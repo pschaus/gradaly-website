@@ -57,12 +57,64 @@
                 <span class="block bg-gradient-to-r from-indigo-600 to-emerald-500 gradient-text" x-text="t.hero_title2"></span>
             </h1>
             <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600 mb-8 leading-relaxed" x-text="t.hero_subtitle"></p>
-            <div class="flex justify-center gap-4">
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-macOS.dmg" class="px-8 py-3 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition shadow-lg hover:shadow-xl flex items-center space-x-2">
                     <i class="fab fa-apple text-xl"></i>
                     <span x-text="t.download_mac"></span>
                 </a>
                 <a href="#tutorial" class="px-8 py-3 rounded-xl bg-white text-slate-700 font-semibold hover:bg-slate-50 transition border border-slate-200 shadow-sm" x-text="t.see_how"></a>
+            </div>
+
+            <!-- Architecture badge & Requirements -->
+            <div class="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs text-slate-500">
+                <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200 font-medium">
+                    <i class="fab fa-apple mr-1.5 text-slate-900"></i>
+                    <span x-text="t.download_sub"></span>
+                </span>
+                <span>•</span>
+                <span x-text="t.macos_req"></span>
+            </div>
+
+            <!-- Gatekeeper Help Accordion (Hero) -->
+            <div x-data="{ open: false, copied: false }" class="mt-3 max-w-lg mx-auto text-left">
+                <button @click="open = !open" type="button" class="mx-auto flex items-center space-x-1.5 text-xs text-indigo-600 hover:text-indigo-800 font-medium py-1 px-2.5 rounded-lg hover:bg-indigo-50/60 transition cursor-pointer">
+                    <i class="fas fa-question-circle text-amber-500"></i>
+                    <span x-text="t.gatekeeper_btn"></span>
+                    <i class="fas fa-chevron-down text-[10px] transition-transform duration-200" :class="{'rotate-180': open}"></i>
+                </button>
+                <div x-show="open" x-cloak x-transition.opacity.duration.200ms class="mt-3 p-4 bg-white border border-amber-200/80 rounded-xl text-xs text-slate-700 shadow-lg space-y-2.5">
+                    <div class="flex items-center space-x-2 text-slate-900 font-semibold">
+                        <i class="fas fa-shield-alt text-amber-500 text-sm"></i>
+                        <span x-text="t.gatekeeper_title"></span>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed" x-text="t.gatekeeper_desc"></p>
+                    <div class="pt-1 bg-slate-50 p-3 rounded-lg border border-slate-200/70">
+                        <p class="font-semibold text-slate-800 mb-2" x-text="t.gatekeeper_fix_title"></p>
+                        <ul class="space-y-1.5 text-slate-600">
+                            <li class="flex items-start space-x-1.5">
+                                <span class="font-bold text-indigo-600">1.</span>
+                                <span x-text="t.gatekeeper_step1"></span>
+                            </li>
+                            <li class="flex flex-col space-y-1">
+                                <div class="flex items-start space-x-1.5">
+                                    <span class="font-bold text-indigo-600">2.</span>
+                                    <span x-text="t.gatekeeper_step2"></span>
+                                </div>
+                                <div class="mt-1 flex items-center bg-slate-900 text-emerald-400 font-mono text-[11px] p-2 rounded-lg justify-between shadow-inner">
+                                    <code class="select-all">xattr -cr /Applications/Gradaly.app</code>
+                                    <button @click="navigator.clipboard.writeText('xattr -cr /Applications/Gradaly.app'); copied = true; setTimeout(() => copied = false, 2000)" class="ml-2 px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-white rounded text-[11px] border border-slate-700 transition flex items-center space-x-1 cursor-pointer">
+                                        <i :class="copied ? 'fas fa-check text-emerald-400' : 'far fa-copy'"></i>
+                                        <span x-text="copied ? t.copied : t.copy"></span>
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-1.5 pt-0.5">
+                                <span class="font-bold text-indigo-600">3.</span>
+                                <span x-text="t.gatekeeper_step3"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             
             <!-- Carousel -->
@@ -209,13 +261,66 @@
     <!-- CTA Section -->
     <div class="bg-white py-24" id="download">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">Ready to upgrade your grading?</h2>
-            <p class="text-xl text-slate-600 mb-10">Join the teachers who have already reclaimed their weekends.</p>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6" x-text="t.cta_title"></h2>
+            <p class="text-xl text-slate-600 mb-10" x-text="t.cta_subtitle"></p>
             <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-macOS.dmg" class="inline-flex px-8 py-4 rounded-xl bg-indigo-600 text-white font-bold text-lg hover:bg-indigo-700 transition shadow-lg hover:shadow-xl items-center space-x-3">
                 <i class="fab fa-apple text-2xl"></i>
                 <span x-text="t.download_mac"></span>
             </a>
-            <p class="mt-4 text-sm text-slate-500">Requires macOS 11.0 or later. <a href="#" class="text-indigo-600 hover:underline">Windows version coming soon.</a></p>
+            
+            <!-- Architecture badge & Requirements -->
+            <div class="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs sm:text-sm text-slate-500">
+                <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200 font-medium">
+                    <i class="fab fa-apple mr-1.5 text-slate-900"></i>
+                    <span x-text="t.download_sub"></span>
+                </span>
+                <span>•</span>
+                <span x-text="t.macos_req"></span>
+                <span>•</span>
+                <span class="text-slate-500" x-text="t.intel_windows_note"></span>
+            </div>
+
+            <!-- Gatekeeper Help Accordion (CTA) -->
+            <div x-data="{ open: false, copied: false }" class="mt-4 max-w-lg mx-auto text-left">
+                <button @click="open = !open" type="button" class="mx-auto flex items-center space-x-1.5 text-xs text-indigo-600 hover:text-indigo-800 font-medium py-1 px-2.5 rounded-lg hover:bg-indigo-50/60 transition cursor-pointer">
+                    <i class="fas fa-question-circle text-amber-500"></i>
+                    <span x-text="t.gatekeeper_btn"></span>
+                    <i class="fas fa-chevron-down text-[10px] transition-transform duration-200" :class="{'rotate-180': open}"></i>
+                </button>
+                <div x-show="open" x-cloak x-transition.opacity.duration.200ms class="mt-3 p-4 bg-slate-50 border border-amber-200/80 rounded-xl text-xs text-slate-700 shadow-md space-y-2.5">
+                    <div class="flex items-center space-x-2 text-slate-900 font-semibold">
+                        <i class="fas fa-shield-alt text-amber-500 text-sm"></i>
+                        <span x-text="t.gatekeeper_title"></span>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed" x-text="t.gatekeeper_desc"></p>
+                    <div class="pt-1 bg-white p-3 rounded-lg border border-slate-200">
+                        <p class="font-semibold text-slate-800 mb-2" x-text="t.gatekeeper_fix_title"></p>
+                        <ul class="space-y-1.5 text-slate-600">
+                            <li class="flex items-start space-x-1.5">
+                                <span class="font-bold text-indigo-600">1.</span>
+                                <span x-text="t.gatekeeper_step1"></span>
+                            </li>
+                            <li class="flex flex-col space-y-1">
+                                <div class="flex items-start space-x-1.5">
+                                    <span class="font-bold text-indigo-600">2.</span>
+                                    <span x-text="t.gatekeeper_step2"></span>
+                                </div>
+                                <div class="mt-1 flex items-center bg-slate-900 text-emerald-400 font-mono text-[11px] p-2 rounded-lg justify-between shadow-inner">
+                                    <code class="select-all">xattr -cr /Applications/Gradaly.app</code>
+                                    <button @click="navigator.clipboard.writeText('xattr -cr /Applications/Gradaly.app'); copied = true; setTimeout(() => copied = false, 2000)" class="ml-2 px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-white rounded text-[11px] border border-slate-700 transition flex items-center space-x-1 cursor-pointer">
+                                        <i :class="copied ? 'fas fa-check text-emerald-400' : 'far fa-copy'"></i>
+                                        <span x-text="copied ? t.copied : t.copy"></span>
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-1.5 pt-0.5">
+                                <span class="font-bold text-indigo-600">3.</span>
+                                <span x-text="t.gatekeeper_step3"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

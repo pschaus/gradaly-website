@@ -40,6 +40,20 @@ const translations = {
         adv_cost_text: "You own your API Key. The application takes zero margin—whether you grade 10 or 1000 copies, you only pay the direct AI provider costs.",
         adv_control_title: "You Have the Final Say",
         adv_control_text: "Gradaly is a grading assistant, not a replacement. You retain full, fine-grained control and can overwrite the AI's output on any copy ergonomically.",
+        download_sub: "Apple Silicon (M1/M2/M3/M4)",
+        macos_req: "Requires macOS 11.0 or later",
+        intel_windows_note: "Intel Mac or Windows version coming soon",
+        gatekeeper_btn: "Seeing \"Application is damaged\" on macOS? Quick fix",
+        gatekeeper_title: "macOS Gatekeeper Note",
+        gatekeeper_desc: "Because Gradaly is an independent tool distributed outside the Mac App Store, modern macOS (Ventura, Sonoma, Sequoia) displays a misleading \"application is damaged\" prompt on first open. The application is completely safe.",
+        gatekeeper_fix_title: "How to open in 5 seconds:",
+        gatekeeper_step1: "Drag Gradaly into your Applications folder.",
+        gatekeeper_step2: "Open Terminal (Spotlight → Terminal) and run:",
+        gatekeeper_step3: "Launch Gradaly normally from Applications!",
+        copy: "Copy",
+        copied: "Copied!",
+        cta_title: "Ready to upgrade your grading?",
+        cta_subtitle: "Join the teachers who have already reclaimed their weekends.",
         footer_rights: "All rights reserved."
 },
     fr: {
@@ -83,8 +97,22 @@ const translations = {
         adv_cost_text: "Vous êtes maître de votre consommation via votre propre API Key. L'application ne prend aucune marge, que vous corrigiez 10 ou 1000 copies.",
         adv_control_title: "Vous Gardez le Dernier Mot",
         adv_control_text: "C'est une aide à la correction avec un contrôle très fin et ergonomique : le correcteur peut toujours écraser la sortie de l'IA sur n'importe quelle copie.",
+        download_sub: "Apple Silicon (M1/M2/M3/M4)",
+        macos_req: "Requis : macOS 11.0 ou ultérieur",
+        intel_windows_note: "Versions Mac Intel & Windows à venir",
+        gatekeeper_btn: "Message « L'application est endommagée » sur macOS ? Solution rapide",
+        gatekeeper_title: "Note de sécurité macOS Gatekeeper",
+        gatekeeper_desc: "Comme Gradaly est un logiciel indépendant distribué hors de l'App Store sans certificat commercial Apple payant, macOS (Ventura, Sonoma, Sequoia) affiche par défaut le message trompeur « l'application est endommagée ». L'application est 100% saine.",
+        gatekeeper_fix_title: "Comment débloquer en 5 secondes :",
+        gatekeeper_step1: "Glissez Gradaly dans votre dossier Applications.",
+        gatekeeper_step2: "Ouvrez le Terminal (Spotlight → Terminal) et collez :",
+        gatekeeper_step3: "Lancez Gradaly normalement depuis Applications !",
+        copy: "Copier",
+        copied: "Copié !",
+        cta_title: "Prêt à révolutionner vos corrections ?",
+        cta_subtitle: "Rejoignez les enseignants qui ont déjà récupéré leurs week-ends.",
         footer_rights: "Tous droits réservés."
-}
+    }
 };
 
 document.addEventListener('alpine:init', () => {
