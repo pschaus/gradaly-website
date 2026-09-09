@@ -27,8 +27,19 @@ const translations = {
         tut3_text: "Click one button. Gradaly securely captures the screen and asks the AI.",
         tut4_title: "4. Apply Grade",
         tut4_text: "Review the suggested grading criteria and apply them to your grading software.",
+        
+        carousel_canevas_title: "1. Define your criteria (Canvas)",
+        carousel_canevas_desc: "The canvas view allows you to visually define grading criteria, their associated points, assignment logic, and any specific constraints or rubrics.",
+        carousel_grading_title: "2. Grade interactively (Grading)",
+        carousel_grading_desc: "The grading view lets you manually toggle criteria, let the AI fill them out for you, and write personalized feedback for each student.",
+        adv_privacy_title: "Total Privacy",
+        adv_privacy_text: "Student names are NEVER sent to an external AI. Only the cropped image regions defined in the canvas are analyzed, ensuring complete confidentiality.",
+        adv_cost_title: "Cost Control",
+        adv_cost_text: "You own your API Key. The application takes zero margin—whether you grade 10 or 1000 copies, you only pay the direct AI provider costs.",
+        adv_control_title: "You Have the Final Say",
+        adv_control_text: "Gradaly is a grading assistant, not a replacement. You retain full, fine-grained control and can overwrite the AI's output on any copy ergonomically.",
         footer_rights: "All rights reserved."
-    },
+},
     fr: {
         nav_download: "Télécharger l'App",
         hero_title1: "Corrigez plus intelligemment.",
@@ -57,8 +68,19 @@ const translations = {
         tut3_text: "En un clic, Gradaly capture la copie et interroge l'IA de manière sécurisée.",
         tut4_title: "4. Appliquez la note",
         tut4_text: "Lisez les critères suggérés et reportez les points dans votre logiciel de correction.",
+        
+        carousel_canevas_title: "1. Définissez vos critères (Canevas)",
+        carousel_canevas_desc: "La vue canevas permet de définir les critères de correction, les points associés, la logique d'attribution et vos éventuelles contraintes d'évaluation.",
+        carousel_grading_title: "2. Corrigez et supervisez (Grading)",
+        carousel_grading_desc: "La vue grading permet d'activer les critères à la main ou de les faire remplir par l'IA, et de donner un feedback de correction personnalisé.",
+        adv_privacy_title: "Confidentialité Absolue",
+        adv_privacy_text: "Le nom d'un étudiant ne part jamais dans une IA externe. Seules les sous-images délimitées dans le canevas sont envoyées, garantissant le respect de la vie privée.",
+        adv_cost_title: "Maîtrise des Coûts",
+        adv_cost_text: "Vous êtes maître de votre consommation via votre propre API Key. L'application ne prend aucune marge, que vous corrigiez 10 ou 1000 copies.",
+        adv_control_title: "Vous Gardez le Dernier Mot",
+        adv_control_text: "C'est une aide à la correction avec un contrôle très fin et ergonomique : le correcteur peut toujours écraser la sortie de l'IA sur n'importe quelle copie.",
         footer_rights: "Tous droits réservés."
-    }
+}
 };
 
 document.addEventListener('alpine:init', () => {
