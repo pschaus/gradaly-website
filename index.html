@@ -69,15 +69,19 @@
             </h1>
             <p class="mt-4 max-w-3xl mx-auto text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed" x-text="t.hero_subtitle"></p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-macOS.dmg" class="px-7 py-3.5 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition shadow-lg hover:shadow-xl flex items-center space-x-2">
+                <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-macOS.dmg" class="px-6 py-3.5 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition shadow-lg hover:shadow-xl flex items-center space-x-2">
                     <i class="fab fa-apple text-xl"></i>
                     <span x-text="t.download_mac"></span>
                 </a>
-                <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-Linux.AppImage" class="px-7 py-3.5 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition shadow-lg hover:shadow-xl flex items-center space-x-2">
+                <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-Windows-Setup.exe" class="px-6 py-3.5 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition shadow-lg hover:shadow-xl flex items-center space-x-2">
+                    <i class="fab fa-windows text-xl"></i>
+                    <span x-text="t.download_windows"></span>
+                </a>
+                <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-Linux.AppImage" class="px-6 py-3.5 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition shadow-lg hover:shadow-xl flex items-center space-x-2">
                     <i class="fab fa-linux text-xl"></i>
                     <span x-text="t.download_appimage"></span>
                 </a>
-                <a href="#tutorial" class="px-7 py-3.5 rounded-xl bg-white text-slate-700 font-semibold hover:bg-slate-50 transition border border-slate-200 shadow-sm" x-text="t.see_how"></a>
+                <a href="#tutorial" class="px-6 py-3.5 rounded-xl bg-white text-slate-700 font-semibold hover:bg-slate-50 transition border border-slate-200 shadow-sm" x-text="t.see_how"></a>
             </div>
 
             <!-- Architecture badge & Requirements -->
@@ -85,6 +89,10 @@
                 <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200 font-medium">
                     <i class="fab fa-apple mr-1.5 text-slate-900"></i>
                     <span x-text="t.download_sub_mac"></span>
+                </span>
+                <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200 font-medium">
+                    <i class="fab fa-windows mr-1.5 text-blue-600"></i>
+                    <span x-text="t.download_sub_windows"></span>
                 </span>
                 <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200 font-medium">
                     <i class="fas fa-check-circle mr-1.5 text-emerald-600"></i>
@@ -580,13 +588,13 @@
 
     <!-- CTA Section -->
     <div class="bg-white py-24 border-t border-slate-200" id="download">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4" x-text="t.cta_title"></h2>
             <p class="text-xl text-slate-600 mb-12 max-w-2xl mx-auto" x-text="t.cta_subtitle"></p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 text-left max-w-6xl mx-auto">
                 <!-- macOS Card -->
-                <div class="p-8 rounded-2xl border-2 border-indigo-500 bg-gradient-to-b from-indigo-50/40 to-white shadow-xl flex flex-col justify-between relative overflow-hidden">
+                <div class="p-7 rounded-2xl border-2 border-indigo-500 bg-gradient-to-b from-indigo-50/40 to-white shadow-xl flex flex-col justify-between relative overflow-hidden">
                     <div class="absolute top-4 right-4">
                         <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
                             <i class="fas fa-check-circle mr-1 text-emerald-600"></i>
@@ -594,7 +602,7 @@
                         </span>
                     </div>
                     <div>
-                        <div class="w-14 h-14 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-md shadow-indigo-200">
+                        <div class="w-13 h-13 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-3xl mb-5 shadow-md shadow-indigo-200">
                             <i class="fab fa-apple"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-slate-900 mb-2">macOS</h3>
@@ -602,7 +610,7 @@
                         <p class="text-xs text-slate-500 mb-6" x-text="t.macos_req"></p>
                     </div>
                     <div>
-                        <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-macOS.dmg" class="w-full inline-flex justify-center items-center px-6 py-3.5 rounded-xl bg-indigo-600 text-white font-bold text-base hover:bg-indigo-700 transition shadow-md hover:shadow-lg space-x-2">
+                        <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-macOS.dmg" class="w-full inline-flex justify-center items-center px-5 py-3.5 rounded-xl bg-indigo-600 text-white font-bold text-base hover:bg-indigo-700 transition shadow-md hover:shadow-lg space-x-2">
                             <i class="fas fa-download"></i>
                             <span x-text="t.download_mac"></span>
                             <span class="text-indigo-200 text-xs font-normal">(.dmg)</span>
@@ -610,20 +618,45 @@
                     </div>
                 </div>
 
+                <!-- Windows Card -->
+                <div class="p-7 rounded-2xl border-2 border-blue-500 bg-gradient-to-b from-blue-50/40 to-white shadow-xl flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-4 right-4">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 border border-blue-200">
+                            <i class="fab fa-windows mr-1 text-blue-600"></i>
+                            <span x-text="t.windows_badge"></span>
+                        </span>
+                    </div>
+                    <div>
+                        <div class="w-13 h-13 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-3xl mb-5 shadow-md shadow-blue-200">
+                            <i class="fab fa-windows"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Windows</h3>
+                        <p class="text-sm text-slate-600 mb-1" x-text="t.download_sub_windows"></p>
+                        <p class="text-xs text-slate-500 mb-6" x-text="t.windows_req"></p>
+                    </div>
+                    <div>
+                        <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-Windows-Setup.exe" class="w-full inline-flex justify-center items-center px-5 py-3.5 rounded-xl bg-blue-600 text-white font-bold text-base hover:bg-blue-700 transition shadow-md hover:shadow-lg space-x-2">
+                            <i class="fas fa-download"></i>
+                            <span x-text="t.download_windows"></span>
+                            <span class="text-blue-200 text-xs font-normal">(.exe)</span>
+                        </a>
+                    </div>
+                </div>
+
                 <!-- Linux Card -->
-                <div x-data="{ linuxArch: 'x86_64' }" class="p-8 rounded-2xl border border-slate-200 bg-gradient-to-b from-slate-50 to-white shadow-xl flex flex-col justify-between relative overflow-hidden">
+                <div x-data="{ linuxArch: 'x86_64' }" class="p-7 rounded-2xl border border-slate-200 bg-gradient-to-b from-slate-50 to-white shadow-xl flex flex-col justify-between relative overflow-hidden">
                     <div class="absolute top-4 right-4">
                         <div class="inline-flex p-0.5 bg-slate-200/90 rounded-lg text-xs font-semibold">
-                            <button @click="linuxArch = 'x86_64'" type="button" class="px-2.5 py-1 rounded-md transition" :class="linuxArch === 'x86_64' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-900'">
+                            <button @click="linuxArch = 'x86_64'" type="button" class="px-2 py-0.5 rounded-md transition" :class="linuxArch === 'x86_64' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-900'">
                                 x86_64
                             </button>
-                            <button @click="linuxArch = 'arm64'" type="button" class="px-2.5 py-1 rounded-md transition" :class="linuxArch === 'arm64' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-900'">
+                            <button @click="linuxArch = 'arm64'" type="button" class="px-2 py-0.5 rounded-md transition" :class="linuxArch === 'arm64' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-900'">
                                 ARM64
                             </button>
                         </div>
                     </div>
                     <div>
-                        <div class="w-14 h-14 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-md shadow-slate-300">
+                        <div class="w-13 h-13 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-3xl mb-5 shadow-md shadow-slate-300">
                             <i class="fab fa-linux"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-slate-900 mb-2">Linux</h3>
@@ -631,12 +664,12 @@
                         <p class="text-xs text-slate-500 mb-6" x-text="t.linux_req"></p>
                     </div>
                     <div class="space-y-3">
-                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-Linux.AppImage' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-Linux-arm64.AppImage'" class="w-full inline-flex justify-center items-center px-6 py-3.5 rounded-xl bg-slate-900 text-white font-bold text-base hover:bg-slate-800 transition shadow-md hover:shadow-lg space-x-2">
+                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-Linux.AppImage' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-Linux-arm64.AppImage'" class="w-full inline-flex justify-center items-center px-5 py-3 rounded-xl bg-slate-900 text-white font-bold text-sm hover:bg-slate-800 transition shadow-md hover:shadow-lg space-x-2">
                             <i class="fas fa-download"></i>
                             <span x-text="t.download_appimage"></span>
                             <span class="text-slate-400 text-xs font-normal" x-text="linuxArch === 'x86_64' ? '(x86_64)' : '(ARM64)'"></span>
                         </a>
-                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/gradaly-amd64.deb' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/gradaly-arm64.deb'" class="w-full inline-flex justify-center items-center px-6 py-2.5 rounded-xl bg-white text-slate-700 font-semibold text-sm hover:bg-slate-50 transition border border-slate-300 space-x-2">
+                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/gradaly-amd64.deb' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/gradaly-arm64.deb'" class="w-full inline-flex justify-center items-center px-5 py-2.5 rounded-xl bg-white text-slate-700 font-semibold text-sm hover:bg-slate-50 transition border border-slate-300 space-x-2">
                             <i class="fas fa-download text-xs text-slate-500"></i>
                             <span x-text="t.download_deb"></span>
                             <span class="text-slate-400 text-xs font-normal" x-text="linuxArch === 'x86_64' ? '(amd64)' : '(arm64)'"></span>
