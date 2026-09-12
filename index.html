@@ -15,6 +15,7 @@
     <title>Gradaly - AI Grading Assistant</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://assets.lemonsqueezy.com/lemonsqueezy.js" defer></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -49,10 +50,11 @@
                     <span class="font-bold text-xl tracking-tight">Gradaly<span class="text-indigo-600">.io</span></span>
                 </div>
                 <div class="flex items-center space-x-4">
+                    <a href="#pricing" class="text-sm font-semibold text-slate-700 hover:text-indigo-600 transition" x-text="t.nav_pricing"></a>
                     <button @click="toggleLang()" class="px-3 py-1 rounded-md bg-slate-100 hover:bg-slate-200 transition text-sm font-medium border border-slate-300">
                         <span x-text="lang === 'en' ? '🇫🇷 Français' : '🇬🇧 English'"></span>
                     </button>
-                    <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-macOS.dmg" class="hidden sm:inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition" x-text="t.nav_download"></a>
+                    <a href="#download" class="hidden sm:inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition" x-text="t.nav_download"></a>
                 </div>
             </div>
         </div>
@@ -478,6 +480,99 @@
                             <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step5_item3_desc"></p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div id="pricing" class="py-24 bg-slate-100/70 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-600 mb-3" x-text="t.pricing_tag"></h2>
+            <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4" x-text="t.pricing_title"></p>
+            <p class="max-w-2xl mx-auto text-base text-slate-600 mb-12" x-text="t.pricing_subtitle"></p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+                <!-- Free Plan -->
+                <div class="p-8 rounded-2xl bg-white border border-slate-200 shadow-md flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold text-slate-900" x-text="t.plan_free_name"></h3>
+                            <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600" x-text="t.plan_free_badge"></span>
+                        </div>
+                        <div class="mb-6">
+                            <span class="text-4xl font-extrabold text-slate-900">0 €</span>
+                            <span class="text-slate-500 text-sm" x-text="t.plan_free_period"></span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-600 mb-8">
+                            <li class="flex items-center space-x-2.5">
+                                <i class="fas fa-check text-emerald-500"></i>
+                                <span x-text="t.plan_free_f1"></span>
+                            </li>
+                            <li class="flex items-center space-x-2.5">
+                                <i class="fas fa-check text-emerald-500"></i>
+                                <span x-text="t.plan_free_f2"></span>
+                            </li>
+                            <li class="flex items-center space-x-2.5">
+                                <i class="fas fa-check text-emerald-500"></i>
+                                <span x-text="t.plan_free_f3"></span>
+                            </li>
+                            <li class="flex items-center space-x-2.5">
+                                <i class="fas fa-check text-emerald-500"></i>
+                                <span x-text="t.plan_free_f4"></span>
+                            </li>
+                            <li class="flex items-center space-x-2.5">
+                                <i class="fas fa-check text-emerald-500"></i>
+                                <span x-text="t.plan_free_f5"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#download" class="w-full inline-flex justify-center items-center px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-sm transition border border-slate-300 space-x-2">
+                        <i class="fas fa-download text-xs"></i>
+                        <span x-text="t.plan_free_btn"></span>
+                    </a>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-slate-900 to-indigo-950 text-white shadow-xl relative overflow-hidden flex flex-col justify-between border border-indigo-500/30">
+                    <div class="absolute top-4 right-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-500 text-white shadow-sm" x-text="t.plan_pro_badge"></span>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-bold text-white" x-text="t.plan_pro_name"></h3>
+                        </div>
+                        <div class="mb-6">
+                            <span class="text-4xl font-extrabold text-white">29,99 €</span>
+                            <span class="text-indigo-200 text-sm" x-text="t.plan_pro_period"></span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-200 mb-8">
+                            <li class="flex items-center space-x-2.5 font-medium text-emerald-400">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="text-white font-semibold" x-text="t.plan_pro_f1"></span>
+                            </li>
+                            <li class="flex items-center space-x-2.5">
+                                <i class="fas fa-check text-indigo-400"></i>
+                                <span x-text="t.plan_pro_f2"></span>
+                            </li>
+                            <li class="flex items-center space-x-2.5">
+                                <i class="fas fa-check text-indigo-400"></i>
+                                <span x-text="t.plan_pro_f3"></span>
+                            </li>
+                            <li class="flex items-center space-x-2.5">
+                                <i class="fas fa-check text-indigo-400"></i>
+                                <span x-text="t.plan_pro_f4"></span>
+                            </li>
+                            <li class="flex items-center space-x-2.5">
+                                <i class="fas fa-check text-indigo-400"></i>
+                                <span x-text="t.plan_pro_f5"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="https://gradaly.lemonsqueezy.com/checkout/buy/611a2aa2-df46-4065-9fc1-24cc6c7781d9" class="lemonsqueezy-button w-full inline-flex justify-center items-center px-6 py-3.5 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white font-bold text-base transition shadow-lg hover:shadow-xl space-x-2">
+                        <i class="fas fa-shopping-cart text-sm"></i>
+                        <span x-text="t.plan_pro_btn"></span>
+                    </a>
                 </div>
             </div>
         </div>
