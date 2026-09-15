@@ -25,8 +25,8 @@ const translations = {
 
         // Carousel slides
         carousel_slide0_badge: "Step 1: Canvas & Rubrics",
-        carousel_slide0_title: "Layout, MAX_SCORE & Criteria",
-        carousel_slide0_desc: "Delineate the student ID zone for offline OCR, configure question answer boxes, set individual MAX_SCORE limits with automatic capping, and write custom AI prompts.",
+        carousel_slide0_title: "Layout, Maximum Score & Criteria",
+        carousel_slide0_desc: "Delineate the student ID zone for offline OCR, configure question answer boxes, set individual maximum scores with automatic capping, and write custom AI prompts.",
         
         carousel_slide1_badge: "Step 2: Students",
         carousel_slide1_title: "Import Student Roster (CSV)",
@@ -67,8 +67,8 @@ const translations = {
         guide_step1_item1_desc: "Delineate the reserved box for student details (name, first name, ID/matricule).",
         guide_step1_item2_title: "Question Layout:",
         guide_step1_item2_desc: "Add exam questions by drawing bounding boxes over the respective answer regions.",
-        guide_step1_item3_title: "Criteria, Rubric & MAX_SCORE:",
-        guide_step1_item3_desc: "Define additive criteria (0.5 pt increments), set individual question MAX_SCORE limits with automatic capping, and ensure rubric consistency.",
+        guide_step1_item3_title: "Criteria, Rubric & Maximum Score:",
+        guide_step1_item3_desc: "Define additive criteria (0.5 pt increments), set individual question maximum scores with automatic capping, and ensure rubric consistency.",
         guide_step1_item4_title: "Evaluation Logic (Prompt):",
         guide_step1_item4_desc: "Write a dedicated grading prompt per question to guide the AI (key expectations, tolerances, required steps).",
 
@@ -194,8 +194,8 @@ const translations = {
 
         // Carousel slides
         carousel_slide0_badge: "Étape 1 : Canevas & Barème",
-        carousel_slide0_title: "Découpage, MAX_SCORE & Critères",
-        carousel_slide0_desc: "Délimitez la zone d'en-tête pour l'OCR local, cadrez les questions, fixez le score maximum par question (MAX_SCORE) avec plafonnement automatique et consignes IA.",
+        carousel_slide0_title: "Découpage, Score maximum & Critères",
+        carousel_slide0_desc: "Délimitez la zone d'en-tête pour l'OCR local, cadrez les questions, fixez le score maximum par question avec plafonnement automatique et consignes IA.",
         
         carousel_slide1_badge: "Étape 2 : Étudiants",
         carousel_slide1_title: "Import du Trombinoscope (CSV)",
@@ -236,8 +236,8 @@ const translations = {
         guide_step1_item1_desc: "Délimitez l'emplacement réservé aux informations de l'étudiant (nom, prénom, identifiant).",
         guide_step1_item2_title: "Découpage des questions :",
         guide_step1_item2_desc: "Ajoutez les questions de l'examen en traçant leurs zones de réponse sur le PDF vierge.",
-        guide_step1_item3_title: "Critères, Barème & MAX_SCORE :",
-        guide_step1_item3_desc: "Définissez précisément les critères d'évaluation (multiples de 0,5 pt), fixez le score maximum par question (MAX_SCORE) avec plafonnement automatique des points.",
+        guide_step1_item3_title: "Critères, Barème & Score maximum :",
+        guide_step1_item3_desc: "Définissez précisément les critères d'évaluation (multiples de 0,5 pt), fixez le score maximum par question avec plafonnement automatique des points.",
         guide_step1_item4_title: "Logique de correction (Prompt) :",
         guide_step1_item4_desc: "Rédigez une consigne d'évaluation dédiée par question pour guider l'IA (attentes clés, tolérances, éléments indispensables).",
 
