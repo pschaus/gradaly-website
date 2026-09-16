@@ -1,6 +1,8 @@
 const translations = {
     en: {
         nav_download: "Download App",
+        hero_version_badge: "Latest release available:",
+        cta_version_info: "Current release:",
         hero_title1: "Grade Smarter, Not Harder.",
         hero_title2: "Your AI Grading Assistant.",
         hero_subtitle: "Spend your time designing a fine-grained, high-quality rubric rather than grading repetitively. Gradaly applies your criteria with AI, lets you instantly simulate the impact of adjustments across the entire cohort, and keeps you fully in control of every grade.",
@@ -180,7 +182,9 @@ const translations = {
     },
     fr: {
         nav_download: "Télécharger l'App",
-        hero_title1: "Corrigez plus intelligemment.",
+        hero_version_badge: "Dernière version disponible :",
+        cta_version_info: "Version actuelle :",
+        hero_title1: "Corrigez Plus Vite, Plus Juste.",
         hero_title2: "Votre assistant IA pour la correction.",
         hero_subtitle: "Consacrez votre temps à concevoir un barème d'évaluation fin et rigoureux plutôt qu'à corriger de manière répétitive. Gradaly applique vos critères avec l'IA, simule immédiatement l'impact de vos ajustements sur toute la promotion et vous laisse toujours le dernier mot.",
         download_mac: "Télécharger pour macOS",
