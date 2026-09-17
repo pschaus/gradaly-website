@@ -22,8 +22,8 @@ const translations = {
         adv_privacy_text: "A student's name never leaves your computer. The CSV student roster, header inspection, and copy matching run 100% offline locally. Only cropped, anonymous answer snippets are analyzed by the AI.",
         adv1_title: "Native Desktop Experience",
         adv1_text: "Ultra-fast, lightweight, and responsive. Operates directly on your machine (macOS, Windows, Linux) with high-performance PDF rendering and zero browser lag.",
-        adv_cost_title: "Direct Cost Control",
-        adv_cost_text: "You own your Google Gemini API key. The application takes zero margin—whether you grade 10 or 1000 copies, you only pay direct provider costs (fractions of a cent per copy).",
+        adv_cost_title: "100% Direct & Transparent Costs",
+        adv_cost_text: "You own your Google Gemini API key. The application takes zero margin—grade 100% free with Google's Free Tier (safe 15 RPM rate limiting), or choose Flex/Standard tiers for fractions of a cent per copy.",
 
         // Carousel slides
         carousel_slide0_badge: "Step 1: Canvas & Rubrics",
@@ -44,11 +44,11 @@ const translations = {
         
         carousel_slide4_badge: "Step 5: Batch AI",
         carousel_slide4_title: "Launch AI Grading Across Copies",
-        carousel_slide4_desc: "Select which questions and copies to grade using Google Gemini (3.8 Flash, 3.7 Flash, 3.1 Pro), with options to evaluate unrated copies or overwrite.",
+        carousel_slide4_desc: "Select which questions and copies to grade with Google Gemini (3.8 Flash, 3.7 Flash). Choose between Free Tier (safe 15 RPM rate limiting), Flex, or Standard tiers with pre-flight cost and duration estimation.",
         
         carousel_slide5_badge: "Step 5 (cont.): Progress",
-        carousel_slide5_title: "Real-Time AI Execution & Feedback",
-        carousel_slide5_desc: "Follow the multimodal AI in real time as it ticks validated criteria and drafts constructive feedback. You maintain full sovereignty to override anything.",
+        carousel_slide5_title: "Real-Time AI Execution & Cost Tracking",
+        carousel_slide5_desc: "Run up to 10 parallel workers with live progress, real-time token and cost accumulation, and instant cancellation. You maintain full sovereignty to inspect and override any grade.",
         
         carousel_slide6_badge: "Step 6: Analytics",
         carousel_slide6_title: "Cohort Statistics & Clarified Histograms",
@@ -164,7 +164,7 @@ const translations = {
         plan_free_name: "Gradaly Community",
         plan_free_badge: "Free Forever",
         plan_free_period: "/ free",
-        plan_free_f1: "All AI models (Gemini Flash, Pro...)",
+        plan_free_f1: "Gemini 3.8 & 3.7 Flash with Free Tier mode",
         plan_free_f2: "Unlimited students & exam copies",
         plan_free_f3: "100% offline student OCR & matching",
         plan_free_f4: "Live grading console & human control",
@@ -203,8 +203,8 @@ const translations = {
         adv_privacy_text: "Le nom d'un étudiant ne sort jamais de votre ordinateur. La liste des étudiants (CSV), la lecture des en-têtes et l'appariement des copies s'exécutent intégralement en local. Seuls des extraits de copies anonymisés sont analysés par l'IA.",
         adv1_title: "Application de Bureau Fluide",
         adv1_text: "Ultra-rapide, légère et réactive. S'exécute directement sur votre ordinateur (macOS, Windows, Linux) avec un affichage PDF haute performance, sans lenteur de navigateur ni distraction.",
-        adv_cost_title: "Maîtrise Totale des Coûts",
-        adv_cost_text: "Vous utilisez directement votre propre clé API Gemini sans intermédiaire. L'application ne prend aucune marge : corriger un examen complet ne vous coûte que quelques fractions de centime par copie.",
+        adv_cost_title: "Coûts Directs & Transparents",
+        adv_cost_text: "Vous utilisez directement votre propre clé API Gemini sans intermédiaire. L'application ne prend aucune marge : corrigez gratuitement avec le mode Free Tier de Google (sécurisé à 15 RPM), ou optez pour les modes Flex/Standard pour quelques fractions de centime.",
 
         // Carousel slides
         carousel_slide0_badge: "Étape 1 : Canevas & Barème",
@@ -225,11 +225,11 @@ const translations = {
         
         carousel_slide4_badge: "Étape 5 : IA par lot",
         carousel_slide4_title: "Lancement de la Correction IA",
-        carousel_slide4_desc: "Sélectionnez les questions et copies à évaluer avec Gemini (3.8 Flash, 3.7 Flash, 3.1 Pro), avec option d'évaluer les copies restantes ou tout réévaluer.",
+        carousel_slide4_desc: "Sélectionnez les questions et copies à évaluer avec Gemini (3.8 Flash, 3.7 Flash). Choisissez entre le mode Gratuit (sécurisé à 15 RPM), Flex ou Standard avec estimation préalable des coûts et de la durée.",
         
         carousel_slide5_badge: "Étape 5 (suite) : Exécution",
-        carousel_slide5_title: "Suivi en Direct & Retours Détaillés",
-        carousel_slide5_desc: "Observez l'analyse multimodale en temps réel. Gemini coche les critères mérités et formule un commentaire constructif que l'enseignant valide ou modifie.",
+        carousel_slide5_title: "Exécution Parallèle & Suivi des Coûts",
+        carousel_slide5_desc: "Lancez jusqu'à 10 workers en parallèle avec suivi en direct de la vitesse, des tokens et du coût cumulé, et annulation instantanée. Gardez un contrôle souverain sur chaque note.",
         
         carousel_slide6_badge: "Étape 6 : Synthèse",
         carousel_slide6_title: "Statistiques & Histogrammes Clairs",
@@ -345,7 +345,7 @@ const translations = {
         plan_free_name: "Gradaly Gratuit",
         plan_free_badge: "Gratuit à vie",
         plan_free_period: "/ gratuit",
-        plan_free_f1: "Tous les modèles IA (Gemini Flash, Pro...)",
+        plan_free_f1: "Modèles Gemini 3.8 & 3.7 Flash avec mode Free Tier",
         plan_free_f2: "Copies et étudiants illimités",
         plan_free_f3: "Appariement de la liste d'étudiants 100% hors-ligne",
         plan_free_f4: "Console de correction live & contrôle humain total",
