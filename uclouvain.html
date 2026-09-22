@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5EW5CBP0QL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5EW5CBP0QL');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradaly Pro - Offre Académique UCLouvain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5', // Indigo 600
+                        secondary: '#10B981', // Emerald 500
+                        uclouvain: '#002855', // UCLouvain Navy
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        [x-cloak] { display: none !important; }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col justify-between" x-data="uclouvainApp()">
+
+    <!-- Navbar -->
+    <nav class="w-full bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-xs">G</div>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">Gradaly<span class="text-indigo-600">.io</span></span>
+                </a>
+                <div class="flex items-center space-x-4">
+                    <button @click="toggleLang()" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 transition text-xs font-semibold border border-slate-300 flex items-center gap-1.5 cursor-pointer">
+                        <span x-text="lang === 'en' ? '🇫🇷 Français' : '🇬🇧 English'"></span>
+                    </button>
+                    <a href="index.html" class="text-xs font-semibold text-slate-600 hover:text-indigo-600 transition flex items-center gap-1">
+                        <i class="fas fa-arrow-left"></i>
+                        <span x-text="lang === 'en' ? 'Back to site' : 'Retour au site'"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 max-w-3xl w-full mx-auto px-4 py-12 sm:py-16 flex flex-col justify-center">
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+            <!-- Header Banner -->
+            <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 p-8 sm:p-10 text-white relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-10 text-white text-9xl font-serif select-none pointer-events-none">
+                    UCL
+                </div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-blue-200 border border-white/20 mb-4 backdrop-blur-xs">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span x-text="lang === 'en' ? 'Academic Program' : 'Offre Académique Partenaire'"></span>
+                </div>
+                <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight" x-text="lang === 'en' ? 'Free Gradaly Pro for UCLouvain' : 'Licence Gradaly Pro offerte pour l\'UCLouvain'"></h1>
+                <p class="mt-2 text-sm sm:text-base text-blue-100/90 leading-relaxed" x-text="lang === 'en' ? 'Faculty, professors, and teaching assistants at UCLouvain receive free access to all Gradaly Pro features.' : 'Professeurs, assistants et membres du personnel enseignant de l\'UCLouvain : bénéficiez gratuitement de l\'ensemble des fonctionnalités Gradaly Pro.'"></p>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 sm:p-10">
+                <!-- Features included -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+                    <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-2.5">
+                        <i class="fas fa-file-excel text-emerald-600 mt-1"></i>
+                        <div>
+                            <div class="font-bold text-xs text-slate-800" x-text="lang === 'en' ? 'Excel Export' : 'Export Excel Pro'"></div>
+                            <div class="text-[11px] text-slate-500" x-text="lang === 'en' ? 'Multi-sheet gradebook & stats' : 'Notes détaillées par question & récap'"></div>
+                        </div>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-2.5">
+                        <i class="fas fa-file-pdf text-red-600 mt-1"></i>
+                        <div>
+                            <div class="font-bold text-xs text-slate-800" x-text="lang === 'en' ? 'Student PDF Reports' : 'Rapports PDF Élèves'"></div>
+                            <div class="text-[11px] text-slate-500" x-text="lang === 'en' ? 'Individual annotated copies in ZIP' : 'Copies annotées avec page de garde'"></div>
+                        </div>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-2.5">
+                        <i class="fas fa-infinity text-indigo-600 mt-1"></i>
+                        <div>
+                            <div class="font-bold text-xs text-slate-800" x-text="lang === 'en' ? '1-Year License' : 'Licence 1 An'"></div>
+                            <div class="text-[11px] text-slate-500" x-text="lang === 'en' ? 'Full access, renewable free' : 'Accès complet, renouvelable'"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success State -->
+                <div x-show="state === 'success'" x-cloak class="p-6 bg-emerald-50 border border-emerald-200 rounded-2xl animate-in fade-in">
+                    <div class="flex items-start gap-3.5">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                            <i class="fas fa-check text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-emerald-900 text-base mb-1" x-text="lang === 'en' ? 'Check your UCLouvain inbox!' : 'Vérifiez votre boîte mail UCLouvain !'"></h3>
+                            <p class="text-xs sm:text-sm text-emerald-800 leading-relaxed" x-text="responseMessage"></p>
+                            <div class="mt-4 pt-3 border-t border-emerald-200/60 text-xs text-emerald-700 flex items-center gap-2">
+                                <i class="fas fa-info-circle"></i>
+                                <span x-text="lang === 'en' ? 'The email usually arrives within 1 minute. Check your junk/spam folder if needed.' : 'Le courriel arrive généralement en moins d\'une minute. Vérifiez vos spams si nécessaire.'"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form State -->
+                <form x-show="state !== 'success'" @submit.prevent="submitClaim()" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                            <span x-text="lang === 'en' ? 'Your UCLouvain email address:' : 'Votre adresse email institutionnelle UCLouvain :'"></span>
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <input 
+                                type="email" 
+                                x-model="email" 
+                                required 
+                                placeholder="prenom.nom@uclouvain.be" 
+                                :disabled="state === 'loading'"
+                                class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-600 transition disabled:opacity-50"
+                            />
+                        </div>
+                        <p class="mt-1.5 text-[11px] text-slate-500 flex items-center gap-1.5">
+                            <i class="fas fa-shield-alt text-slate-400"></i>
+                            <span x-text="lang === 'en' ? 'Must end with @uclouvain.be (or .uclouvain.be). Max 1 license per email.' : 'Doit se terminer par @uclouvain.be (ou .uclouvain.be). 1 licence max par adresse.'"></span>
+                        </p>
+                    </div>
+
+                    <!-- Error Alert -->
+                    <div x-show="errorMessage" x-cloak class="p-3.5 bg-rose-50 border border-rose-200 rounded-xl text-xs text-rose-700 flex items-center gap-2">
+                        <i class="fas fa-exclamation-triangle text-rose-500 shrink-0"></i>
+                        <span x-text="errorMessage"></span>
+                    </div>
+
+                    <button 
+                        type="submit" 
+                        :disabled="state === 'loading' || !email"
+                        class="w-full py-3.5 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm transition shadow-md hover:shadow-lg disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                        <template x-if="state === 'loading'">
+                            <span class="inline-flex items-center gap-2">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <span x-text="lang === 'en' ? 'Verifying...' : 'Vérification en cours...'"></span>
+                            </span>
+                        </template>
+                        <template x-if="state !== 'loading'">
+                            <span class="inline-flex items-center gap-2">
+                                <span x-text="lang === 'en' ? 'Send my Free Pro License →' : 'Recevoir ma licence Pro offerte →'"></span>
+                            </span>
+                        </template>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-6 text-center text-xs text-slate-400 border-t border-slate-200">
+        &copy; 2026 Gradaly.io &bull; UCLouvain Academic Partnership
+    </footer>
+
+    <script>
+        function uclouvainApp() {
+            return {
+                lang: 'fr',
+                email: '',
+                state: 'idle', // 'idle' | 'loading' | 'success' | 'error'
+                errorMessage: '',
+                responseMessage: '',
+                // The worker URL endpoint
+                workerEndpoint: 'https://gradaly-license-service.gradaly.workers.dev/api/claim',
+
+                toggleLang() {
+                    this.lang = this.lang === 'fr' ? 'en' : 'fr';
+                },
+
+                async submitClaim() {
+                    this.errorMessage = '';
+                    const cleanEmail = (this.email || '').trim().toLowerCase();
+
+                    if (!cleanEmail.endsWith('@uclouvain.be') && !cleanEmail.endsWith('.uclouvain.be')) {
+                        this.errorMessage = this.lang === 'en'
+                            ? 'Please enter an institutional email ending with @uclouvain.be'
+                            : 'Veuillez saisir une adresse se terminant obligatoirement par @uclouvain.be';
+                        return;
+                    }
+
+                    this.state = 'loading';
+
+                    try {
+                        const response = await fetch(this.workerEndpoint, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ email: cleanEmail }),
+                        });
+
+                        const data = await response.json();
+
+                        if (!response.ok) {
+                            throw new Error(data.error || 'Erreur lors de la demande.');
+                        }
+
+                        this.responseMessage = data.message || (this.lang === 'en'
+                            ? 'An email has been sent to your UCLouvain inbox.'
+                            : 'Un email a été envoyé à votre adresse UCLouvain.');
+                        this.state = 'success';
+                    } catch (err) {
+                        this.errorMessage = err.message || (this.lang === 'en'
+                            ? 'An unexpected error occurred. Please try again later.'
+                            : 'Une erreur est survenue. Veuillez réessayer plus tard.');
+                        this.state = 'error';
+                    }
+                }
+            };
+        }
+    </script>
+</body>
+</html>
