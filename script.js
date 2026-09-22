@@ -28,29 +28,29 @@ const translations = {
         // Carousel slides
         carousel_slide0_badge: "Step 1: Canvas & Rubrics",
         carousel_slide0_title: "Layout, Maximum Score & Criteria",
-        carousel_slide0_desc: "Delineate the student ID zone for offline OCR, configure question answer boxes, set individual maximum scores with automatic capping, and write custom AI prompts.",
+        carousel_slide0_desc: "Delineate the student ID zone for offline OCR, configure question answer boxes, set individual maximum scores with automatic capping, configure global AI prompt instructions (feedback tone, toggleable LaTeX formatting), and write custom AI prompts.",
         
-        carousel_slide1_badge: "Step 2: Students",
+        carousel_slide1_badge: "Step 1: Students",
         carousel_slide1_title: "Import Student Roster (CSV)",
         carousel_slide1_desc: "Load your enrolled class list (matricule IDs, names, emails). Student data remains 100% confidential and stored locally on your machine.",
         
-        carousel_slide2_badge: "Step 3: Matching",
+        carousel_slide2_badge: "Step 2: Matching",
         carousel_slide2_title: "Automatic & Manual Copy Matching",
         carousel_slide2_desc: "Batch import scanned student copies. Local offline OCR matches each copy to the student record, with 1-click manual verification.",
         
-        carousel_slide3_badge: "Step 4: Workspace",
+        carousel_slide3_badge: "Step 3: Workspace",
         carousel_slide3_title: "Unified Grading Console",
         carousel_slide3_desc: "Navigate copies smoothly with a high-performance PDF viewer, switchable anonymous mode, rubric checklist, and direct access to Pro exports.",
         
-        carousel_slide4_badge: "Step 5: Batch AI",
+        carousel_slide4_badge: "Step 4: Batch AI",
         carousel_slide4_title: "Launch AI Grading Across Copies",
         carousel_slide4_desc: "Select which questions and copies to grade with Google Gemini (3.8 Flash, 3.7 Flash). Choose between Free Tier (safe 15 RPM rate limiting), Flex, or Standard tiers with pre-flight cost and duration estimation.",
         
-        carousel_slide5_badge: "Step 5 (cont.): Progress",
+        carousel_slide5_badge: "Step 4 (cont.): Progress",
         carousel_slide5_title: "Real-Time AI Execution & Cost Tracking",
         carousel_slide5_desc: "Run up to 10 parallel workers with live progress, real-time token and cost accumulation, and instant cancellation. You maintain full sovereignty to inspect and override any grade.",
         
-        carousel_slide6_badge: "Step 6: Analytics",
+        carousel_slide6_badge: "Step 5: Analytics",
         carousel_slide6_title: "Cohort Statistics & Clarified Histograms",
         carousel_slide6_desc: "Track grade distributions and rubric success rates in real time. Histograms feature unambiguous interval notation [a, b) with hover inequalities.",
         
@@ -72,7 +72,7 @@ const translations = {
         guide_step1_item3_title: "Detailed Criteria & Maximum Score:",
         guide_step1_item3_desc: "Define fine-grained additive criteria (0.5 pt increments), set individual question maximum scores with automatic capping, and ensure rubric consistency.",
         guide_step1_item4_title: "Evaluation Logic (Prompt):",
-        guide_step1_item4_desc: "Write clear expectations, grading tolerances, and required steps to guide the AI with pedagogical precision.",
+        guide_step1_item4_desc: "Write clear expectations, global prompt directives (tone of feedback, toggleable LaTeX formatting), grading tolerances, and required steps to guide the AI with pedagogical precision.",
 
         guide_step2_tag: "Step 2",
         guide_step2_title: "Import Student Roster",
@@ -209,29 +209,29 @@ const translations = {
         // Carousel slides
         carousel_slide0_badge: "Étape 1 : Canevas & Barème",
         carousel_slide0_title: "Découpage, Score maximum & Critères",
-        carousel_slide0_desc: "Délimitez la zone d'en-tête pour l'OCR local, cadrez les questions, fixez le score maximum par question avec plafonnement automatique et consignes IA.",
+        carousel_slide0_desc: "Délimitez la zone d'en-tête pour l'OCR local, cadrez les questions, personnalisez les instructions générales du prompt IA (ton du feedback, formatage LaTeX commutable), fixez le score maximum et définissez vos critères.",
         
-        carousel_slide1_badge: "Étape 2 : Étudiants",
+        carousel_slide1_badge: "Étape 1 : Étudiants",
         carousel_slide1_title: "Import de la Liste des Étudiants (CSV)",
         carousel_slide1_desc: "Chargez votre liste de classe ou de promotion (matricules, noms, emails). Aucune donnée nominative ne sort de votre machine : confidentialité 100% garantie.",
         
-        carousel_slide2_badge: "Étape 3 : Appariement",
+        carousel_slide2_badge: "Étape 2 : Appariement",
         carousel_slide2_title: "Appariement Automatique & Manuel",
         carousel_slide2_desc: "Importez vos copies PDF en lot. L'OCR local hors-ligne inspecte la zone d'en-tête manuscrite et associe chaque copie à son étudiant en un clic.",
         
-        carousel_slide3_badge: "Étape 4 : Visualiseur",
+        carousel_slide3_badge: "Étape 3 : Visualiseur",
         carousel_slide3_title: "Poste d'Évaluation Ergonomique",
         carousel_slide3_desc: "Parcourez les copies avec un visualiseur haute résolution, un mode anonyme commutable, la validation des critères et l'accès direct aux exports Pro.",
         
-        carousel_slide4_badge: "Étape 5 : IA par lot",
+        carousel_slide4_badge: "Étape 4 : IA par lot",
         carousel_slide4_title: "Lancement de la Correction IA",
         carousel_slide4_desc: "Sélectionnez les questions et copies à évaluer avec Gemini (3.8 Flash, 3.7 Flash). Choisissez entre le mode Gratuit (sécurisé à 15 RPM), Flex ou Standard avec estimation préalable des coûts et de la durée.",
         
-        carousel_slide5_badge: "Étape 5 (suite) : Exécution",
+        carousel_slide5_badge: "Étape 4 (suite) : Exécution",
         carousel_slide5_title: "Exécution Parallèle & Suivi des Coûts",
         carousel_slide5_desc: "Lancez jusqu'à 10 workers en parallèle avec suivi en direct de la vitesse, des tokens et du coût cumulé, et annulation instantanée. Gardez un contrôle souverain sur chaque note.",
         
-        carousel_slide6_badge: "Étape 6 : Synthèse",
+        carousel_slide6_badge: "Étape 5 : Synthèse",
         carousel_slide6_title: "Statistiques & Histogrammes Clairs",
         carousel_slide6_desc: "Suivez la moyenne, la médiane et le taux de succès par critère. Testez l'impact de vos ajustements de barème sur toute la promotion grâce à des histogrammes clairs [a, b[.",
         
@@ -253,7 +253,7 @@ const translations = {
         guide_step1_item3_title: "Critères précis & Score maximum :",
         guide_step1_item3_desc: "Définissez des critères d'évaluation fins et additifs (multiples de 0,5 pt), fixez le score maximum par question avec plafonnement automatique des points.",
         guide_step1_item4_title: "Consignes d'évaluation (Prompt) :",
-        guide_step1_item4_desc: "Formulez les attentes pédagogiques, tolérances et étapes obligatoires pour guider l'analyse de l'IA avec rigueur.",
+        guide_step1_item4_desc: "Formulez les attentes pédagogiques, les consignes générales du prompt (ton du feedback, formatage LaTeX commutable), les tolérances et les étapes obligatoires pour guider l'analyse de l'IA avec rigueur.",
 
         guide_step2_tag: "Étape 2",
         guide_step2_title: "Import de la liste des étudiants",
