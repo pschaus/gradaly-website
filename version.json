@@ -2,7 +2,7 @@
   "version": "1.0.13",
   "name": "Gradaly v1.0.13",
   "title": "Gradaly v1.0.13",
-  "published_at": "2026-09-22T11:40:00.000Z",
+  "published_at": "2026-09-22T11:47:00.937Z",
   "notes": "### Nouveautés (v1.0.13) / What's New (v1.0.13)\n\n- **Instructions générales du prompt par projet / Project-Level Global AI Prompt Settings** :\n  - Configuration transversale des consignes du prompt pour toutes les questions de l'examen depuis l'onglet « Canevas & Barème ».\n  - Choix du ton pédagogique pour le feedback élève : 2e personne directe (« tu / you ») ou 3e personne neutre (« l'élève / the student »).\n  - Directives personnalisées transversales pour le feedback destiné à l'élève et la justification pour l'enseignant.\n  - Global AI prompt settings configurable per project in the \"Canvas & Rubrics\" tab, including feedback tone (2nd person \"you\" or neutral 3rd person \"The student\") and transversal custom directives.\n\n- **Formatage mathématique LaTeX commutable / Toggleable LaTeX Math Formatting** :\n  - Option permettant d'activer ou de désactiver les consignes de notation LaTeX (`$...$` et `$$...$$`) pour les disciplines purement textuelles ou littéraires.\n  - Aperçu interactif en temps réel du prompt d'évaluation selon la question active et les paramètres choisis.\n  - Option to enable or disable LaTeX math notation instructions for non-mathematical or purely textual subjects, paired with a live interactive prompt preview.",
   "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.13",
   "assets": {
