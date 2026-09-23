@@ -1,10 +1,10 @@
 {
-  "version": "1.0.14",
-  "name": "Gradaly v1.0.14",
-  "title": "Gradaly v1.0.14",
-  "published_at": "2026-09-22T20:05:00.000Z",
-  "notes": "### Nouveautés (v1.0.14) / What's New (v1.0.14)\n\n- **Persistance et navigation fluide entre Canevas et Copies / Seamless Navigation State Persistence** :\n  - Maintien et restauration automatique de la copie étudiante sélectionnée, de la question active et de la page visualisée lors des allers-retours entre l'onglet Canevas et l'onglet Copies.\n  - Transition instantanée sans rechargement des documents PDF en mémoire.\n  - Automatically preserves and restores active student copy, question, and viewer page when toggling between Canvas and Copies tabs.\n\n- **Ergonomie des paramètres avancés / Streamlined Advanced Settings** :\n  - Suppression de l'option globale redondante de ton IA dans les paramètres avancés (le ton se configure désormais au niveau de chaque canevas d'examen).\n  - Removed redundant global AI tone selector from advanced settings modal.",
-  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.14",
+  "version": "1.0.15",
+  "name": "Gradaly v1.0.15",
+  "title": "Gradaly v1.0.15",
+  "published_at": "2026-09-23T14:10:00.000Z",
+  "notes": "### Nouveautés (v1.0.15) / What's New (v1.0.15)\n\n- **Portail de Restitution Étudiant Zéro-Knowledge / Zero-Knowledge Student Portal** :\n  - Restitution interactive en ligne des copies d'examen chiffrées localement (AES-256-GCM).\n  - Hébergement statique 100% libre sans serveur ni base de données (Cloudflare Pages, Netlify, Université).\n  - Liens magiques 1-clic transmis aux étudiants avec fragment d'URL sécurisé (#k=).\n  - Interactive student web portal with client-side decryption, question bounding boxes, and criteria feedback.\n\n- **Exportation & Mode Découverte / Export Hub & Discovery Mode** :\n  - Hub d'export unifié regroupant Excel, PDF annotés et Portail Web.\n  - Mode Découverte permettant d'évaluer gratuitement chaque modalité d'exportation sur 1 copie test.\n  - Gestion et test de désactivation de licence directement depuis l'application.",
+  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.15",
   "assets": {
     "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-macOS.dmg",
     "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-Windows-Setup.exe",
