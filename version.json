@@ -1,18 +1,18 @@
 {
-  "version": "1.0.17",
-  "name": "Gradaly v1.0.17",
-  "title": "Gradaly v1.0.17",
-  "published_at": "2026-09-24T14:45:00.000Z",
-  "notes": "### Nouveautés (v1.0.17) / What's New (v1.0.17)\n\n- **Contrôle granulaire de l'écrasement IA / Granular AI Override Controls** :\n  - L'écrasement complet devient la norme par défaut, avec des options explicites \"Ne pas écraser\" distinctes pour les critères, le feedback et le justificatif.\n  - Disponible à la fois pour la notation par lot et pour la réévaluation unitaire d'une question.\n\n- **Tri & Visualisation par note de question / Sort by Question Score** :\n  - Nouvelle colonne affichant la note de la question active dans la liste des étudiants (onglet Notation).\n  - Tri ascendant et descendant direct par note de question pour repérer instantanément les étudiants à analyser en priorité.\n\n- **Support des questions multi-pages & Export PDF / Multi-Page Questions & PDF Export** :\n  - Correction de la persistance multi-page des zones de question entre les sessions.\n  - Exportation PDF annotée prenant fidèlement en compte les questions couvrant plusieurs pages.\n\n- **Robustesse LaTeX & KaTeX / LaTeX & KaTeX Math Robustness** :\n  - Nettoyage et préservation des backslashes dans les réponses de l'IA (feedback et justificatif) pour un rendu mathématique KaTeX irréprochable.\n\n- **Standardisation canvas.pdf & Migration Automatique / Standardized canvas.pdf & Auto-Migration** :\n  - Renommage officiel du fichier canevas en canvas.pdf et migration automatique transparente des anciens projets utilisateur.\n\n- **Fiabilité des Mises à Jour Multiplateforme / Cross-Platform Update Reliability** :\n  - Fiabilisation de la détection et du téléchargement des mises à jour in-app sous Linux et Windows.",
-  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.17",
+  "version": "1.0.18",
+  "name": "Gradaly v1.0.18",
+  "title": "Gradaly v1.0.18",
+  "published_at": "2026-09-24T18:00:00.000Z",
+  "notes": "### Nouveautés (v1.0.18) / What's New (v1.0.18)\n\n- **Protection sélective de correction IA / Selective AI Override Protection** :\n  - Précision du libellé de protection des notes (\"Don't override grades\" / \"Ne pas écraser les notes\").\n\n- **Internationalisation complète / Full Internationalization** :\n  - Traduction intégrale en anglais des dialogues d'exportation web Zero-Knowledge et de sélection de profils.\n\n- **Documentation & Site Web / Documentation & Website** :\n  - Mise à jour des captures d'écran illustrant le flux de travail en 8 étapes et la publication sur pages personnelles universitaires (UCLouvain).",
+  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.18",
   "assets": {
-    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.17_universal.dmg",
-    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.17_x64-setup.exe",
-    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.17_amd64.AppImage",
-    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.17_aarch64.AppImage",
-    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.17_amd64.deb",
-    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.17_arm64.deb",
-    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.17-1.x86_64.rpm",
-    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.17-1.aarch64.rpm"
+    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_universal.dmg",
+    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_x64-setup.exe",
+    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_amd64.AppImage",
+    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_aarch64.AppImage",
+    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_amd64.deb",
+    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_arm64.deb",
+    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.18-1.x86_64.rpm",
+    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.18-1.aarch64.rpm"
   }
 }

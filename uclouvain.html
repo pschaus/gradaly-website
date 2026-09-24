@@ -79,7 +79,7 @@
             <!-- Card Body -->
             <div class="p-6 sm:p-10">
                 <!-- Features included -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
                     <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-2.5">
                         <i class="fas fa-file-excel text-emerald-600 mt-1"></i>
                         <div>
@@ -95,11 +95,29 @@
                         </div>
                     </div>
                     <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-2.5">
-                        <i class="fas fa-infinity text-indigo-600 mt-1"></i>
+                        <i class="fas fa-globe text-indigo-600 mt-1"></i>
+                        <div>
+                            <div class="font-bold text-xs text-slate-800" x-text="lang === 'en' ? 'Student Web Portal' : 'Portail Web Étudiant'"></div>
+                            <div class="text-[11px] text-slate-500" x-text="lang === 'en' ? 'Encrypted copies on perso.uclouvain.be' : 'Copies chiffrées sur perso.uclouvain.be'"></div>
+                        </div>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-2.5">
+                        <i class="fas fa-infinity text-blue-600 mt-1"></i>
                         <div>
                             <div class="font-bold text-xs text-slate-800" x-text="lang === 'en' ? '1-Year License' : 'Licence 1 An'"></div>
                             <div class="text-[11px] text-slate-500" x-text="lang === 'en' ? 'Full access, renewable free' : 'Accès complet, renouvelable'"></div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Web Export callout for UCLouvain -->
+                <div class="p-4 mb-8 rounded-2xl bg-indigo-50/70 border border-indigo-100 text-xs text-indigo-950 flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-2xs mt-0.5">
+                        <i class="fas fa-shield-alt text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-indigo-900 text-xs sm:text-sm mb-1" x-text="lang === 'en' ? 'Zero-Knowledge Web Export & perso.uclouvain.be Integration' : 'Export Web Zéro-Knowledge & Intégration perso.uclouvain.be'"></h4>
+                        <p class="text-indigo-900/80 leading-relaxed" x-text="lang === 'en' ? 'UCLouvain faculty members can host the generated static portal directly on their personal university web space (perso.uclouvain.be) or departmental server. Each student copy is strongly encrypted with AES-256-GCM: no database, zero cloud hosting risk, and 100% GDPR compliant. Students view their copies securely via their personal 1-click magic link.' : 'Les enseignants de l\'UCLouvain peuvent héberger le portail web statique généré directement sur leur espace web institutionnel personnel (perso.uclouvain.be) ou serveur facultaire. Chaque copie est chiffrée localement en AES-256-GCM : aucune base de données, zéro risque cloud et stricte conformité RGPD. Les étudiants consultent leur copie via leur lien magique individuel sécurisé.'"></p>
                     </div>
                 </div>
 

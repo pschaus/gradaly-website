@@ -48,7 +48,7 @@
                 <div class="flex-shrink-0 flex items-center space-x-2">
                     <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">G</div>
                     <span class="font-bold text-xl tracking-tight">Gradaly<span class="text-indigo-600">.io</span></span>
-                    <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold font-mono bg-indigo-50 text-indigo-700 border border-indigo-200 ml-1">v1.0.17</span>
+                    <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold font-mono bg-indigo-50 text-indigo-700 border border-indigo-200 ml-1">v1.0.18</span>
                 </div>
                 <div class="flex items-center space-x-4">
                     <a href="#student-portal" class="text-sm font-semibold text-slate-700 hover:text-indigo-600 transition flex items-center gap-1.5">
@@ -71,7 +71,7 @@
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200 mb-6 shadow-2xs">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span x-text="t.hero_version_badge"></span>
-                <span class="font-mono font-bold text-indigo-900">v1.0.17</span>
+                <span class="font-mono font-bold text-indigo-900">v1.0.18</span>
             </div>
             <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6">
                 <span class="block text-slate-900" x-text="t.hero_title1"></span>
@@ -79,15 +79,15 @@
             </h1>
             <p class="mt-4 max-w-3xl mx-auto text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed" x-text="t.hero_subtitle"></p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.17_universal.dmg" class="px-6 py-3.5 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition shadow-lg hover:shadow-xl flex items-center space-x-2">
+                <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_universal.dmg" class="px-6 py-3.5 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition shadow-lg hover:shadow-xl flex items-center space-x-2">
                     <i class="fab fa-apple text-xl"></i>
                     <span x-text="t.download_mac"></span>
                 </a>
-                <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.17_x64-setup.exe" class="px-6 py-3.5 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition shadow-lg hover:shadow-xl flex items-center space-x-2">
+                <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_x64-setup.exe" class="px-6 py-3.5 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition shadow-lg hover:shadow-xl flex items-center space-x-2">
                     <i class="fab fa-windows text-xl"></i>
                     <span x-text="t.download_windows"></span>
                 </a>
-                <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.17_amd64.AppImage" class="px-6 py-3.5 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition shadow-lg hover:shadow-xl flex items-center space-x-2">
+                <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_amd64.AppImage" class="px-6 py-3.5 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition shadow-lg hover:shadow-xl flex items-center space-x-2">
                     <i class="fab fa-linux text-xl"></i>
                     <span x-text="t.download_appimage"></span>
                 </a>
@@ -134,9 +134,9 @@
                 <div class="rounded-2xl border border-slate-200 shadow-2xl bg-white p-2 relative overflow-hidden group">
                     
                     <div class="grid">
-                        <!-- Slide 0: Canvas, Questions & Rubrics -->
+                        <!-- Slide 0: Step 1 - Create Project -->
                         <div x-show="slide === 0" x-transition.opacity.duration.600ms class="flex flex-col" style="grid-area: 1 / 1;">
-                            <img :src="lang === 'fr' ? '00_canvas_rubric_fr.png' : '00_canvas_rubric_en.png'" alt="Canvas, Questions & Barème" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
+                            <img src="01_create_project.png" alt="Créer un projet ou projet démo" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
                             <div class="px-6 sm:px-8 pb-8 pt-5 bg-indigo-50/50 rounded-b-xl border-t border-indigo-100 text-left">
                                 <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-100 text-indigo-700 mb-1" x-text="t.carousel_slide0_badge"></span>
                                 <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-1" x-text="t.carousel_slide0_title"></h3>
@@ -144,9 +144,9 @@
                             </div>
                         </div>
 
-                        <!-- Slide 1: Students Roster Import -->
+                        <!-- Slide 1: Step 2 - Import Canvas -->
                         <div x-show="slide === 1" x-transition.opacity.duration.600ms class="flex flex-col" style="grid-area: 1 / 1;">
-                            <img :src="lang === 'fr' ? '01_students_roster_fr.png' : '01_students_roster_en.png'" alt="Import Liste des Étudiants CSV" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
+                            <img src="02_canvas_import.png" alt="Importer le canevas et zone d'identification" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
                             <div class="px-6 sm:px-8 pb-8 pt-5 bg-blue-50/50 rounded-b-xl border-t border-blue-100 text-left">
                                 <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-100 text-blue-700 mb-1" x-text="t.carousel_slide1_badge"></span>
                                 <h3 class="text-xl sm:text-2xl font-bold text-blue-950 mb-1" x-text="t.carousel_slide1_title"></h3>
@@ -154,39 +154,39 @@
                             </div>
                         </div>
 
-                        <!-- Slide 2: Copy Matching & OCR -->
+                        <!-- Slide 2: Step 3 - Questions, Zones & Rubrics -->
                         <div x-show="slide === 2" x-transition.opacity.duration.600ms class="flex flex-col" style="grid-area: 1 / 1;">
-                            <img :src="lang === 'fr' ? '02_matching_copies_fr.png' : '02_matching_copies_en.png'" alt="Appariement des Copies et OCR local" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
-                            <div class="px-6 sm:px-8 pb-8 pt-5 bg-emerald-50/50 rounded-b-xl border-t border-emerald-100 text-left">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-700 mb-1" x-text="t.carousel_slide2_badge"></span>
-                                <h3 class="text-xl sm:text-2xl font-bold text-emerald-950 mb-1" x-text="t.carousel_slide2_title"></h3>
-                                <p class="text-emerald-900/80 text-sm sm:text-base leading-relaxed" x-text="t.carousel_slide2_desc"></p>
+                            <img src="03_questions_rubric.png" alt="Définir questions, zones et barèmes" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
+                            <div class="px-6 sm:px-8 pb-8 pt-5 bg-cyan-50/50 rounded-b-xl border-t border-cyan-100 text-left">
+                                <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-100 text-cyan-800 mb-1" x-text="t.carousel_slide2_badge"></span>
+                                <h3 class="text-xl sm:text-2xl font-bold text-cyan-950 mb-1" x-text="t.carousel_slide2_title"></h3>
+                                <p class="text-cyan-900/80 text-sm sm:text-base leading-relaxed" x-text="t.carousel_slide2_desc"></p>
                             </div>
                         </div>
 
-                        <!-- Slide 3: Unified Grading Console -->
+                        <!-- Slide 3: Step 4 - Students Roster Import -->
                         <div x-show="slide === 3" x-transition.opacity.duration.600ms class="flex flex-col" style="grid-area: 1 / 1;">
-                            <img :src="lang === 'fr' ? '03_grading_workspace_fr.png' : '03_grading_workspace_en.png'" alt="Poste d'évaluation et Visualiseur" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
-                            <div class="px-6 sm:px-8 pb-8 pt-5 bg-slate-50 rounded-b-xl border-t border-slate-200 text-left">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-200 text-slate-700 mb-1" x-text="t.carousel_slide3_badge"></span>
-                                <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-1" x-text="t.carousel_slide3_title"></h3>
-                                <p class="text-slate-600 text-sm sm:text-base leading-relaxed" x-text="t.carousel_slide3_desc"></p>
+                            <img src="04_students_roster.png" alt="Importer liste des étudiants CSV" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
+                            <div class="px-6 sm:px-8 pb-8 pt-5 bg-emerald-50/50 rounded-b-xl border-t border-emerald-100 text-left">
+                                <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-700 mb-1" x-text="t.carousel_slide3_badge"></span>
+                                <h3 class="text-xl sm:text-2xl font-bold text-emerald-950 mb-1" x-text="t.carousel_slide3_title"></h3>
+                                <p class="text-emerald-900/80 text-sm sm:text-base leading-relaxed" x-text="t.carousel_slide3_desc"></p>
                             </div>
                         </div>
 
-                        <!-- Slide 4: Batch AI Grading Launch -->
+                        <!-- Slide 4: Step 5 - Copies & Matching -->
                         <div x-show="slide === 4" x-transition.opacity.duration.600ms class="flex flex-col" style="grid-area: 1 / 1;">
-                            <img :src="lang === 'fr' ? '04_ai_batch_launch_fr.png' : '04_ai_batch_launch_en.png'" alt="Lancement de la correction IA par lot" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
-                            <div class="px-6 sm:px-8 pb-8 pt-5 bg-purple-50/50 rounded-b-xl border-t border-purple-100 text-left">
-                                <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-100 text-purple-700 mb-1" x-text="t.carousel_slide4_badge"></span>
-                                <h3 class="text-xl sm:text-2xl font-bold text-purple-950 mb-1" x-text="t.carousel_slide4_title"></h3>
-                                <p class="text-purple-900/80 text-sm sm:text-base leading-relaxed" x-text="t.carousel_slide4_desc"></p>
+                            <img src="05_copies_matching.png" alt="Importer copies et appariement OCR" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
+                            <div class="px-6 sm:px-8 pb-8 pt-5 bg-teal-50/50 rounded-b-xl border-t border-teal-100 text-left">
+                                <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-100 text-teal-700 mb-1" x-text="t.carousel_slide4_badge"></span>
+                                <h3 class="text-xl sm:text-2xl font-bold text-teal-950 mb-1" x-text="t.carousel_slide4_title"></h3>
+                                <p class="text-teal-900/80 text-sm sm:text-base leading-relaxed" x-text="t.carousel_slide4_desc"></p>
                             </div>
                         </div>
 
-                        <!-- Slide 5: Real-time AI Progress -->
+                        <!-- Slide 5: Step 6 - Grading (AI, Manual or Hybrid) -->
                         <div x-show="slide === 5" x-transition.opacity.duration.600ms class="flex flex-col" style="grid-area: 1 / 1;">
-                            <img :src="lang === 'fr' ? '05_ai_progress_terminal_fr.png' : '05_ai_progress_terminal_en.png'" alt="Suivi en direct de l'évaluation IA" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
+                            <img src="06_grading_workspace.png" alt="Notation des copies : IA, manuelle ou mixte" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
                             <div class="px-6 sm:px-8 pb-8 pt-5 bg-purple-50/50 rounded-b-xl border-t border-purple-100 text-left">
                                 <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-100 text-purple-700 mb-1" x-text="t.carousel_slide5_badge"></span>
                                 <h3 class="text-xl sm:text-2xl font-bold text-purple-950 mb-1" x-text="t.carousel_slide5_title"></h3>
@@ -194,9 +194,9 @@
                             </div>
                         </div>
 
-                        <!-- Slide 6: Analytics & Histograms -->
+                        <!-- Slide 6: Step 7 - Statistics & Analytics -->
                         <div x-show="slide === 6" x-transition.opacity.duration.600ms class="flex flex-col" style="grid-area: 1 / 1;">
-                            <img :src="lang === 'fr' ? '06_statistics_histograms_fr.png' : '06_statistics_histograms_en.png'" alt="Synthèse statistique et histogrammes" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
+                            <img src="07_statistics_histograms.png" alt="Consulter les statistiques et histogrammes" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
                             <div class="px-6 sm:px-8 pb-8 pt-5 bg-indigo-50/50 rounded-b-xl border-t border-indigo-100 text-left">
                                 <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-100 text-indigo-700 mb-1" x-text="t.carousel_slide6_badge"></span>
                                 <h3 class="text-xl sm:text-2xl font-bold text-indigo-950 mb-1" x-text="t.carousel_slide6_title"></h3>
@@ -204,9 +204,9 @@
                             </div>
                         </div>
 
-                        <!-- Slide 7: Individual Annotated Student PDF Export (PRO) -->
+                        <!-- Slide 7: Step 8 - Export Results or Adjust -->
                         <div x-show="slide === 7" x-transition.opacity.duration.600ms class="flex flex-col" style="grid-area: 1 / 1;">
-                            <img src="07_pdf_annotated_export.png" alt="Export PDF des copies annotées individuelles" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
+                            <img src="08_export_hub.png" alt="Exporter les résultats (Excel, PDF, Portail Web) ou adapter" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
                             <div class="px-6 sm:px-8 pb-8 pt-5 bg-amber-50/50 rounded-b-xl border-t border-amber-100 text-left">
                                 <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-800 mb-1" x-text="t.carousel_slide7_badge"></span>
                                 <h3 class="text-xl sm:text-2xl font-bold text-amber-950 mb-1" x-text="t.carousel_slide7_title"></h3>
@@ -350,31 +350,17 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                         <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                             <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
-                                <i class="fas fa-id-badge text-indigo-600 text-xs"></i>
+                                <i class="fas fa-folder-plus text-indigo-600 text-xs"></i>
                                 <span x-text="t.guide_step1_item1_title"></span>
                             </h4>
                             <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step1_item1_desc"></p>
                         </div>
                         <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                             <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
-                                <i class="fas fa-crop-alt text-indigo-600 text-xs"></i>
+                                <i class="fas fa-laptop-code text-indigo-600 text-xs"></i>
                                 <span x-text="t.guide_step1_item2_title"></span>
                             </h4>
                             <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step1_item2_desc"></p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
-                                <i class="fas fa-list-check text-indigo-600 text-xs"></i>
-                                <span x-text="t.guide_step1_item3_title"></span>
-                            </h4>
-                            <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step1_item3_desc"></p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
-                                <i class="fas fa-robot text-indigo-600 text-xs"></i>
-                                <span x-text="t.guide_step1_item4_title"></span>
-                            </h4>
-                            <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step1_item4_desc"></p>
                         </div>
                     </div>
                 </div>
@@ -394,14 +380,14 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                         <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                             <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
-                                <i class="fas fa-file-csv text-blue-600 text-xs"></i>
+                                <i class="fas fa-file-pdf text-blue-600 text-xs"></i>
                                 <span x-text="t.guide_step2_item1_title"></span>
                             </h4>
                             <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step2_item1_desc"></p>
                         </div>
                         <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                             <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
-                                <i class="fas fa-database text-blue-600 text-xs"></i>
+                                <i class="fas fa-id-badge text-blue-600 text-xs"></i>
                                 <span x-text="t.guide_step2_item2_title"></span>
                             </h4>
                             <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step2_item2_desc"></p>
@@ -412,11 +398,11 @@
                 <!-- Step 3 Card -->
                 <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-md hover:shadow-lg transition">
                     <div class="flex items-start gap-4 mb-4">
-                        <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-600 text-white font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">
                             3
                         </div>
                         <div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600" x-text="t.guide_step3_tag"></span>
+                            <span class="text-xs font-bold uppercase tracking-wider text-cyan-600" x-text="t.guide_step3_tag"></span>
                             <h3 class="text-xl sm:text-2xl font-bold text-slate-900" x-text="t.guide_step3_title"></h3>
                             <p class="text-sm text-slate-500 mt-0.5" x-text="t.guide_step3_subtitle"></p>
                         </div>
@@ -424,21 +410,21 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
                         <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                             <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
-                                <i class="fas fa-folder-open text-emerald-600 text-xs"></i>
+                                <i class="fas fa-crop-alt text-cyan-600 text-xs"></i>
                                 <span x-text="t.guide_step3_item1_title"></span>
                             </h4>
                             <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step3_item1_desc"></p>
                         </div>
                         <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                             <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
-                                <i class="fas fa-magic text-emerald-600 text-xs"></i>
+                                <i class="fas fa-list-check text-cyan-600 text-xs"></i>
                                 <span x-text="t.guide_step3_item2_title"></span>
                             </h4>
                             <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step3_item2_desc"></p>
                         </div>
                         <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                             <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
-                                <i class="fas fa-sliders-h text-emerald-600 text-xs"></i>
+                                <i class="fas fa-square-root-alt text-cyan-600 text-xs"></i>
                                 <span x-text="t.guide_step3_item3_title"></span>
                             </h4>
                             <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step3_item3_desc"></p>
@@ -449,36 +435,29 @@
                 <!-- Step 4 Card -->
                 <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-md hover:shadow-lg transition">
                     <div class="flex items-start gap-4 mb-4">
-                        <div class="w-12 h-12 rounded-2xl bg-purple-600 text-white font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">
                             4
                         </div>
                         <div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-purple-600" x-text="t.guide_step4_tag"></span>
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600" x-text="t.guide_step4_tag"></span>
                             <h3 class="text-xl sm:text-2xl font-bold text-slate-900" x-text="t.guide_step4_title"></h3>
                             <p class="text-sm text-slate-500 mt-0.5" x-text="t.guide_step4_subtitle"></p>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                         <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                             <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
-                                <i class="fas fa-microchip text-purple-600 text-xs"></i>
+                                <i class="fas fa-file-csv text-emerald-600 text-xs"></i>
                                 <span x-text="t.guide_step4_item1_title"></span>
                             </h4>
                             <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step4_item1_desc"></p>
                         </div>
                         <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                             <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
-                                <i class="fas fa-comment-dots text-purple-600 text-xs"></i>
+                                <i class="fas fa-user-shield text-emerald-600 text-xs"></i>
                                 <span x-text="t.guide_step4_item2_title"></span>
                             </h4>
                             <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step4_item2_desc"></p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
-                                <i class="fas fa-user-check text-purple-600 text-xs"></i>
-                                <span x-text="t.guide_step4_item3_title"></span>
-                            </h4>
-                            <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step4_item3_desc"></p>
                         </div>
                     </div>
                 </div>
@@ -486,43 +465,154 @@
                 <!-- Step 5 Card -->
                 <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-md hover:shadow-lg transition">
                     <div class="flex items-start gap-4 mb-4">
-                        <div class="w-12 h-12 rounded-2xl bg-amber-500 text-white font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-600 text-white font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">
                             5
                         </div>
                         <div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-amber-600" x-text="t.guide_step5_tag"></span>
+                            <span class="text-xs font-bold uppercase tracking-wider text-teal-600" x-text="t.guide_step5_tag"></span>
                             <h3 class="text-xl sm:text-2xl font-bold text-slate-900" x-text="t.guide_step5_title"></h3>
                             <p class="text-sm text-slate-500 mt-0.5" x-text="t.guide_step5_subtitle"></p>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
                         <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                             <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
-                                <i class="fas fa-chart-bar text-amber-500 text-xs"></i>
+                                <i class="fas fa-copy text-teal-600 text-xs"></i>
                                 <span x-text="t.guide_step5_item1_title"></span>
                             </h4>
                             <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step5_item1_desc"></p>
                         </div>
                         <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                             <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
-                                <i class="fas fa-sync-alt text-amber-500 text-xs"></i>
+                                <i class="fas fa-barcode text-teal-600 text-xs"></i>
                                 <span x-text="t.guide_step5_item2_title"></span>
                             </h4>
                             <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step5_item2_desc"></p>
                         </div>
                         <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                             <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
-                                <i class="fas fa-file-excel text-emerald-600 text-xs"></i>
+                                <i class="fas fa-check-circle text-teal-600 text-xs"></i>
                                 <span x-text="t.guide_step5_item3_title"></span>
                             </h4>
                             <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step5_item3_desc"></p>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Step 6 Card -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-md hover:shadow-lg transition">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-600 text-white font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">
+                            6
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-600" x-text="t.guide_step6_tag"></span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-900" x-text="t.guide_step6_title"></h3>
+                            <p class="text-sm text-slate-500 mt-0.5" x-text="t.guide_step6_subtitle"></p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
+                                <i class="fas fa-robot text-purple-600 text-xs"></i>
+                                <span x-text="t.guide_step6_item1_title"></span>
+                            </h4>
+                            <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step6_item1_desc"></p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
+                                <i class="fas fa-lock text-purple-600 text-xs"></i>
+                                <span x-text="t.guide_step6_item2_title"></span>
+                            </h4>
+                            <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step6_item2_desc"></p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
+                                <i class="fas fa-pen-fancy text-purple-600 text-xs"></i>
+                                <span x-text="t.guide_step6_item3_title"></span>
+                            </h4>
+                            <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step6_item3_desc"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 7 Card -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-md hover:shadow-lg transition">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-600 text-white font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">
+                            7
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-indigo-600" x-text="t.guide_step7_tag"></span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-900" x-text="t.guide_step7_title"></h3>
+                            <p class="text-sm text-slate-500 mt-0.5" x-text="t.guide_step7_subtitle"></p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
+                                <i class="fas fa-chart-line text-indigo-600 text-xs"></i>
+                                <span x-text="t.guide_step7_item1_title"></span>
+                            </h4>
+                            <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step7_item1_desc"></p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
+                                <i class="fas fa-chart-bar text-indigo-600 text-xs"></i>
+                                <span x-text="t.guide_step7_item2_title"></span>
+                            </h4>
+                            <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step7_item2_desc"></p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
+                                <i class="fas fa-bullseye text-indigo-600 text-xs"></i>
+                                <span x-text="t.guide_step7_item3_title"></span>
+                            </h4>
+                            <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step7_item3_desc"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 8 Card -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-md hover:shadow-lg transition">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-600 text-white font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md">
+                            8
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-amber-600" x-text="t.guide_step8_tag"></span>
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-900" x-text="t.guide_step8_title"></h3>
+                            <p class="text-sm text-slate-500 mt-0.5" x-text="t.guide_step8_subtitle"></p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
+                                <i class="fas fa-file-excel text-emerald-600 text-xs"></i>
+                                <span x-text="t.guide_step8_item1_title"></span>
+                            </h4>
+                            <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step8_item1_desc"></p>
+                        </div>
                         <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                             <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
                                 <i class="fas fa-file-pdf text-rose-500 text-xs"></i>
-                                <span x-text="t.guide_step5_item4_title"></span>
+                                <span x-text="t.guide_step8_item2_title"></span>
                             </h4>
-                            <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step5_item4_desc"></p>
+                            <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step8_item2_desc"></p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
+                                <i class="fas fa-globe text-indigo-600 text-xs"></i>
+                                <span x-text="t.guide_step8_item3_title"></span>
+                            </h4>
+                            <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step8_item3_desc"></p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-1.5">
+                                <i class="fas fa-sliders-h text-amber-500 text-xs"></i>
+                                <span x-text="t.guide_step8_item4_title"></span>
+                            </h4>
+                            <p class="text-xs text-slate-600 leading-relaxed" x-text="t.guide_step8_item4_desc"></p>
                         </div>
                     </div>
                 </div>
@@ -572,6 +662,11 @@
                     <p class="text-slate-600 leading-relaxed text-sm" x-text="t.portal_b3_desc"></p>
                 </div>
 
+            </div>
+
+            <!-- In-App Web Export Modal Preview -->
+            <div class="mb-14 rounded-2xl border border-slate-200 shadow-xl overflow-hidden bg-white p-2">
+                <img src="08_web_export_modal.png" alt="Dialogue de génération du Portail Web Zéro-Knowledge dans Gradaly" class="rounded-xl w-full">
             </div>
 
             <!-- Interactive Live Demo Callout Box -->
@@ -760,7 +855,7 @@
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200 mb-10 shadow-2xs">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span x-text="t.cta_version_info"></span>
-                <span class="font-mono font-bold text-indigo-900">v1.0.17</span>
+                <span class="font-mono font-bold text-indigo-900">v1.0.18</span>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 text-left max-w-6xl mx-auto">
@@ -778,13 +873,13 @@
                         </div>
                         <h3 class="text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                             <span>macOS</span>
-                            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700">v1.0.17</span>
+                            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700">v1.0.18</span>
                         </h3>
                         <p class="text-sm text-slate-600 mb-1" x-text="t.download_sub_mac"></p>
                         <p class="text-xs text-slate-500 mb-6" x-text="t.macos_req"></p>
                     </div>
                     <div>
-                        <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.17_universal.dmg" class="w-full inline-flex justify-center items-center px-5 py-3.5 rounded-xl bg-indigo-600 text-white font-bold text-base hover:bg-indigo-700 transition shadow-md hover:shadow-lg space-x-2">
+                        <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_universal.dmg" class="w-full inline-flex justify-center items-center px-5 py-3.5 rounded-xl bg-indigo-600 text-white font-bold text-base hover:bg-indigo-700 transition shadow-md hover:shadow-lg space-x-2">
                             <i class="fas fa-download"></i>
                             <span x-text="t.download_mac"></span>
                             <span class="text-indigo-200 text-xs font-normal">(.dmg)</span>
@@ -806,13 +901,13 @@
                         </div>
                         <h3 class="text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                             <span>Windows</span>
-                            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">v1.0.17</span>
+                            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">v1.0.18</span>
                         </h3>
                         <p class="text-sm text-slate-600 mb-1" x-text="t.download_sub_windows"></p>
                         <p class="text-xs text-slate-500 mb-6" x-text="t.windows_req"></p>
                     </div>
                     <div>
-                        <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.17_x64-setup.exe" class="w-full inline-flex justify-center items-center px-5 py-3.5 rounded-xl bg-blue-600 text-white font-bold text-base hover:bg-blue-700 transition shadow-md hover:shadow-lg space-x-2">
+                        <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_x64-setup.exe" class="w-full inline-flex justify-center items-center px-5 py-3.5 rounded-xl bg-blue-600 text-white font-bold text-base hover:bg-blue-700 transition shadow-md hover:shadow-lg space-x-2">
                             <i class="fas fa-download"></i>
                             <span x-text="t.download_windows"></span>
                             <span class="text-blue-200 text-xs font-normal">(.exe)</span>
@@ -838,23 +933,23 @@
                         </div>
                         <h3 class="text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2">
                             <span>Linux</span>
-                            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-slate-200 text-slate-800">v1.0.17</span>
+                            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-slate-200 text-slate-800">v1.0.18</span>
                         </h3>
                         <p class="text-sm text-slate-600 mb-1" x-text="t.download_sub_linux"></p>
                         <p class="text-xs text-slate-500 mb-6" x-text="t.linux_req"></p>
                     </div>
                     <div class="space-y-2.5">
-                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.17-1.x86_64.rpm' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.17-1.aarch64.rpm'" class="w-full inline-flex justify-center items-center px-5 py-2.5 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 transition shadow-md hover:shadow-lg space-x-2">
+                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.18-1.x86_64.rpm' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.18-1.aarch64.rpm'" class="w-full inline-flex justify-center items-center px-5 py-2.5 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 transition shadow-md hover:shadow-lg space-x-2">
                             <i class="fab fa-fedora"></i>
                             <span x-text="t.download_rpm"></span>
                             <span class="text-blue-200 text-xs font-normal" x-text="linuxArch === 'x86_64' ? '(Fedora x86_64)' : '(Fedora ARM64)'"></span>
                         </a>
-                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.17_amd64.deb' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.17_arm64.deb'" class="w-full inline-flex justify-center items-center px-5 py-2.5 rounded-xl bg-amber-600 text-white font-bold text-sm hover:bg-amber-700 transition shadow-md hover:shadow-lg space-x-2">
+                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_amd64.deb' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_arm64.deb'" class="w-full inline-flex justify-center items-center px-5 py-2.5 rounded-xl bg-amber-600 text-white font-bold text-sm hover:bg-amber-700 transition shadow-md hover:shadow-lg space-x-2">
                             <i class="fab fa-ubuntu"></i>
                             <span x-text="t.download_deb"></span>
                             <span class="text-amber-200 text-xs font-normal" x-text="linuxArch === 'x86_64' ? '(Ubuntu/Debian amd64)' : '(Ubuntu/Debian arm64)'"></span>
                         </a>
-                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.17_amd64.AppImage' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.17_aarch64.AppImage'" class="w-full inline-flex justify-center items-center px-5 py-2.5 rounded-xl bg-slate-900 text-white font-semibold text-sm hover:bg-slate-800 transition shadow-md hover:shadow-lg space-x-2">
+                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_amd64.AppImage' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_aarch64.AppImage'" class="w-full inline-flex justify-center items-center px-5 py-2.5 rounded-xl bg-slate-900 text-white font-semibold text-sm hover:bg-slate-800 transition shadow-md hover:shadow-lg space-x-2">
                             <i class="fas fa-box-open text-xs text-slate-300"></i>
                             <span x-text="t.download_appimage"></span>
                             <span class="text-slate-400 text-xs font-normal" x-text="linuxArch === 'x86_64' ? '(Universal x86_64)' : '(Universal ARM64)'"></span>
@@ -902,7 +997,7 @@
                         </div>
                         <p class="text-slate-600 pl-5 leading-relaxed" x-text="t.install_fedora_text"></p>
                         <div class="pl-5 pt-1">
-                            <code class="bg-slate-200/80 px-2 py-1 rounded text-[11px] font-mono text-slate-800">sudo dnf install ./Gradaly-1.0.17-1.x86_64.rpm</code>
+                            <code class="bg-slate-200/80 px-2 py-1 rounded text-[11px] font-mono text-slate-800">sudo dnf install ./Gradaly-1.0.18-1.x86_64.rpm</code>
                         </div>
                     </div>
 
@@ -914,7 +1009,7 @@
                         </div>
                         <p class="text-slate-600 pl-5 leading-relaxed" x-text="t.install_ubuntu_text"></p>
                         <div class="pl-5 pt-1">
-                            <code class="bg-slate-200/80 px-2 py-1 rounded text-[11px] font-mono text-slate-800">sudo apt install ./Gradaly_1.0.17_amd64.deb</code>
+                            <code class="bg-slate-200/80 px-2 py-1 rounded text-[11px] font-mono text-slate-800">sudo apt install ./Gradaly_1.0.18_amd64.deb</code>
                         </div>
                     </div>
 
