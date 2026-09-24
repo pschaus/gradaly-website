@@ -106,6 +106,18 @@
   let mobilePane = 'copy'; // 'copy' | 'grading'
   let currentZoom = 1.0;
   let isShowingFullPdf = false; // toggle between interactive page image vs full PDF iframe
+  let currentActiveCopyPage = null; // null defaults to question primary page
+
+  function getQuestionZonesList(qObj) {
+    if (!qObj) return [];
+    if (Array.isArray(qObj.zones) && qObj.zones.length > 0) {
+      return qObj.zones;
+    }
+    if (Array.isArray(qObj.bbox_rel) && qObj.bbox_rel.length === 4) {
+      return [{ page: typeof qObj.page === 'number' ? qObj.page : 0, bbox_rel: qObj.bbox_rel }];
+    }
+    return [];
+  }
 
   /**
    * Dual-mode loader:
@@ -350,6 +362,9 @@
       const score = typeof q.score === 'number' ? q.score : 0;
       const max = typeof q.maxScore === 'number' ? q.maxScore : 0;
 
+      const pageInfo = q.pageRange ? ' (p. ' + q.pageRange + ')' : '';
+      pill.title = (q.title || ('Question ' + (idx + 1))) + pageInfo;
+
       pill.innerHTML =
         '<span class="q-pill-label">Q' + (idx + 1) + '</span>' +
         '<span class="q-pill-score">' + Number(score.toFixed(1)) + '/' + Number(max.toFixed(1)) + '</span>';
@@ -391,6 +406,7 @@
     if (index < 0 || index >= questions.length) return;
 
     activeQuestionIndex = index;
+    currentActiveCopyPage = null; // reset to primary page of question
 
     // Update active pill
     questions.forEach(function (_, idx) {
@@ -407,6 +423,16 @@
 
     updateNavArrows();
     renderActiveQuestion();
+  }
+
+  function setCopyPage(pageNum) {
+    currentActiveCopyPage = pageNum;
+    if (!currentData) return;
+    const questions = currentData.questions || [];
+    const q = questions[activeQuestionIndex];
+    if (q) {
+      renderCopyPageAndOverlay(q);
+    }
   }
 
   function renderActiveQuestion() {
@@ -504,11 +530,16 @@
     const isFirst = activeQuestionIndex <= 0;
     const isLast = activeQuestionIndex >= questionsCount - 1;
 
+    const pageBadge = q.pageRange ? '<span class="q-page-range-badge" style="display:inline-block;margin-top:3px;font-size:11.5px;font-weight:600;color:var(--slate-500);">Page ' + escapeHtml(q.pageRange) + '</span>' : '';
+
     cardEl.innerHTML =
       '<div class="grading-card-header">' +
         '<div class="q-title-area">' +
           '<span class="q-index-badge">Q' + (activeQuestionIndex + 1) + '</span>' +
-          '<h3 class="q-title">' + escapeHtml(q.title || ('Question ' + (activeQuestionIndex + 1))) + '</h3>' +
+          '<div>' +
+            '<h3 class="q-title">' + escapeHtml(q.title || ('Question ' + (activeQuestionIndex + 1))) + '</h3>' +
+            pageBadge +
+          '</div>' +
         '</div>' +
         '<div class="q-badges">' +
           scoreBadge +
@@ -535,11 +566,26 @@
 
     if (!copyImage || !overlaysLayer) return;
 
-    const targetPage = typeof q.page === 'number' ? q.page : 0;
+    const activeZones = getQuestionZonesList(q);
+    const primaryPage = activeZones.length > 0 && typeof activeZones[0].page === 'number'
+      ? activeZones[0].page
+      : (typeof q.page === 'number' ? q.page : 0);
+
+    const targetPage = typeof currentActiveCopyPage === 'number' ? currentActiveCopyPage : primaryPage;
     const pageDataUrl = pages[targetPage] || pages[0] || '';
 
     if (pageLabel) {
-      pageLabel.textContent = 'Page ' + (targetPage + 1) + ' / ' + (pages.length || 1);
+      if (activeZones.length > 1) {
+        let pageBtnsHtml = '<span class="toolbar-label">Page :</span> ';
+        activeZones.forEach(function (z) {
+          const isCur = z.page === targetPage;
+          pageBtnsHtml += '<button type="button" class="btn-page-pill ' + (isCur ? 'active' : '') + '" onclick="window.setCopyPage(' + z.page + ')" style="padding: 2px 7px; margin-left: 4px; border-radius: 4px; font-size: 11px; font-weight: 700; cursor: pointer; border: 1px solid ' + (isCur ? 'var(--primary)' : 'var(--slate-300)') + '; background: ' + (isCur ? 'var(--primary)' : '#ffffff') + '; color: ' + (isCur ? '#ffffff' : 'var(--slate-700)') + ';">p. ' + (z.page + 1) + '</button>';
+        });
+        pageBtnsHtml += ' <span style="font-size: 11px; color: var(--slate-400); margin-left: 6px;">(' + (targetPage + 1) + '/' + pages.length + ')</span>';
+        pageLabel.innerHTML = pageBtnsHtml;
+      } else {
+        pageLabel.textContent = 'Page ' + (targetPage + 1) + ' / ' + (pages.length || 1);
+      }
     }
 
     // Set page image
@@ -554,42 +600,46 @@
     let hasTargetBbox = false;
     let targetBboxEl = null;
 
-    // Draw bounding boxes for all questions on this page
+    // Draw bounding boxes for all questions/zones on this page
     questions.forEach(function (otherQ, otherIdx) {
-      const otherPage = typeof otherQ.page === 'number' ? otherQ.page : 0;
-      if (otherPage !== targetPage || !otherQ.bbox_rel || otherQ.bbox_rel.length !== 4) return;
-
-      const bbox = otherQ.bbox_rel; // [x1, y1, x2, y2]
+      const otherZones = getQuestionZonesList(otherQ);
       const isActive = otherIdx === activeQuestionIndex;
 
-      const boxDiv = document.createElement('div');
-      boxDiv.className = 'bbox-overlay ' + (isActive ? 'active' : 'inactive');
-      boxDiv.style.left = (bbox[0] * 100) + '%';
-      boxDiv.style.top = (bbox[1] * 100) + '%';
-      boxDiv.style.width = ((bbox[2] - bbox[0]) * 100) + '%';
-      boxDiv.style.height = ((bbox[3] - bbox[1]) * 100) + '%';
+      otherZones.forEach(function (z) {
+        if (z.page !== targetPage || !z.bbox_rel || z.bbox_rel.length !== 4) return;
+        const bbox = z.bbox_rel; // [x1, y1, x2, y2]
 
-      if (isActive) {
-        hasTargetBbox = true;
-        targetBboxEl = boxDiv;
-        const scoreStr = typeof otherQ.score === 'number' && typeof otherQ.maxScore === 'number'
-          ? ' — ' + Number(otherQ.score.toFixed(1)) + '/' + Number(otherQ.maxScore.toFixed(1)) + ' pts'
-          : '';
-        boxDiv.innerHTML = '<div class="bbox-badge">Q' + (otherIdx + 1) + scoreStr + '</div>';
-      } else {
-        boxDiv.title = (otherQ.title || ('Question ' + (otherIdx + 1))) + ' (Cliquer pour ouvrir)';
-        boxDiv.addEventListener('click', function () {
-          selectQuestion(otherIdx);
-        });
-      }
+        const boxDiv = document.createElement('div');
+        boxDiv.className = 'bbox-overlay ' + (isActive ? 'active' : 'inactive');
+        boxDiv.style.left = (bbox[0] * 100) + '%';
+        boxDiv.style.top = (bbox[1] * 100) + '%';
+        boxDiv.style.width = ((bbox[2] - bbox[0]) * 100) + '%';
+        boxDiv.style.height = ((bbox[3] - bbox[1]) * 100) + '%';
 
-      overlaysLayer.appendChild(boxDiv);
+        if (isActive) {
+          hasTargetBbox = true;
+          targetBboxEl = boxDiv;
+          const scoreStr = typeof otherQ.score === 'number' && typeof otherQ.maxScore === 'number'
+            ? ' — ' + Number(otherQ.score.toFixed(1)) + '/' + Number(otherQ.maxScore.toFixed(1)) + ' pts'
+            : '';
+          const multiTag = activeZones.length > 1 ? ' (p. ' + (targetPage + 1) + ')' : '';
+          boxDiv.innerHTML = '<div class="bbox-badge">Q' + (otherIdx + 1) + multiTag + scoreStr + '</div>';
+        } else {
+          boxDiv.title = (otherQ.title || ('Question ' + (otherIdx + 1))) + ' (Cliquer pour ouvrir)';
+          boxDiv.addEventListener('click', function () {
+            selectQuestion(otherIdx);
+          });
+        }
+
+        overlaysLayer.appendChild(boxDiv);
+      });
     });
 
     if (bboxIndicator) {
       bboxIndicator.style.display = hasTargetBbox ? 'inline-block' : 'none';
       if (hasTargetBbox) {
-        bboxIndicator.textContent = 'Zone ciblée Q' + (activeQuestionIndex + 1);
+        const multiTag = activeZones.length > 1 ? ' (page ' + (targetPage + 1) + ')' : '';
+        bboxIndicator.textContent = 'Zone ciblée Q' + (activeQuestionIndex + 1) + multiTag;
       }
     }
 
@@ -794,11 +844,16 @@
           '</div>';
       }
 
+      const pageBadge = q.pageRange ? '<span class="q-page-range-badge" style="display:inline-block;margin-top:3px;font-size:11.5px;font-weight:600;color:var(--slate-500);">Page ' + escapeHtml(q.pageRange) + '</span>' : '';
+
       card.innerHTML =
         '<div class="summary-card-header">' +
           '<div class="q-title-area">' +
             '<span class="q-index-badge">Q' + (idx + 1) + '</span>' +
-            '<h3 class="q-title">' + escapeHtml(q.title || ('Question ' + (idx + 1))) + '</h3>' +
+            '<div>' +
+              '<h3 class="q-title">' + escapeHtml(q.title || ('Question ' + (idx + 1))) + '</h3>' +
+              pageBadge +
+            '</div>' +
           '</div>' +
           '<div class="q-badges">' +
             scoreBadge +
@@ -884,6 +939,7 @@
   window.handleManualUnlock = handleManualUnlock;
   window.toggleCopyViewType = toggleCopyViewType;
   window.openPdfInNewTab = openPdfInNewTab;
+  window.setCopyPage = setCopyPage;
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);

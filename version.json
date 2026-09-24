@@ -1,18 +1,18 @@
 {
-  "version": "1.0.15",
-  "name": "Gradaly v1.0.15",
-  "title": "Gradaly v1.0.15",
-  "published_at": "2026-09-23T12:18:36.654Z",
-  "notes": "### Nouveautés (v1.0.15) / What's New (v1.0.15)\n\n- **Portail de Restitution Étudiant Zéro-Knowledge / Zero-Knowledge Student Portal** :\n  - Restitution interactive en ligne des copies d'examen chiffrées localement (AES-256-GCM).\n  - Hébergement statique 100% libre sans serveur ni base de données (Cloudflare Pages, Netlify, Université).\n  - Liens magiques 1-clic transmis aux étudiants avec fragment d'URL sécurisé (#k=).\n  - Navigation par question, boîtes englobantes des réponses manuscrites, barème et critères validés.\n\n- **Hub d'Exportation & Mode Découverte / Export Hub & Discovery Mode** :\n  - Hub d'export unifié regroupant Excel officiel, archive ZIP des copies PDF annotées et Portail Web.\n  - Mode Découverte permettant d'évaluer gratuitement chaque modalité d'exportation sur 1 copie test.\n  - Gestion et test de désactivation de licence directement depuis l'application.\n\n- **Robustesse & Corrections / Robustness & Fixes** :\n  - Tolérance et auto-réparation intelligente des réponses JSON tronquées des LLMs.\n  - Amélioration de la persistance de l'état de correction et de notation.",
-  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.15",
+  "version": "1.0.16",
+  "name": "Gradaly v1.0.16",
+  "title": "Gradaly v1.0.16",
+  "published_at": "2026-09-24T13:45:00.000Z",
+  "notes": "### Nouveautés (v1.0.16) / What's New (v1.0.16)\n\n- **Onglet dédié à l'Import et la Gestion des Copies / Dedicated Copies Tab** :\n  - Séparation ergonomique de l'import et de la gestion des copies dans un onglet autonome avec indicateurs d'état.\n  - Guides contextuels et astuces d'utilisation intégrés pour assister l'enseignant à chaque étape.\n\n- **Mémorisation Intelligente des Répertoires / Persistent Directory Memory** :\n  - Système générique mémorisant les derniers dossiers par catégorie et par projet pour tous les imports (copies, scans, canevas, étudiants) et exports (Excel, PDF annotés, portail web).\n  - Préservation du nom de fichier par défaut lors des dialogues de sauvegarde.\n\n- **OCR Gemini Vision Accéléré / High-Speed Gemini Vision OCR** :\n  - Intégration du modèle ultra-rapide Flash-Lite (temps de réponse ~1,2s par copie, suppression du raisonnement superflu pour l'extraction d'en-tête).\n  - Robustesse et tolérance accrues contre les délais réseau.\n\n- **Robustesse du Rendu PDF & Scans / PDF Rendering & Scan Robustness** :\n  - Rendu fiabilisé et optimisé pour les scans de copies haute résolution.",
+  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.16",
   "assets": {
-    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-macOS.dmg",
-    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-Windows-Setup.exe",
-    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-Linux.AppImage",
-    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-Linux-arm64.AppImage",
-    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/gradaly-amd64.deb",
-    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/gradaly-arm64.deb",
-    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/gradaly-x86_64.rpm",
-    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/gradaly-aarch64.rpm"
+    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.16_universal.dmg",
+    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.16_x64-setup.exe",
+    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.16_amd64.AppImage",
+    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.16_aarch64.AppImage",
+    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.16_amd64.deb",
+    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.16_arm64.deb",
+    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.16-1.x86_64.rpm",
+    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.16-1.aarch64.rpm"
   }
 }

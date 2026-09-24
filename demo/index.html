@@ -1596,6 +1596,18 @@ math {
   let mobilePane = 'copy'; // 'copy' | 'grading'
   let currentZoom = 1.0;
   let isShowingFullPdf = false; // toggle between interactive page image vs full PDF iframe
+  let currentActiveCopyPage = null; // null defaults to question primary page
+
+  function getQuestionZonesList(qObj) {
+    if (!qObj) return [];
+    if (Array.isArray(qObj.zones) && qObj.zones.length > 0) {
+      return qObj.zones;
+    }
+    if (Array.isArray(qObj.bbox_rel) && qObj.bbox_rel.length === 4) {
+      return [{ page: typeof qObj.page === 'number' ? qObj.page : 0, bbox_rel: qObj.bbox_rel }];
+    }
+    return [];
+  }
 
   /**
    * Dual-mode loader:
@@ -1840,6 +1852,9 @@ math {
       const score = typeof q.score === 'number' ? q.score : 0;
       const max = typeof q.maxScore === 'number' ? q.maxScore : 0;
 
+      const pageInfo = q.pageRange ? ' (p. ' + q.pageRange + ')' : '';
+      pill.title = (q.title || ('Question ' + (idx + 1))) + pageInfo;
+
       pill.innerHTML =
         '<span class="q-pill-label">Q' + (idx + 1) + '</span>' +
         '<span class="q-pill-score">' + Number(score.toFixed(1)) + '/' + Number(max.toFixed(1)) + '</span>';
@@ -1881,6 +1896,7 @@ math {
     if (index < 0 || index >= questions.length) return;
 
     activeQuestionIndex = index;
+    currentActiveCopyPage = null; // reset to primary page of question
 
     // Update active pill
     questions.forEach(function (_, idx) {
@@ -1897,6 +1913,16 @@ math {
 
     updateNavArrows();
     renderActiveQuestion();
+  }
+
+  function setCopyPage(pageNum) {
+    currentActiveCopyPage = pageNum;
+    if (!currentData) return;
+    const questions = currentData.questions || [];
+    const q = questions[activeQuestionIndex];
+    if (q) {
+      renderCopyPageAndOverlay(q);
+    }
   }
 
   function renderActiveQuestion() {
@@ -1994,11 +2020,16 @@ math {
     const isFirst = activeQuestionIndex <= 0;
     const isLast = activeQuestionIndex >= questionsCount - 1;
 
+    const pageBadge = q.pageRange ? '<span class="q-page-range-badge" style="display:inline-block;margin-top:3px;font-size:11.5px;font-weight:600;color:var(--slate-500);">Page ' + escapeHtml(q.pageRange) + '</span>' : '';
+
     cardEl.innerHTML =
       '<div class="grading-card-header">' +
         '<div class="q-title-area">' +
           '<span class="q-index-badge">Q' + (activeQuestionIndex + 1) + '</span>' +
-          '<h3 class="q-title">' + escapeHtml(q.title || ('Question ' + (activeQuestionIndex + 1))) + '</h3>' +
+          '<div>' +
+            '<h3 class="q-title">' + escapeHtml(q.title || ('Question ' + (activeQuestionIndex + 1))) + '</h3>' +
+            pageBadge +
+          '</div>' +
         '</div>' +
         '<div class="q-badges">' +
           scoreBadge +
@@ -2025,11 +2056,26 @@ math {
 
     if (!copyImage || !overlaysLayer) return;
 
-    const targetPage = typeof q.page === 'number' ? q.page : 0;
+    const activeZones = getQuestionZonesList(q);
+    const primaryPage = activeZones.length > 0 && typeof activeZones[0].page === 'number'
+      ? activeZones[0].page
+      : (typeof q.page === 'number' ? q.page : 0);
+
+    const targetPage = typeof currentActiveCopyPage === 'number' ? currentActiveCopyPage : primaryPage;
     const pageDataUrl = pages[targetPage] || pages[0] || '';
 
     if (pageLabel) {
-      pageLabel.textContent = 'Page ' + (targetPage + 1) + ' / ' + (pages.length || 1);
+      if (activeZones.length > 1) {
+        let pageBtnsHtml = '<span class="toolbar-label">Page :</span> ';
+        activeZones.forEach(function (z) {
+          const isCur = z.page === targetPage;
+          pageBtnsHtml += '<button type="button" class="btn-page-pill ' + (isCur ? 'active' : '') + '" onclick="window.setCopyPage(' + z.page + ')" style="padding: 2px 7px; margin-left: 4px; border-radius: 4px; font-size: 11px; font-weight: 700; cursor: pointer; border: 1px solid ' + (isCur ? 'var(--primary)' : 'var(--slate-300)') + '; background: ' + (isCur ? 'var(--primary)' : '#ffffff') + '; color: ' + (isCur ? '#ffffff' : 'var(--slate-700)') + ';">p. ' + (z.page + 1) + '</button>';
+        });
+        pageBtnsHtml += ' <span style="font-size: 11px; color: var(--slate-400); margin-left: 6px;">(' + (targetPage + 1) + '/' + pages.length + ')</span>';
+        pageLabel.innerHTML = pageBtnsHtml;
+      } else {
+        pageLabel.textContent = 'Page ' + (targetPage + 1) + ' / ' + (pages.length || 1);
+      }
     }
 
     // Set page image
@@ -2044,42 +2090,46 @@ math {
     let hasTargetBbox = false;
     let targetBboxEl = null;
 
-    // Draw bounding boxes for all questions on this page
+    // Draw bounding boxes for all questions/zones on this page
     questions.forEach(function (otherQ, otherIdx) {
-      const otherPage = typeof otherQ.page === 'number' ? otherQ.page : 0;
-      if (otherPage !== targetPage || !otherQ.bbox_rel || otherQ.bbox_rel.length !== 4) return;
-
-      const bbox = otherQ.bbox_rel; // [x1, y1, x2, y2]
+      const otherZones = getQuestionZonesList(otherQ);
       const isActive = otherIdx === activeQuestionIndex;
 
-      const boxDiv = document.createElement('div');
-      boxDiv.className = 'bbox-overlay ' + (isActive ? 'active' : 'inactive');
-      boxDiv.style.left = (bbox[0] * 100) + '%';
-      boxDiv.style.top = (bbox[1] * 100) + '%';
-      boxDiv.style.width = ((bbox[2] - bbox[0]) * 100) + '%';
-      boxDiv.style.height = ((bbox[3] - bbox[1]) * 100) + '%';
+      otherZones.forEach(function (z) {
+        if (z.page !== targetPage || !z.bbox_rel || z.bbox_rel.length !== 4) return;
+        const bbox = z.bbox_rel; // [x1, y1, x2, y2]
 
-      if (isActive) {
-        hasTargetBbox = true;
-        targetBboxEl = boxDiv;
-        const scoreStr = typeof otherQ.score === 'number' && typeof otherQ.maxScore === 'number'
-          ? ' — ' + Number(otherQ.score.toFixed(1)) + '/' + Number(otherQ.maxScore.toFixed(1)) + ' pts'
-          : '';
-        boxDiv.innerHTML = '<div class="bbox-badge">Q' + (otherIdx + 1) + scoreStr + '</div>';
-      } else {
-        boxDiv.title = (otherQ.title || ('Question ' + (otherIdx + 1))) + ' (Cliquer pour ouvrir)';
-        boxDiv.addEventListener('click', function () {
-          selectQuestion(otherIdx);
-        });
-      }
+        const boxDiv = document.createElement('div');
+        boxDiv.className = 'bbox-overlay ' + (isActive ? 'active' : 'inactive');
+        boxDiv.style.left = (bbox[0] * 100) + '%';
+        boxDiv.style.top = (bbox[1] * 100) + '%';
+        boxDiv.style.width = ((bbox[2] - bbox[0]) * 100) + '%';
+        boxDiv.style.height = ((bbox[3] - bbox[1]) * 100) + '%';
 
-      overlaysLayer.appendChild(boxDiv);
+        if (isActive) {
+          hasTargetBbox = true;
+          targetBboxEl = boxDiv;
+          const scoreStr = typeof otherQ.score === 'number' && typeof otherQ.maxScore === 'number'
+            ? ' — ' + Number(otherQ.score.toFixed(1)) + '/' + Number(otherQ.maxScore.toFixed(1)) + ' pts'
+            : '';
+          const multiTag = activeZones.length > 1 ? ' (p. ' + (targetPage + 1) + ')' : '';
+          boxDiv.innerHTML = '<div class="bbox-badge">Q' + (otherIdx + 1) + multiTag + scoreStr + '</div>';
+        } else {
+          boxDiv.title = (otherQ.title || ('Question ' + (otherIdx + 1))) + ' (Cliquer pour ouvrir)';
+          boxDiv.addEventListener('click', function () {
+            selectQuestion(otherIdx);
+          });
+        }
+
+        overlaysLayer.appendChild(boxDiv);
+      });
     });
 
     if (bboxIndicator) {
       bboxIndicator.style.display = hasTargetBbox ? 'inline-block' : 'none';
       if (hasTargetBbox) {
-        bboxIndicator.textContent = 'Zone ciblée Q' + (activeQuestionIndex + 1);
+        const multiTag = activeZones.length > 1 ? ' (page ' + (targetPage + 1) + ')' : '';
+        bboxIndicator.textContent = 'Zone ciblée Q' + (activeQuestionIndex + 1) + multiTag;
       }
     }
 
@@ -2284,11 +2334,16 @@ math {
           '</div>';
       }
 
+      const pageBadge = q.pageRange ? '<span class="q-page-range-badge" style="display:inline-block;margin-top:3px;font-size:11.5px;font-weight:600;color:var(--slate-500);">Page ' + escapeHtml(q.pageRange) + '</span>' : '';
+
       card.innerHTML =
         '<div class="summary-card-header">' +
           '<div class="q-title-area">' +
             '<span class="q-index-badge">Q' + (idx + 1) + '</span>' +
-            '<h3 class="q-title">' + escapeHtml(q.title || ('Question ' + (idx + 1))) + '</h3>' +
+            '<div>' +
+              '<h3 class="q-title">' + escapeHtml(q.title || ('Question ' + (idx + 1))) + '</h3>' +
+              pageBadge +
+            '</div>' +
           '</div>' +
           '<div class="q-badges">' +
             scoreBadge +
@@ -2333,32 +2388,14 @@ math {
 
     if (!docId) {
       showView('view-unlock');
-      const unlockCard = document.getElementById('view-unlock');
-      if (unlockCard) {
-        unlockCard.innerHTML =
-          '<div style="text-align: center; padding: 16px 8px;">' +
-            '<div style="display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 16px; background: #eef2ff; color: #4f46e5; margin-bottom: 14px;">' +
-              '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>' +
-            '</div>' +
-            '<h2 style="font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 6px;">Portail Étudiant Zéro-Knowledge (Démo)</h2>' +
-            '<p style="font-size: 13px; color: #64748b; max-width: 440px; margin: 0 auto 20px; line-height: 1.5;">' +
-              'Chaque copie d\'examen est chiffrée localement en AES-256-GCM. Choisissez une copie ci-dessous pour tester le déchiffrement instantané et la consultation interactive :' +
-            '</p>' +
-            '<div style="display: flex; flex-direction: column; gap: 12px; max-width: 420px; margin: 0 auto;">' +
-              '<a href="index.html?id=8b0b6cc4a3bfd478081950f54a1a4969#k=2yQdLmtPN4pKbuVfEflHqDkqLUDbIxr2uRZ7TTTYWtM" style="display: flex; align-items: center; justify-content: space-between; padding: 13px 18px; border-radius: 12px; background: #4f46e5; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 13.5px; box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3); transition: transform 0.15s ease;">' +
-                '<span style="display: flex; align-items: center; gap: 8px;"><span>🇫🇷</span> <span>Copie Démo (Français) — Emma Dubois (19.8/20)</span></span>' +
-                '<span>→</span>' +
-              '</a>' +
-              '<a href="index.html?id=e6b892e325d36bfd74f1a9d50b45d64e#k=fps-pl-WevkHs676fF76-Jl4xtKBXQCfMjQoxtrG9EY" style="display: flex; align-items: center; justify-content: space-between; padding: 13px 18px; border-radius: 12px; background: #0f172a; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 13.5px; box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2); transition: transform 0.15s ease;">' +
-                '<span style="display: flex; align-items: center; gap: 8px;"><span>🇬🇧</span> <span>Student Demo (English) — Emma Dubois (19.8/20)</span></span>' +
-                '<span>→</span>' +
-              '</a>' +
-            '</div>' +
-            '<div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #e2e8f0;">' +
-              '<a href="../index.html" style="font-size: 12.5px; font-weight: 500; color: #6366f1; text-decoration: none;">← Retour sur le site principal Gradaly.io</a>' +
-            '</div>' +
-          '</div>';
-      }
+      showError(
+        'Aucun identifiant de copie spécifié dans l\'URL (paramètre ?id= manquant). ' +
+        'Veuillez cliquer sur le lien complet fourni dans le tableau des copies (liens_consultation_etudiants.xlsx).'
+      );
+      const input = document.getElementById('manual-key-input');
+      if (input) input.disabled = true;
+      const btn = document.getElementById('unlock-button');
+      if (btn) btn.disabled = true;
       return;
     }
 
@@ -2392,6 +2429,7 @@ math {
   window.handleManualUnlock = handleManualUnlock;
   window.toggleCopyViewType = toggleCopyViewType;
   window.openPdfInNewTab = openPdfInNewTab;
+  window.setCopyPage = setCopyPage;
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
