@@ -1,18 +1,18 @@
 {
-  "version": "1.0.18",
-  "name": "Gradaly v1.0.18",
-  "title": "Gradaly v1.0.18",
-  "published_at": "2026-09-24T18:00:00.000Z",
-  "notes": "### Nouveautés (v1.0.18) / What's New (v1.0.18)\n\n- **Protection sélective de correction IA / Selective AI Override Protection** :\n  - Précision du libellé de protection des notes (\"Don't override grades\" / \"Ne pas écraser les notes\").\n\n- **Internationalisation complète / Full Internationalization** :\n  - Traduction intégrale en anglais des dialogues d'exportation web Zero-Knowledge et de sélection de profils.\n\n- **Documentation & Site Web / Documentation & Website** :\n  - Mise à jour des captures d'écran illustrant le flux de travail en 8 étapes et la publication sur pages personnelles universitaires (UCLouvain).",
-  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.18",
+  "version": "1.0.19",
+  "name": "Gradaly v1.0.19",
+  "title": "Gradaly v1.0.19",
+  "published_at": "2026-09-25T13:55:00.000Z",
+  "notes": "### Nouveautés (v1.0.19) / What's New (v1.0.19)\n\n- **Gestion des copies & Sécurité / Copies Management & Safety** :\n  - La suppression de copies (fichiers scannés PDF) est désormais strictement réservée à l'onglet Copies, avec sélection multiple et suppression en lot sécurisée.\n  - PDF copy file deletion is now strictly restricted to the Copies tab, with multiple selection and safe batch deletion.\n\n- **Réinitialisation granulaire des notations / Fine-grained Grading Reset** :\n  - Dans l'onglet Notation, nouvelle modale permettant d'effacer les notes/critères (remise au statut 'UNGRADED'), les feedbacks et/ou les justificatifs pour la question active ou pour l'ensemble des copies.\n  - In Grading tab, new modal allowing teachers to reset grades/criteria (setting questions to 'UNGRADED'), student feedback, and/or grader justifications for the active question or all copies.\n\n- **Bilinguisme intégral (FR / EN) / Full Bilingual Support** :\n  - Audit complet de l'interface avec traductions ajoutées pour l'intégralité des boutons (Reset), modales et infobulles.\n  - Complete UI audit with full English translations for all buttons (Reset), modals and tooltips.\n\n- **Positionnement pédagogique / Pedagogical Slogan** :\n  - Adoption du slogan officiel « Mieux corriger, pour mieux former » / \"Grade Smarter, not Harder\".",
+  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.19",
   "assets": {
-    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_universal.dmg",
-    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_x64-setup.exe",
-    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_amd64.AppImage",
-    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_aarch64.AppImage",
-    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_amd64.deb",
-    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.18_arm64.deb",
-    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.18-1.x86_64.rpm",
-    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.18-1.aarch64.rpm"
+    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.19_universal.dmg",
+    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.19_x64-setup.exe",
+    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.19_amd64.AppImage",
+    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.19_aarch64.AppImage",
+    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.19_amd64.deb",
+    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.19_arm64.deb",
+    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.19-1.x86_64.rpm",
+    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.19-1.aarch64.rpm"
   }
 }

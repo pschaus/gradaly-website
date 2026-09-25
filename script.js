@@ -177,7 +177,7 @@ const translations = {
         install_build_info: "Linux build environment: x86_64 binaries are built in an Ubuntu 22.04 LTS runner with glibc 2.35 (and ARM64 under Ubuntu 24.04). Fully compatible with any distribution providing glibc ≥ 2.35.",
         copy: "Copy",
         copied: "Copied!",
-        cta_subtitle: "Join the teachers who have already reclaimed their weekends.",
+        cta_subtitle: "Provide your students with richer, clearer, and truly formative feedback.",
         footer_rights: "All rights reserved.",
 
         // Student Portal Section (Pro Showcase)
@@ -185,7 +185,7 @@ const translations = {
         portal_badge: "Pro Feature Exclusive",
         portal_title: "Zero-Knowledge Student Consultation Portal",
         portal_subtitle: "Return 200 graded copies in minutes with zero paper printing and zero bulk emailing: Gradaly generates a self-hosted, confidential web viewer where each student interacts with their personal annotated copy and rubric.",
-        portal_b1_title: "Massive Time Saver",
+        portal_b1_title: "Seamless Formative Distribution",
         portal_b1_desc: "In one click, export a complete static web folder and an Excel/CSV spreadsheet listing every student alongside their personal 1-click magic link, ready for automated mail merge or direct LMS distribution.",
         portal_b2_title: "100% Host-Independent & Private",
         portal_b2_desc: "Gradaly does not host your student data. You freely upload the static files to any hosting space of your choice (university web space, Cloudflare Pages, Netlify). Each copy is locked with a unique key: students can never see each other's work.",
@@ -235,7 +235,7 @@ const translations = {
         nav_download: "Télécharger l'App",
         hero_version_badge: "Dernière version disponible :",
         cta_version_info: "Version actuelle :",
-        hero_title1: "Corrigez Plus Vite, Plus Juste.",
+        hero_title1: "Mieux Corriger, Pour Mieux Former.",
         hero_title2: "Votre assistant IA pour la correction.",
         hero_subtitle: "Consacrez votre temps à concevoir un barème d'évaluation fin et rigoureux plutôt qu'à corriger de manière répétitive. Gradaly applique vos critères avec l'IA, simule immédiatement l'impact de vos ajustements sur toute la promotion et vous laisse toujours le dernier mot.",
         download_mac: "Télécharger pour macOS",
@@ -409,7 +409,7 @@ const translations = {
         install_build_info: "Environnement de compilation Linux : Les binaires x86_64 sont compilés sous Ubuntu 22.04 LTS (glibc 2.35) et ARM64 sous Ubuntu 24.04. Compatibles avec toute distribution Linux récente intégrant glibc ≥ 2.35.",
         copy: "Copier",
         copied: "Copié !",
-        cta_subtitle: "Rejoignez les enseignants qui ont déjà récupéré leurs week-ends.",
+        cta_subtitle: "Offrez à vos étudiants un feedback plus riche, plus précis et véritablement formateur.",
         footer_rights: "Tous droits réservés.",
 
         // Student Portal Section (Pro Showcase)
@@ -417,8 +417,8 @@ const translations = {
         portal_badge: "Fonctionnalité Pro Exclusive",
         portal_title: "Portail de Restitution Étudiant Zéro-Knowledge",
         portal_subtitle: "Rendez 200 copies corrigées en quelques minutes sans aucune impression papier ni envoi d'emails lourds : Gradaly génère un portail web interactif et confidentiel où chaque étudiant consulte sa copie et son barème.",
-        portal_b1_title: "Un gain de temps spectaculaire",
-        portal_b1_desc: "En 1 clic, exportez un site web statique complet ainsi qu'un tableau Excel/CSV listant chaque étudiant avec son lien magique 1-clic personnel, prêt pour un publipostage rapide ou une diffusion sur votre LMS (Moodle, Teams).",
+        portal_b1_title: "Restitution Pédagogique Immédiate",
+        portal_b1_desc: "En 1 clic, exportez un site web statique complet ainsi qu'un tableau Excel/CSV associant chaque étudiant à son lien magique personnel, prêt pour un publipostage ou une diffusion sur votre LMS (Moodle, Teams).",
         portal_b2_title: "Hébergement 100% libre & Zéro Cloud",
         portal_b2_desc: "Gradaly n'héberge pas vos données pour préserver votre indépendance. Vous déposez librement les fichiers statiques où vous voulez (serveur de votre université, Cloudflare Pages, Netlify). Chaque copie est verrouillée : aucun étudiant ne peut voir celle d'un camarade.",
         portal_b3_title: "Consultation étudiante interactive",
