@@ -121,25 +121,64 @@
                     </div>
                 </div>
 
-                <!-- Success State -->
-                <div x-show="state === 'success'" x-cloak class="p-6 bg-emerald-50 border border-emerald-200 rounded-2xl animate-in fade-in">
-                    <div class="flex items-start gap-3.5">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-xs">
-                            <i class="fas fa-check text-lg"></i>
+                <!-- Step 3: Success State (License Key Display) -->
+                <div x-show="step === 'success'" x-cloak class="p-6 sm:p-8 bg-emerald-50/70 border border-emerald-200 rounded-3xl animate-in fade-in">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                            <i class="fas fa-check text-xl"></i>
                         </div>
-                        <div>
-                            <h3 class="font-bold text-emerald-900 text-base mb-1" x-text="lang === 'en' ? 'Check your UCLouvain inbox!' : 'Vérifiez votre boîte mail UCLouvain !'"></h3>
-                            <p class="text-xs sm:text-sm text-emerald-800 leading-relaxed" x-text="responseMessage"></p>
-                            <div class="mt-4 pt-3 border-t border-emerald-200/60 text-xs text-emerald-700 flex items-center gap-2">
-                                <i class="fas fa-info-circle"></i>
-                                <span x-text="lang === 'en' ? 'The email usually arrives within 1 minute. Check your junk/spam folder if needed.' : 'Le courriel arrive généralement en moins d\'une minute. Vérifiez vos spams si nécessaire.'"></span>
+                        <div class="flex-1">
+                            <div class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold tracking-wider uppercase bg-emerald-100 text-emerald-800 mb-1">
+                                <span x-text="alreadyClaimed ? (lang === 'en' ? 'EXISTING LICENSE' : 'LICENCE RETROUVÉE') : (lang === 'en' ? 'LICENSE GENERATED' : 'LICENCE ACTIVÉE')"></span>
+                            </div>
+                            <h3 class="font-extrabold text-slate-900 text-lg sm:text-xl mb-1" x-text="lang === 'en' ? 'Your Gradaly Pro license is ready!' : 'Votre licence Gradaly Pro est prête !'"></h3>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" x-text="lang === 'en' ? 'Here is your official academic license key. A confirmation email has also been sent to your inbox.' : 'Voici votre clé de licence académique officielle. Un e-mail de confirmation vous a également été envoyé.'"></p>
+
+                            <!-- License Key Box -->
+                            <div class="mt-5 p-4 sm:p-5 bg-white border-2 border-dashed border-emerald-300 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-xs">
+                                <span class="font-mono text-base sm:text-xl font-black text-slate-900 tracking-wider select-all" x-text="licenseKey"></span>
+                                <button 
+                                    @click="copyLicenseKey()" 
+                                    class="w-full sm:w-auto px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-xs cursor-pointer"
+                                >
+                                    <i :class="copied ? 'fas fa-check' : 'fas fa-copy'"></i>
+                                    <span x-text="copied ? (lang === 'en' ? 'Copied!' : 'Copié !') : (lang === 'en' ? 'Copy Key' : 'Copier la clé')"></span>
+                                </button>
+                            </div>
+
+                            <!-- Steps on how to use -->
+                            <div class="mt-6 bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 text-xs text-slate-700">
+                                <div class="font-bold text-slate-900 text-xs sm:text-sm mb-2 flex items-center gap-2">
+                                    <i class="fas fa-play text-indigo-600"></i>
+                                    <span x-text="lang === 'en' ? 'How to activate in Gradaly :' : 'Comment l\'activer dans Gradaly :'"></span>
+                                </div>
+                                <ol class="list-decimal list-inside space-y-1.5 leading-relaxed text-slate-600">
+                                    <li x-text="lang === 'en' ? 'Open the Gradaly desktop application on your computer.' : 'Ouvrez l\'application Gradaly sur votre ordinateur.'"></li>
+                                    <li x-text="lang === 'en' ? 'Click the Settings (⚙️) icon in the top right corner.' : 'Cliquez sur l\'icône Paramètres (⚙️) en haut à droite.'"></li>
+                                    <li x-text="lang === 'en' ? 'In the License tab, paste this key and click Activate.' : 'Dans l\'onglet Licence, collez cette clé et cliquez sur Activer.'"></li>
+                                </ol>
+                                <div class="mt-3 pt-3 border-t border-slate-200/80 text-[11px] text-slate-500 flex items-center gap-2">
+                                    <i class="fas fa-shield-alt text-indigo-500"></i>
+                                    <span x-text="lang === 'en' ? 'Valid for up to 2 of your personal or office computers (e.g. laptop & desktop).' : 'Valable pour 2 de vos postes (ex: ordinateur portable et de bureau).'"></span>
+                                </div>
+                            </div>
+
+                            <!-- CTA row -->
+                            <div class="mt-6 flex flex-wrap items-center gap-3">
+                                <a href="index.html#download" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-xs">
+                                    <i class="fas fa-download"></i>
+                                    <span x-text="lang === 'en' ? 'Download Gradaly' : 'Télécharger Gradaly'"></span>
+                                </a>
+                                <a href="index.html" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold transition">
+                                    <span x-text="lang === 'en' ? 'Back to homepage' : 'Retour au site'"></span>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Form State -->
-                <form x-show="state !== 'success'" @submit.prevent="submitClaim()" class="space-y-4">
+                <!-- Step 1: Email Form -->
+                <form x-show="step === 'email'" @submit.prevent="submitRequestCode()" class="space-y-4">
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                             <span x-text="lang === 'en' ? 'Your UCLouvain email address:' : 'Votre adresse email institutionnelle UCLouvain :'"></span>
@@ -153,13 +192,13 @@
                                 x-model="email" 
                                 required 
                                 placeholder="prenom.nom@uclouvain.be" 
-                                :disabled="state === 'loading'"
+                                :disabled="loading"
                                 class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-600 transition disabled:opacity-50"
                             />
                         </div>
                         <p class="mt-1.5 text-[11px] text-slate-500 flex items-center gap-1.5">
                             <i class="fas fa-shield-alt text-slate-400"></i>
-                            <span x-text="lang === 'en' ? 'Must end with @uclouvain.be (or .uclouvain.be). Max 1 license per email.' : 'Doit se terminer par @uclouvain.be (ou .uclouvain.be). 1 licence max par adresse.'"></span>
+                            <span x-text="lang === 'en' ? 'Must end with @uclouvain.be (or .uclouvain.be). Max 1 license per person.' : 'Doit se terminer par @uclouvain.be (ou .uclouvain.be). 1 licence max par personne.'"></span>
                         </p>
                     </div>
 
@@ -171,18 +210,76 @@
 
                     <button 
                         type="submit" 
-                        :disabled="state === 'loading' || !email"
+                        :disabled="loading || !email"
                         class="w-full py-3.5 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm transition shadow-md hover:shadow-lg disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
                     >
-                        <template x-if="state === 'loading'">
+                        <template x-if="loading">
                             <span class="inline-flex items-center gap-2">
                                 <i class="fas fa-spinner fa-spin"></i>
-                                <span x-text="lang === 'en' ? 'Verifying...' : 'Vérification en cours...'"></span>
+                                <span x-text="lang === 'en' ? 'Sending code...' : 'Envoi du code...'"></span>
                             </span>
                         </template>
-                        <template x-if="state !== 'loading'">
+                        <template x-if="!loading">
                             <span class="inline-flex items-center gap-2">
-                                <span x-text="lang === 'en' ? 'Send my Free Pro License →' : 'Recevoir ma licence Pro offerte →'"></span>
+                                <span x-text="lang === 'en' ? 'Send my verification code →' : 'Recevoir mon code de vérification →'"></span>
+                            </span>
+                        </template>
+                    </button>
+                </form>
+
+                <!-- Step 2: OTP Code Form -->
+                <form x-show="step === 'otp'" x-cloak @submit.prevent="submitVerifyCode()" class="space-y-4">
+                    <div class="p-3.5 bg-indigo-50/70 border border-indigo-100 rounded-xl text-xs text-indigo-950 flex items-center justify-between">
+                        <div class="flex items-center gap-2 truncate">
+                            <i class="fas fa-envelope-open-text text-indigo-600"></i>
+                            <span class="truncate font-medium" x-text="email"></span>
+                        </div>
+                        <button type="button" @click="step = 'email'; otp = ''; errorMessage = ''" class="text-indigo-600 font-bold hover:underline shrink-0 ml-2 cursor-pointer">
+                            <span x-text="lang === 'en' ? 'Change' : 'Modifier'"></span>
+                        </button>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                            <span x-text="lang === 'en' ? '6-digit verification code:' : 'Code de vérification à 6 chiffres :'"></span>
+                        </label>
+                        <input 
+                            type="text" 
+                            x-model="otp" 
+                            maxlength="6"
+                            required 
+                            placeholder="123456" 
+                            :disabled="loading"
+                            class="w-full py-3 px-4 bg-slate-50 border border-slate-300 rounded-xl text-center font-mono font-black text-2xl tracking-[8px] text-indigo-600 placeholder:text-slate-300 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-600 transition disabled:opacity-50"
+                        />
+                        <p class="mt-1.5 text-[11px] text-slate-500 flex items-center justify-between">
+                            <span x-text="lang === 'en' ? 'Check your UCLouvain inbox (and junk folder).' : 'Vérifiez votre boîte mail UCLouvain (et vos spams).'"></span>
+                            <button type="button" @click="submitRequestCode(true)" :disabled="loading" class="text-indigo-600 hover:underline font-semibold cursor-pointer">
+                                <span x-text="lang === 'en' ? 'Resend code' : 'Renvoyer un code'"></span>
+                            </button>
+                        </p>
+                    </div>
+
+                    <!-- Error Alert -->
+                    <div x-show="errorMessage" x-cloak class="p-3.5 bg-rose-50 border border-rose-200 rounded-xl text-xs text-rose-700 flex items-center gap-2">
+                        <i class="fas fa-exclamation-triangle text-rose-500 shrink-0"></i>
+                        <span x-text="errorMessage"></span>
+                    </div>
+
+                    <button 
+                        type="submit" 
+                        :disabled="loading || otp.length < 6"
+                        class="w-full py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition shadow-md hover:shadow-lg disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                        <template x-if="loading">
+                            <span class="inline-flex items-center gap-2">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <span x-text="lang === 'en' ? 'Validating...' : 'Validation en cours...'"></span>
+                            </span>
+                        </template>
+                        <template x-if="!loading">
+                            <span class="inline-flex items-center gap-2">
+                                <span x-text="lang === 'en' ? 'Verify & Get my Pro License →' : 'Valider et obtenir ma licence Pro →'"></span>
                             </span>
                         </template>
                     </button>
@@ -201,17 +298,20 @@
             return {
                 lang: 'fr',
                 email: '',
-                state: 'idle', // 'idle' | 'loading' | 'success' | 'error'
+                otp: '',
+                step: 'email', // 'email' | 'otp' | 'success'
+                loading: false,
                 errorMessage: '',
-                responseMessage: '',
-                // The worker URL endpoint
-                workerEndpoint: 'https://gradaly-license-service.gradaly.workers.dev/api/claim',
+                licenseKey: '',
+                alreadyClaimed: false,
+                copied: false,
+                apiBase: 'https://gradaly-license-service.gradaly.workers.dev',
 
                 toggleLang() {
                     this.lang = this.lang === 'fr' ? 'en' : 'fr';
                 },
 
-                async submitClaim() {
+                async submitRequestCode(isResend = false) {
                     this.errorMessage = '';
                     const cleanEmail = (this.email || '').trim().toLowerCase();
 
@@ -222,32 +322,77 @@
                         return;
                     }
 
-                    this.state = 'loading';
+                    this.loading = true;
 
                     try {
-                        const response = await fetch(this.workerEndpoint, {
+                        const response = await fetch(`${this.apiBase}/api/request-code`, {
                             method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
+                            headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({ email: cleanEmail }),
                         });
 
                         const data = await response.json();
-
                         if (!response.ok) {
-                            throw new Error(data.error || 'Erreur lors de la demande.');
+                            throw new Error(data.error || 'Erreur lors de l\'envoi du code.');
                         }
 
-                        this.responseMessage = data.message || (this.lang === 'en'
-                            ? 'An email has been sent to your UCLouvain inbox.'
-                            : 'Un email a été envoyé à votre adresse UCLouvain.');
-                        this.state = 'success';
+                        this.step = 'otp';
+                        if (isResend) {
+                            alert(this.lang === 'en' ? 'A new code has been sent!' : 'Un nouveau code vous a été envoyé !');
+                        }
                     } catch (err) {
                         this.errorMessage = err.message || (this.lang === 'en'
                             ? 'An unexpected error occurred. Please try again later.'
                             : 'Une erreur est survenue. Veuillez réessayer plus tard.');
-                        this.state = 'error';
+                    } finally {
+                        this.loading = false;
+                    }
+                },
+
+                async submitVerifyCode() {
+                    this.errorMessage = '';
+                    const cleanEmail = (this.email || '').trim().toLowerCase();
+                    const cleanOtp = (this.otp || '').trim();
+
+                    if (!cleanOtp || cleanOtp.length < 6) {
+                        this.errorMessage = this.lang === 'en' ? 'Please enter the 6-digit code.' : 'Veuillez entrer le code à 6 chiffres.';
+                        return;
+                    }
+
+                    this.loading = true;
+
+                    try {
+                        const response = await fetch(`${this.apiBase}/api/verify-code`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ email: cleanEmail, code: cleanOtp }),
+                        });
+
+                        const data = await response.json();
+                        if (!response.ok) {
+                            throw new Error(data.error || 'Code invalide ou expiré.');
+                        }
+
+                        this.licenseKey = data.license_key;
+                        this.alreadyClaimed = Boolean(data.already_claimed);
+                        this.step = 'success';
+                    } catch (err) {
+                        this.errorMessage = err.message || (this.lang === 'en'
+                            ? 'Invalid or expired code. Please try again.'
+                            : 'Code invalide ou expiré. Veuillez réessayer.');
+                    } finally {
+                        this.loading = false;
+                    }
+                },
+
+                async copyLicenseKey() {
+                    if (!this.licenseKey) return;
+                    try {
+                        await navigator.clipboard.writeText(this.licenseKey);
+                        this.copied = true;
+                        setTimeout(() => { this.copied = false; }, 3000);
+                    } catch {
+                        prompt(this.lang === 'en' ? 'Copy your key:' : 'Copiez votre clé :', this.licenseKey);
                     }
                 }
             };
