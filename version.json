@@ -1,18 +1,18 @@
 {
-  "version": "1.0.22",
-  "name": "Gradaly v1.0.22",
-  "title": "Gradaly v1.0.22",
-  "published_at": "2026-10-08T14:00:00.000Z",
-  "notes": "### Nouveautés (v1.0.22) / What's New (v1.0.22)\n\n- **Assistant de Barème Interactif & Banc d'Essai / Interactive Rubric Assistant & Solution Testing** :\n  - Nouvel assistant conversationnel IA pour élaborer, challenger et affiner interactivement les critères d'évaluation d'une question.\n  - Possibilité de tester le barème sur un corrigé type (solutionnaire PDF) avec retour immédiat sur les critères et la notation suggérée.\n  - Remplacement direct et sécurisé des critères du barème en 1 clic.\n  - Interactive AI Rubric Assistant dialog to co-design and refine fine-grained evaluation criteria.\n  - Benchmark and test your rubric against a reference solution PDF before grading student copies.\n\n- **Export Sélectif des Copies / Selective Copy Export** :\n  - Export ciblé vers Excel, PDF et Portail Web pour une sélection de copies (via les cases à cocher de l'onglet Notation).\n  - Génération facilitée de rapports de rattrapage, de groupes spécifiques ou d'échantillons de contrôle.\n  - Export only selected copies to Excel, PDF, and Zero-Knowledge Web Portal.\n\n- **Performances & Raffinements / Performance & Visual Polish** :\n  - Réinitialisation instantanée et vectorisée des évaluations par question via Rust natif.\n  - Pied de page cliquable discret Gradaly • gradaly.io intégré aux PDF annotés et au portail de consultation web.\n  - Fast native vectorized grading reset and discreet gradaly.io links in exported assets.",
-  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.22",
+  "version": "1.0.23",
+  "name": "Gradaly v1.0.23",
+  "title": "Gradaly v1.0.23",
+  "published_at": "2026-10-08T18:00:00.000Z",
+  "notes": "### Nouveautés (v1.0.23) / What's New (v1.0.23)\n\n- **Compatibilité macOS Sonoma (Safari 17 / Apple Silicon & Intel)** :\n  - Correction de l'écran blanc au lancement causé par l'absence de l'objet global standard Iterator requis par le moteur PDF (pdfjs-dist).\n  - Fixed blank/white screen on startup for macOS Sonoma users due to missing global Iterator object required by pdfjs-dist.\n\n- **Robustesse & Tolérance aux Pannes** :\n  - Ajout d'un composant de secours ErrorBoundary React et d'une capture d'erreur globale dès le chargement HTML pour éliminer définitivement tout écran blanc muet.\n  - Added React ErrorBoundary and early HTML startup error handler with instant reload and error reporting actions.\n\n- **Rétro-compatibilité WebKit** :\n  - Ciblage explicite du bundle pour Safari 15+ / macOS 11+.\n  - Explicit bundle target for Safari 15+ / macOS 11+.",
+  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.23",
   "assets": {
-    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.22_universal.dmg",
-    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.22_x64-setup.exe",
-    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.22_amd64.AppImage",
-    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.22_aarch64.AppImage",
-    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.22_amd64.deb",
-    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.22_arm64.deb",
-    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.22-1.x86_64.rpm",
-    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.22-1.aarch64.rpm"
+    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.23_universal.dmg",
+    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.23_x64-setup.exe",
+    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.23_amd64.AppImage",
+    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.23_aarch64.AppImage",
+    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.23_amd64.deb",
+    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.23_arm64.deb",
+    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.23-1.x86_64.rpm",
+    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.23-1.aarch64.rpm"
   }
 }
