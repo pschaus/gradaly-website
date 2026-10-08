@@ -36,7 +36,7 @@ const translations = {
         
         carousel_slide2_badge: "Step 3: Questions & Rubric",
         carousel_slide2_title: "Frame Zones, Criteria & Fine-Grained Rubrics",
-        carousel_slide2_desc: "Draw bounding boxes over answer areas. Set maximum scores, create additive grading criteria (+0.5 pt, +1 pt...), and write AI prompt guidelines with live LaTeX preview.",
+        carousel_slide2_desc: "Draw bounding boxes over answer areas. Design fine-grained criteria (+0.5 pt, +1 pt...) with our interactive AI Rubric Assistant, test against a reference solution PDF, and customize guidelines.",
         
         carousel_slide3_badge: "Step 4: Student Roster",
         carousel_slide3_title: "Import Official Class Roster (CSV)",
@@ -56,7 +56,7 @@ const translations = {
         
         carousel_slide7_badge: "Step 8: Export or Adjust",
         carousel_slide7_title: "Export Excel, PDFs, Web Portal or Adjust Rubrics",
-        carousel_slide7_desc: "Satisfied with your marks? Export the official multi-sheet Excel gradebook, individual annotated student PDFs, or the AES-256 encrypted Student Web Portal. Or adjust rubrics freely!",
+        carousel_slide7_desc: "Satisfied with your marks? Export the official multi-sheet Excel gradebook, individual annotated student PDFs, or the AES-256 encrypted Student Web Portal (full cohort or selected copies). Or adjust rubrics freely!",
 
         // Guide / User Guide Section (8-Step Pipeline)
         guide_title: "Gradaly User Guide: The 8-Step Evaluation Pipeline",
@@ -268,7 +268,7 @@ const translations = {
         
         carousel_slide2_badge: "Étape 3 : Questions & Barèmes",
         carousel_slide2_title: "Tracer les zones, critères & barèmes",
-        carousel_slide2_desc: "Cadrez les zones de réponse sur le canevas. Fixez le score maximal, définissez vos critères fins (+0,5 pt, +1 pt...) et affinez vos consignes de correction avec rendu LaTeX en direct.",
+        carousel_slide2_desc: "Cadrez les zones de réponse sur le canevas. Co-construisez vos critères fins (+0,5 pt, +1 pt...) avec l'Assistant de barème interactif IA, testez-les sur un corrigé type et visualisez les formules en LaTeX.",
         
         carousel_slide3_badge: "Étape 4 : Importer les étudiants",
         carousel_slide3_title: "Importer la liste des étudiants (CSV)",
@@ -288,7 +288,7 @@ const translations = {
         
         carousel_slide7_badge: "Étape 8 : Exporter ou adapter",
         carousel_slide7_title: "Excel, PDF annotés, Portail Web ou ajustements",
-        carousel_slide7_desc: "Satisfait de vos notes ? Exportez en 1 clic le tableur Excel officiel, les copies annotées en PDF, ou le Portail Web Zéro-Knowledge chiffré en AES-256. Sinon, ajustez vos barèmes à volonté !",
+        carousel_slide7_desc: "Satisfait de vos notes ? Exportez en 1 clic le tableur Excel officiel, les copies annotées en PDF, ou le Portail Web Zéro-Knowledge chiffré en AES-256 (toute la classe ou sélection de copies). Sinon, ajustez vos barèmes à volonté !",
 
         // Guide / User Guide Section (Pipeline en 8 étapes)
         guide_title: "Guide d'utilisation de Gradaly : Le pipeline en 8 étapes",

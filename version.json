@@ -1,18 +1,18 @@
 {
-  "version": "1.0.21",
-  "name": "Gradaly v1.0.21",
-  "title": "Gradaly v1.0.21",
-  "published_at": "2026-09-30T08:45:00.000Z",
-  "notes": "### Nouveautés (v1.0.21) / What's New (v1.0.21)\n\n- **Offre Académique UCLouvain / UCLouvain Academic Program** :\n  - Nouveau système d'obtention de licence Pro sans carte bancaire pour les membres de l'UCLouvain (vérification par code OTP e-mail).\n  - Gestion automatique des quotas (1 licence par personne, plafond de 2 appareils enregistrés).\n  - Routage transparent des licences académiques (`UCL-PRO-...`) dans l'application avec maintien de la compatibilité Lemon Squeezy et mode hors-ligne préservé.\n  - New zero-credit-card academic Pro license flow for UCLouvain faculty via email OTP verification.\n  - Strict quota enforcement (1 license per person, 2 registered devices max) and seamless in-app activation.\n\n- **Performances & Ergonomie / Performance & Usability** :\n  - Optimisation du défilement des copies et pré-chargement en arrière-plan des copies adjacentes dans l'onglet Notation.\n  - Intégration d'un lien d'accès direct vers l'offre académique dans la modale de licence.\n  - Smooth copy scrolling and adjacent background pre-fetching in Grading tab.\n  - Direct shortcut link to the academic program inside the license modal.",
-  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.21",
+  "version": "1.0.22",
+  "name": "Gradaly v1.0.22",
+  "title": "Gradaly v1.0.22",
+  "published_at": "2026-10-08T14:00:00.000Z",
+  "notes": "### Nouveautés (v1.0.22) / What's New (v1.0.22)\n\n- **Assistant de Barème Interactif & Banc d'Essai / Interactive Rubric Assistant & Solution Testing** :\n  - Nouvel assistant conversationnel IA pour élaborer, challenger et affiner interactivement les critères d'évaluation d'une question.\n  - Possibilité de tester le barème sur un corrigé type (solutionnaire PDF) avec retour immédiat sur les critères et la notation suggérée.\n  - Remplacement direct et sécurisé des critères du barème en 1 clic.\n  - Interactive AI Rubric Assistant dialog to co-design and refine fine-grained evaluation criteria.\n  - Benchmark and test your rubric against a reference solution PDF before grading student copies.\n\n- **Export Sélectif des Copies / Selective Copy Export** :\n  - Export ciblé vers Excel, PDF et Portail Web pour une sélection de copies (via les cases à cocher de l'onglet Notation).\n  - Génération facilitée de rapports de rattrapage, de groupes spécifiques ou d'échantillons de contrôle.\n  - Export only selected copies to Excel, PDF, and Zero-Knowledge Web Portal.\n\n- **Performances & Raffinements / Performance & Visual Polish** :\n  - Réinitialisation instantanée et vectorisée des évaluations par question via Rust natif.\n  - Pied de page cliquable discret Gradaly • gradaly.io intégré aux PDF annotés et au portail de consultation web.\n  - Fast native vectorized grading reset and discreet gradaly.io links in exported assets.",
+  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.22",
   "assets": {
-    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.21_universal.dmg",
-    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.21_x64-setup.exe",
-    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.21_amd64.AppImage",
-    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.21_aarch64.AppImage",
-    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.21_amd64.deb",
-    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.21_arm64.deb",
-    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.21-1.x86_64.rpm",
-    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.21-1.aarch64.rpm"
+    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.22_universal.dmg",
+    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.22_x64-setup.exe",
+    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.22_amd64.AppImage",
+    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.22_aarch64.AppImage",
+    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.22_amd64.deb",
+    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.22_arm64.deb",
+    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.22-1.x86_64.rpm",
+    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.22-1.aarch64.rpm"
   }
 }
