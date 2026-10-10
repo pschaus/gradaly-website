@@ -1,18 +1,18 @@
 {
-  "version": "1.0.24",
-  "name": "Gradaly v1.0.24",
-  "title": "Gradaly v1.0.24",
-  "published_at": "2026-10-10T09:00:00.000Z",
-  "notes": "### Nouveautés (v1.0.24) / What's New (v1.0.24)\n\n- **Estimation dynamique du temps restant / Dynamic Remaining Time Estimation** :\n  - Affichage en direct du temps restant estimé et de la durée écoulée lors de la correction IA par lots.\n  - Live display of estimated remaining time and elapsed duration during batch AI grading.\n\n- **Rendu haute fidélité des formules mathématiques LaTeX / LaTeX Math Fonts High-Fidelity Rendering** :\n  - Intégration des polyfills ECMAScript (Math.sumPrecise, Uint8Array, Set, Iterator helpers) assurant la compilation et l'affichage parfaits des polices mathématiques Type 1 / CFF dans PDF.js.\n  - Integrated ECMAScript polyfills ensuring flawless compilation and rendering of Type 1 / CFF LaTeX mathematical fonts in PDF.js.\n\n- **Compatibilité étendue macOS Sonoma / Extended macOS Sonoma Compatibility** :\n  - Résolution de l'écran blanc au démarrage sur macOS Sonoma (Safari 17) via le polyfill global Iterator.\n  - Fixed blank screen on startup for macOS Sonoma (Safari 17) via global Iterator polyfill.",
-  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.24",
+  "version": "1.0.25",
+  "name": "Gradaly v1.0.25",
+  "title": "Gradaly v1.0.25",
+  "published_at": "2026-10-11T00:00:00.000Z",
+  "notes": "### Améliorations de l'interface et de la Correction IA / UI & AI Grading Enhancements (v1.0.25)\n\n- **Tri chronologique des questions / Chronological Question Ordering** :\n  - Les questions sont désormais ordonnées par page et position verticale dans la modale d'évaluation IA et la navigation.\n  - Questions are now ordered by page and vertical position in the AI evaluation modal and navigation.\n\n- **Bouton Question active seule / Active Question Only Button** :\n  - Coche automatiquement la question ouverte en un clic dans la modale IA.\n  - Automatically selects the currently opened question with a single click in the AI modal.\n\n- **Sélecteur de portée / Scope Selector** :\n  - Choix direct entre l'évaluation de toutes les copies cochées ou uniquement de la copie active affichée.\n  - Direct selection between grading all checked copies or only the currently active displayed copy.\n\n- **Remplacement complet par défaut / Full Replacement by Default** :\n  - L'évaluation IA remplace intégralement les critères et feedbacks sans blocage silencieux.\n  - AI evaluation completely replaces criteria and feedback by default without silent blocking.",
+  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.25",
   "assets": {
-    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.24_universal.dmg",
-    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.24_x64-setup.exe",
-    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.24_amd64.AppImage",
-    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.24_aarch64.AppImage",
-    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.24_amd64.deb",
-    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.24_arm64.deb",
-    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.24-1.x86_64.rpm",
-    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.24-1.aarch64.rpm"
+    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.25_universal.dmg",
+    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.25_x64-setup.exe",
+    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.25_amd64.AppImage",
+    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.25_aarch64.AppImage",
+    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.25_amd64.deb",
+    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.25_arm64.deb",
+    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.25-1.x86_64.rpm",
+    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.25-1.aarch64.rpm"
   }
 }
