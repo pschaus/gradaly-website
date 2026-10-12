@@ -1,18 +1,18 @@
 {
-  "version": "1.0.25",
-  "name": "Gradaly v1.0.25",
-  "title": "Gradaly v1.0.25",
-  "published_at": "2026-10-11T00:00:00.000Z",
-  "notes": "### Améliorations de l'interface et de la Correction IA / UI & AI Grading Enhancements (v1.0.25)\n\n- **Tri chronologique des questions / Chronological Question Ordering** :\n  - Les questions sont désormais ordonnées par page et position verticale dans la modale d'évaluation IA et la navigation.\n  - Questions are now ordered by page and vertical position in the AI evaluation modal and navigation.\n\n- **Bouton Question active seule / Active Question Only Button** :\n  - Coche automatiquement la question ouverte en un clic dans la modale IA.\n  - Automatically selects the currently opened question with a single click in the AI modal.\n\n- **Sélecteur de portée / Scope Selector** :\n  - Choix direct entre l'évaluation de toutes les copies cochées ou uniquement de la copie active affichée.\n  - Direct selection between grading all checked copies or only the currently active displayed copy.\n\n- **Remplacement complet par défaut / Full Replacement by Default** :\n  - L'évaluation IA remplace intégralement les critères et feedbacks sans blocage silencieux.\n  - AI evaluation completely replaces criteria and feedback by default without silent blocking.",
-  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.25",
+  "version": "1.0.26",
+  "name": "Gradaly v1.0.26",
+  "title": "Gradaly v1.0.26",
+  "published_at": "2026-10-12T21:30:00.000Z",
+  "notes": "### Performance & Exportations Multi-cœurs / Multi-Core Export Performance (v1.0.26)\n\n- **Parallélisation dynamique de tous les exports / Dynamic Multi-core Parallelization** :\n  - Les exports PDF par lot, le portail web étudiant chiffré (AES-256-GCM) et le portail d'analyse enseignant s'adaptent désormais automatiquement au nombre de cœurs processeur de la machine pour des exports ultra-rapides.\n  - Batch PDF exports, the encrypted student web portal (AES-256-GCM), and the teacher review portal now dynamically scale across CPU cores for ultra-fast exports.\n\n- **Optimisation du rendu graphique / Targeted Page Rendering** :\n  - Rendu sélectif des seules pages contenant des questions d'examen et libération immédiate de la mémoire pour éliminer les ralentissements.\n  - Selective rendering restricted to exam pages containing questions and immediate memory reclamation to eliminate lag.\n\n- **Portail web d'analyse et consultation / Teacher Review & Analysis Web Portal** :\n  - Nouveau portail web statique autonome non chiffré permettant à l'équipe pédagogique de rechercher, naviguer fluidement entre les copies et analyser les statistiques et histogrammes de la classe.\n  - New unencrypted static web portal allowing the teaching staff to search, fluidly navigate student copies, and analyze class statistics and histograms.",
+  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.26",
   "assets": {
-    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.25_universal.dmg",
-    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.25_x64-setup.exe",
-    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.25_amd64.AppImage",
-    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.25_aarch64.AppImage",
-    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.25_amd64.deb",
-    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.25_arm64.deb",
-    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.25-1.x86_64.rpm",
-    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.25-1.aarch64.rpm"
+    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.26_universal.dmg",
+    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.26_x64-setup.exe",
+    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.26_amd64.AppImage",
+    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.26_aarch64.AppImage",
+    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.26_amd64.deb",
+    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.26_arm64.deb",
+    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.26-1.x86_64.rpm",
+    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.26-1.aarch64.rpm"
   }
 }
