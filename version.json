@@ -1,18 +1,18 @@
 {
-  "version": "1.0.27",
-  "name": "Gradaly v1.0.27",
-  "title": "Gradaly v1.0.27",
-  "published_at": "2026-10-13T08:25:00.000Z",
-  "notes": "### Assistant Barème & Modernisation Gemini / Rubric Assistant & Gemini Migration (v1.0.27)\n\n- **Glisser-déposer de PDF dans l'aide au barème / Drag-and-Drop PDF in Rubric Assistant** :\n  - Possibilité de glisser-déposer directement un document PDF ou des images dans le dialogue d'aide au barème IA.\n  - Conversion haute définition des pages pour une analyse visuelle et contextuelle instantanée par l'IA.\n  - Drag-and-drop PDF documents or images directly into the AI rubric chat dialog with high-resolution page rendering.\n\n- **Modernisation API Gemini 3+ / Gemini 3+ API Modernization** :\n  - Migration vers `thinking_level` sémantique pour une meilleure rigueur de notation et suppression des paramètres d'échantillonnage obsolètes.\n  - Migration to semantic `thinking_level` for enhanced evaluation reasoning and complete removal of deprecated sampling parameters.",
-  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v1.0.27",
+  "version": "2.0.0",
+  "name": "Gradaly v2.0.0",
+  "title": "Gradaly v2.0.0",
+  "published_at": "2026-10-13T12:00:00.000Z",
+  "notes": "### Portail Web Zero-Knowledge, Fiches QR & Notifications E-mail / Zero-Knowledge Web Portal, QR Access Slips & Email Notifications (v2.0.0)\n\n- **Portail d'évaluation Web Zero-Knowledge & Hébergement Cloud / Zero-Knowledge Web Portal & Cloud Hosting** :\n  - Publication sécurisée des copies d'examen corrigées sur le portail web chiffré de bout en bout (Zero-Knowledge).\n  - Les clés de déchiffrement restent exclusivement dans le fragment d'URL (#k=...) côté étudiant : aucune donnée personnelle n'est lisible par le serveur.\n  - End-to-end encrypted student exam copies on the web portal. Decryption keys remain strictly in the URL hash fragment (#k=...) client-side.\n\n- **Envoi automatisé des liens par e-mail / Automated Email Notifications** :\n  - Notification directe et élégante des étudiants avec leur note et leur lien magique personnalisé.\n  - Direct student notification emails featuring final scores and personal magic links.\n\n- **Fiches d'accès individuelles avec QR Code / Printable QR Code Access Slips** :\n  - Génération de planches A4 de fiches à découper (jusqu'à 16 élèves par page) pour les établissements ou classes sans adresse e-mail.\n  - Printable cut-out A4 slips with individual QR codes for classes and schools without student emails.\n\n- **Consultation directe enseignant / Direct Teacher Consultation Links** :\n  - Liens directs vers les copies publiées depuis le tableau de notation et la modale d'export.\n  - One-click direct review links accessible right from the grading dashboard and export modal.",
+  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v2.0.0",
   "assets": {
-    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.27_universal.dmg",
-    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.27_x64-setup.exe",
-    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.27_amd64.AppImage",
-    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.27_aarch64.AppImage",
-    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.27_amd64.deb",
-    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_1.0.27_arm64.deb",
-    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.27-1.x86_64.rpm",
-    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-1.0.27-1.aarch64.rpm"
+    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.0.0_universal.dmg",
+    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.0.0_x64-setup.exe",
+    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.0.0_amd64.AppImage",
+    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.0.0_aarch64.AppImage",
+    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.0.0_amd64.deb",
+    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.0.0_arm64.deb",
+    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-2.0.0-1.x86_64.rpm",
+    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-2.0.0-1.aarch64.rpm"
   }
 }
