@@ -156,7 +156,7 @@
 
                         <!-- Slide 2: Step 3 - Questions, Zones & Rubrics -->
                         <div x-show="slide === 2" x-transition.opacity.duration.600ms class="flex flex-col" style="grid-area: 1 / 1;">
-                            <img src="03_questions_rubric.png" alt="Définir questions, zones et barèmes" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
+                            <img src="ai_assistant_criteria.png" alt="Assistant IA de création de barème avec corrigé type" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
                             <div class="px-6 sm:px-8 pb-8 pt-5 bg-cyan-50/50 rounded-b-xl border-t border-cyan-100 text-left">
                                 <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-100 text-cyan-800 mb-1" x-text="t.carousel_slide2_badge"></span>
                                 <h3 class="text-xl sm:text-2xl font-bold text-cyan-950 mb-1" x-text="t.carousel_slide2_title"></h3>
@@ -206,7 +206,7 @@
 
                         <!-- Slide 7: Step 8 - Export Results or Adjust -->
                         <div x-show="slide === 7" x-transition.opacity.duration.600ms class="flex flex-col" style="grid-area: 1 / 1;">
-                            <img src="08_export_hub.png" alt="Exporter les résultats (Excel, PDF, Portail Web) ou adapter" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
+                            <img src="web_portal_hosted.png" alt="Portail Web en ligne chiffré et fiches QR" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
                             <div class="px-6 sm:px-8 pb-8 pt-5 bg-amber-50/50 rounded-b-xl border-t border-amber-100 text-left">
                                 <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-800 mb-1" x-text="t.carousel_slide7_badge"></span>
                                 <h3 class="text-xl sm:text-2xl font-bold text-amber-950 mb-1" x-text="t.carousel_slide7_title"></h3>
@@ -664,9 +664,26 @@
 
             </div>
 
-            <!-- In-App Web Export Modal Preview -->
-            <div class="mb-14 rounded-2xl border border-slate-200 shadow-xl overflow-hidden bg-white p-2">
-                <img src="08_web_export_modal.png" alt="Dialogue de génération du Portail Web Zéro-Knowledge dans Gradaly" class="rounded-xl w-full">
+            <!-- 3 Showcase Previews: Web Portal, Email Notification & QR Code Slips -->
+            <div class="mb-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-2xl border border-slate-200 shadow-xl overflow-hidden bg-white p-2.5 flex flex-col justify-between">
+                    <img src="web_portal_hosted.png" alt="Portail Web en ligne sécurisé" class="rounded-xl w-full h-[220px] object-cover object-top border border-slate-100 shadow-xs">
+                    <div class="pt-3 pb-1 text-center">
+                        <span class="text-xs font-bold text-indigo-700 uppercase tracking-wider" x-text="t.portal_shot_web"></span>
+                    </div>
+                </div>
+                <div class="rounded-2xl border border-slate-200 shadow-xl overflow-hidden bg-white p-2.5 flex flex-col justify-between">
+                    <img src="mail_gradaly.png" alt="Notification e-mail automatique" class="rounded-xl w-full h-[220px] object-cover object-top border border-slate-100 shadow-xs">
+                    <div class="pt-3 pb-1 text-center">
+                        <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider" x-text="t.portal_shot_mail"></span>
+                    </div>
+                </div>
+                <div class="rounded-2xl border border-slate-200 shadow-xl overflow-hidden bg-white p-2.5 flex flex-col justify-between">
+                    <img src="QR_code_ready_to_print.png" alt="Fiches QR découpables prêtes à imprimer" class="rounded-xl w-full h-[220px] object-cover object-top border border-slate-100 shadow-xs">
+                    <div class="pt-3 pb-1 text-center">
+                        <span class="text-xs font-bold text-amber-700 uppercase tracking-wider" x-text="t.portal_shot_qr"></span>
+                    </div>
+                </div>
             </div>
 
             <!-- Interactive Live Demo Callout Box -->
