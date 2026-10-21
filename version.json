@@ -1,18 +1,18 @@
 {
-  "version": "2.1.1",
-  "name": "Gradaly v2.1.1",
-  "title": "Gradaly v2.1.1",
-  "published_at": "2026-10-19T18:10:00.000Z",
-  "notes": "### 🚀 Highlights & Improvements (v2.1.1)\n\n- **Ultra-Lightweight 100% Vector PDF Grading Reports & Math**: Grading report pages (summary cover page, evaluation cards, rubrics, justifications, feedback, and LaTeX mathematical formulas) are now generated as native PDF vector text and vector Bézier curves instead of rasterized images across all PDF and Web export modes, reducing report page size by over 98% while delivering razor-sharp print and zoom quality.\n- **Faster Web Portal Publishing & Instant Cancellation**: Reuses compressed scan pages for heavy multi-megabyte exam scans during Web Portal publishing, adds intra-copy cancellation with immediate HTTP abort when clicking \"Cancel\", and saves publishing progress incrementally.\n- **Anthropic Model List Cleanup**: Removed retired Claude 3.5 Haiku, Claude 3.7 Sonnet, and Claude Sonnet 4 fallback identifiers in favor of Claude Sonnet 4.6, Claude Opus 4.6, and Claude Haiku 4.5.",
-  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v2.1.1",
+  "version": "2.1.2",
+  "name": "Gradaly v2.1.2",
+  "title": "Gradaly v2.1.2",
+  "published_at": "2026-10-21T16:05:00.000Z",
+  "notes": "### 🚀 Highlights & Improvements (v2.1.2)\n\n- **Vertical Multi-Page Web Viewer**: Upgraded student web exports, online portal copies, and teacher review portals to display all copy pages stacked vertically (just like the Grading tab), supporting questions that span multiple pages with accurate per-page bounding box overlays and smooth auto-scrolling.\n- **Bounding Box Normalization Fix**: Fixed an issue where question zones defined in PDF coordinates were not displayed in web exports.\n- **External Links & Document Opening Fix**: Fixed the \"View this copy online\" and \"Open document\" buttons across macOS, Windows, and Linux.\n- **UI Wording Simplification**: Replaced technical \"Zero-Knowledge\" terminology with clearer \"End-to-End Encryption\" phrasing across the interface.",
+  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v2.1.2",
   "assets": {
-    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.1_universal.dmg",
-    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.1_x64-setup.exe",
-    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.1_amd64.AppImage",
-    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.1_aarch64.AppImage",
-    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.1_amd64.deb",
-    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.1_arm64.deb",
-    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-2.1.1-1.x86_64.rpm",
-    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-2.1.1-1.aarch64.rpm"
+    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.2_universal.dmg",
+    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.2_x64-setup.exe",
+    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.2_amd64.AppImage",
+    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.2_aarch64.AppImage",
+    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.2_amd64.deb",
+    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.2_arm64.deb",
+    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-2.1.2-1.x86_64.rpm",
+    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-2.1.2-1.aarch64.rpm"
   }
 }

@@ -1,5 +1,5 @@
 /**
- * Gradaly Zero-Knowledge Student Web Viewer
+ * Gradaly Student Web Viewer
  * Client-side in-memory decryption using Web Crypto API (AES-256-GCM)
  * Detailed Interactive Question-by-Question & Summary Consultation
  * 100% Offline & Online compatible (file:// and http(s)://)
@@ -107,14 +107,45 @@
   let currentZoom = 1.0;
   let isShowingFullPdf = false; // toggle between interactive page image vs full PDF iframe
   let currentActiveCopyPage = null; // null defaults to question primary page
+  let renderedStageDocId = null;
+
+  function normalizeZoneBbox(bbox, bbox_rel) {
+    if (Array.isArray(bbox_rel) && bbox_rel.length === 4 && bbox_rel[2] > bbox_rel[0] && bbox_rel[3] > bbox_rel[1]) {
+      return bbox_rel;
+    }
+    if (!Array.isArray(bbox) || bbox.length !== 4) return null;
+    const x1 = bbox[0], y1 = bbox[1], x2 = bbox[2], y2 = bbox[3];
+    if (x1 >= 0 && y1 >= 0 && x2 <= 1.05 && y2 <= 1.05 && x2 > x1 && y2 > y1) {
+      return [x1, y1, Math.min(1, x2), Math.min(1, y2)];
+    }
+    const pw = 595.276, ph = 841.890;
+    const nx1 = Math.max(0, Math.min(1, x1 / pw));
+    const ny1 = Math.max(0, Math.min(1, y1 / ph));
+    const nx2 = Math.max(0, Math.min(1, x2 / pw));
+    const ny2 = Math.max(0, Math.min(1, y2 / ph));
+    if (nx2 > nx1 && ny2 > ny1) {
+      return [nx1, ny1, nx2, ny2];
+    }
+    return null;
+  }
 
   function getQuestionZonesList(qObj) {
     if (!qObj) return [];
+    const fallbackRel = normalizeZoneBbox(qObj.bbox, qObj.bbox_rel);
     if (Array.isArray(qObj.zones) && qObj.zones.length > 0) {
-      return qObj.zones;
+      const mapped = [];
+      qObj.zones.forEach(function (z, idx) {
+        const p = typeof z.page === 'number' ? z.page : (typeof qObj.page === 'number' ? qObj.page : 0);
+        let rel = normalizeZoneBbox(z.bbox, z.bbox_rel);
+        if (!rel && idx === 0 && fallbackRel) {
+          rel = fallbackRel;
+        }
+        mapped.push({ page: p, bbox_rel: rel });
+      });
+      return mapped;
     }
-    if (Array.isArray(qObj.bbox_rel) && qObj.bbox_rel.length === 4) {
-      return [{ page: typeof qObj.page === 'number' ? qObj.page : 0, bbox_rel: qObj.bbox_rel }];
+    if (fallbackRel) {
+      return [{ page: typeof qObj.page === 'number' ? qObj.page : 0, bbox_rel: fallbackRel }];
     }
     return [];
   }
@@ -127,8 +158,13 @@
    * This completely bypasses CORS restrictions when opening via file://.
    */
   function loadEncryptedData(docId) {
+    var examId = getQueryParam('e') || getQueryParam('exam');
+    var fetchUrl = examId
+      ? 'data/' + encodeURIComponent(examId) + '/' + encodeURIComponent(docId) + '.enc'
+      : 'data/' + encodeURIComponent(docId) + '.enc';
+
     if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
-      return fetch('data/' + encodeURIComponent(docId) + '.enc')
+      return fetch(fetchUrl)
         .then(function (res) {
           if (!res.ok) throw new Error('HTTP code ' + res.status);
           return res.arrayBuffer();
@@ -337,7 +373,9 @@
     // 3. Setup Question Navigation Pills
     setupQuestionPills(data.questions || []);
 
-    // 4. Render initial question in Detailed View
+    // 4. Build vertical stack of copy pages & render initial question
+    renderedStageDocId = null;
+    buildCopyPagesStack(data.pages || []);
     activeQuestionIndex = 0;
     renderActiveQuestion();
 
@@ -346,6 +384,18 @@
 
     // Apply default mode
     setMode('detailed');
+
+    // 6. Update footer text if English
+    if (data && data.lang === 'en') {
+      const securityEl = document.getElementById('footer-security-text');
+      if (securityEl) {
+        securityEl.innerHTML = '🔒 <strong>End-to-End Encryption</strong>: The document was decrypted exclusively in your browser\'s memory using the native Web Crypto API (AES-256-GCM). The hosting server stores only encrypted fragments and has no access key.';
+      }
+      const brandTextEl = document.getElementById('footer-brand-text');
+      if (brandTextEl) {
+        brandTextEl.innerHTML = 'Generated with <a href="https://gradaly.io" target="_blank" rel="noopener noreferrer" class="footer-brand-link">Gradaly</a>';
+      }
+    }
   }
 
   function setupQuestionPills(questions) {
@@ -556,15 +606,59 @@
       '</div>';
   }
 
+  function buildCopyPagesStack(pages) {
+    const copyStage = document.getElementById('copy-stage');
+    if (!copyStage) return;
+    const stageKey = (currentDocId || 'doc') + ':' + pages.length;
+    if (renderedStageDocId === stageKey && copyStage.querySelectorAll('.copy-page-card').length > 0) {
+      return;
+    }
+    renderedStageDocId = stageKey;
+    copyStage.innerHTML = '';
+
+    const totalPages = pages.length || 1;
+    pages.forEach(function (pageDataUrl, pIdx) {
+      if (!pageDataUrl) return;
+      const pageCard = document.createElement('div');
+      pageCard.className = 'copy-page-card';
+      pageCard.id = 'copy-page-card-' + pIdx;
+      pageCard.setAttribute('data-page-index', String(pIdx));
+
+      const pageBadge = document.createElement('div');
+      pageBadge.className = 'copy-page-number-badge';
+      pageBadge.textContent = 'Page ' + (pIdx + 1) + ' / ' + totalPages;
+      pageCard.appendChild(pageBadge);
+
+      const pageInner = document.createElement('div');
+      pageInner.className = 'copy-page-inner';
+
+      const img = document.createElement('img');
+      img.className = 'copy-img';
+      img.id = 'copy-image-' + pIdx;
+      img.src = pageDataUrl;
+      img.alt = 'Copie page ' + (pIdx + 1);
+      img.draggable = false;
+      pageInner.appendChild(img);
+
+      const overlaysLayer = document.createElement('div');
+      overlaysLayer.className = 'overlays-layer';
+      overlaysLayer.id = 'overlays-layer-' + pIdx;
+      pageInner.appendChild(overlaysLayer);
+
+      pageCard.appendChild(pageInner);
+      copyStage.appendChild(pageCard);
+    });
+  }
+
   function renderCopyPageAndOverlay(q) {
     const pages = currentData.pages || [];
-    const copyImage = document.getElementById('copy-image');
-    const overlaysLayer = document.getElementById('overlays-layer');
+    const copyStage = document.getElementById('copy-stage');
     const pageLabel = document.getElementById('current-page-label');
     const bboxIndicator = document.getElementById('bbox-indicator');
     const copyViewport = document.getElementById('copy-viewport');
 
-    if (!copyImage || !overlaysLayer) return;
+    if (!copyStage) return;
+    buildCopyPagesStack(pages);
 
     const activeZones = getQuestionZonesList(q);
     const primaryPage = activeZones.length > 0 && typeof activeZones[0].page === 'number'
@@ -572,41 +666,51 @@
       : (typeof q.page === 'number' ? q.page : 0);
 
     const targetPage = typeof currentActiveCopyPage === 'number' ? currentActiveCopyPage : primaryPage;
-    const pageDataUrl = pages[targetPage] || pages[0] || '';
+
+    // Deduplicate pages for active question pills
+    const uniqueActivePages = [];
+    activeZones.forEach(function (z) {
+      if (typeof z.page === 'number' && uniqueActivePages.indexOf(z.page) === -1) {
+        uniqueActivePages.push(z.page);
+      }
+    });
+    if (uniqueActivePages.length === 0) {
+      uniqueActivePages.push(primaryPage);
+    }
 
     if (pageLabel) {
-      if (activeZones.length > 1) {
-        let pageBtnsHtml = '<span class="toolbar-label">Page :</span> ';
-        activeZones.forEach(function (z) {
-          const isCur = z.page === targetPage;
-          pageBtnsHtml += '<button type="button" class="btn-page-pill ' + (isCur ? 'active' : '') + '" onclick="window.setCopyPage(' + z.page + ')" style="padding: 2px 7px; margin-left: 4px; border-radius: 4px; font-size: 11px; font-weight: 700; cursor: pointer; border: 1px solid ' + (isCur ? 'var(--primary)' : 'var(--slate-300)') + '; background: ' + (isCur ? 'var(--primary)' : '#ffffff') + '; color: ' + (isCur ? '#ffffff' : 'var(--slate-700)') + ';">p. ' + (z.page + 1) + '</button>';
+      if (uniqueActivePages.length > 1) {
+        let pageBtnsHtml = '<span class="toolbar-label">Pages :</span> ';
+        uniqueActivePages.forEach(function (pIdx) {
+          const isCur = pIdx === targetPage;
+          pageBtnsHtml += '<button type="button" class="btn-page-pill ' + (isCur ? 'active' : '') + '" onclick="window.setCopyPage(' + pIdx + ')" style="padding: 2px 7px; margin-left: 4px; border-radius: 4px; font-size: 11px; font-weight: 700; cursor: pointer; border: 1px solid ' + (isCur ? 'var(--primary)' : 'var(--slate-300)') + '; background: ' + (isCur ? 'var(--primary)' : '#ffffff') + '; color: ' + (isCur ? '#ffffff' : 'var(--slate-700)') + ';">p. ' + (pIdx + 1) + '</button>';
         });
-        pageBtnsHtml += ' <span style="font-size: 11px; color: var(--slate-400); margin-left: 6px;">(' + (targetPage + 1) + '/' + pages.length + ')</span>';
+        pageBtnsHtml += ' <span style="font-size: 11px; color: var(--slate-400); margin-left: 6px;">(' + (pages.length || 1) + ' pages)</span>';
         pageLabel.innerHTML = pageBtnsHtml;
       } else {
         pageLabel.textContent = 'Page ' + (targetPage + 1) + ' / ' + (pages.length || 1);
       }
     }
 
-    // Set page image
-    if (pageDataUrl && copyImage.src !== pageDataUrl) {
-      copyImage.src = pageDataUrl;
-    }
-
-    // Clear previous overlays
-    overlaysLayer.innerHTML = '';
+    // Clear previous overlays across all pages
+    const allLayers = copyStage.querySelectorAll('.overlays-layer');
+    allLayers.forEach(function (layer) {
+      layer.innerHTML = '';
+    });
 
     const questions = currentData.questions || [];
     let hasTargetBbox = false;
-    let targetBboxEl = null;
+    let targetScrollEl = null;
 
-    // Draw bounding boxes for all questions/zones on this page
+    // Draw bounding boxes for all questions/zones across all pages
     questions.forEach(function (otherQ, otherIdx) {
       const otherZones = getQuestionZonesList(otherQ);
       const isActive = otherIdx === activeQuestionIndex;
 
-      otherZones.forEach(function (z) {
-        if (z.page !== targetPage || !z.bbox_rel || z.bbox_rel.length !== 4) return;
+      otherZones.forEach(function (z, zIdx) {
+        const zPage = typeof z.page === 'number' ? z.page : 0;
+        const pageLayer = document.getElementById('overlays-layer-' + zPage);
+        if (!pageLayer || !z.bbox_rel || z.bbox_rel.length !== 4) return;
         const bbox = z.bbox_rel; // [x1, y1, x2, y2]
 
         const boxDiv = document.createElement('div');
@@ -618,11 +722,18 @@
 
         if (isActive) {
           hasTargetBbox = true;
-          targetBboxEl = boxDiv;
+          if (!targetScrollEl || zPage === targetPage) {
+            if (!targetScrollEl || (zPage === targetPage && targetScrollEl.getAttribute('data-zone-page') !== String(targetPage))) {
+              targetScrollEl = boxDiv;
+              boxDiv.setAttribute('data-zone-page', String(zPage));
+            }
+          }
           const scoreStr = typeof otherQ.score === 'number' && typeof otherQ.maxScore === 'number'
             ? ' — ' + Number(otherQ.score.toFixed(1)) + '/' + Number(otherQ.maxScore.toFixed(1)) + ' pts'
             : '';
-          const multiTag = activeZones.length > 1 ? ' (p. ' + (targetPage + 1) + ')' : '';
+          const multiTag = otherZones.length > 1
+            ? ' (' + (zIdx + 1) + '/' + otherZones.length + ' • p. ' + (zPage + 1) + ')'
+            : '';
           boxDiv.innerHTML = '<div class="bbox-badge">Q' + (otherIdx + 1) + multiTag + scoreStr + '</div>';
         } else {
           boxDiv.title = (otherQ.title || ('Question ' + (otherIdx + 1))) + ' (Cliquer pour ouvrir)';
@@ -631,29 +742,48 @@
           });
         }
 
-        overlaysLayer.appendChild(boxDiv);
+        pageLayer.appendChild(boxDiv);
       });
     });
 
     if (bboxIndicator) {
       bboxIndicator.style.display = hasTargetBbox ? 'inline-block' : 'none';
       if (hasTargetBbox) {
-        const multiTag = activeZones.length > 1 ? ' (page ' + (targetPage + 1) + ')' : '';
+        const multiTag = uniqueActivePages.length > 1
+          ? ' (pages ' + uniqueActivePages.map(function (p) { return p + 1; }).join(', ') + ')'
+          : ' (page ' + (targetPage + 1) + ')';
         bboxIndicator.textContent = 'Zone ciblée Q' + (activeQuestionIndex + 1) + multiTag;
       }
     }
 
-    // Auto-scroll to center the bounding box in the copy viewport
-    if (targetBboxEl && copyViewport) {
-      setTimeout(function () {
+    if (!targetScrollEl) {
+      targetScrollEl = document.getElementById('copy-page-card-' + targetPage);
+    }
+
+    // Auto-scroll to center the active bounding box (or page card) in the vertical copy viewport
+    if (targetScrollEl && copyViewport) {
+      const performScroll = function () {
         const viewportRect = copyViewport.getBoundingClientRect();
-        const bboxRect = targetBboxEl.getBoundingClientRect();
-        const targetScrollTop = copyViewport.scrollTop + (bboxRect.top - viewportRect.top) - (viewportRect.height / 2) + (bboxRect.height / 2);
+        const elRect = targetScrollEl.getBoundingClientRect();
+        if (viewportRect.height <= 0 || elRect.height <= 0) return;
+        const offsetInViewport = elRect.top - viewportRect.top;
+        const desiredOffset = elRect.height < viewportRect.height * 0.75
+          ? (viewportRect.height - elRect.height) / 2
+          : 28;
+        const targetScrollTop = copyViewport.scrollTop + offsetInViewport - desiredOffset;
         copyViewport.scrollTo({
           top: Math.max(0, targetScrollTop),
           behavior: 'smooth',
         });
-      }, 80);
+      };
+
+      setTimeout(performScroll, 60);
+      const targetImg = document.getElementById('copy-image-' + targetPage);
+      if (targetImg && !targetImg.complete) {
+        targetImg.addEventListener('load', function () {
+          setTimeout(performScroll, 30);
+        }, { once: true });
+      }
     }
   }
 
