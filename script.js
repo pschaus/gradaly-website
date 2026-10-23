@@ -69,6 +69,8 @@ const translations = {
         guide_step1_item1_desc: "Create an isolated workspace folder with automatic version migration and history.",
         guide_step1_item2_title: "Instant Demos:",
         guide_step1_item2_desc: "Load complete French or English demo projects with 20 real student copies in 1 click.",
+        guide_step1_item3_title: "Collaborative Sharing & Selective Merge:",
+        guide_step1_item3_desc: "Share full or partial projects via .gradaly archives or end-to-end encrypted Cloud links, and merge rubrics or gradings question-by-question with automatic backups.",
 
         guide_step2_tag: "Step 2",
         guide_step2_title: "Import Exam Canvas PDF",
@@ -137,6 +139,11 @@ const translations = {
         guide_step8_item3_desc: "Publish online directly or export a static site encrypted with AES-256-GCM (all data online is encrypted). Dispatch individual emails with 1-click magic links or print cut-out QR slips for secondary classes.",
         guide_step8_item4_title: "Dynamic Rubric Adjustment:",
         guide_step8_item4_desc: "Not satisfied with the curve? Adjust criterion points and weights: all student scores recalculate dynamically!",
+
+        // Collaborative & Privacy Callouts
+        collab_banner_title: "Collaborative Team Grading & Encrypted Project Sharing",
+        collab_banner_badge: "New in v3.0",
+        collab_banner_desc: "Co-grade exams seamlessly with colleagues or teaching assistants. Export a lightweight .gradaly archive or generate an end-to-end encrypted (AES-256-GCM) Cloud share link where the secret key (#k=...) stays strictly in the link. Recipients can import it as a new project or selectively merge rubrics and gradings question-by-question with SHA-256 canvas verification and automatic backup.",
 
         // Privacy Callout
         privacy_banner_title: "Local Architecture & Student Anonymity",
@@ -221,6 +228,7 @@ const translations = {
         plan_free_f3: "100% offline student OCR & matching",
         plan_free_f4: "Live grading console & human control",
         plan_free_f5: "Cohort analytics & score histograms",
+        plan_free_f7: "Collaborative project sharing (.gradaly & encrypted Cloud links) + selective merge",
         plan_free_f6: "Evaluation exports (1-copy test for Excel, PDF and Web portal)",
         plan_free_btn: "Download for Free",
         plan_pro_name: "Gradaly Pro",
@@ -304,6 +312,8 @@ const translations = {
         guide_step1_item1_desc: "Créez un dossier de travail dédié avec migration automatique des versions et historique.",
         guide_step1_item2_title: "Projets de démonstration :",
         guide_step1_item2_desc: "Chargez en 1 clic un projet démo complet (en français ou en anglais) avec 20 copies corrigées.",
+        guide_step1_item3_title: "Partage collaboratif & Fusion sélective :",
+        guide_step1_item3_desc: "Partagez tout ou partie d'un projet par fichier .gradaly ou lien Cloud chiffré de bout en bout, et fusionnez barèmes ou corrections question par question avec sauvegarde automatique.",
 
         guide_step2_tag: "Étape 2",
         guide_step2_title: "Importation du Canevas d'Examen",
@@ -372,6 +382,11 @@ const translations = {
         guide_step8_item3_desc: "Publication directe en ligne ou dossier statique chiffré en AES-256-GCM (tout ce qui est en ligne est crypté). Envoi d'e-mails individuels avec liens magiques ou planches de QR codes découpables prêtes à imprimer pour la classe.",
         guide_step8_item4_title: "Ajustement & simulation libre :",
         guide_step8_item4_desc: "Pas satisfait de la répartition ? Ajustez barèmes et critères : toutes les notes se recalculent instantanément !",
+
+        // Collaborative & Privacy Callouts
+        collab_banner_title: "Correction Collaborative en Équipe & Partage Cloud Chiffré",
+        collab_banner_badge: "Nouveau en v3.0",
+        collab_banner_desc: "Répartissez facilement la correction d'un examen entre collègues ou assistants. Exportez une archive .gradaly légère ou générez un lien Cloud chiffré de bout en bout (AES-256-GCM) où la clé secrète (#k=...) ne figure que dans le lien. Vos collègues peuvent l'importer comme nouveau projet ou fusionner sélectivement le barème et les corrections question par question avec vérification d'empreinte SHA-256 du canevas et sauvegarde automatique.",
 
         // Privacy Callout
         privacy_banner_title: "Architecture locale & Anonymat des étudiants",
@@ -456,6 +471,7 @@ const translations = {
         plan_free_f3: "Appariement de la liste d'étudiants 100% hors-ligne",
         plan_free_f4: "Console de correction live & contrôle humain total",
         plan_free_f5: "Statistiques complètes et histogrammes de notes",
+        plan_free_f7: "Partage collaboratif (.gradaly & lien Cloud chiffré) + fusion par question",
         plan_free_f6: "Exports d'évaluation (1 copie test en Excel, PDF et portail web)",
         plan_free_btn: "Télécharger gratuitement",
         plan_pro_name: "Gradaly Pro",

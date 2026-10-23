@@ -1,18 +1,18 @@
 {
-  "version": "2.1.2",
-  "name": "Gradaly v2.1.2",
-  "title": "Gradaly v2.1.2",
-  "published_at": "2026-10-21T16:05:00.000Z",
-  "notes": "### 🚀 Highlights & Improvements (v2.1.2)\n\n- **Vertical Multi-Page Web Viewer**: Upgraded student web exports, online portal copies, and teacher review portals to display all copy pages stacked vertically (just like the Grading tab), supporting questions that span multiple pages with accurate per-page bounding box overlays and smooth auto-scrolling.\n- **Bounding Box Normalization Fix**: Fixed an issue where question zones defined in PDF coordinates were not displayed in web exports.\n- **External Links & Document Opening Fix**: Fixed the \"View this copy online\" and \"Open document\" buttons across macOS, Windows, and Linux.\n- **UI Wording Simplification**: Replaced technical \"Zero-Knowledge\" terminology with clearer \"End-to-End Encryption\" phrasing across the interface.",
-  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v2.1.2",
+  "version": "3.0.0",
+  "name": "Gradaly v3.0.0",
+  "title": "Gradaly v3.0.0",
+  "published_at": "2026-10-23T07:12:00.000Z",
+  "notes": "### 🚀 Highlights & Improvements (v3.0.0)\n\n- **Collaborative Project Sharing (.gradaly & Encrypted Cloud Links)**: Share full or partial grading projects with colleagues via `.gradaly` archives or end-to-end encrypted (AES-256-GCM) Cloud share links (`#k=...`) with real-time progress bars.\n- **Safe Import & Selective Per-Question Merge**: Import any shared archive as an independent new project (with custom name) or selectively merge rubrics and/or gradings per question into an existing compatible project (verified via SHA-256 canvas fingerprint) with automatic pre-merge backup and conflict protection.",
+  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v3.0.0",
   "assets": {
-    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.2_universal.dmg",
-    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.2_x64-setup.exe",
-    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.2_amd64.AppImage",
-    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.2_aarch64.AppImage",
-    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.2_amd64.deb",
-    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_2.1.2_arm64.deb",
-    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-2.1.2-1.x86_64.rpm",
-    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-2.1.2-1.aarch64.rpm"
+    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.0_universal.dmg",
+    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.0_x64-setup.exe",
+    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.0_amd64.AppImage",
+    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.0_aarch64.AppImage",
+    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.0_amd64.deb",
+    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.0_arm64.deb",
+    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-3.0.0-1.x86_64.rpm",
+    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-3.0.0-1.aarch64.rpm"
   }
 }
