@@ -1,18 +1,18 @@
 {
-  "version": "3.0.0",
-  "name": "Gradaly v3.0.0",
-  "title": "Gradaly v3.0.0",
-  "published_at": "2026-10-23T07:12:00.000Z",
-  "notes": "## What's New in Gradaly v3.0.0\n\n- **Collaborative Project Sharing & Selective Per-Question Merge (Gradaly Pro)**: Share your exam projects with colleagues or teaching assistants via local `.gradaly` archives or **End-to-End Encrypted Cloud Links** (`AES-256-GCM` client-side encryption with zero-knowledge `#k=...` key fragment and chunked upload progress bar).\n- **Safe Import & Question-by-Question Merge (Gradaly Pro)**: Import shared archives as a brand-new project under a custom name (100% conflict-free) or selectively merge rubrics and/or gradings question-by-question with SHA-256 canvas verification, conflict resolution rules, and automatic pre-merge backups.\n- **Interactive Bilingual User Manual**: Added a complete step-by-step User Manual (EN/FR) on the website covering API key creation (OpenRouter, Gemini, OpenAI, Anthropic), recommended models, collaborative workflows, and Zero-Knowledge security FAQ.",
-  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v3.0.0",
+  "version": "3.0.1",
+  "name": "Gradaly v3.0.1",
+  "title": "Gradaly v3.0.1",
+  "published_at": "2026-10-23T17:35:00.000Z",
+  "notes": "## What's New in Gradaly v3.0.1\n\n- **Adjustable Interface & Grading Text Size (`90%` to `130%`)**: Customize the font size of the application (rubrics, criteria descriptions, AI justifications, student feedback, and student lists) directly in **Settings (⚙️)** or anytime via keyboard shortcuts (`Ctrl/Cmd +`, `Ctrl/Cmd -`, `Ctrl/Cmd + 0`).\n- **Windows / Parallels Desktop Shared Folders Support**: Improved directory deletion and project renaming compatibility on network and virtualized drives (`\\\\Mac\\Home\\Documents`).\n- **Unified Multi-Platform Application Icons**: Unified high-resolution Gradaly desktop icons across macOS, Windows, and Linux.",
+  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v3.0.1",
   "assets": {
-    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.0_universal.dmg",
-    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.0_x64-setup.exe",
-    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.0_amd64.AppImage",
-    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.0_aarch64.AppImage",
-    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.0_amd64.deb",
-    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.0_arm64.deb",
-    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-3.0.0-1.x86_64.rpm",
-    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-3.0.0-1.aarch64.rpm"
+    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.1_universal.dmg",
+    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.1_x64-setup.exe",
+    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.1_amd64.AppImage",
+    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.1_aarch64.AppImage",
+    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.1_amd64.deb",
+    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.1_arm64.deb",
+    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-3.0.1-1.x86_64.rpm",
+    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-3.0.1-1.aarch64.rpm"
   }
 }
