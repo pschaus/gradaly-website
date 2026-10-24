@@ -1,18 +1,18 @@
 {
-  "version": "3.0.1",
-  "name": "Gradaly v3.0.1",
-  "title": "Gradaly v3.0.1",
-  "published_at": "2026-10-23T17:35:00.000Z",
-  "notes": "## What's New in Gradaly v3.0.1\n\n- **Adjustable Interface & Grading Text Size (`90%` to `130%`)**: Customize the font size of the application (rubrics, criteria descriptions, AI justifications, student feedback, and student lists) directly in **Settings (⚙️)** or anytime via keyboard shortcuts (`Ctrl/Cmd +`, `Ctrl/Cmd -`, `Ctrl/Cmd + 0`).\n- **Windows / Parallels Desktop Shared Folders Support**: Improved directory deletion and project renaming compatibility on network and virtualized drives (`\\\\Mac\\Home\\Documents`).\n- **Unified Multi-Platform Application Icons**: Unified high-resolution Gradaly desktop icons across macOS, Windows, and Linux.",
-  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v3.0.1",
+  "version": "3.0.2",
+  "name": "Gradaly v3.0.2",
+  "title": "Gradaly v3.0.2",
+  "published_at": "2026-10-24T12:00:00.000Z",
+  "notes": "### ✨ New Features & Improvements\n- **Geometric Copy Alignment (2D RANSAC)**: Automatically detect and correct printer scaling, rotation, and scanner offsets across student copies relative to the reference canvas, with instant cancellation support during per-copy calibration.\n- **1-Click PDF Page Reordering & Rotation**: Swap adjacent pages directly from the PDF viewer separator or open the thumbnail grid modal to reorder and rotate pages (`+90°`, `180°`, `-90°`) for one or multiple copies.\n- **Filter by Selected Copies in Grading**: Added a symmetric 2×2 filter bar (`All`, `Selected (N)`, `To grade`, `Graded`) and reorganized the copies list header for a cleaner workspace.\n- **Unified Solutionnaire & AI Rubric Editing**: Unified `Solutionnaire` terminology across the UI, redesigned the criteria toolbar with a full-width *Design / Edit with AI* button, and enabled direct conversational editing of existing rubrics.\n- **Enhanced OCR & Automatic Student Matching**: Rendered identification zone crops at 2.5× resolution (180 DPI), added multiset canvas token subtraction, improved spaced student ID reassembly, supported `\"Last, First\"` CSV rosters, and preserved live matching progress across tab switches.",
+  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v3.0.2",
   "assets": {
-    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.1_universal.dmg",
-    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.1_x64-setup.exe",
-    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.1_amd64.AppImage",
-    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.1_aarch64.AppImage",
-    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.1_amd64.deb",
-    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.1_arm64.deb",
-    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-3.0.1-1.x86_64.rpm",
-    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-3.0.1-1.aarch64.rpm"
+    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.2_universal.dmg",
+    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.2_x64-setup.exe",
+    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.2_amd64.AppImage",
+    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.2_aarch64.AppImage",
+    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.2_amd64.deb",
+    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.2_arm64.deb",
+    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-3.0.2-1.x86_64.rpm",
+    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-3.0.2-1.aarch64.rpm"
   }
 }
