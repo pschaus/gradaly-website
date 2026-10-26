@@ -1,244 +1,176 @@
 const manualTranslations = {
     en: {
-        badge_manual: "User Manual",
+        badge_manual: "User Manual (2-in-1)",
         back_home: "Back to Website",
         download_btn: "Download Gradaly",
-        hero_pill: "Complete Step-by-Step Guide • v3.0.2",
+        hero_pill: "2-in-1 Desktop Application • Complete User Manual v4.0.0",
         hero_title: "Gradaly User Manual",
-        hero_subtitle: "Grade Smarter, not Harder. Use Gradaly in 100% Human Mode (just like Gradescope) or supercharge your workflow with Multimodal AI Rubric Design & Pre-Grading — while keeping 100% control over your data.",
-        search_placeholder: "Search the manual (e.g. human mode, criteria, API key, OpenRouter, Gradescope, Documents/Gradaly, FAQ)...",
-        toc_title: "Chapters",
+        hero_subtitle: "Grade Smarter, not Harder. Gradaly is a 2-in-1 application offering two independent workflows: (1) Summative Exam Grading by the teacher, and (2) Formative Practice QR Self-Assessment by the student. Select the guide matching your workflow below:",
+        search_placeholder: "Search across all guides (e.g. exam, practice QR, rubric, OCR, API key, FAQ)...",
+        card_exam_badge: "Product 1 • Summative (Teacher)",
+        card_exam_chapters: "Chapters E1–E7",
+        card_exam_title: "Manual 1: Exam Grading Mode (By the Teacher)",
+        card_exam_desc: "For midterms, finals, and graded assignments: scan student booklets, match identities 100% offline via OCR, grade manually or with AI/team collaboration, and return annotated copies.",
+        card_practice_badge: "Product 2 • Formative (Student)",
+        card_practice_chapters: "Chapters P1–P4",
+        card_practice_title: "Manual 2: Practice & Self-Assessment QR Mode (By the Student)",
+        card_practice_desc: "For problem sets, tutorials, and mock exams: stamp QR codes onto your exercise PDF so students solve on paper, scan with their smartphone, and get instant formative AI feedback (BYOK, 0 € for the teacher).",
+        filter_label: "Display:",
+        filter_exam: "1. Exam Guide (E1–E7)",
+        filter_practice: "2. Practice QR Guide (P1–P4)",
+        filter_reference: "AI API Keys & FAQ (R1–R2)",
+        filter_all: "Show All Chapters",
+        filter_hint: "Each guide is 100% self-contained — no need to read both!",
+        switch_guide_kicker: "Explore the Second Gradaly Workflow",
+        btn_go_practice: "Open Manual 2: Practice QR Mode",
+        btn_go_exam: "Open Manual 1: Exam Grading Mode",
+        toc_title: "Table of Contents",
         privacy_box_title: "100% Local Student Privacy",
         privacy_box_text: "Student rosters, ID zones, OCR matching, and project files are stored locally in Documents/Gradaly on your computer. Cloud portals and team links use client-side AES-256-GCM Zero-Knowledge encryption.",
         sections: [
+            // =========================================================================
+            // GUIDE 1: EXAM GRADING MODE (E1 to E7) — 100% SELF-CONTAINED
+            // =========================================================================
             {
-                id: "welcome-and-modes",
-                stepNumber: "1",
-                tag: "Chapter 1 — Getting Started",
+                id: "exam-getting-started",
+                guide: "exam",
+                stepNumber: "E1",
+                partHeader: "Manual 1 — Exam Grading Mode (Teacher)",
+                partColor: "indigo",
+                partBanner: {
+                    kicker: "Manual 1 • Product 1: Summative Exam Grading (Chapters E1–E7)",
+                    title: "Complete Guide to Exam Grading by the Teacher (100% Human, AI-Assisted & Team Mode)",
+                    desc: "Self-contained guide for collecting scanned student booklets, matching identities offline, grading with a structured rubric, and returning results."
+                },
+                tag: "Exam Mode • Step 1 — Creating an Exam Project",
                 badge: "100% Human or AI-Assisted",
-                shortTitle: "1. Human vs AI Mode & Projects",
-                title: "Two Ways to Grade: 100% Human Mode or AI-Assisted Mode",
-                subtitle: "A complete question-by-question rubric grading workstation that works both 100% manually (without any AI) and with optional multimodal AI assistance.",
+                shortTitle: "E1. Creating an Exam Project",
+                title: "Creating an Exam Grading Project & 100% Human vs. AI Workflows",
+                subtitle: "Start a new Exam project (or launch the 20-copy Exam Demo) to evaluate scanned student booklets on your computer.",
                 paragraphs: [
-                    "<strong>First and foremost: you do NOT need an AI API key to use Gradaly.</strong> Out of the box, Gradaly works in <strong>100% Human Mode</strong> with the same core question-by-question rubric workflow as platforms like Gradescope: you define question zones on your blank exam PDF, build a structured rubric of checkable criteria, match scanned student papers locally, and grade rapidly using keyboard shortcuts (<code>1–9</code> to toggle criteria, <code>J</code>/<code>K</code> to navigate between students) while writing rich Markdown & KaTeX feedback. If you later adjust a criterion's point value, Gradaly dynamically recalculates every student's score across the entire cohort.",
-                    "<strong>Optional AI-Assisted Mode:</strong> Whenever you want to go further, you can connect your own AI API key (or a free university/local server) to unlock two powerful assistants while always keeping the final human word:<br>• <strong>The AI Rubric Assistant</strong> to help you design, structure, and calibrate your grading criteria in an interactive chat.<br>• <strong>Multimodal AI Pre-Grading</strong> to read handwritten student answers, pre-check your rubric criteria, explain its reasoning to the teacher, and draft individualized formative feedback for each student.",
-                    "From the <strong>Welcome Screen</strong>, you can create a new exam project from a blank PDF canvas, launch the built-in <strong>Offline Demo Project</strong> (20 pre-populated physics/math papers in English or French) in one click, or use <strong>Import / Merge</strong> (Gradaly Pro) to collaborate with colleagues."
+                    "<strong>What is an Exam Grading Project (<code>Exam</code> badge)?</strong> An Exam project is designed for summative or graded assessments (midterms, finals, quizzes, graded homework) where the teacher collects student papers, scans them into PDFs, and grades the cohort. It provides <strong>6 dedicated workflow tabs</strong> in the top bar: <code>1. Canvas &amp; Questions</code>, <code>2. Students</code>, <code>3. Copies</code>, <code>4. Matching</code>, <code>5. Grading</code>, and <code>6. Summary</code>.",
+                    "<strong>100% Human Mode or AI-Assisted Mode:</strong> You do <strong>not</strong> need an AI API key to grade an exam in Gradaly. Out of the box, Gradaly works in <strong>100% Human Mode</strong> with rapid keyboard shortcuts (<code>1–9</code> to toggle criteria, <code>J</code>/<code>K</code> to navigate between students), dynamic score recalculation across the entire cohort whenever you adjust criterion weights, and rich Markdown &amp; KaTeX feedback. Whenever you wish, you can connect an AI API key (see section <code>R1</code>) to unlock the <strong>AI Rubric Assistant</strong> and <strong>Multimodal AI Pre-Grading</strong> while always keeping the final human decision.",
+                    "From the <strong>Welcome Screen</strong>, click <strong>New project</strong> and select <strong>Exam Project (Teacher Grading)</strong>, or click <strong>Create demo project → Exam Project</strong> to explore a complete ready-made Physics exam with 20 handwritten student copies and a Reference Solution."
                 ],
                 screenshots: [
                     {
                         filePrefix: "01_welcome",
-                        caption: "Welcome Screen: Create a project, try the instant offline demo, or import/merge a colleague's archive"
+                        caption: "Welcome Screen: Exam projects are identified by the indigo 'Exam' badge and stored locally in Documents/Gradaly"
+                    },
+                    {
+                        filePrefix: "12_demo_types_modal",
+                        caption: "Demo Creation Modal: Select 'Exam Project (Teacher Grading)' to generate an offline demo with 20 graded copies"
                     }
                 ],
                 callouts: [
                     {
-                        title: "100% Human Mode (Zero AI Required)",
-                        desc: "Grade manually by clicking criteria or pressing keys 1–9, with instant score recalculation, cohort histograms, Excel gradebooks, annotated PDFs, and the encrypted Student Web Portal."
+                        title: "Dedicated 6-Tab Exam Workspace",
+                        desc: "Canvas & Questions → Students → Copies → Offline OCR Matching → 3-Pane Grading Console → Cohort Analytics & Exports."
                     },
                     {
-                        title: "AI-Assisted Mode (When You Want It)",
-                        desc: "Connect Gemini, OpenAI, Claude, OpenRouter, or a local Ollama model to co-design rubrics and pre-grade handwritten answers with detailed justifications."
+                        title: "Works 100% Offline & Manually",
+                        desc: "Grade manually at high speed with keyboard shortcuts, or combine AI pre-grading with human validation."
                     },
                     {
-                        title: "Instant Offline Demo Project",
-                        desc: "Click 'Create Demo Project' to explore a complete 20-student exam with rubrics, handwritten copies, and statistics before importing your own PDFs."
+                        title: "Built-in 20-Copy Exam Demo",
+                        desc: "Test the entire exam workflow immediately without scanning anything using the built-in English or French Exam Demo."
                     },
                     {
-                        title: "100% Local Workspace (Documents/Gradaly)",
-                        desc: "All your projects live in plain folders inside your computer's Documents/Gradaly directory — no forced cloud account required."
-                    }
-                ],
-                tip: {
-                    title: "Pedagogical Positioning: Better Formative Feedback",
-                    text: "Whether you grade 100% manually or with AI pre-grading, Gradaly shifts your effort toward designing a clear, fair, fine-grained rubric so every student receives detailed conceptual feedback."
-                }
-            },
-            {
-                id: "ai-settings",
-                stepNumber: "2",
-                tag: "Chapter 2 — AI Setup (Optional)",
-                badge: "OpenRouter • Gemini • GPT • Claude",
-                shortTitle: "2. API Keys & Choosing an AI Model",
-                title: "Setting Up Your API Key & Choosing the Right AI Model",
-                subtitle: "Skip this chapter if you grade 100% manually. To enable AI Rubric Design and AI Pre-Grading, configure an API key in Settings.",
-                paragraphs: [
-                    "<strong>The quality of AI pre-grading depends directly on the vision/reasoning capability of the AI model you select.</strong> In our benchmarks on handwritten university exams (mathematics, physics, engineering, economics, and humanities), we achieve <strong>excellent results</strong> with <strong><code>Gemini 3.8 Flash</code></strong>, <strong><code>GPT 5-4 mini</code></strong>, <strong><code>Claude-Sonnet-5.5</code></strong>, and <strong><code>Mistral-Large 4.0</code></strong> — feel free to experiment with other models to see which one best fits your subject!",
-                    "<strong>Direct Provider Keys vs. OpenRouter:</strong> You can create an API key directly with <strong>Google Gemini</strong>, <strong>OpenAI</strong>, or <strong>Anthropic</strong> (which notably gives you access to their asynchronous <strong>Batch / Flex mode</strong>), or use <strong>OpenRouter</strong>, whose specific advantage is that <strong>a single API key gives you access to models from all providers</strong> (Gemini, GPT, Claude, Mistral, DeepSeek, Qwen, Llama) from one unified balance.",
-                    "<strong>0% Markup & No Proprietary 'AI Credits':</strong> Unlike commercial AI grading platforms that lock you into a fixed model and sell expensive proprietary 'AI credit packs', Gradaly charges <strong>nothing</strong> for AI usage. You pay the exact wholesale token cost directly to your provider (typically a few dollars for a whole exam) — or <strong>0 € if your university provides an institutional LLM server or if you run local models via Ollama</strong>, maximizing academic sovereignty."
-                ],
-                screenshots: [
-                    {
-                        filePrefix: "11_settings_ai",
-                        caption: "AI Settings Modal: Choose your provider (Gemini, OpenRouter, OpenAI, Anthropic, or Local/University Server), pick your model, and test connectivity"
-                    }
-                ],
-                providerGuides: [
-                    {
-                        name: "OpenRouter (Multi-Provider Gateway)",
-                        tag: "All Models in 1 Key",
-                        icon: "fas fa-network-wired",
-                        desc: "<strong>Specific advantage:</strong> One single account and API key lets you try <code>Gemini 3.8 Flash</code>, <code>GPT 5-4 mini</code>, <code>Claude-Sonnet-5.5</code>, <code>Mistral-Large 4.0</code>, and hundreds of other models without managing multiple accounts (note: asynchronous Batch mode is not supported on OpenRouter).",
-                        steps: [
-                            "Go to <strong>openrouter.ai</strong> and sign in (or create a free account).",
-                            "Open <strong>Credits</strong> in the top menu and add a small prepaid balance (e.g. $5 or $10 — enough for thousands of exam pages).",
-                            "Go to <strong>Keys</strong> → click <strong>Create Key</strong>, name it <code>Gradaly</code>, and copy the key starting with <code>sk-or-v1-...</code>.",
-                            "In Gradaly, open <strong>Settings (⚙️)</strong>, select <strong>OpenRouter</strong>, paste your key, and type or select your model ID."
-                        ],
-                        url: "https://openrouter.ai/keys",
-                        linkLabel: "Open OpenRouter API Keys Console"
-                    },
-                    {
-                        name: "Google Gemini (Google AI Studio)",
-                        tag: "Fast & Cost-Effective",
-                        icon: "fas fa-bolt",
-                        desc: "Direct access to Google's multimodal <code>Gemini 3.8 Flash</code> and Pro models, featuring native 50%-discounted asynchronous Batch API support.",
-                        steps: [
-                            "Sign in to <strong>Google AI Studio</strong> (<code>aistudio.google.com</code>) with your Google account.",
-                            "Click <strong>Get API key</strong> in the left sidebar, then click <strong>Create API key</strong>.",
-                            "Copy the generated key (starts with <code>AIzaSy...</code>). Enable Pay-as-you-go billing in Google Cloud if you want high rate limits.",
-                            "In Gradaly, open <strong>Settings (⚙️)</strong>, select <strong>Google Gemini</strong>, and paste your key."
-                        ],
-                        url: "https://aistudio.google.com/app/apikey",
-                        linkLabel: "Open Google AI Studio API Keys"
-                    },
-                    {
-                        name: "OpenAI (GPT Models)",
-                        tag: "High Reasoning Precision",
-                        icon: "fas fa-brain",
-                        desc: "Direct access to OpenAI's multimodal models such as <code>GPT 5-4 mini</code>, offering strong mathematical and logical step verification plus 50% Batch API discounts.",
-                        steps: [
-                            "Log in to <strong>platform.openai.com</strong> (note: API accounts are separate from ChatGPT Plus subscriptions).",
-                            "Go to <strong>Settings → Billing</strong> and load a small prepaid credit balance (e.g. $5).",
-                            "Navigate to <strong>Dashboard → API keys</strong>, click <strong>+ Create new secret key</strong>, and copy the key (<code>sk-proj-...</code>).",
-                            "In Gradaly, open <strong>Settings (⚙️)</strong>, select <strong>OpenAI</strong>, paste your key, and choose your model."
-                        ],
-                        url: "https://platform.openai.com/api-keys",
-                        linkLabel: "Open OpenAI Platform API Keys"
-                    },
-                    {
-                        name: "Anthropic (Claude Models)",
-                        tag: "Nuanced Feedback & Proofs",
-                        icon: "fas fa-feather-alt",
-                        desc: "Direct access to Anthropic's <code>Claude-Sonnet-5.5</code> and Opus models, renowned for reading dense handwritten proofs and writing natural academic feedback.",
-                        steps: [
-                            "Sign in to the <strong>Anthropic Console</strong> (<code>console.anthropic.com</code>).",
-                            "Go to <strong>Settings → Billing</strong> to activate a prepaid credit balance.",
-                            "Go to <strong>API Keys</strong>, click <strong>Create Key</strong>, and copy the secret key (<code>sk-ant-...</code>).",
-                            "In Gradaly, open <strong>Settings (⚙️)</strong>, select <strong>Anthropic</strong>, and paste your key."
-                        ],
-                        url: "https://console.anthropic.com/settings/keys",
-                        linkLabel: "Open Anthropic Console API Keys"
-                    }
-                ],
-                callouts: [
-                    {
-                        title: "University Server or 100% Local Ollama",
-                        desc: "If your university provides an OpenAI-compatible AI endpoint — or if you run local vision models via Ollama/LM Studio (<code>http://localhost:11434/v1</code>) — select 'Local / Custom Server' in Settings for 100% sovereign, zero-cost AI."
-                    },
-                    {
-                        title: "One-Click Connection Diagnostic",
-                        desc: "Click the status badge in the top bar at any time to verify that your API key and selected vision model respond properly."
+                        title: "100% Local Files in Documents/Gradaly",
+                        desc: "All PDFs, rosters, and gradings remain on your machine in plain folders — zero forced cloud storage."
                     }
                 ]
             },
             {
-                id: "canvas-and-rubric",
-                stepNumber: "3",
-                tag: "Chapter 3 — Core Functionality",
+                id: "exam-canvas-and-rubric",
+                guide: "exam",
+                stepNumber: "E2",
+                partColor: "indigo",
+                tag: "Exam Mode • Step 2 — Canvas, ID Zone & Rubric",
                 badge: "Essential for Accurate Grading",
-                shortTitle: "3. Creating Question Zones & Criteria",
-                title: "How to Define Question Zones, Scoring Rules & the Reference Solution",
-                subtitle: "Understand how Gradaly extracts each question zone, how Base Score, Max Score and Max-Possible work, and how to use the Reference Solution (Solutionnaire).",
+                shortTitle: "E2. Canvas, ID Zone & Criteria",
+                title: "Defining the Student ID Zone, Question Zones, Scoring Policy & Solutionnaire",
+                subtitle: "Import your blank exam PDF, frame the Student ID header for offline OCR, and define your questions and grading rubric.",
                 paragraphs: [
-                    "<strong>How Gradaly's AI Grading Works Under the Hood:</strong> When you trigger AI grading on a student's copy for a specific question, Gradaly crops the <strong>exact image of the rectangle zone</strong> you drew for that question and sends that image — together with a structured prompt containing your rubric criteria and instructions — to your chosen AI model. <em>Think of it as if you took a screenshot of that area on the student's paper, pasted it into your favorite AI chat tool, and wrote: \"Please grade this student's answer using the following grading policy.\"</em>",
-                    "Because the AI <strong>only sees what is inside the cropped zone plus the text of your rubric</strong>, setting up your question zone and criteria accurately is the single most important key to high-precision AI grading! Here is the step-by-step method in the <strong>Canvas & Questions</strong> tab:",
-                    "<strong>1. Draw the Question Zone (Include the Printed Question Statement!):</strong> On the blank exam PDF on the right, draw a rectangle around each question. <strong>Crucial guideline:</strong> whenever the layout allows, <strong>include both the printed question statement and the student's answer box inside the rectangle</strong>. Seeing the printed question directly above the handwritten answer gives the AI complete visual context (formulas, diagrams, notations).",
-                    "<strong>2. Understand Base Score (<code>Note de base</code>), Max Score (<code>Score max</code>), Clamping &amp; <code>Max possible</code>:</strong><br>• <strong>How the student's grade is calculated:</strong> Gradaly always starts from the question's <strong>Base Score (<code>Note de base</code>)</strong>, and then <strong>adds the points of all selected (checked) criteria</strong> on the student's copy: <code>Raw Score = Base Score + Σ (checked criteria points)</code>. Finally, <strong>the student's final grade on the question is strictly bounded (clamped) between <code>0</code> and <code>Max Score</code></strong> — it can never go below <code>0</code> even with heavy penalties, and it can never exceed <code>Max Score</code>.<br>• <strong>Choose a Purely Additive OR Purely Diminutive Scheme (Do Not Mix Positive &amp; Negative Points):</strong> For an <strong>additive scheme</strong>, set <code>Base Score = 0</code> and use only positive criteria (<code>+1</code>, <code>+1.5</code>, <code>+2</code>) awarded for each correct step. For a <strong>diminutive / subtractive scheme</strong>, set <code>Base Score = Max Score</code> and use only negative criteria (<code>-0.5</code>, <code>-1</code>) that deduct points for errors. <strong>We do not recommend mixing positive and negative points within the same question:</strong> in our experience, choosing a strictly additive or strictly diminutive scheme is much clearer both for the <strong>AI</strong> (which evaluates criteria far more reliably) and for the <strong>student</strong>.<br>• <strong>What <code>Max possible</code> means:</strong> Next to Base Score and Max Score, Gradaly displays <strong><code>Max possible = Base Score + Σ (positive criteria)</code></strong>. This value does not cap the student's grade (which is bounded by <code>Max Score</code>); <strong>it is simply a visual diagnostic helper to help you spot any mistake in your rubric</strong> (for instance, immediately seeing if your positive criteria only add up to 3.5 pts when the question's Max Score is set to 4 pts).",
-                    "<strong>3. Define Each Rubric Criterion:</strong> Add criteria with a clear <strong>Label</strong> (e.g. <code>C1_Formula</code>), a <strong>Point weight</strong> (e.g. <code>+1.5 pts</code>), and a precise <strong>Description</strong> stating the exact condition required to validate the criterion.",
-                    "<strong>4. Fill in the Bottom Field — General Instructions on How to Select Criteria (<code>Consignes & Logique de correction / Prompt IA</code>):</strong> At the bottom of the question panel, you will find a dedicated text box for general grading instructions on that question. Use this field for two essential purposes:<br>• <strong>Explain how to apply your grading policy in edge cases:</strong> e.g. <em>\"If the student makes a sign error in step 1 but carries the rest of the derivation consistently, do not award C1 but still award C2\"</em> or <em>\"Accept any equivalent trigonometric form.\"</em><br>• <strong>Include the question statement in plain text if it is NOT visible in the zone:</strong> If the question prompt was printed on a separate sheet or outside the cropped answer box, <strong>paste the plain-text question (and expected final answer) into this bottom field</strong> so the AI knows exactly what question the student is answering!",
-                    "<strong>5. Using the Solutionnaire (<code>Solutionnaire</code> / <code>⭐ Solutionnaire</code>):</strong> At the top of the PDF viewer in the <strong>Canvas &amp; Questions</strong> tab, use the <strong>Statement (Canvas) / Solutionnaire</strong> toggle to import a PDF containing your model solutions written on the exam template. The Solutionnaire serves two major purposes:<br>• <strong>Sanity-Checking Your Rubric (Does the Solutionnaire Get the Maximum Score?):</strong> Once imported, you can click <strong>Test solutionnaire (<code>Tester le solutionnaire</code>)</strong> on any question, and <strong>the Solutionnaire copy also appears at the very top of the student list in the Grading tab (<code>⭐ Solutionnaire</code>)</strong>. It is an invaluable quality check to verify that your own Solutionnaire obtains the <strong>maximum score (<code>Max/Max</code>)</strong> on every question — if it does not achieve full marks, there is almost certainly an ambiguity or issue in your rubric or question framing!<br>• <strong>Feeding the AI Rubric Assistant:</strong> The Solutionnaire can also be used by the <strong>AI Rubric Assistant (<code>Design / Edit with AI</code>)</strong> to help generate or refine your grading criteria automatically (make sure to <strong>check the option <em>\"Use the reference solution answer as reference\"</em></strong> in the assistant's setup screen)."
+                    "In the <strong>1. Canvas &amp; Questions</strong> tab of an Exam project, begin by importing the blank exam PDF (<code>Canvas</code>). You will then draw two types of rectangular zones on the PDF pages:",
+                    "<strong>1. Draw the Student Identification Zone (<code>ID</code>):</strong> Click the <strong>Student ID Zone (Name / ID)</strong> button in the left panel and draw a rectangle on Page 1 where students write their name and student ID number. Gradaly will later crop this exact area on every copy to run <strong>100% offline OCR matching</strong> against your class roster.",
+                    "<strong>2. Draw Each Question Zone (Include the Printed Question Statement!):</strong> When you trigger AI grading on a student's copy, Gradaly crops the <strong>exact image of the rectangle zone</strong> you drew for that question and sends it to your chosen AI model together with your rubric criteria. <strong>Crucial guideline:</strong> whenever the layout allows, <strong>include both the printed question statement and the student's answer box inside the rectangle</strong> so the AI has full visual context.",
+                    "<strong>3. Understand Base Score (<code>Note de base</code>), Max Score (<code>Score max</code>), Clamping &amp; <code>Max possible</code>:</strong><br>• <strong>Score formula:</strong> Gradaly starts from the question's <strong>Base Score</strong>, adds the points of all checked criteria (<code>Raw Score = Base Score + Σ checked criteria</code>), and <strong>clamps the final question grade between <code>0</code> and <code>Max Score</code></strong>.<br>• <strong>Purely Additive OR Purely Diminutive Scheme:</strong> For an <strong>additive scheme</strong>, set <code>Base Score = 0</code> and use only positive criteria (<code>+1</code>, <code>+1.5</code>). For a <strong>diminutive / subtractive scheme</strong>, set <code>Base Score = Max Score</code> and use only negative criteria (<code>-0.5</code>, <code>-1</code>). <strong>Avoid mixing positive and negative points within the same question</strong> — a pure scheme is much clearer for both the AI and the student.<br>• <strong><code>Max possible</code> helper:</strong> Displays <code>Base Score + Σ (positive criteria)</code> so you can immediately spot if your criteria weights don't add up to <code>Max Score</code>.",
+                    "<strong>4. Bottom General Instructions Field (<code>Consignes &amp; Logique de correction / Prompt IA</code>):</strong> Use the bottom text box of each question to specify how to handle edge cases (e.g. error carried forward, equivalent forms) — and if the printed question statement is outside the cropped box, paste the plain-text question here.",
+                    "<strong>5. Import &amp; Test Your Reference Solution (<code>Solutionnaire</code> / <code>⭐ Solutionnaire</code>):</strong> Use the <strong>Statement (Canvas) / Solutionnaire</strong> toggle at the top of the PDF viewer to import your model solution PDF. It appears at the very top of the Grading tab as <strong><code>⭐ Reference Solution</code></strong>: always verify that your own Solutionnaire obtains the <strong>maximum score (<code>Max/Max</code>)</strong> on every question!"
                 ],
                 screenshots: [
                     {
                         filePrefix: "02_questions",
-                        caption: "Canvas & Questions Tab: Base Score, Max Score & Max-possible helper, checkable criteria, bottom General AI Instructions field, and Statement / Solutionnaire PDF toggle"
+                        caption: "Exam Mode — Canvas & Questions Tab: Student ID Zone button, Base/Max/Max-possible scores, checkable criteria, bottom AI instructions, and Statement / Solutionnaire toggle"
                     }
                 ],
                 callouts: [
                     {
-                        title: "Base Score + Checked Criteria (Bounded [0, Max])",
-                        desc: "Gradaly starts from Base Score, adds the points of checked criteria, and clamps the student's final grade between 0 and Max Score."
+                        title: "Student ID Zone for Offline OCR",
+                        desc: "Frame the header box on Page 1 once; Gradaly will extract it on all scanned copies for local name/matricule recognition."
                     },
                     {
-                        title: "Avoid Mixing + and − Points & Check 'Max possible'",
-                        desc: "Stick to a purely additive (Base = 0, +pts) or purely diminutive (Base = Max, −pts) scheme for clarity for both the AI and the student. 'Max possible' (Base + positive criteria) helps you verify your rubric math."
+                        title: "Purely Additive or Diminutive Rubric",
+                        desc: "Start from 0 with +pts or start from Max Score with −pts. Final question scores are always clamped to [0, Max Score]."
                     },
                     {
-                        title: "Solutionnaire (⭐ Solutionnaire) Sanity Check",
-                        desc: "Visible in the Grading tab as '⭐ Solutionnaire' and in the AI Rubric Assistant (when checked). Always verify that your Solutionnaire gets the maximum score!"
+                        title: "Include the Question in the Zone",
+                        desc: "Frame both the printed question prompt and the student's answer box (or paste the prompt text in the bottom instructions field)."
                     },
                     {
-                        title: "Include the Question in the Zone (or Bottom Prompt)",
-                        desc: "Frame both the printed question statement and the answer box — or paste the question text in the bottom instructions field if it is outside the zone."
-                    }
-                ],
-                tip: {
-                    title: "Multi-Zone Questions Across Pages",
-                    text: "If a single question spans the bottom of Page 2 and continues at the top of Page 3, add a second zone to the same question: Gradaly automatically stitches both areas into a single composite image for the grader and the AI."
-                }
-            },
-            {
-                id: "ai-rubric-assistant",
-                stepNumber: "4",
-                tag: "Chapter 4 — AI Rubric Assistant",
-                badge: "Interactive Chat & Calibration",
-                shortTitle: "4. AI Assistant for Creating Criteria",
-                title: "Co-Designing & Calibrating Criteria with the AI Rubric Assistant",
-                subtitle: "Let the AI draft or edit your rubric from the question and solutionnaire PDF, iterate in chat mode, paste screenshots of real student answers, and calibrate on a few copies.",
-                paragraphs: [
-                    "Defining well-calibrated grading criteria from scratch — or refining an existing rubric — can sometimes feel complex. That is why Gradaly includes an interactive <strong>AI Rubric Assistant</strong>: click the <strong>Design / Edit with AI</strong> (<code>Concevoir / Modifier avec l'IA</code>) button above your criteria list on any question (if criteria already exist on the question, the assistant immediately loads them in chat mode so you can modify or refine them).",
-                    "<strong>1. Configure Your Rubric Preferences (and Check the Solutionnaire Option!):</strong> In the setup screen, specify how many points the question is worth, choose whether you prefer a purely <strong>Additive policy</strong> (starting from 0 pt and adding positive points per step) or a purely <strong>Subtractive / Deductive policy</strong> (starting from Max score and deducting penalties), and pick the <strong>number of criteria</strong> you want (e.g. 3, 4, 5, or let the AI decide). If you uploaded a <strong>Reference Solution PDF</strong> (<code>Solutionnaire</code>), make sure to <strong>check the box <em>\"Use the reference solution answer as reference\"</em></strong> so the assistant inspects both the question statement and your model answer to build the criteria!",
-                    "<strong>2. Iterate in Chat Mode Until You Are Happy:</strong> Once the assistant proposes an initial rubric (shown on the left) and general AI instructions (<code>PROMPT_TEXT</code>), use the chat panel on the right to refine it in natural language (e.g. <em>\"Split criterion 2 into two 1-point steps\"</em> or <em>\"Add a -0.5 pt penalty if units are missing\"</em>).",
-                    "<strong>3. Power Workflow — Copy-Paste Screenshots of Actual Student Answers in the Chat!</strong> While reviewing your exam, don't hesitate to take a screenshot of an actual student's handwritten answer, <strong>paste it directly into the Rubric Assistant chat (<code>Cmd+V</code> / <code>Ctrl+V</code>)</strong>, and write:<br><em>\"I think this student answer deserves the maximum grade on the question, please adapt the grading policy and criteria so this alternative method gets full credit\"</em> (or <em>\"This answer should only get 2/5, please clarify the criteria\"</em>). The AI will inspect the screenshot and automatically update the criteria descriptions and general instructions!",
-                    "<strong>4. Include the Criteria, Check the Solutionnaire &amp; Experiment on a Few Copies:</strong> When you are satisfied with the proposed rubric, click <strong>Validate and apply to question</strong> to import all criteria and instructions into your question. Then, test the rubric on your <strong>Reference Solution</strong> (to confirm it achieves the maximum score!) and on <strong>2 to 4 student copies</strong> in the <strong>Grading</strong> tab before grading the entire class."
-                ],
-                screenshots: [
-                    {
-                        filePrefix: "03_rubric_assistant",
-                        caption: "AI Rubric Assistant Modal: Live proposed criteria & PROMPT_TEXT on the left, interactive natural-language refinement chat (with screenshot paste support) on the right"
-                    }
-                ],
-                callouts: [
-                    {
-                        title: "Choose Additive or Subtractive & Criteria Count",
-                        desc: "Tell the assistant the question's Max Score, whether you want positive steps or negative penalties, and how many criteria (3, 4, 5, or free) you prefer."
-                    },
-                    {
-                        title: "Paste Real Student Screenshots in the Chat",
-                        desc: "Press Cmd+V / Ctrl+V in the chat to paste an image of a real student answer and say: 'I think this deserves the maximum grade, please adapt the grading policy.'"
-                    },
-                    {
-                        title: "Automatic Solution Audit & Simulation",
-                        desc: "If a Solution PDF is loaded, the assistant audits your solution for completeness and lets you simulate the rubric's score in one click."
-                    },
-                    {
-                        title: "Calibrate on a Few Copies First",
-                        desc: "After applying the AI-generated criteria to your question, always run a quick test on a few actual student copies to verify the grading calibration."
+                        title: "Solutionnaire (⭐) Sanity Check",
+                        desc: "Import your model solution PDF and verify in 1 click that it achieves full marks (Max/Max) on every question."
                     }
                 ]
             },
             {
-                id: "roster-and-matching",
-                stepNumber: "5",
-                tag: "Chapter 5 — Roster, Copies & OCR",
-                badge: "100% Local & Offline",
-                shortTitle: "5. Roster, Copies & OCR Matching",
-                title: "Student Roster, PDF Splitting & 100% Offline OCR Matching",
-                subtitle: "Import your student list, slice bulk scanner PDFs into individual copies, and associate student identities locally without sending a single byte to the cloud.",
+                id: "exam-ai-rubric-assistant",
+                guide: "exam",
+                stepNumber: "E3",
+                partColor: "indigo",
+                tag: "Exam Mode • Step 3 — AI Rubric Assistant",
+                badge: "Interactive Chat & Calibration",
+                shortTitle: "E3. AI Rubric Assistant",
+                title: "Co-Designing & Calibrating Exam Criteria with the AI Rubric Assistant",
+                subtitle: "Generate or refine your grading rubric from the question and solutionnaire PDF, iterate via chat, and paste screenshots of real student copies.",
                 paragraphs: [
-                    "In the <strong>Students</strong> tab, import your official class roster from a CSV or Excel file (Moodle, Canvas, Banner, ADE, etc.). Gradaly automatically detects columns for <strong>Student ID (Matricule)</strong>, <strong>Last Name</strong>, <strong>First Name</strong>, <strong>Email</strong> (used for sending encrypted Web Portal links), and <strong>Group/Section</strong>.",
-                    "In the <strong>Copies</strong> tab, import either a folder of individual student PDFs or a <strong>single multi-student bulk PDF</strong> straight from the photocopy room scanner. Tell Gradaly how many pages each exam booklet has (e.g. 4 pages per student), and it automatically slices the bulk scan into <code>copie_01.pdf</code>, <code>copie_02.pdf</code>, etc.",
-                    "In the <strong>Matching</strong> tab, click <strong>Run Automatic OCR Matching</strong>. Gradaly crops the Student Identification Zone (<code>ID</code>) you drew on Page 1, runs an <strong>embedded WebAssembly Tesseract OCR engine 100% locally on your computer</strong>, and matches handwritten names/IDs against your roster using fuzzy string similarity. You can then verify each copy side-by-side with its cropped ID header and confirm or reassign any student in one click."
+                    "On any question in <strong>Canvas &amp; Questions</strong>, click <strong>Design / Edit with AI</strong> (<code>Concevoir / Modifier avec l'IA</code>) to open the interactive <strong>AI Rubric Assistant</strong>.",
+                    "<strong>1. Configure Your Rubric Preferences:</strong> Specify the question's <code>Max Score</code>, choose an <strong>Additive</strong> or <strong>Subtractive</strong> policy, and pick your target <strong>number of criteria</strong> (3, 4, 5, or free). If you loaded a <code>Solutionnaire</code> PDF, check <em>\"Use the reference solution answer as reference\"</em> so the AI inspects both the question and your model solution.",
+                    "<strong>2. Iterate in Chat Mode &amp; Paste Student Screenshots (<code>Cmd+V</code> / <code>Ctrl+V</code>):</strong> Refine the proposed criteria in natural language on the right. Even better: take a screenshot of an actual student's handwritten answer, <strong>paste it directly into the chat</strong>, and write: <em>\"I think this student answer deserves full credit, please adapt the criteria and grading instructions accordingly.\"</em>",
+                    "<strong>3. Apply &amp; Calibrate on a Few Copies:</strong> Click <strong>Validate and apply to question</strong>, then test the rubric on your <code>⭐ Reference Solution</code> and on 2–3 student copies in the Grading tab before launching a full-cohort batch."
+                ],
+                screenshots: [
+                    {
+                        filePrefix: "03_rubric_assistant",
+                        caption: "AI Rubric Assistant Modal: Proposed criteria & PROMPT_TEXT on the left, interactive refinement chat (supporting screenshot paste) on the right"
+                    }
+                ],
+                callouts: [
+                    {
+                        title: "Reads Both Canvas & Solutionnaire",
+                        desc: "Generates structured criteria and point weights aligned with your exact mathematical or conceptual derivation."
+                    },
+                    {
+                        title: "Paste Real Student Answers (Cmd+V)",
+                        desc: "Paste screenshots of edge-case student answers in the chat to adapt criteria descriptions automatically."
+                    }
+                ]
+            },
+            {
+                id: "exam-roster-and-matching",
+                guide: "exam",
+                stepNumber: "E4",
+                partColor: "indigo",
+                tag: "Exam Mode • Step 4 — Roster, Copies & Offline OCR",
+                badge: "100% Local & Offline",
+                shortTitle: "E4. Roster, Copies & OCR Matching",
+                title: "Student Roster (CSV), PDF Splitting & 100% Offline OCR Matching",
+                subtitle: "Import your class list, slice bulk scanner PDFs into individual booklets, and match student identities locally with zero cloud uploads.",
+                paragraphs: [
+                    "In the <strong>2. Students</strong> tab, import your class roster from a CSV or Excel file (Moodle, Canvas, ADE, etc.). Gradaly maps <strong>Student ID (Matricule)</strong>, <strong>Last Name</strong>, <strong>First Name</strong>, <strong>Email</strong>, and <strong>Group</strong>.",
+                    "In the <strong>3. Copies</strong> tab, import either individual student PDFs or a <strong>single multi-student bulk PDF</strong> from the photocopy scanner. Specify the page count per booklet (e.g. 4 pages per student) to slice the batch into <code>copie_01.pdf</code>, <code>copie_02.pdf</code>, etc. Gradaly can also automatically deskew/rotate upside-down scans.",
+                    "In the <strong>4. Matching</strong> tab, click <strong>Run Automatic OCR Matching</strong>. Gradaly crops the Student ID Zone from Page 1 of each copy, runs an <strong>embedded WebAssembly Tesseract OCR engine 100% offline on your computer</strong>, and pairs handwritten names/IDs with your roster using fuzzy matching. Review and confirm each association side-by-side in seconds."
                 ],
                 screenshots: [
                     {
@@ -261,530 +193,681 @@ const manualTranslations = {
                     },
                     {
                         title: "Unmatched Filter & Instant Search",
-                        desc: "Filter by 'Unmatched' or 'Low Confidence' to resolve ambiguous handwriting in seconds using the live search dropdown."
+                        desc: "Filter by 'Unmatched' or 'Low Confidence' to resolve ambiguous handwriting in seconds."
                     }
                 ]
             },
             {
-                id: "grading-console",
-                stepNumber: "6",
-                tag: "Chapter 6 — Grading Console",
-                badge: "Navigation, Color Codes & Batch AI",
-                shortTitle: "6. Manual & AI-Assisted Grading",
-                title: "The Evaluation Console: Navigation, Color Codes & Launching AI Grading",
-                subtitle: "Understand the 3-pane workspace, question circles, color status codes, single-question calibration, and Batch vs. Standard AI execution.",
+                id: "exam-grading-console",
+                guide: "exam",
+                stepNumber: "E5",
+                partColor: "indigo",
+                tag: "Exam Mode • Step 5 — The Grading Console",
+                badge: "100% Human, Standard AI or Batch Flex (-50%)",
+                shortTitle: "E5. Manual & AI-Assisted Grading",
+                title: "The 3-Pane Grading Console: Manual Speed, AI Calibration & Batch Mode",
+                subtitle: "Navigate question-by-question across the cohort, understand the 3-color status code, calibrate on single copies, and run Batch AI pre-grading.",
                 paragraphs: [
-                    "The <strong>Grading</strong> tab is organized into three synchronized columns: the <strong>Student List</strong> on the left, the <strong>Interactive PDF Copy Viewer</strong> in the center, and the <strong>Question &amp; Criteria Workstation</strong> on the right.",
-                    "<strong>1. Selecting a Question ('Small Circles' in the Top Right) &amp; Horizontal Navigation:</strong> At the top of the right-hand column under <em>Question Overview</em>, each exam question is represented by a numbered circle (<code>1</code>, <code>2</code>, <code>3</code>, ...). Click any circle to select that question — the center PDF viewer automatically jumps to the right page and frames the student's answer box. You can then <strong>stay on that question and navigate from one student to the next</strong> using the <code>&lt; 1/20 &gt;</code> arrows in the top right (or the <code>↑</code> / <code>↓</code> arrow keys on your keyboard) to grade or review the entire class one question at a time.",
-                    "<strong>2. Understanding the 3-Color Status Code (Question Circles &amp; Left Column):</strong> Both the numbered question circles in the top right and the summary counters in the left column use the same intuitive color code:<br>• 🟢 <strong>Green (<code>AI</code>):</strong> The question was pre-graded by the AI (awaiting your human review).<br>• 🔵 <strong>Blue (<code>Human</code>):</strong> The question was graded, modified, or explicitly confirmed by a human (by clicking a criterion checkbox or clicking the <strong>Human Validation</strong> button).<br>• ⚪ <strong>Grey (<code>To grade</code>):</strong> The question has not been graded yet.",
-                    "<strong>3. Reading the Left Column (Reference Solution Row, Status Counters, Open Question Score &amp; Total Score):</strong> If you loaded a <strong>Reference Solution (<code>Solutionnaire</code>)</strong> in your project, it appears pinned at the very top of the left-hand list as <strong><code>⭐ Reference Solution</code></strong> so you can view, grade, and verify that it obtains full marks (<code>Max/Max</code>) at any time. Beneath each student's name, three colored dots (<code>🟢 AI</code>, <code>🔵 Human</code>, <code>⚪ To grade</code>) show the exact progress on that copy. On the right side of each row, two score badges appear side by side: <strong>the score on the currently open question</strong> (e.g. <code>8/8</code>) and <strong>the total exam score</strong> (e.g. <code>18.8 tot</code>). You can sort the student list in one click by student name, by active question score, or by total score.",
-                    "<strong>4. Option A — Grading Only the Current Question for the Current Student (Calibrating Your Criteria):</strong> Scroll to the bottom of the right-hand column and click <strong>Re-run AI for this question</strong>. This runs the AI on <strong>the active question for the current student only</strong>. This is the essential workflow for <strong>calibrating your rubric criteria</strong>: test a question on 2 or 3 sample copies, and do a few quick back-and-forths with the <em>Canvas &amp; Questions</em> tab to fine-tune your criteria descriptions or general instructions until the AI's evaluation matches your expectations. Right above the button, three checkboxes (<em>Do not override: Grades / Feedback / Justification</em>) let you protect existing grades if you only want to regenerate the text.",
-                    "<strong>5. Option B — Launching Multi-Copy / Multi-Question AI Grading (<code>▶ AI Grading</code> Modal):</strong> Once your criteria are calibrated, click the large <strong>▶ AI Grading</strong> button at the top left to open the batch launch dialog:<br>• <strong>Target copies:</strong> Choose between <em>All checked copies</em> in the left column or <em>Only the current copy</em> (e.g. to grade all questions of a single student).<br>• <strong>Questions to grade:</strong> Select <em>Check all</em>, <em>Active question only</em>, or check specific questions.<br>• <strong>Override protection:</strong> Check <em>Do not override grades / feedback / justification</em> so the AI skips or preserves questions you have already graded or validated.<br>• <strong>Execution Mode — We Recommend Batch / Flex Mode:</strong> You can choose between <strong>⚡ Standard Mode</strong> (real-time parallel requests using multiple worker threads, compatible with all providers) and <strong>🌿 Flex Mode (Asynchronous Batch API)</strong>, which submits the batch in the background to the provider's servers with a <strong>50% cost discount</strong> and higher rate limits. <strong>We strongly recommend using Batch / Flex Mode for full-cohort grading.</strong> Note that Batch Mode is supported with direct <strong>Google Gemini</strong>, <strong>OpenAI</strong>, and <strong>Anthropic (Claude)</strong> API keys, but is <strong>unfortunately not available when using OpenRouter</strong>."
+                    "The <strong>5. Grading</strong> tab features three synchronized panes: the <strong>Student List</strong> on the left (with the pinned <code>⭐ Reference Solution</code> at the top), the <strong>Interactive PDF Viewer</strong> in the center, and the <strong>Question &amp; Criteria Workstation</strong> on the right.",
+                    "<strong>1. Question Circles &amp; Horizontal Navigation:</strong> Click any numbered question circle (<code>1</code>, <code>2</code>, <code>3</code>...) at the top right to jump to that question's zone on the PDF. Then use <code>&lt; 1/20 &gt;</code> or the <code>↑</code>/<code>↓</code> (<code>J</code>/<code>K</code>) keys to grade the entire cohort on that same question for maximum consistency.",
+                    "<strong>2. The 3-Color Status Code:</strong><br>• 🟢 <strong>Green (<code>AI</code>):</strong> Pre-graded by the AI (awaiting your human review).<br>• 🔵 <strong>Blue (<code>Human</code>):</strong> Graded, modified, or explicitly validated by a human teacher.<br>• ⚪ <strong>Grey (<code>To grade</code>):</strong> Not graded yet.",
+                    "<strong>3. Calibrating on a Single Copy vs. Launching Full-Cohort Batch AI:</strong><br>• <strong>Single-Question Calibration:</strong> At the bottom right, click <strong>Re-run AI for this question</strong> to test your rubric on the current student only.<br>• <strong>Multi-Copy Batch Launch (<code>▶ AI Grading</code>):</strong> Click <strong>▶ AI Grading</strong> at the top left to grade selected copies and questions. Choose between <strong>⚡ Standard Mode</strong> (real-time parallel workers) and <strong>🌿 Flex / Asynchronous Batch Mode (-50% cost discount)</strong>, recommended for full cohorts with direct Gemini, OpenAI, or Anthropic keys."
                 ],
                 screenshots: [
                     {
                         filePrefix: "07_grading",
-                        caption: "Grading Console Overview: Left column (student list with 🟢 AI / 🔵 Human / ⚪ To grade counters, open question score & total score), Center PDF auto-focused on the question zone, and Top-Right colored question circles (1–10)"
+                        caption: "Grading Console Overview: Left student list (with ⭐ Reference Solution, status dots, question score & total score), Center PDF auto-focused on the question zone, and Right rubric workstation"
                     },
                     {
                         filePrefix: "07b_grading_single_ai",
-                        caption: "Bottom of Right Column: AI Justification, Student Feedback (Markdown + KaTeX), 'Do not override' checkboxes, and 'Re-run AI for this question' button for single-student calibration"
+                        caption: "Bottom of Right Pane: AI Justification, Student Feedback (Markdown + KaTeX), Override protection checkboxes, and 'Re-run AI for this question'"
                     },
                     {
                         filePrefix: "07c_grading_launch_modal",
-                        caption: "Start AI Grading Modal ('▶ AI Grading'): Select target copies, questions, override rules, and choose between Standard parallel mode and recommended Flex / Asynchronous Batch Mode (-50%)"
+                        caption: "Start AI Grading Modal: Select target copies, questions, override rules, and Standard vs. Flex Asynchronous Batch Mode (-50%)"
                     }
                 ],
                 callouts: [
                     {
-                        title: "Single-Question AI Calibration",
-                        desc: "Use 'Re-run AI for this question' at the bottom right on a few copies and iterate on your criteria before launching a full batch."
+                        title: "100% Human Keyboard Speed",
+                        desc: "Toggle criteria with keys 1–9 and move across students with J/K without touching the mouse."
                     },
                     {
-                        title: "3-Color Status Code (🟢 AI • 🔵 Human • ⚪ To grade)",
-                        desc: "Track at a glance which questions were pre-graded by AI, validated by a human teacher, or still ungraded — both on the top-right circles and in the left list."
-                    },
-                    {
-                        title: "Question Score + Total Score in Left List",
-                        desc: "See each student's score on the open question alongside their total exam score, and sort the cohort by either column in one click."
-                    },
-                    {
-                        title: "Recommended Asynchronous Batch Mode (-50%)",
-                        desc: "Available with direct Gemini, OpenAI, and Anthropic keys (not supported on OpenRouter) for 50%-discounted background grading."
+                        title: "Recommended Flex Batch Mode (-50%)",
+                        desc: "Available with direct Gemini, OpenAI, and Anthropic keys for 50%-discounted asynchronous cohort pre-grading."
                     }
                 ]
             },
             {
-                id: "collaborative-sharing",
-                stepNumber: "7",
-                tag: "Chapter 7 — Team Grading (Gradaly Pro)",
-                badge: "New in v3.0 • PRO",
-                shortTitle: "7. Collaborative Share & Merge (PRO)",
+                id: "exam-collaborative-sharing",
+                guide: "exam",
+                stepNumber: "E6",
+                partColor: "indigo",
+                tag: "Exam Mode • Step 6 — Team Grading (Gradaly Pro)",
+                badge: "Collaborative Share & Merge • PRO",
+                shortTitle: "E6. Team Share & Merge (PRO)",
                 title: "Collaborative Project Sharing & Selective Per-Question Merge",
-                subtitle: "Split grading across colleagues or teaching assistants via .gradaly archives or end-to-end encrypted Cloud links (Gradaly Pro).",
+                subtitle: "Split exam grading across colleagues or teaching assistants via .gradaly archives or end-to-end encrypted Cloud links (Gradaly Pro).",
                 paragraphs: [
-                    "When co-grading an exam with colleagues or teaching assistants, <strong>Gradaly Pro</strong> lets you share either a complete project or a lightweight subset (e.g. only the rubric and gradings for specific questions) with real-time progress bars.",
-                    "Click the <strong>Share / Export</strong> icon next to the project name in the header to choose between a local <code>.gradaly</code> archive file or an <strong>Encrypted Cloud Link</strong>. With Cloud links, the archive is encrypted on your computer using <strong>AES-256-GCM</strong> before upload, and the secret decryption key (<code>#k=...</code>) stays strictly in the URL fragment that you send to your colleague.",
-                    "When your colleague clicks <strong>Import / Merge</strong>, Gradaly inspects the archive, verifies that the exam canvas PDF has the exact same <strong>SHA-256 cryptographic fingerprint</strong>, and lets them either import the archive as a <strong>brand-new project under a custom name</strong> (100% conflict-free) or <strong>selectively merge rubrics and/or gradings question-by-question</strong> with an automatic pre-merge backup in <code>backups/</code>."
+                    "When co-grading an exam with colleagues or TAs, <strong>Gradaly Pro</strong> lets you share a complete project or a lightweight subset via a local <code>.gradaly</code> archive or an <strong>AES-256-GCM Encrypted Cloud Link</strong> (valid for 7, 14, or 30 days).",
+                    "When colleagues click <strong>Import / Merge</strong>, Gradaly verifies the SHA-256 fingerprint of the exam canvas PDF and lets them either import the archive as a <strong>new project</strong> or <strong>selectively merge rubrics and/or gradings question-by-question</strong> (e.g. merging TA 1's Q1–Q2 with TA 2's Q3–Q4) with automatic pre-merge backups."
                 ],
                 screenshots: [
                     {
                         filePrefix: "09_share_modal",
-                        caption: "Share / Export Project Modal (Gradaly Pro): Presets, per-question filter, .gradaly file export, and AES-256 Encrypted Cloud Link"
+                        caption: "Share / Export Project Modal (Gradaly Pro): Sharing presets, per-question filter, and AES-256 Encrypted Cloud Link"
                     },
                     {
                         filePrefix: "10_import_merge_modal",
-                        caption: "Import / Selective Merge Modal (Gradaly Pro): SHA-256 canvas verification, per-question Rubric/Gradings checkboxes, and conflict protection"
+                        caption: "Import / Selective Merge Modal (Gradaly Pro): SHA-256 canvas verification and per-question Rubric/Gradings merge"
                     }
                 ],
                 callouts: [
                     {
-                        title: "4 Ready-to-Use Sharing Presets",
-                        desc: "Choose 'Rubric & Gradings (Lightweight < 500 KB)', 'Full Project', 'Canvas & Rubric Only', or 'Project + Papers (No gradings)'."
-                    },
-                    {
                         title: "End-to-End Encrypted Cloud Links",
-                        desc: "Large archives are automatically split into encrypted chunks with a live byte-by-byte progress bar and configurable expiration (7, 14, or 30 days)."
+                        desc: "Share projects across your teaching team with client-side AES-256-GCM encryption (#k=... never reaches the server)."
                     },
                     {
-                        title: "Create as New Project vs Selective Merge",
-                        desc: "Import safely under a new project name, or merge specific questions (e.g. Colleague A's Q1–Q2 with Colleague B's Q3–Q4)."
-                    },
-                    {
-                        title: "Conflict Protection & Auto-Backup",
-                        desc: "Protect your local manual gradings from being overwritten and rely on the automatic snapshot saved in your project's backups/ directory."
+                        title: "Question-by-Question Selective Merge",
+                        desc: "Combine gradings from multiple TAs cleanly while protecting manual edits and saving an automatic backup."
                     }
                 ]
             },
             {
-                id: "analytics-and-exports",
-                stepNumber: "8",
-                tag: "Chapter 8 — Analytics & Restitution",
-                badge: "Excel • PDF • Web Portal",
-                shortTitle: "8. Analytics, PDF & Web Portal",
-                title: "Cohort Analytics, Annotated PDFs & Zero-Knowledge Student Web Portal",
-                subtitle: "Analyze score distributions, simulate rubric adjustments, and deliver rich formative feedback to students.",
+                id: "exam-analytics-and-exports",
+                guide: "exam",
+                stepNumber: "E7",
+                partColor: "indigo",
+                tag: "Exam Mode • Step 7 — Statistics & Restitution",
+                badge: "Excel • Annotated PDFs • Encrypted Web Portal",
+                shortTitle: "E7. Statistics, PDF & Exam Web Portal",
+                title: "Cohort Analytics, Annotated PDFs & Encrypted Student Consultation Portal",
+                subtitle: "Analyze score distributions, simulate rubric weight adjustments, and return rich individual feedback to your students.",
                 paragraphs: [
-                    "The <strong>Summary</strong> tab provides real-time cohort statistics: mean, median, standard deviation, min/max scores, unambiguous score histograms <code>[a, b[</code>, and the exact validation percentage for every rubric criterion.",
-                    "When you are ready to return results, Gradaly offers three complementary export channels (1-copy test in Free mode; unlimited full-class exports in Gradaly Pro):",
-                    "1) <strong>Multi-Sheet Excel Gradebook</strong> with a global summary tab (matched with student IDs, names, emails, and groups) plus one detailed breakdown tab per question.<br>2) <strong>Individual Annotated Student PDFs</strong> (packaged in a ZIP archive) with a clean cover sheet, per-question rubric breakdown, and KaTeX math.<br>3) <strong>End-to-End Encrypted Student Web Portal</strong>: publish encrypted copies online in one click, dispatch individual notification emails with 1-click magic links, print <strong>cut-out QR code slips</strong> for in-class distribution without email, or share a <strong>Teacher Review Portal link</strong> with colleagues."
+                    "The <strong>6. Summary</strong> tab computes real-time cohort statistics: mean, median, standard deviation, min/max, unambiguous histograms <code>[a, b[</code>, and per-criterion validation rates.",
+                    "To return graded exams to students (1-copy preview in Free mode; full cohort in Gradaly Pro), choose among three channels:<br>1) <strong>Multi-Sheet Excel Gradebook</strong> (global summary + 1 tab per question).<br>2) <strong>Individual Annotated PDFs (ZIP)</strong> combining a summary cover sheet with the student's handwritten pages.<br>3) <strong>Zero-Knowledge Student Consultation Web Portal</strong>: publish encrypted graded copies online (for 30, 60, 90, 180, or 365 days), send personalized magic links by email, or print <strong>cut-out individual QR code slips</strong> to hand out in class."
                 ],
                 screenshots: [
                     {
                         filePrefix: "08_stats",
-                        caption: "Summary Tab: Cohort KPIs, score distribution histograms, per-criterion success rates, and Export Hub"
+                        caption: "Summary Tab (Exam Mode): Cohort KPIs, score distribution histograms, per-criterion success rates, and Export Hub"
                     }
                 ],
                 callouts: [
                     {
-                        title: "Multi-Sheet Excel Export",
-                        desc: "Ready for university grade administration, including per-criterion columns (1/0) and student roster metadata."
+                        title: "Excel Gradebook & Annotated PDFs",
+                        desc: "Export official university gradebooks and individual PDF copies with detailed criterion breakdowns and KaTeX math."
                     },
                     {
-                        title: "Annotated Student PDFs (ZIP)",
-                        desc: "Generates an individual PDF for each student combining a summary cover table and their original handwritten pages."
+                        title: "Encrypted Student Consultation Portal",
+                        desc: "Students view their graded copy, checked criteria, and personalized feedback via email magic link or individual QR slip."
+                    }
+                ]
+            },
+
+            // =========================================================================
+            // GUIDE 2: PRACTICE & SELF-ASSESSMENT QR MODE (P1 to P4) — 100% SELF-CONTAINED
+            // =========================================================================
+            {
+                id: "practice-getting-started",
+                guide: "practice",
+                stepNumber: "P1",
+                partHeader: "Manual 2 — Practice & Self-Assessment QR Mode (Student)",
+                partColor: "teal",
+                partBanner: {
+                    kicker: "Manual 2 • Product 2: Formative Practice QR Mode (Chapters P1–P4)",
+                    title: "Complete Guide to Autonomous Student Self-Assessment via Printable QR Worksheets",
+                    desc: "100% self-contained guide: design a PDF exercise worksheet with embedded QR codes so students solve on paper, scan with their smartphone, and receive instant formative AI feedback using their own API key (BYOK — 0 € for the teacher)."
+                },
+                tag: "Practice QR Mode • Step 1 — Concept & Project Creation",
+                badge: "Formative • Autonomous Student Training",
+                shortTitle: "P1. Concept & Creating a Practice Project",
+                title: "How Practice QR Mode Works & Creating a Practice Project",
+                subtitle: "Give your students unlimited paper-based training with instant AI feedback on smartphone — without collecting a single copy or paying a single cent in API tokens.",
+                paragraphs: [
+                    "<strong>The Pedagogical Goal of Practice QR Mode (<code>Practice</code> badge):</strong> Before a midterm or final exam, students need to practice solving problems by hand on paper (tutorials, problem sets, homework, past exam papers). However, teachers rarely have the time to collect and grade hundreds of weekly practice sheets. <strong>Practice QR Mode turns any PDF exercise sheet into an interactive self-assessment tutor:</strong><br>1. <strong>The Teacher</strong> prepares the PDF exercise sheet, defines the grading criteria (and optional Reference Solution <code>Solutionnaire</code>), places QR codes on the PDF, and publishes an encrypted static web portal.<br>2. <strong>The Student</strong> prints the PDF worksheet (or views it on tablet/screen), writes their mathematical derivations or essay answer on paper, <strong>scans the question's QR code with their smartphone</strong>, takes a photo of their handwritten work, and receives <strong>immediate, criterion-by-criterion formative AI feedback</strong>!",
+                    "<strong>Why It Costs 0 € to the Teacher (100% Static &amp; BYOK Architecture):</strong> Unlike Exam Mode where the teacher runs AI grading on collected copies, in Practice Mode <strong>there are no student rosters, no scanned copies, and no teacher API keys in the published portal</strong>. Instead, each student enters their own personal API key once on their smartphone (<strong>Bring Your Own Key — BYOK</strong>, such as a <strong>free Google AI Studio Gemini key</strong>). The student's mobile browser communicates directly with the AI provider.",
+                    "<strong>Streamlined 3-Tab Interface:</strong> On the Welcome Screen, click <strong>New project → Practice Project (Student Self-Assessment)</strong> (or click <strong>Create demo project → Practice Project (QR Self-Assessment)</strong> to explore a complete Trigonometry worksheet in French or English). A Practice project opens a clean <strong>3-tab workspace</strong>: <code>1. Canvas &amp; Questions</code>, <code>2. QR Code Placement</code>, and <code>3. Web Publication</code>."
+                ],
+                screenshots: [
+                    {
+                        filePrefix: "01_welcome",
+                        caption: "Welcome Screen: Practice projects are identified by the teal 'Practice' badge alongside your Exam projects"
                     },
                     {
-                        title: "Zero-Knowledge Student Web Portal",
-                        desc: "Each student copy is encrypted client-side (AES-256-GCM) with its own unique key (#k=...) before upload."
+                        filePrefix: "12_demo_types_modal",
+                        caption: "Demo Creation Modal: Select 'Practice Project (QR Self-Assessment)' to open a ready-to-test QR exercise sheet"
+                    }
+                ],
+                callouts: [
+                    {
+                        title: "Paper + Smartphone Workflow",
+                        desc: "Students keep writing real handwritten math, proofs, and diagrams on paper while getting instant AI tutoring via smartphone camera."
                     },
                     {
-                        title: "Direct Email Dispatch & Printable QR Slips",
-                        desc: "Send personalized magic links by email or print a PDF sheet of individual QR code slips to hand out in class."
+                        title: "Zero Copies to Collect, Zero Roster",
+                        desc: "A Practice project has no student list or copies tab — it is 100% dedicated to autonomous formative training."
+                    },
+                    {
+                        title: "0 € Token Cost for the Teacher (BYOK)",
+                        desc: "Students use their own free Google AI Studio (Gemini) key on their phone. Even 1,000 student attempts cost 0 € to the teacher."
+                    },
+                    {
+                        title: "Instant Built-in Practice Demo",
+                        desc: "Launch the built-in Practice Demo from the Welcome Screen to inspect a complete 10-question QR worksheet and Reference Solution."
+                    }
+                ]
+            },
+            {
+                id: "practice-canvas-and-rubric",
+                guide: "practice",
+                stepNumber: "P2",
+                partColor: "teal",
+                tag: "Practice QR Mode • Step 2 — Worksheet, Solutionnaire & Rubric",
+                badge: "100% Self-Contained Guide",
+                shortTitle: "P2. Worksheet PDF, Solution & Criteria",
+                title: "Importing Your Exercise PDF, Reference Solution & Designing Formative Criteria",
+                subtitle: "Frame each exercise on your blank PDF, load your Reference Solution (Solutionnaire), and build clear self-assessment criteria manually or with the AI Assistant.",
+                paragraphs: [
+                    "In the <strong>1. Canvas &amp; Questions</strong> tab of your Practice project (notice the streamlined 3-tab header at the top and the absence of any Student ID zone), you define the exercises and grading criteria that will guide the AI when evaluating a student's smartphone photo:",
+                    "<strong>1. Import the Blank Exercise PDF (<code>Canvas</code>) &amp; Frame Each Question:</strong> Import your PDF worksheet and draw a rectangle around each exercise (<code>Q1</code>, <code>Q2</code>, ...). <strong>Important:</strong> include the printed exercise statement inside the rectangle! In Practice Mode, Gradaly crops this exact rectangle to <strong>display the exercise statement on the student's smartphone screen</strong> and to give the AI full visual context.",
+                    "<strong>2. Import the Optional Reference Solution PDF (<code>Solutionnaire</code>):</strong> Use the <strong>Statement (Canvas) / Solutionnaire</strong> toggle at the top of the PDF viewer to import a PDF containing your worked-out model solutions. If your solution PDF has the same page layout as the blank worksheet, the question zones apply automatically; if the layout differs, switch to <em>Solutionnaire</em> view and draw the corresponding solution zone for each question. In Practice Mode, the Solutionnaire serves three purposes:<br>• <strong>Helping the AI Rubric Assistant</strong> generate accurate criteria.<br>• <strong>Providing the ground-truth mathematical solution to the AI</strong> when evaluating the student's photo.<br>• <strong>Unlocking the visual model solution on the student's smartphone</strong> after they submit at least one handwritten attempt!",
+                    "<strong>3. Define the Scoring Rules &amp; Criteria (Purely Additive or Purely Diminutive):</strong><br>• Gradaly computes <code>Score = Base Score + Σ (validated criteria)</code>, bounded between <code>0</code> and <code>Max Score</code>.<br>• Choose either a <strong>purely additive rubric</strong> (<code>Base Score = 0</code>, positive criteria <code>+1</code>, <code>+2</code> for each valid step) or a <strong>purely diminutive rubric</strong> (<code>Base Score = Max Score</code>, negative penalties <code>-0.5</code>, <code>-1</code>). Avoid mixing positive and negative weights in the same question.<br>• Use the bottom field (<strong>General AI Instructions / Prompt</strong>) to specify pedagogical guidance or paste the plain-text question if needed.",
+                    "<strong>4. Use the AI Rubric Assistant (<code>Design / Edit with AI</code>):</strong> Click <strong>Design / Edit with AI</strong> above the criteria list to let the AI draft your formative rubric automatically from the exercise statement and Reference Solution, and refine it in chat mode."
+                ],
+                screenshots: [
+                    {
+                        filePrefix: "13a_practice_questions",
+                        caption: "Practice Mode — 1. Canvas & Questions Tab: Streamlined 3-tab header (Canvas & Questions | QR Code Placement | Web Publication), question zones, formative criteria, and Statement / Solutionnaire toggle"
+                    },
+                    {
+                        filePrefix: "03_rubric_assistant",
+                        caption: "AI Rubric Assistant: Co-design formative criteria and instructions using both the exercise statement and your Reference Solution"
+                    }
+                ],
+                callouts: [
+                    {
+                        title: "Statement Crop Shown on Smartphone",
+                        desc: "The zone you draw on the Canvas PDF is automatically cropped and displayed at the top of the student's phone screen."
+                    },
+                    {
+                        title: "Reference Solution (Solutionnaire)",
+                        desc: "Guides the AI during evaluation and can be automatically revealed to the student after their first handwritten attempt."
+                    },
+                    {
+                        title: "Purely Additive or Diminutive Criteria",
+                        desc: "Clear step-by-step criteria help students understand exactly which part of their derivation succeeded or needs rework."
+                    },
+                    {
+                        title: "AI Rubric Assistant Included",
+                        desc: "Generate a complete formative rubric from your exercise PDF and solutionnaire in seconds."
+                    }
+                ]
+            },
+            {
+                id: "practice-qr-placement",
+                guide: "practice",
+                stepNumber: "P3",
+                partColor: "teal",
+                tag: "Practice QR Mode • Step 3 — QR Code Placement & Printable PDF",
+                badge: "Included in Free & Pro",
+                shortTitle: "P3. QR Placement & Printable PDF",
+                title: "Positioning QR Codes on Your PDF & Downloading the Printable Worksheet",
+                subtitle: "Place a General QR code (full sheet) and/or Per-Question QR codes directly inside each exercise box on your PDF.",
+                paragraphs: [
+                    "Open the <strong>2. QR Code Placement</strong> tab to choose where the self-assessment QR codes appear on your exercise sheet:",
+                    "<strong>1. General QR Code vs. Per-Question QR Codes:</strong><br>• <strong>General QR Code (Full Worksheet):</strong> Placed by default at the top of Page 1. Scanning it opens the mobile portal on the full list of exercises.<br>• <strong>Per-Question QR Codes (<code>QR Q1</code>, <code>QR Q2</code>, ...):</strong> Embedded directly inside each question's box on the PDF. When a student scans <code>QR Q1</code> with their phone camera, their smartphone opens <strong>directly on Question 1</strong> (<code>?q=Q1</code>), ready to snap a photo of their answer!",
+                    "<strong>2. Interactive Drag-and-Drop &amp; 1-Click Corner Alignment:</strong> Click any question in the left list to jump to its page. Drag any QR badge directly with your mouse on the PDF page so it never covers formulas or diagrams, or click <code>Top-Right Corner</code>, <code>Top-Left Corner</code>, or <code>Bottom-Right Corner</code>. Toggle individual QR codes on/off with the eye icon.",
+                    "<strong>3. Download the Printable PDF with Embedded QR Codes:</strong> Click <strong>Download Printable PDF with QR Codes</strong>. Gradaly generates a crisp vector PDF with all active QR codes stamped at their exact positions, ready to print for class or upload to Moodle/Canvas."
+                ],
+                screenshots: [
+                    {
+                        filePrefix: "13_practice_qr",
+                        caption: "Practice Mode — 2. QR Code Placement Tab: General & Per-Question QR list on the left, corner snap buttons, and interactive drag-and-drop placement on Page 2 (QR Q1 & QR Q2)"
+                    }
+                ],
+                callouts: [
+                    {
+                        title: "Direct Per-Question Deep Link (?q=Q1)",
+                        desc: "Scanning a question's QR code opens that exact exercise on the student's smartphone with zero navigation needed."
+                    },
+                    {
+                        title: "Permanent QR Codes Across Rubric Edits",
+                        desc: "Even if you refine your rubric criteria later and update the online publication, the printed QR codes remain 100% valid!"
+                    }
+                ]
+            },
+            {
+                id: "practice-publish-and-student",
+                guide: "practice",
+                stepNumber: "P4",
+                partColor: "teal",
+                tag: "Practice QR Mode • Step 4 — Simulator, Web Publication & Student App",
+                badge: "Free Simulator • Gradaly Pro Publication • BYOK",
+                shortTitle: "P4. Simulator, Web Publish (Pro) & Student App",
+                title: "Smartphone Simulator (Free), Zero-Knowledge Web Publication (Pro) & The Student Experience",
+                subtitle: "Configure pedagogical visibility rules, test for free in the built-in Smartphone Simulator, and publish online or as a static .zip with Gradaly Pro.",
+                paragraphs: [
+                    "In the <strong>3. Web Publication</strong> tab, you configure the pedagogical behavior of the mobile app, test it in the simulator, and publish it:",
+                    "<strong>1. Pedagogical Visibility Options:</strong><br>• <strong>Show rubric criteria before the 1st attempt:</strong> Let students see the expected steps upfront, or keep criteria hidden until they submit their first photo.<br>• <strong>Show detailed AI evaluation justification:</strong> Display criterion-by-criterion explanations alongside the formative feedback.<br>• <strong>Reveal the Reference Solution (<code>Solutionnaire</code>) after at least one attempt:</strong> Keep your worked-out model solution locked until the student submits an initial handwritten attempt!",
+                    "<strong>2. Test for Free in the Built-in Smartphone Simulator:</strong> Click <strong>Test Student Web App (Simulator)</strong> at the top right of the banner. Even in the <strong>Free Community Edition</strong>, you can preview and test the exact mobile interface inside Gradaly.",
+                    "<strong>3. Publish Online in 1 Click or Export Static <code>.zip</code> (Gradaly Pro):</strong> With <strong>Gradaly Pro</strong>, click <strong>Publish in 1 click to portal.gradaly.io</strong> (encrypted client-side with <strong>AES-256-GCM</strong>, with a selectable retention duration of <strong>60 days</strong>, <strong>180 days / 1 semester</strong>, or <strong>365 days / 1 year</strong>) or click <strong>Export as standalone static website (.zip)</strong> to host on your own university server.",
+                    "<strong>4. Step-by-Step Student Experience on Smartphone (BYOK — 0 € for the Teacher):</strong><br>• The student scans the QR code on their paper worksheet.<br>• On their first visit, they tap the <strong>API Key</strong> banner and follow the built-in 30-second guide to paste a <strong>free Google AI Studio (Gemini) API key</strong> (saved locally in their phone browser).<br>• They tap <strong>Take a photo of my work</strong>, photograph their handwritten solution on paper, and tap <strong>Evaluate my answer with AI</strong> to receive their score, validated criteria, LaTeX math feedback, and the unlocked Reference Solution!",
+                    "<strong>5. Live Interactive Example (Printable PDF Worksheet &amp; Student Portal):</strong><br>• 🇬🇧 <a href=\"practice_examples_pdfs/Sujet_QR_Demo_Practice_EN.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-teal-700 font-bold underline hover:text-teal-900\">View Printable PDF Worksheet with QR Codes (Demo EN)</a> &nbsp;|&nbsp; <a href=\"https://portal.gradaly.io/?e=ex_7c576e0a7ff4729b&id=practice#k=fOTpaHBSuaFzzdN7AJYjSF_BKMgKaYcGQj6lyYljH10\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-teal-700 font-bold underline hover:text-teal-900\">Open Live Student Practice Portal (Demo EN)</a><br>• 🇫🇷 <a href=\"practice_examples_pdfs/Sujet_QR_Demo_Practice_FR.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-teal-700 font-bold underline hover:text-teal-900\">View Printable PDF Worksheet with QR Codes (Demo FR)</a> &nbsp;|&nbsp; <a href=\"https://portal.gradaly.io/?e=ex_f511e8d3dad53c82&id=practice#k=6p9EEDYpJx0TMPq7vWBK8h8oeuplQq07tGq56yQPWiM\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-teal-700 font-bold underline hover:text-teal-900\">Open Live Student Practice Portal (Demo FR)</a>"
+                ],
+                screenshots: [
+                    {
+                        filePrefix: "14_practice_publish",
+                        caption: "Practice Mode — 3. Web Publication Tab: Pedagogical toggles, Solutionnaire unlock after 1st attempt, retention duration (60/180/365 days), and Gradaly Pro 1-click Cloud / ZIP publication"
+                    },
+                    {
+                        filePrefix: "15_practice_student_portal",
+                        caption: "Built-in Student Smartphone Simulator: Preview the mobile web app where students enter their free Gemini key (BYOK), snap a photo of their paper work, and get instant feedback"
+                    }
+                ],
+                callouts: [
+                    {
+                        title: "Built-in Smartphone Simulator (Free)",
+                        desc: "Test your exercise sheet, criteria, and mobile student experience inside Gradaly for free before publishing."
+                    },
+                    {
+                        title: "1-Click Cloud or Static ZIP (Gradaly Pro)",
+                        desc: "Publish with client-side AES-256-GCM encryption to portal.gradaly.io (60/180/365 days) or export a standalone .zip."
+                    },
+                    {
+                        title: "Free Google AI Studio Key for Students",
+                        desc: "The mobile interface includes a built-in step-by-step tutorial showing students how to get a free Gemini API key in 30 seconds."
+                    },
+                    {
+                        title: "Solutionnaire Unlocked After Effort",
+                        desc: "Students must photograph and submit an initial paper attempt before the teacher's Reference Solution is revealed."
+                    }
+                ]
+            },
+
+            // =========================================================================
+            // GUIDE 3: AI API KEYS & FAQ (R1 to R2)
+            // =========================================================================
+            {
+                id: "ai-settings",
+                guide: "reference",
+                stepNumber: "R1",
+                partHeader: "AI API Keys & FAQ",
+                partColor: "slate",
+                partBanner: {
+                    kicker: "Reference & Configuration (Chapters R1–R2)",
+                    title: "Setting Up AI API Keys, Choosing a Model & Frequently Asked Questions",
+                    desc: "How to configure Gemini, OpenRouter, OpenAI, Anthropic, or a local/university server, plus answers to common questions."
+                },
+                tag: "Reference R1 — AI Configuration",
+                badge: "OpenRouter • Gemini • GPT • Claude • Local",
+                shortTitle: "R1. API Keys & Choosing an AI Model",
+                title: "Setting Up Your API Key & Choosing the Right AI Model",
+                subtitle: "Configure an API key in Settings (⚙️) to enable the AI Rubric Assistant and AI Pre-Grading with 0% markup.",
+                paragraphs: [
+                    "<strong>Recommended Vision Models:</strong> In our benchmarks on handwritten university exams (math, physics, engineering, economics, humanities), we achieve <strong>excellent results</strong> with <strong><code>Gemini 3.8 Flash</code></strong>, <strong><code>GPT 5-4 mini</code></strong>, <strong><code>Claude-Sonnet-5.5</code></strong>, and <strong><code>Mistral-Large 4.0</code></strong>.",
+                    "<strong>Direct Provider Keys vs. OpenRouter:</strong> Create a key directly with <strong>Google Gemini</strong>, <strong>OpenAI</strong>, or <strong>Anthropic</strong> (which supports 50%-discounted asynchronous <strong>Batch / Flex mode</strong>), or use <strong>OpenRouter</strong> to access all providers from one unified balance.",
+                    "<strong>0% Markup &amp; University/Local Server Support:</strong> Gradaly charges nothing on top of your provider's token cost — or <strong>0 € if you connect an institutional university LLM server or local Ollama model</strong>."
+                ],
+                screenshots: [
+                    {
+                        filePrefix: "11_settings_ai",
+                        caption: "AI Settings Modal (⚙️): Configure Google Gemini, OpenRouter, OpenAI, Anthropic, or a Local / University server"
+                    }
+                ],
+                providerGuides: [
+                    {
+                        name: "OpenRouter (Multi-Provider Gateway)",
+                        tag: "All Models in 1 Key",
+                        icon: "fas fa-network-wired",
+                        desc: "One single account and API key lets you use <code>Gemini 3.8 Flash</code>, <code>GPT 5-4 mini</code>, <code>Claude-Sonnet-5.5</code>, and <code>Mistral-Large 4.0</code> (note: asynchronous Batch mode is not available on OpenRouter).",
+                        steps: [
+                            "Sign in at <strong>openrouter.ai</strong> and add a small prepaid balance ($5–$10) under <strong>Credits</strong>.",
+                            "Go to <strong>Keys → Create Key</strong> and copy the key (<code>sk-or-v1-...</code>).",
+                            "Paste it into Gradaly <strong>Settings (⚙️) → OpenRouter</strong>."
+                        ],
+                        url: "https://openrouter.ai/keys",
+                        linkLabel: "Open OpenRouter API Keys Console"
+                    },
+                    {
+                        name: "Google Gemini (Google AI Studio)",
+                        tag: "Fast, Free Tier & Batch -50%",
+                        icon: "fas fa-bolt",
+                        desc: "Direct access to <code>Gemini 3.8 Flash</code> and Pro models with native 50%-discounted Batch API support (and a free tier for students in Practice QR mode).",
+                        steps: [
+                            "Sign in to <strong>Google AI Studio</strong> (<code>aistudio.google.com</code>).",
+                            "Click <strong>Get API key → Create API key</strong> and copy the key (<code>AIzaSy...</code>).",
+                            "Paste it into Gradaly <strong>Settings (⚙️) → Google Gemini</strong>."
+                        ],
+                        url: "https://aistudio.google.com/app/apikey",
+                        linkLabel: "Open Google AI Studio API Keys"
+                    },
+                    {
+                        name: "OpenAI (GPT Models)",
+                        tag: "High Reasoning Precision",
+                        icon: "fas fa-brain",
+                        desc: "Direct access to <code>GPT 5-4 mini</code> and GPT vision models with 50% Batch API discounts.",
+                        steps: [
+                            "Log in to <strong>platform.openai.com</strong> and load a small prepaid balance under <strong>Settings → Billing</strong>.",
+                            "Go to <strong>API keys → + Create new secret key</strong> (<code>sk-proj-...</code>).",
+                            "Paste it into Gradaly <strong>Settings (⚙️) → OpenAI</strong>."
+                        ],
+                        url: "https://platform.openai.com/api-keys",
+                        linkLabel: "Open OpenAI Platform API Keys"
+                    },
+                    {
+                        name: "Anthropic (Claude Models)",
+                        tag: "Nuanced Feedback & Proofs",
+                        icon: "fas fa-feather-alt",
+                        desc: "Direct access to <code>Claude-Sonnet-5.5</code> and Opus models for dense handwritten proofs.",
+                        steps: [
+                            "Sign in to <strong>console.anthropic.com</strong> and top up your balance under <strong>Billing</strong>.",
+                            "Go to <strong>API Keys → Create Key</strong> (<code>sk-ant-...</code>).",
+                            "Paste it into Gradaly <strong>Settings (⚙️) → Anthropic</strong>."
+                        ],
+                        url: "https://console.anthropic.com/settings/keys",
+                        linkLabel: "Open Anthropic Console API Keys"
                     }
                 ]
             },
             {
                 id: "faq",
-                stepNumber: "9",
-                tag: "Chapter 9 — FAQ",
-                badge: "Architecture, Privacy & Support",
-                shortTitle: "9. Frequently Asked Questions (FAQ)",
+                guide: "reference",
+                stepNumber: "R2",
+                partColor: "slate",
+                tag: "Reference R2 — Frequently Asked Questions",
+                badge: "Architecture, Privacy & Best Practices",
+                shortTitle: "R2. Frequently Asked Questions (FAQ)",
                 title: "Frequently Asked Questions (FAQ)",
-                subtitle: "Answers to common questions about how AI grading works, local storage, API key security, Zero-Knowledge Cloud encryption, and feedback.",
+                subtitle: "Everything you need to know about Exam Mode vs. Practice QR Mode, AI costs, local files, and Zero-Knowledge encryption.",
                 paragraphs: [
                     "Below you will find answers to the most frequent technical, pedagogical, and privacy questions about Gradaly."
                 ],
                 faqs: [
                     {
-                        q: "How does Gradaly's AI grading work under the hood?",
-                        a: "<p>When you ask the AI to grade a question on a student's paper, Gradaly extracts the <strong>cropped image of the rectangle zone</strong> you drew for that question and sends it to your chosen vision AI model together with a structured prompt containing your rubric criteria (<code>CRITERIA</code>) and general grading instructions (<code>PROMPT_TEXT</code>).</p><p><strong>In short, it works just as if you copied and pasted a screenshot of that zone into your favorite AI chat tool and asked:</strong> <em>\"Hey, here is my grading policy and point breakdown for this question — please evaluate this student's handwritten answer, tell me which criteria are satisfied, explain why, and write constructive feedback for the student.\"</em></p><p>Because the AI only sees what is inside that cropped zone plus the text of your criteria and instructions, framing the question statement inside the zone (or pasting the question text in the bottom instructions field) and writing clear criteria descriptions ensures the best possible grading accuracy.</p>"
+                        q: "What is the exact difference between Product 1 (Exam Mode) and Product 2 (Practice QR Mode)?",
+                        a: "<p><strong>Product 1 — Exam Grading Mode (Summative, by the Teacher):</strong> You collect student papers after an exam, scan them, match student identities 100% offline via OCR, grade the cohort in Gradaly (100% manually or with your teacher API key), and export Excel gradebooks, annotated PDFs, or the Student Consultation Portal.</p><p><strong>Product 2 — Practice &amp; Self-Assessment QR Mode (Formative, by the Student):</strong> There are <strong>no student rosters and no copies collected by the teacher</strong>. You stamp QR codes onto a blank PDF exercise sheet and publish an encrypted static portal (with Gradaly Pro). Students solve the exercises on paper at home or in tutorials, scan the QR code with their smartphone, photograph their handwritten work, and get instant formative AI feedback using <strong>their own personal API key (BYOK — e.g. a free Google AI Studio key, costing 0 € to the teacher)</strong>.</p>"
                     },
                     {
-                        q: "Should I trust AI grading?",
-                        a: "<p><strong>Yes and no — at first, absolutely not!</strong> Out of the box, your initial rubric might be too strict or ambiguous, or the AI model you selected might struggle to solve a specific problem or misread an unusual notation.</p><p><strong>Human review and validation are essential:</strong> We strongly recommend that you <strong>read through the AI's outputs and validate them manually</strong>, especially when Gradaly is used for <strong>summative or high-stakes (certificative) exams</strong>. Gradaly is specifically designed to let you review, adjust, and manually validate every single student answer and feedback item — and doing so will always be the best practice.</p><p><strong>Student transparency &amp; grade appeals:</strong> Because Gradaly gives students full transparency on the exact criteria applied to their copy (via annotated PDFs or the Student Web Portal), we also strongly recommend giving students the opportunity to review their graded copy and contest/appeal the application of specific rubric criteria if needed.</p>"
+                        q: "Should I trust AI grading for official exams?",
+                        a: "<p><strong>At first, never blindly!</strong> For summative exams (Exam Mode), we strongly recommend calibrating your rubric on a few copies first, reviewing the AI's pre-grading, and <strong>validating every copy manually</strong> (turning its status badge from 🟢 AI to 🔵 Human). Because Gradaly returns the transparent criterion-by-criterion breakdown to students, students can also easily inspect and appeal any criterion if needed.</p>"
                     },
                     {
-                        q: "How much does it cost to grade an exam with AI?",
-                        a: "<p>There is no single fixed price because the cost depends on several factors: the number of student copies, the number of questions, and the size and pricing tier of the AI model you choose (each API provider publishes its exact price per million input/output tokens).</p><p>To give a concrete real-world benchmark: using an excellent model like <strong><code>Gemini 3.8 Flash</code></strong> (which performs remarkably well in our tests), we graded complex university statistics exams with <strong>6 to 7 pages of handwritten answers across 400 students for a total API cost of around $5 to $7</strong> in flexible/batch mode (and remember: Gradaly takes 0% markup on top of your provider's token price).</p>"
+                        q: "How much does AI grading cost in Exam Mode vs. Practice QR Mode?",
+                        a: "<p><strong>In Exam Mode:</strong> Using a fast multimodal model like <code>Gemini 3.8 Flash</code> in Flex/Batch mode (-50%), pre-grading a 6-page exam across <strong>400 students typically costs around $5 to $7 total</strong> (0% markup from Gradaly).</p><p><strong>In Practice QR Mode:</strong> It costs <strong>0 € to the teacher</strong> because each student uses their own personal API key (BYOK, such as Google AI Studio's free Gemini tier) directly on their smartphone.</p>"
                     },
                     {
-                        q: "I already have a paid subscription to ChatGPT Plus (OpenAI), Claude Pro, or Gemini Advanced — why can't I use it instead of an API key?",
-                        a: "<p><strong>1. Two strictly separate products at AI providers:</strong> At OpenAI, Anthropic, and Google, consumer chat subscriptions (ChatGPT Plus, Claude Pro, Gemini Advanced at ~$20/month) and <strong>API access</strong> are completely separate billing systems. Consumer subscriptions only grant manual access to their web/mobile chat interface and do not technically allow third-party software like Gradaly to run automated requests (and their Terms of Service strictly prohibit bypassing this).</p><p><strong>2. Parallel batch grading &amp; stronger data privacy:</strong> To pre-grade dozens or hundreds of exam copies in parallel and receive structured grading data (checked rubric criteria, teacher justifications, and student feedback), Gradaly must communicate through the official developer API. Furthermore, <strong>API traffic enjoys stricter privacy guarantees</strong>: unlike consumer web chats by default, exam answers sent through the commercial API <strong>are contractually not used by OpenAI, Google, or Anthropic to train their AI models</strong>.</p><p><strong>3. Very low pay-as-you-go cost (no extra monthly subscription):</strong> An API key does not require a monthly subscription — you only pay for the exact tokens you use (<em>pay-as-you-go</em>, with 0% markup from Gradaly), which typically costs <strong>only a few dollars to grade an entire cohort of several hundred students</strong> (and Google even offers a free tier on the Gemini API for testing). If you prefer a single unified balance for all models (OpenAI, Claude, Gemini, Mistral), you can simply use <strong>OpenRouter</strong> or your university's institutional AI server.</p>"
+                        q: "What resolution (DPI) should I use when scanning student copies in Exam Mode?",
+                        a: "<p>Scan in <strong>Color at <code>150 DPI</code> to <code>200 DPI</code></strong>. Avoid 300 or 600 DPI (which makes files 5× heavier without improving AI vision accuracy) and avoid 1-bit black-and-white (which erases pencil strokes and colored diagrams).</p>"
                     },
                     {
-                        q: "How long does it take to grade my exam with AI?",
-                        a: "<p>The processing time depends on the number of question zones, the number of copies, and the complexity of the reasoning task for the AI model. In practice, for an exam with <strong>400 student copies, 5 questions, and around ten pages of handwritten answers</strong> in flexible mode, we typically pre-grade the <strong>entire exam in about 10 minutes</strong>.</p><p><strong>Tip to speed up processing:</strong> Don't hesitate to increase the <strong>number of parallel threads (workers)</strong> in <strong>Settings (⚙️)</strong> — as long as your API provider's rate limits allow it, running more parallel workers significantly reduces total grading time.</p>"
+                        q: "Where are my projects and API keys stored, and how does Zero-Knowledge Cloud encryption work?",
+                        a: "<p>All projects live locally in <strong><code>Documents/Gradaly/</code></strong> on your computer, and your API keys stay in <code>~/.gradaly_settings.json</code>. Whenever you publish an Exam Portal, a Practice QR Portal, or a Team Share Link, all files are encrypted client-side on your machine using <strong><code>AES-256-GCM</code></strong> before upload. The decryption key (<code>#k=...</code>) remains inside the URL fragment after <code>#</code>, which browsers never send to the server.</p>"
                     },
                     {
-                        q: "What resolution (DPI) should I use when scanning student copies?",
-                        a: "<p>Aim for the <strong>lightest possible files that remain clearly legible</strong>: <strong><code>150 DPI</code> to <code>200 DPI</code></strong> is the ideal sweet spot for both human reading and AI vision models.</p><p><strong>Why you should NOT scan at 300 or 600 DPI:</strong> Scanning at very high resolutions offers zero benefit for AI grading accuracy (vision models internally resize images anyway) while making your PDF files 4× to 10× heavier, which unnecessarily slows down PDF splitting, page navigation, and encrypted Cloud uploads.</p><p><strong>Keep Color enabled:</strong> We recommend scanning in <strong>Color (at 150–200 DPI with standard JPEG/PDF compression)</strong> rather than harsh black-and-white (1-bit) mode. Color preserves faint pencil strokes, colored pens used by students in diagrams, and subtle math subscripts much more faithfully.</p>"
-                    },
-                    {
-                        q: "Where are the files of Gradaly stored on my computer?",
-                        a: "<p>All your exam projects are stored locally in your computer's <strong><code>Documents/Gradaly/</code></strong> folder (e.g. <code>~/Documents/Gradaly/</code> on macOS/Linux or <code>C:\\Users\\YourName\\Documents\\Gradaly\\</code> on Windows), with one subfolder per project.</p><p>Inside each project folder, everything is stored in standard, transparent formats:<ul><li><strong>PDF files:</strong> the blank exam canvas (<code>canvas.pdf</code>), the optional reference solution (<code>solution.pdf</code>), and the individual student copies inside <code>copies/</code> (<code>copie_01.pdf</code>, <code>copie_02.pdf</code>, etc.).</li><li><strong>Plain-text JSON files:</strong> the question zones and grading rubric (<code>config.json</code>), the student roster with names, IDs, and emails (<code>students.json</code>), the OCR student-to-copy association table (<code>matching.json</code>), and each copy's evaluation and feedback inside <code>gradings/</code> (<code>copie_01.json</code>, etc.).</li></ul></p><p><strong>⚠️ Important advice:</strong> While this open structure makes it easy to back up your <code>Documents/Gradaly</code> folder (via Time Machine, Nextcloud, OneDrive, etc.), <strong>we strongly advise NOT editing, renaming, or moving files manually inside a project folder</strong>, as manual modifications may break internal references and corrupt the project.</p>"
-                    },
-                    {
-                        q: "Where are my API keys stored and is this secure?",
-                        a: "<p>Your AI API keys (Gemini, OpenRouter, OpenAI, Anthropic) are stored <strong>strictly locally on your own computer</strong> inside the hidden configuration file <code>.gradaly_settings.json</code> located in your user home directory (<code>~/.gradaly_settings.json</code> on macOS/Linux or <code>C:\\Users\\YourName\\.gradaly_settings.json</code> on Windows).</p><p><strong>Security guarantees:</strong><ul><li>Your API keys are <strong>never sent to any Gradaly server</strong> and are <strong>never included when you export or share a <code>.gradaly</code> project archive</strong> with colleagues.</li><li>When you trigger AI rubric design or AI pre-grading, your computer communicates <strong>directly over encrypted HTTPS (TLS 1.3)</strong> with the official API endpoint of the provider you selected (Google, OpenRouter, OpenAI, Anthropic, or your university server).</li><li>You can revoke, rotate, or set a monthly spending cap on your API key at any time from your provider's dashboard.</li></ul></p>"
-                    },
-                    {
-                        q: "Where are data stored when I publish an exam on the Cloud or generate a Cloud share link? Who has access to it?",
-                        a: "<p>When you publish an exam to the <strong>Student Web Portal</strong> or generate a <strong>Collaborative Cloud Share Link</strong>, <strong>every file is encrypted locally on your computer using <code>AES-256-GCM</code> before a single byte leaves your machine</strong>. Only unreadable encrypted binary blobs (<code>.enc</code>) are uploaded to our European cloud storage (hosted in the EU with automatic expiration).</p><p>The secret decryption key (<code>#k=...</code>) is placed inside the URL fragment after the <code>#</code> symbol. By web standard (RFC 3986), browsers <strong>never transmit the URL fragment after <code>#</code> to the server</strong>. Consequently, <strong>even the creators of Gradaly can never read your files stored on the cloud, and even an attacker who compromised the cloud platform could see nothing</strong> — because everything stored is encrypted and only you (and the recipients to whom you send the generated web link) possess the key.</p>"
-                    },
-                    {
-                        q: "Why is Gradaly a desktop application rather than a web tool? What is Gradaly's vision?",
-                        a: "<p>We chose a native desktop architecture (macOS, Windows, Linux) for two fundamental reasons:</p><p>1) <strong>Immediate Data Sovereignty:</strong> You never have to upload unencrypted student rosters or exam scans to a third-party SaaS database just to organize and match your exam.</p><p>2) <strong>Our Long-Term Vision (100% Autonomous Local AI):</strong> AI hardware and open-weights multimodal models are advancing rapidly. <strong>Gradaly's vision is that within the next few years, highly capable vision-language models will run directly on a teacher's laptop</strong> (or on a local department server). Because Gradaly is a native desktop app with built-in local endpoint support (Ollama / vLLM / institutional servers), educators will become <strong>100% autonomous</strong> — grading exams offline with zero cloud dependency and zero token cost.</p>"
-                    },
-                    {
-                        q: "What are the differences with other tools such as Gradescope or cloud AI graders?",
-                        a: "<p><strong>Compared to Gradescope:</strong> Gradescope has real advantages for certain workflows — simultaneous real-time browser collaboration without merging files, advanced support for multiple-choice bubble sheets, and automatic answer clustering. However, Gradescope does not include multimodal AI pre-grading for open-ended handwritten reasoning, does not offer an AI assistant to co-design rubrics, and gives you less control over your student data (which are stored in plaintext on third-party servers). Gradaly can be used in <strong>100% Human Mode</strong> with the same core rubric grading workflow, while adding optional AI rubric design, AI pre-grading, and 100% local data control.</p><p><strong>Compared to emerging Cloud AI Graders:</strong> Those platforms typically impose a single black-box AI model and charge a heavy markup by selling proprietary 'AI Credit Packs'. Gradaly gives you <strong>full control over the AI model</strong> (Gemini, GPT, Claude, Mistral, OpenRouter, or a free university/local server) and <strong>charges 0% markup on AI usage</strong>.</p>"
-                    },
-                    {
-                        q: "Where can I make suggestions and bug reports?",
-                        a: "<p>We welcome all your feedback, feature ideas, and bug reports! You can open an issue directly on our GitHub issue tracker here: <a href=\"https://github.com/pschaus/gradaly-website/issues\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-indigo-600 font-bold hover:underline\">https://github.com/pschaus/gradaly-website/issues</a>.</p>"
+                        q: "How long do published Exam Portals, Practice QR Portals, and Collaborative Links stay online?",
+                        a: "<p>You choose the retention duration when publishing (with automatic purge upon expiration): <strong>30 to 365 days</strong> for Exam Consultation Portals, <strong>60, 180 (1 semester), or 365 days (1 year)</strong> for Practice QR Portals, and <strong>7, 14, or 30 days</strong> for Team Share Links. With Gradaly Pro, you can also export Exam and Practice portals as standalone <code>.zip</code> archives to host indefinitely on your own university server.</p>"
                     }
                 ]
             }
         ]
     },
+
+    // =========================================================================
+    // FRENCH TRANSLATION (FR) — DEUX MANUELS INDÉPENDANTS (SANS SOCLE COMMUN)
+    // =========================================================================
     fr: {
-        badge_manual: "Manuel Utilisateur",
+        badge_manual: "Manuel Utilisateur (2-en-1)",
         back_home: "Retour au site",
         download_btn: "Télécharger Gradaly",
-        hero_pill: "Guide Complet Pas-à-Pas • v3.0.2",
+        hero_pill: "Logiciel Desktop 2-en-1 • Manuel Utilisateur Complet v4.0.0",
         hero_title: "Manuel Utilisateur Gradaly",
-        hero_subtitle: "Mieux corriger, pour mieux former. Utilisez Gradaly en mode 100 % Humain (comme Gradescope) ou activez l'assistance IA multimodale pour concevoir vos barèmes et pré-corriger vos copies — tout en gardant un contrôle absolu sur vos données.",
-        search_placeholder: "Rechercher dans le manuel (ex: mode humain, critères, clé API, OpenRouter, Gradescope, Documents/Gradaly, FAQ)...",
-        toc_title: "Sommaire",
+        hero_subtitle: "Mieux corriger, pour mieux former. Gradaly est un produit 2-en-1 réunissant deux outils distincts : (1) le Mode Examen Certificatif pour la correction de copies par l'enseignant, et (2) le Mode Entraînement QR Formatif pour l'auto-évaluation autonome par l'étudiant. Choisissez ci-dessous le manuel correspondant à votre besoin :",
+        search_placeholder: "Rechercher dans les manuels (ex: examen, entraînement QR, barème, OCR, clé API, FAQ)...",
+        card_exam_badge: "Produit 1 • Certificatif (Enseignant)",
+        card_exam_chapters: "Chapitres E1 à E7",
+        card_exam_title: "Manuel 1 : Mode Examen & Correction (Par l'Enseignant)",
+        card_exam_desc: "Pour vos examens, partiels et interrogations : scannez les copies des étudiants, associez-les hors-ligne par OCR, corrigez (100 % humain, IA ou en équipe) et restituez les copies corrigées.",
+        card_practice_badge: "Produit 2 • Formatif (Étudiant)",
+        card_practice_chapters: "Chapitres P1 à P4",
+        card_practice_title: "Manuel 2 : Mode Entraînement QR (Auto-évaluation par l'Étudiant)",
+        card_practice_desc: "Pour vos TD, devoirs et examens blancs : incrustez des QR codes sur votre sujet PDF pour que l'étudiant rédige sur papier, scanne avec son smartphone et reçoive un feedback IA immédiat (BYOK, 0 € pour l'enseignant).",
+        filter_label: "Afficher :",
+        filter_exam: "1. Manuel Examen (E1–E7)",
+        filter_practice: "2. Manuel Entraînement QR (P1–P4)",
+        filter_reference: "Clés API IA & FAQ (R1–R2)",
+        filter_all: "Tout afficher",
+        filter_hint: "Chaque manuel est 100 % autonome — inutile de lire les deux !",
+        switch_guide_kicker: "Découvrir le second outil de Gradaly",
+        btn_go_practice: "Ouvrir le Manuel 2 : Mode Entraînement QR",
+        btn_go_exam: "Ouvrir le Manuel 1 : Mode Examen",
+        toc_title: "Sommaire du Manuel",
         privacy_box_title: "Confidentialité 100 % Locale",
-        privacy_box_text: "La liste des étudiants, l'OCR et vos projets restent stockés localement dans Documents/Gradaly sur votre ordinateur. Le portail web et les liens Cloud utilisent un chiffrement Zero-Knowledge AES-256-GCM côté client.",
+        privacy_box_text: "La liste des étudiants, l'OCR et vos projets restent stockés localement dans Documents/Gradaly sur votre ordinateur. Les publications web utilisent un chiffrement AES-256-GCM Zero-Knowledge côté client.",
         sections: [
+            // =========================================================================
+            // MANUEL 1 : MODE EXAMEN (E1 à E7) — 100 % AUTONOME
+            // =========================================================================
             {
-                id: "welcome-and-modes",
-                stepNumber: "1",
-                tag: "Chapitre 1 — Prise en main",
+                id: "exam-getting-started",
+                guide: "exam",
+                stepNumber: "E1",
+                partHeader: "Manuel 1 — Mode Examen (Enseignant)",
+                partColor: "indigo",
+                partBanner: {
+                    kicker: "Manuel 1 • Produit 1 : Évaluation Certificative & Correction d'Examen (Chapitres E1 à E7)",
+                    title: "Guide Complet du Mode Examen : Correction par l'Enseignant (100 % Humain, Assisté par IA ou en Équipe)",
+                    desc: "Ce manuel autonome couvre de A à Z la correction d'une promotion par l'enseignant : canevas, zone d'ID étudiant, barème, appariement OCR hors-ligne, console de notation et restitution."
+                },
+                tag: "Mode Examen • Étape 1 — Créer un Projet d'Examen",
                 badge: "100 % Humain ou Assisté par IA",
-                shortTitle: "1. Mode Humain vs IA & Projets",
-                title: "Deux façons d'utiliser Gradaly : Mode 100 % Humain ou Mode Assisté par l'IA",
-                subtitle: "Un environnement complet de correction par critères utilisable aussi bien à 100 % manuellement (sans aucune IA) qu'avec l'assistance multimodale de l'IA.",
+                shortTitle: "E1. Créer un Projet d'Examen",
+                title: "Créer un Projet d'Examen & Fonctionnement 100 % Humain ou Assisté par IA",
+                subtitle: "Créez un projet Examen (ou lancez la démo Examen de 20 copies) pour corriger les copies scannées de votre promotion.",
                 paragraphs: [
-                    "<strong>Point essentiel : vous n'avez PAS besoin de clé API d'IA pour utiliser Gradaly.</strong> Par défaut, Gradaly fonctionne en <strong>Mode 100 % Humain</strong> avec exactement le même confort de correction par grille de critères que des outils comme Gradescope : vous délimitez les zones de questions sur le PDF vierge, créez vos critères de barème, associez localement les copies scannées aux étudiants, et corrigez très rapidement au clavier (touches <code>1–9</code> pour cocher/décocher les critères, <code>J</code>/<code>K</code> pour passer d'une copie à l'autre) tout en rédigeant des commentaires en Markdown et LaTeX (KaTeX). Si vous modifiez le poids d'un critère en cours de route, toutes les notes de la promotion sont recalculées instantanément.",
-                    "<strong>Mode Assisté par l'IA (optionnel) :</strong> Dès que vous le souhaitez, vous pouvez renseigner une clé API d'IA (ou un serveur universitaire / Ollama local) pour débloquer deux assistants puissants, tout en gardant systématiquement le dernier mot :<br>• <strong>L'Assistant IA de Barème</strong> pour co-construire, affiner et calibrer vos critères d'évaluation par dialogue.<br>• <strong>La Pré-correction IA Multimodale</strong> qui lit les réponses manuscrites des étudiants, pré-coche les critères du barème, explique son raisonnement à l'enseignant et rédige un feedback formateur personnalisé pour chaque étudiant.",
-                    "Depuis l'<strong>Écran d'Accueil</strong>, vous pouvez créer un nouveau projet à partir d'un canevas PDF vierge, lancer en un clic le <strong>Projet de Démonstration hors-ligne</strong> (20 copies pré-remplies en français ou en anglais), ou cliquer sur <strong>Importer / Fusionner</strong> (Gradaly Pro) pour travailler en équipe."
+                    "<strong>Qu'est-ce qu'un Projet d'Examen (badge <code>Examen</code>) ?</strong> Ce premier mode est conçu pour les évaluations où l'enseignant ramasse et scanne les copies papier des étudiants (examens finaux, partiels, interrogations écrites). L'interface comporte <strong>6 onglets séquentiels</strong> dans la barre supérieure : <code>1. Canevas &amp; Questions</code>, <code>2. Étudiants</code>, <code>3. Copies</code>, <code>4. Appariement</code>, <code>5. Notation</code> et <code>6. Statistiques</code>.",
+                    "<strong>Mode 100 % Humain ou Mode Assisté par IA :</strong> Vous n'avez <strong>pas besoin de clé API IA</strong> pour utiliser le Mode Examen. Par défaut, Gradaly fonctionne en <strong>Mode 100 % Humain</strong> avec navigation rapide au clavier (touches <code>1–9</code> pour cocher les critères, <code>J</code>/<code>K</code> pour changer d'étudiant), recalcul dynamique des notes de toute la promotion si vous ajustez le poids d'un critère, et commentaires riches en Markdown &amp; KaTeX. Si vous le souhaitez, connectez une clé API IA (voir chapitre <code>R1</code>) pour activer l'<strong>Assistant IA de Barème</strong> et la <strong>Pré-correction IA Multimodale</strong> tout en gardant systématiquement le dernier mot.",
+                    "Depuis l'<strong>Écran d'accueil</strong>, cliquez sur <strong>Nouveau projet → Projet d'Examen (Correction par l'enseignant)</strong>, ou cliquez sur <strong>Créer projet de démo → Projet d'Examen</strong> pour explorer immédiatement un examen complet de Physique contenant 20 copies manuscrites et un corrigé de référence."
                 ],
                 screenshots: [
                     {
                         filePrefix: "01_welcome",
-                        caption: "Écran d'accueil : Création de projet, projet de démo instantané hors-ligne et Import / Fusion collaboratif"
+                        caption: "Écran d'accueil : Vos projets d'Examen (badge indigo « Examen ») sont stockés localement dans Documents/Gradaly"
+                    },
+                    {
+                        filePrefix: "12_demo_types_modal",
+                        caption: "Fenêtre de création de démo : Choisissez « Projet d'Examen (Correction par l'enseignant) » pour charger les 20 copies de démonstration"
                     }
                 ],
                 callouts: [
                     {
-                        title: "Mode 100 % Humain (Sans aucune IA)",
-                        desc: "Corrigez manuellement par clic ou raccourcis clavier (1–9), avec recalcul dynamique du barème, statistiques, export Excel, PDF annotés et Portail Web Étudiant."
+                        title: "Flux Examen dédié en 6 onglets",
+                        desc: "Canevas & Questions → Étudiants → Copies → Appariement OCR hors-ligne → Console de Notation → Statistiques & Exports."
                     },
                     {
-                        title: "Mode Assisté par l'IA (À la carte)",
-                        desc: "Connectez Gemini, OpenAI, Claude, OpenRouter ou un modèle local Ollama pour concevoir vos grilles de critères et pré-corriger les copies manuscrites."
+                        title: "Utilisable 100 % manuellement sans IA",
+                        desc: "Corrigez au clavier à haute vitesse en mode 100 % humain, ou combinez pré-correction IA et validation humaine."
                     },
                     {
-                        title: "Projet de Démo Instantané Hors-Ligne",
-                        desc: "Cliquez sur « Créer projet de démo » pour explorer immédiatement un examen complet de 20 copies corrigées avant d'importer vos propres PDF."
+                        title: "Démo Examen de 20 copies intégrée",
+                        desc: "Testez tout le flux de correction en 1 clic sans rien scanner grâce au projet démo FR ou EN embarqué."
                     },
                     {
-                        title: "Stockage 100 % Local (Documents/Gradaly)",
-                        desc: "Tous vos projets sont enregistrés localement sur votre machine dans le dossier Documents/Gradaly, sans compte cloud imposé."
-                    }
-                ],
-                tip: {
-                    title: "Positionnement Pédagogique : Mieux corriger, pour mieux former",
-                    text: "Que vous corrigiez à 100 % manuellement ou avec l'IA, Gradaly vous permet de concentrer votre expertise sur la finesse du barème et la richesse du feedback formateur transmis à chaque étudiant."
-                }
-            },
-            {
-                id: "ai-settings",
-                stepNumber: "2",
-                tag: "Chapitre 2 — Configuration IA (Optionnel)",
-                badge: "OpenRouter • Gemini • GPT • Claude",
-                shortTitle: "2. Clés API & Choix du Modèle IA",
-                title: "Configurer sa Clé API & Choisir son Modèle d'IA",
-                subtitle: "Ignorez ce chapitre si vous utilisez Gradaly en mode 100 % humain. Pour activer l'Assistant de barème et la pré-correction IA, configurez votre clé dans Paramètres.",
-                paragraphs: [
-                    "<strong>La qualité de la pré-correction IA dépend directement du modèle d'IA que vous utilisez.</strong> Lors de nos campagnes d'évaluation sur des copies manuscrites universitaires (mathématiques, physique, ingénierie, économie, sciences humaines), nous obtenons d'<strong>excellents résultats</strong> avec <strong><code>Gemini 3.8 Flash</code></strong>, <strong><code>GPT 5-4 mini</code></strong>, <strong><code>Claude-Sonnet-5.5</code></strong> ou <strong><code>Mistral-Large 4.0</code></strong> — n'hésitez pas à en tester plusieurs selon votre discipline !",
-                    "<strong>Clé directe fournisseur ou OpenRouter :</strong> Vous pouvez créer une clé API directement chez <strong>Google Gemini</strong>, <strong>OpenAI</strong> ou <strong>Anthropic</strong> (ce qui permet notamment de bénéficier du <strong>mode Batch / Flex asynchrone</strong>), ou passer par <strong>OpenRouter</strong>, dont l'avantage est qu'<strong>une seule clé API donne accès aux modèles de tous les fournisseurs</strong> (Gemini, GPT, Claude, Mistral, DeepSeek, Qwen, Llama) sur un même compte.",
-                    "<strong>0 % de marge ni « crédits IA » propriétaires :</strong> Contrairement aux plateformes commerciales qui vous imposent un modèle unique et vous revendent des « packs de crédits IA » avec une forte marge, Gradaly ne facture <strong>aucun surcoût</strong> sur l'usage de l'IA. Vous payez le coût réel directement au fournisseur — ou <strong>0 € si votre université met à disposition un modèle institutionnel gratuit ou si vous utilisez un modèle local via Ollama</strong>, renforçant ainsi votre souveraineté numérique."
-                ],
-                screenshots: [
-                    {
-                        filePrefix: "11_settings_ai",
-                        caption: "Fenêtre Paramètres IA : Choix du fournisseur (Gemini, OpenRouter, OpenAI, Anthropic ou Serveur Local/Universitaire), sélection du modèle et test de connexion"
-                    }
-                ],
-                providerGuides: [
-                    {
-                        name: "OpenRouter (Passerelle Multi-Fournisseurs)",
-                        tag: "Tous les modèles en 1 clé",
-                        icon: "fas fa-network-wired",
-                        desc: "<strong>Avantage spécifique :</strong> Un seul compte et une seule clé API permettent de tester <code>Gemini 3.8 Flash</code>, <code>GPT 5-4 mini</code>, <code>Claude-Sonnet-5.5</code>, <code>Mistral-Large 4.0</code> et des centaines d'autres modèles sans multiplier les comptes (note : le mode Batch asynchrone n'est pas disponible sur OpenRouter).",
-                        steps: [
-                            "Rendez-vous sur <strong>openrouter.ai</strong> et connectez-vous (ou créez un compte gratuit).",
-                            "Allez dans <strong>Credits</strong> et ajoutez un petit solde prépayé (ex: 5 $ ou 10 $ — suffisant pour des milliers de pages de copies).",
-                            "Allez dans <strong>Keys</strong> → cliquez sur <strong>Create Key</strong>, nommez-la <code>Gradaly</code> et copiez la clé commençant par <code>sk-or-v1-...</code>.",
-                            "Dans Gradaly, ouvrez <strong>Paramètres (⚙️)</strong>, choisissez <strong>OpenRouter</strong>, collez la clé et sélectionnez le modèle souhaité."
-                        ],
-                        url: "https://openrouter.ai/keys",
-                        linkLabel: "Ouvrir la console OpenRouter Keys"
-                    },
-                    {
-                        name: "Google Gemini (Google AI Studio)",
-                        tag: "Rapide & Économique",
-                        icon: "fas fa-bolt",
-                        desc: "Accès direct aux modèles multimodaux <code>Gemini 3.8 Flash</code> et Pro de Google, avec support du mode Batch asynchrone à -50 %.",
-                        steps: [
-                            "Connectez-vous sur <strong>Google AI Studio</strong> (<code>aistudio.google.com</code>) avec votre compte Google.",
-                            "Cliquez sur <strong>Get API key</strong> dans le menu de gauche, puis sur <strong>Create API key</strong>.",
-                            "Copiez la clé générée (commençant par <code>AIzaSy...</code>). Activez la facturation Pay-as-you-go si vous souhaitez débloquer les quotas élevés.",
-                            "Dans Gradaly, ouvrez <strong>Paramètres (⚙️)</strong>, sélectionnez <strong>Google Gemini</strong> et collez votre clé."
-                        ],
-                        url: "https://aistudio.google.com/app/apikey",
-                        linkLabel: "Ouvrir Google AI Studio API Keys"
-                    },
-                    {
-                        name: "OpenAI (Modèles GPT)",
-                        tag: "Haute précision logique",
-                        icon: "fas fa-brain",
-                        desc: "Accès direct aux modèles multimodaux d'OpenAI tels que <code>GPT 5-4 mini</code>, excellents pour vérifier chaque étape d'un calcul, avec support du mode Batch à -50 %.",
-                        steps: [
-                            "Connectez-vous sur <strong>platform.openai.com</strong> (indépendant d'un abonnement ChatGPT Plus).",
-                            "Allez dans <strong>Settings → Billing</strong> et créditez un petit solde prépayé (ex: 5 $).",
-                            "Ouvrez <strong>Dashboard → API keys</strong>, cliquez sur <strong>+ Create new secret key</strong> et copiez la clé (<code>sk-proj-...</code>).",
-                            "Dans Gradaly, ouvrez <strong>Paramètres (⚙️)</strong>, sélectionnez <strong>OpenAI</strong>, collez la clé et choisissez votre modèle."
-                        ],
-                        url: "https://platform.openai.com/api-keys",
-                        linkLabel: "Ouvrir OpenAI Platform API Keys"
-                    },
-                    {
-                        name: "Anthropic (Modèles Claude)",
-                        tag: "Rédaction & Démonstrations",
-                        icon: "fas fa-feather-alt",
-                        desc: "Accès direct aux modèles <code>Claude-Sonnet-5.5</code> et Opus d'Anthropic, réputés pour l'analyse fine des démonstrations manuscrites et la qualité de leurs feedbacks.",
-                        steps: [
-                            "Connectez-vous sur la <strong>Console Anthropic</strong> (<code>console.anthropic.com</code>).",
-                            "Dans <strong>Settings → Billing</strong>, activez un solde de crédits prépayés.",
-                            "Dans <strong>API Keys</strong>, cliquez sur <strong>Create Key</strong> et copiez la clé secrète (<code>sk-ant-...</code>).",
-                            "Dans Gradaly, ouvrez <strong>Paramètres (⚙️)</strong>, sélectionnez <strong>Anthropic</strong> et collez votre clé."
-                        ],
-                        url: "https://console.anthropic.com/settings/keys",
-                        linkLabel: "Ouvrir Anthropic Console API Keys"
-                    }
-                ],
-                callouts: [
-                    {
-                        title: "Serveur Universitaire ou Ollama 100 % Local",
-                        desc: "Si votre université met à disposition un serveur d'IA (compatible OpenAI) ou si vous faites tourner un modèle local via Ollama (<code>http://localhost:11434/v1</code>), sélectionnez « Serveur Local / Personnalisé » dans les Paramètres pour un coût de 0 €."
-                    },
-                    {
-                        title: "Diagnostic de Connexion en 1 Clic",
-                        desc: "Cliquez à tout moment sur le badge d'état IA dans la barre supérieure pour vérifier la validité de votre clé et la réactivité du modèle."
+                        title: "Stockage 100 % local (Documents/Gradaly)",
+                        desc: "Tous vos PDF, listes d'étudiants et notations restent sur votre ordinateur dans des dossiers standards."
                     }
                 ]
             },
             {
-                id: "canvas-and-rubric",
-                stepNumber: "3",
-                tag: "Chapitre 3 — Fonctionnalité Cœur",
-                badge: "Essentiel pour la précision de l'IA",
-                shortTitle: "3. Créer les Zones & Critères de Barème",
-                title: "Comment Délimiter les Questions, Configurer le Barème (Note de base / Max) et Utiliser le Solutionnaire",
-                subtitle: "Comprenez le calcul des points (Note de base, Score max, Max possible), nos recommandations de barème et le rôle du Solutionnaire.",
+                id: "exam-canvas-and-rubric",
+                guide: "exam",
+                stepNumber: "E2",
+                partColor: "indigo",
+                tag: "Mode Examen • Étape 2 — Canevas, Zone ID & Barème",
+                badge: "Essentiel pour la précision",
+                shortTitle: "E2. Canevas, Zone ID & Critères",
+                title: "Définir la Zone d'ID Étudiant, les Zones de Questions, le Barème & le Solutionnaire",
+                subtitle: "Importez le sujet PDF vierge, tracez le cadre d'identification étudiant pour l'OCR hors-ligne, et créez vos questions et critères.",
                 paragraphs: [
-                    "<strong>Comment fonctionne la correction IA dans Gradaly :</strong> Lorsque vous lancez la pré-correction IA d'une question sur la copie d'un étudiant, Gradaly découpe <strong>l'image exacte du rectangle (zone)</strong> que vous avez tracé pour cette question et l'envoie au modèle d'IA accompagnée d'un prompt structurant vos critères de barème et vos consignes. <em>C'est exactement comme si vous faisiez un copier-coller d'une capture d'écran de cette zone dans votre outil de chat IA favori en lui disant : « Corrige cette réponse d'étudiant en appliquant rigoureusement la politique de notation suivante. »</em>",
-                    "Puisque l'IA <strong>ne voit que ce qui figure dans la zone découpée ainsi que le texte de vos critères et consignes</strong>, la précision de la correction dépend directement du soin apporté à la définition de vos questions dans l'onglet <strong>Canevas & Questions</strong> :",
-                    "<strong>1. Tracer la zone de la question (Inclure l'énoncé dans la zone !) :</strong> Sur le canevas PDF vierge à droite, tracez un rectangle autour de la question. <strong>Règle d'or :</strong> chaque fois que la mise en page le permet, <strong>englobez à la fois l'énoncé imprimé de la question et le cadre de réponse de l'étudiant dans la zone</strong>. Ainsi, le modèle de vision lit directement l'énoncé exact (formules, schémas, notations) juste au-dessus de la réponse manuscrite.",
-                    "<strong>2. Comprendre la <code>Note de base</code>, le <code>Score max</code>, le bornage final et le <code>Max possible</code> :</strong><br>• <strong>Comment est calculée la note de l'étudiant :</strong> Pour chaque question, le calcul part systématiquement de la <strong><code>Note de base</code></strong> que vous avez fixée, puis <strong>ajoute les points de tous les critères sélectionnés (cochés)</strong> sur la copie de l'étudiant : <code>Score brut = Note de base + Σ (points des critères cochés)</code>. Enfin, <strong>la note finale de l'étudiant à la question est toujours bornée entre <code>0</code> et le <code>Score max</code></strong> : même si un étudiant cumule des pénalités qui feraient passer le total sous 0, sa note à la question sera ramenée à <code>0</code> ; et si la somme dépasse le <code>Score max</code>, sa note sera plafonnée au <code>Score max</code>.<br>• <strong>Choisir un schéma uniquement additif OU uniquement diminutif (ne pas mélanger points positifs et négatifs) :</strong> Pour un <strong>schéma additif</strong>, fixez la <code>Note de base = 0</code> et créez uniquement des critères à points positifs (<code>+1</code>, <code>+1.5</code>, <code>+2</code>) qui récompensent chaque étape réussie. Pour un <strong>schéma diminutif / soustractif</strong>, fixez la <code>Note de base = Score max</code> et créez uniquement des critères à points négatifs (<code>-0.5</code>, <code>-1</code>) qui retirent des points par erreur. <strong>Nous déconseillons vivement de mélanger des points positifs et des points négatifs au sein d'une même question :</strong> notre retour d'expérience montre que choisir un schéma strictement additif ou strictement diminutif offre une bien meilleure clarté à la fois pour l'<strong>IA</strong> (qui évalue les critères de façon beaucoup plus fiable) et pour l'<strong>étudiant</strong>.<br>• <strong>À quoi sert l'indicateur <code>Max possible</code> :</strong> À droite du <code>Score max</code> s'affiche le <strong><code>Max possible = Note de base + somme des critères positifs</code></strong>. Cet indicateur ne modifie pas le plafonnement de l'étudiant (qui reste borné par le <code>Score max</code>) : <strong>il sert uniquement d'aide visuelle pour vous permettre de repérer immédiatement s'il n'y a pas un problème ou un oubli dans votre barème</strong> (par exemple, voir d'un coup d'œil que la somme de vos critères positifs n'atteint que 3,5 pts alors que le <code>Score max</code> de la question est fixé à 4 pts).",
-                    "<strong>3. Définir chaque critère du barème :</strong> Créez vos critères avec un <strong>Label</strong> court (ex: <code>C1_Formule</code>), un <strong>Poids en points</strong> (<code>+</code> ou <code>-</code>) et une <strong>Description</strong> explicite détaillant la condition exacte pour que le critère soit validé.",
-                    "<strong>4. Remplir le champ du bas — Consignes générales de sélection des critères (<code>Consignes & Logique de correction / Prompt IA</code>) :</strong> Tout en bas de la question se trouve un champ de texte essentiel qui donne à l'IA les instructions générales sur la façon d'appliquer votre barème pour cette question. Il remplit deux rôles clés :<br>• <strong>Préciser la logique globale d'attribution des critères :</strong> par ex. <em>« En cas d'erreur de signe à la 1re ligne mais avec une suite de résolution cohérente, ne pas valider C1 mais valider C2 (erreur reportée) »</em> ou <em>« Accepter toute forme trigonométrique équivalente. »</em><br>• <strong>Fournir l'énoncé en texte clair s'il n'apparaît pas dans la zone découpée :</strong> Si l'énoncé de la question se trouve sur une feuille séparée ou en dehors de la zone de réponse de l'étudiant, <strong>collez l'énoncé de la question (et la réponse attendue) en texte plein dans ce champ du bas</strong> afin que l'IA sache précisément à quelle question l'étudiant répond !",
-                    "<strong>5. Utiliser la fonctionnalité du Solutionnaire (<code>Solutionnaire</code> / <code>⭐ Solutionnaire</code>) :</strong> En haut de la visionneuse PDF de l'onglet <strong>Canevas &amp; Questions</strong>, le sélecteur <strong>Énoncé (Canevas) / Solutionnaire</strong> vous permet d'importer le PDF de votre solutionnaire de référence (rédigé sur le même canevas que l'examen). Le solutionnaire remplit deux fonctions très précieuses :<br>• <strong>Vérifier que votre solutionnaire obtient bien la note maximale :</strong> Une fois le solutionnaire chargé, vous pouvez cliquer sur le bouton <strong>« Tester le solutionnaire »</strong> sur une question, et <strong>la copie du solutionnaire apparaît également tout en haut de la liste des copies dans l'onglet d'Évaluation (<code>⭐ Solutionnaire</code>)</strong>. C'est un excellent moyen de contrôle : <strong>vérifiez toujours que votre solutionnaire obtient le score maximum (<code>Max/Max</code>)</strong> à chaque question ! S'il n'obtient pas le maximum, c'est qu'il y a très probablement une ambiguïté ou un problème dans votre barème ou dans le cadrage de la zone.<br>• <strong>Aider l'Assistant IA de création et modification de critères :</strong> Le solutionnaire peut également être utilisé par l'<strong>Assistant IA de Barème (<code>Concevoir / Modifier avec l'IA</code>)</strong> pour générer ou affiner automatiquement des critères calés sur votre résolution attendue (il suffit de <strong>cocher l'option <em>« Utiliser la réponse du solutionnaire comme référence »</em></strong> dans la fenêtre de l'assistant)."
+                    "Dans l'onglet <strong>1. Canevas &amp; Questions</strong> d'un projet Examen, commencez par importer le PDF vierge de votre sujet (<code>Canevas</code>). Vous allez ensuite tracer deux types de zones rectangulaires sur le PDF :",
+                    "<strong>1. Tracer la Zone d'Identification Étudiant (<code>ID</code>) :</strong> Cliquez sur le bouton <strong>Zone d'identification Étudiant (Nom / Matricule)</strong> dans le panneau de gauche et encadrez sur la Page 1 la zone où les étudiants inscrivent leur nom et numéro de matricule. Gradaly découpera cette zone sur chaque copie scannée pour effectuer l'<strong>appariement OCR 100 % hors-ligne</strong>.",
+                    "<strong>2. Tracer chaque Zone de Question (en englobant l'énoncé imprimé !) :</strong> Lorsque vous lancez la correction IA sur une copie, Gradaly découpe <strong>exactement l'image du rectangle</strong> tracé pour la question et l'envoie au modèle d'IA avec votre barème. <strong>Règle d'or :</strong> dès que la mise en page le permet, <strong>englobez à la fois l'énoncé imprimé de la question et le cadre de réponse de l'étudiant dans le rectangle</strong> afin que l'IA dispose de tout le contexte visuel.",
+                    "<strong>3. Comprendre la Note de base, le Score max, le bornage et le <code>Max possible</code> :</strong><br>• <strong>Formule de calcul :</strong> Gradaly part de la <strong>Note de base</strong> de la question, y ajoute les points des critères cochés (<code>Score brut = Note de base + Σ critères cochés</code>), puis <strong>borne strictement la note finale entre <code>0</code> et <code>Score max</code></strong>.<br>• <strong>Barème purement additif OU purement diminutif :</strong> Pour un barème <strong>additif</strong>, fixez <code>Note de base = 0</code> et utilisez uniquement des critères positifs (<code>+1</code>, <code>+1.5</code>). Pour un barème <strong>diminutif / soustractif</strong>, fixez <code>Note de base = Score max</code> et utilisez uniquement des pénalités négatives (<code>-0.5</code>, <code>-1</code>). <strong>Évitez de mélanger des points positifs et négatifs dans une même question</strong> : un schéma pur est beaucoup plus clair pour l'IA comme pour l'étudiant.<br>• <strong>Indicateur <code>Max possible</code> :</strong> Affiche <code>Note de base + Σ (critères positifs)</code> pour vous permettre de repérer immédiatement un oubli dans le total de vos critères.",
+                    "<strong>4. Champ du bas — Consignes générales pour l'IA (<code>Consignes &amp; Logique de correction / Prompt IA</code>) :</strong> Précisez dans ce champ comment gérer les cas particuliers (erreur reportée, forme équivalente) — et si l'énoncé ne figure pas dans la zone découpée, collez-y l'énoncé en texte plein.",
+                    "<strong>5. Importer et tester le Solutionnaire (<code>Solutionnaire</code> / <code>⭐ Corrigé de référence</code>) :</strong> Utilisez la bascule <strong>Énoncé (Canevas) / Solutionnaire</strong> en haut du PDF pour importer votre corrigé type. Il apparaît tout en haut de la liste des copies dans l'onglet Notation (<code>⭐ Corrigé de référence</code>) : vérifiez toujours que votre propre solutionnaire obtient bien la <strong>note maximale (<code>Max/Max</code>)</strong> à chaque question !"
                 ],
                 screenshots: [
                     {
                         filePrefix: "02_questions",
-                        caption: "Onglet Canevas & Questions : Note de base, Score max & Max possible, liste des critères, champ du bas « Consignes & Logique de correction (Prompt IA) » et bascule Énoncé / Solutionnaire"
+                        caption: "Mode Examen — Onglet Canevas & Questions : Bouton Zone d'ID Étudiant, Note de base / Score max / Max possible, critères, consignes IA de bas de page et bascule Énoncé / Solutionnaire"
                     }
                 ],
                 callouts: [
                     {
-                        title: "Note de base + Critères cochés (Borné [0, Score max])",
-                        desc: "On part de la Note de base, on ajoute les points des critères sélectionnés, et la note finale de l'étudiant est toujours bornée entre 0 et le Score max."
+                        title: "Zone d'ID Étudiant pour l'OCR local",
+                        desc: "Encadrez une seule fois l'en-tête sur la Page 1 ; Gradaly l'extraira sur toutes les copies pour reconnaître les noms hors-ligne."
                     },
                     {
-                        title: "Ne pas mélanger + et − & Vérifier le « Max possible »",
-                        desc: "Privilégiez un schéma 100 % additif (Base = 0, +pts) ou 100 % diminutif (Base = Max, −pts) pour la clarté de l'IA et de l'étudiant. Le « Max possible » (Base + critères positifs) aide à vérifier la cohérence du barème."
+                        title: "Schéma purement Additif ou Diminutif",
+                        desc: "Partez de 0 avec des +pts ou partez du Score max avec des −pts. La note est toujours bornée entre 0 et Score max."
                     },
                     {
-                        title: "Le Solutionnaire (⭐ Solutionnaire)",
-                        desc: "Visible dans l'onglet Évaluation et utilisable dans l'Assistant IA de critères (en cochant l'option). Vérifiez toujours que votre solutionnaire obtient le score maximum !"
+                        title: "Englober l'énoncé dans la zone",
+                        desc: "Incluez l'énoncé imprimé et la boîte de réponse dans le rectangle (ou collez l'énoncé dans le champ de consignes en bas)."
                     },
                     {
-                        title: "Inclure l'énoncé dans la zone (ou dans le Prompt du bas)",
-                        desc: "Englobez l'énoncé imprimé et la réponse dans la zone — ou collez l'énoncé en texte plein dans le champ d'instructions en bas de la question."
-                    }
-                ],
-                tip: {
-                    title: "Questions multi-zones sur plusieurs pages",
-                    text: "Si la réponse d'une question commence au bas de la Page 2 et se poursuit en haut de la Page 3, ajoutez une seconde zone à la même question : Gradaly fusionnera automatiquement les deux découpes en une seule image pour le correcteur et l'IA."
-                }
-            },
-            {
-                id: "ai-rubric-assistant",
-                stepNumber: "4",
-                tag: "Chapitre 4 — Assistant IA de Barème",
-                badge: "Mode Chat & Calibrage",
-                shortTitle: "4. Assistant IA de Création de Critères",
-                title: "Concevoir, Modifier et Calibrer ses Critères avec l'Assistant IA de Barème",
-                subtitle: "Choisissez le nombre de critères et la politique (additive ou soustractive), activez l'option Solutionnaire, ou modifiez directement vos critères existants en mode chat.",
-                paragraphs: [
-                    "Définir de zéro une grille de critères fine — ou faire évoluer une base de critères existante — est très simple grâce à l'<strong>Assistant IA de Barème</strong>, accessible via le bouton <strong>Concevoir / Modifier avec l'IA</strong> au-dessus de la liste des critères de chaque question (si votre question possède déjà des critères, l'assistant les charge directement en mode chat pour vous permettre de les modifier ou de les affiner).",
-                    "<strong>1. Choisir ses paramètres de départ (et cocher l'option Solutionnaire !) :</strong> Indiquez la note maximale de la question, choisissez si vous préférez un <strong>schéma uniquement additif</strong> (départ à 0 pt, ajout de points positifs par étape réussie) ou un <strong>schéma uniquement diminutif / déductif</strong> (départ à la note maximale, retrait de points par erreur), et spécifiez le <strong>nombre de critères souhaité</strong> (3, 4, 5 ou libre). Si vous avez chargé un <strong>PDF Solutionnaire</strong>, pensez à <strong>cocher l'option <em>« Utiliser la réponse du solutionnaire comme référence »</em></strong> afin que l'assistant inspecte simultanément l'énoncé et votre corrigé type pour construire les critères !",
-                    "<strong>2. Itérer en mode Chat jusqu'à satisfaction :</strong> L'assistant affiche à gauche la grille de critères proposée ainsi que les consignes générales (<code>PROMPT_TEXT</code>), et à droite une interface de dialogue. Demandez-lui des ajustements en langage naturel (ex: <em>« Découpe le critère 2 en deux étapes de 1 point »</em> ou <em>« Ajoute une tolérance sur les arrondis »</em>).",
-                    "<strong>3. Astuce puissante — Copier-coller des captures d'écran de vraies réponses dans le Chat !</strong> N'hésitez pas à faire une capture d'écran d'une vraie réponse d'étudiant, à la <strong>coller directement dans le chat de l'assistant (<code>Cmd+V</code> / <code>Ctrl+V</code>)</strong> et à lui écrire par exemple :<br><em>« Je pense que cette réponse mérite la note maximale à la question, adapte la politique de notation et les critères en conséquence »</em> (ou à l'inverse : <em>« Cette réponse ne devrait obtenir que 2/5, durcis le critère 2 »</em>). L'assistant analyse l'écriture manuscrite de la capture et adapte immédiatement les descriptions des critères et le prompt !",
-                    "<strong>4. Inclure les critères, vérifier sur le Solutionnaire et expérimenter sur quelques copies :</strong> Lorsque vous êtes satisfait, cliquez sur <strong>Valider et appliquer à la question</strong> pour intégrer les critères générés. Testez ensuite la correction IA sur votre <strong>Solutionnaire</strong> (pour vérifier qu'il obtient bien le maximum !) ainsi que sur <strong>2 à 4 copies d'étudiants</strong> dans l'onglet <strong>Évaluation</strong> avant de lancer la correction sur toute la classe."
-                ],
-                screenshots: [
-                    {
-                        filePrefix: "03_rubric_assistant",
-                        caption: "Fenêtre Assistant Barème IA : Grille de critères et PROMPT_TEXT proposés à gauche, dialogue interactif d'affinage (avec collage de captures de copies) à droite"
-                    }
-                ],
-                callouts: [
-                    {
-                        title: "Nombre de critères & Politique Additive/Soustractive",
-                        desc: "Spécifiez le nombre de critères voulu (3, 4, 5 ou libre) et la philosophie de notation (additive depuis 0 ou déductive depuis Max)."
-                    },
-                    {
-                        title: "Coller des captures de vraies copies (Cmd+V / Ctrl+V)",
-                        desc: "Collez l'image d'une réponse d'étudiant dans le chat en disant : « Je pense que cette réponse mérite la note maximale, adapte la politique de notation. »"
-                    },
-                    {
-                        title: "Audit & Simulation sur le Solutionnaire",
-                        desc: "Si un PDF solutionnaire est chargé, l'assistant vérifie la complétude du corrigé et permet de simuler le score obtenu en un clic."
-                    },
-                    {
-                        title: "Expérimenter sur quelques copies pour calibrer",
-                        desc: "Une fois les critères appliqués à la question, testez-les sur 2 ou 3 copies réelles dans l'onglet Évaluation pour valider le calibrage."
+                        title: "Vérification sur le Solutionnaire (⭐)",
+                        desc: "Importez votre corrigé type PDF et vérifiez en 1 clic qu'il obtient bien le score maximum (Max/Max) à chaque question."
                     }
                 ]
             },
             {
-                id: "roster-and-matching",
-                stepNumber: "5",
-                tag: "Chapitre 5 — Étudiants, Copies & OCR",
-                badge: "100 % Local & Hors-Ligne",
-                shortTitle: "5. Étudiants, Copies & Appariement OCR",
-                title: "Liste d'Étudiants, Découpage PDF & Appariement OCR 100 % Hors-Ligne",
-                subtitle: "Importez votre liste d'étudiants, découpez vos scans PDF groupés et associez automatiquement chaque copie sans aucun envoi cloud.",
+                id: "exam-ai-rubric-assistant",
+                guide: "exam",
+                stepNumber: "E3",
+                partColor: "indigo",
+                tag: "Mode Examen • Étape 3 — Assistant IA de Barème",
+                badge: "Mode Chat & Calibrage",
+                shortTitle: "E3. Assistant IA de Barème",
+                title: "Concevoir et Calibrer ses Critères d'Examen avec l'Assistant IA",
+                subtitle: "Générez ou affinez votre barème à partir de l'énoncé et du solutionnaire PDF, dialoguez en mode chat et collez des captures de vraies copies.",
                 paragraphs: [
-                    "Dans l'onglet <strong>Étudiants</strong>, importez la liste officielle de votre promotion au format CSV ou Excel (export Moodle, ADE, etc.). Gradaly détecte automatiquement les colonnes <strong>Matricule (ID)</strong>, <strong>Nom</strong>, <strong>Prénom</strong>, <strong>E-mail</strong> (utilisé pour l'envoi des liens du Portail Web) et <strong>Groupe</strong>.",
-                    "Dans l'onglet <strong>Copies</strong>, importez soit un dossier de fichiers PDF individuels, soit un <strong>fichier PDF unique issu du scanner</strong> regroupant toute la pile de copies. Indiquez le nombre de pages par copie (ex: 4 pages par étudiant) : Gradaly découpe instantanément le document en copies individuelles (<code>copie_01.pdf</code>, <code>copie_02.pdf</code>, etc.).",
-                    "Dans l'onglet <strong>Appariement</strong>, cliquez sur <strong>Lancer l'appariement automatique (OCR)</strong>. Gradaly extrait la zone d'identification (<code>ID</code>) tracée sur la Page 1, exécute un moteur <strong>Tesseract WebAssembly embarqué 100 % hors-ligne</strong> et associe chaque copie à l'étudiant correspondant par similarité floue. Vérifiez ensuite visuellement l'en-tête découpé à droite et validez ou corrigez l'association en un clic."
+                    "Sur n'importe quelle question de l'onglet <strong>Canevas &amp; Questions</strong>, cliquez sur <strong>Concevoir / Modifier avec l'IA</strong> pour ouvrir l'<strong>Assistant IA de Barème</strong>.",
+                    "<strong>1. Choisir vos paramètres (et cocher l'option Solutionnaire) :</strong> Indiquez le <code>Score max</code>, la politique <strong>Additive</strong> ou <strong>Soustractive</strong>, et le <strong>nombre de critères</strong> souhaité (3, 4, 5 ou libre). Si vous avez chargé un PDF <code>Solutionnaire</code>, cochez <em>« Utiliser la réponse du solutionnaire comme référence »</em> pour que l'IA s'appuie sur votre démonstration attendue.",
+                    "<strong>2. Affiner par Chat &amp; Coller des captures de copies d'étudiants (<code>Cmd+V</code> / <code>Ctrl+V</code>) :</strong> Demandez des ajustements en langage naturel dans le chat à droite, ou collez directement la capture d'écran d'une vraie réponse d'étudiant en écrivant : <em>« Je pense que cette réponse mérite le maximum, adapte les critères et la logique de notation en conséquence. »</em>",
+                    "<strong>3. Appliquer et calibrer sur quelques copies :</strong> Cliquez sur <strong>Valider et appliquer à la question</strong>, puis testez le barème sur votre <code>⭐ Corrigé de référence</code> et sur 2 ou 3 copies dans l'onglet Notation."
+                ],
+                screenshots: [
+                    {
+                        filePrefix: "03_rubric_assistant",
+                        caption: "Fenêtre Assistant Barème IA : Critères et PROMPT_TEXT proposés à gauche, chat interactif (supportant le collage de captures de copies) à droite"
+                    }
+                ],
+                callouts: [
+                    {
+                        title: "Analyse conjointe Énoncé + Solutionnaire",
+                        desc: "Construit automatiquement une grille de critères détaillée et fidèle à votre corrigé type."
+                    },
+                    {
+                        title: "Coller de vraies copies dans le Chat (Cmd+V)",
+                        desc: "Collez l'image d'une méthode alternative d'étudiant pour que l'assistant adapte immédiatement la formulation des critères."
+                    }
+                ]
+            },
+            {
+                id: "exam-roster-and-matching",
+                guide: "exam",
+                stepNumber: "E4",
+                partColor: "indigo",
+                tag: "Mode Examen • Étape 4 — Étudiants, Copies & OCR Hors-Ligne",
+                badge: "100 % Local & Hors-Ligne",
+                shortTitle: "E4. Étudiants, Copies & OCR",
+                title: "Liste d'Étudiants (CSV), Découpage PDF & Appariement OCR 100 % Hors-Ligne",
+                subtitle: "Importez votre promotion, découpez vos scans PDF groupés en copies individuelles et associez les identités localement sans aucun envoi cloud.",
+                paragraphs: [
+                    "Dans l'onglet <strong>2. Étudiants</strong>, importez la liste officielle de votre promotion au format CSV ou Excel (export Moodle, ADE, etc.) avec détection automatique des colonnes <strong>Matricule (ID)</strong>, <strong>Nom</strong>, <strong>Prénom</strong>, <strong>E-mail</strong> et <strong>Groupe</strong>.",
+                    "Dans l'onglet <strong>3. Copies</strong>, importez soit des PDF individuels, soit un <strong>fichier PDF unique issu du scanner</strong> regroupant toute la pile de copies. Indiquez le nombre de pages par copie (ex: 4 pages par étudiant) pour découper automatiquement le lot en <code>copie_01.pdf</code>, <code>copie_02.pdf</code>, etc.",
+                    "Dans l'onglet <strong>4. Appariement</strong>, cliquez sur <strong>Lancer l'appariement automatique (OCR)</strong>. Gradaly découpe la zone d'identification (<code>ID</code>) sur la Page 1 de chaque copie, exécute un moteur <strong>Tesseract WebAssembly embarqué 100 % hors-ligne</strong> et associe chaque copie à l'étudiant correspondant par similarité floue."
                 ],
                 screenshots: [
                     {
                         filePrefix: "04_students",
-                        caption: "Onglet Étudiants : Liste locale des étudiants avec Matricule, Nom, Prénom, E-mail et Groupe"
+                        caption: "Onglet Étudiants : Liste locale de la promotion avec Matricule, Nom, Prénom, E-mail et Groupe"
                     },
                     {
                         filePrefix: "05_copies",
-                        caption: "Onglet Copies : Importation, découpage automatique par lot de pages et aperçu des copies"
+                        caption: "Onglet Copies : Importation, découpage automatique par nombre de pages et aperçu des copies"
                     },
                     {
                         filePrefix: "06_matching",
-                        caption: "Onglet Appariement : Vérification visuelle côte à côte du cadre d'en-tête manuscrit et de la liste d'étudiants"
+                        caption: "Onglet Appariement : Vérification visuelle côte à côte de l'en-tête manuscrit découpé et de la liste d'étudiants"
                     }
                 ],
                 callouts: [
                     {
                         title: "Confidentialité Absolue (Zéro Cloud OCR)",
-                        desc: "Les noms, matricules, e-mails et en-têtes de copies ne quittent jamais votre ordinateur : la reconnaissance d'écriture tourne à 100 % en local."
+                        desc: "Les noms, matricules, e-mails et en-têtes manuscrits ne quittent jamais votre machine : tout tourne 100 % hors-ligne."
                     },
                     {
                         title: "Filtre « Non associés » & Recherche Rapide",
-                        desc: "Filtrez les copies non reconnues ou à faible confiance pour les associer en quelques secondes via le menu déroulant avec recherche instantanée."
+                        desc: "Vérifiez et associez les écritures ambiguës en quelques secondes grâce au filtre dédié et à la recherche instantanée."
                     }
                 ]
             },
             {
-                id: "grading-console",
-                stepNumber: "6",
-                tag: "Chapitre 6 — Console d'Évaluation",
-                badge: "Navigation, Codes Couleurs & Modes IA",
-                shortTitle: "6. Correction Manuelle & Pré-correction IA",
-                title: "Console d'Évaluation : Navigation, Codes Couleurs & Lancement de la Correction IA",
-                subtitle: "Maîtrisez les petits ronds de sélection de question, les codes couleurs (IA / Humain / À corriger), le calibrage sur une copie et le lancement en mode Batch.",
+                id: "exam-grading-console",
+                guide: "exam",
+                stepNumber: "E5",
+                partColor: "indigo",
+                tag: "Mode Examen • Étape 5 — Console de Notation",
+                badge: "100 % Humain, IA Standard ou Batch Flex (-50 %)",
+                shortTitle: "E5. Notation Manuelle & IA",
+                title: "Console de Notation à 3 Panneaux : Vitesse au Clavier, Calibrage & Lot IA",
+                subtitle: "Naviguez question par question sur toute la promotion, maîtrisez les codes couleurs, calibrez sur une copie et lancez la pré-correction IA en mode Batch.",
                 paragraphs: [
-                    "L'onglet <strong>Évaluation</strong> s'organise en trois colonnes synchronisées : la <strong>Liste des copies</strong> à gauche, la <strong>Visionneuse PDF interactive</strong> au centre et le <strong>Poste de notation par critères</strong> à droite.",
-                    "<strong>1. Sélectionner une question (« Petits ronds » en haut à droite) et naviguer d'un étudiant à l'autre :</strong> En haut de la colonne de droite, sous <em>Aperçu des questions</em>, chaque question de l'examen est représentée par un petit rond numéroté (<code>1</code>, <code>2</code>, <code>3</code>, ...). Cliquez sur un rond pour sélectionner cette question : le PDF central se positionne automatiquement sur la page et la zone correspondante. Vous pouvez ensuite <strong>naviguer d'un étudiant à l'autre tout en restant sur cette même question</strong> grâce aux flèches <code>&lt; 1/20 &gt;</code> en haut à droite (ou aux flèches <code>↑</code> / <code>↓</code> du clavier), ce qui assure une parfaite homogénéité de notation.",
-                    "<strong>2. Comprendre les codes de couleurs (Petits ronds &amp; Colonne de gauche) :</strong> Les petits ronds de questions en haut à droite ainsi que les indicateurs de la colonne de gauche partagent le même code couleur :<br>• 🟢 <strong>Vert (<code>IA</code>) :</strong> Question pré-corrigée par l'IA (en attente de relecture/validation par l'enseignant).<br>• 🔵 <strong>Bleu (<code>Humain</code>) :</strong> Question corrigée, modifiée ou validée manuellement par un humain (en cochant/décochant un critère ou en cliquant sur le bouton <strong>Validation humaine</strong>).<br>• ⚪ <strong>Gris (<code>À corriger</code>) :</strong> Question non encore corrigée.",
-                    "<strong>3. Lire la colonne de gauche (Ligne du Solutionnaire, Compteurs de statut, Score à la question ouverte &amp; Score total) :</strong> Si vous avez chargé un <strong>Solutionnaire</strong> dans le projet, sa copie apparaît épinglée tout en haut de la colonne de gauche sous le nom <strong><code>⭐ Corrigé de référence</code></strong> : vous pouvez ainsi la consulter, l'évaluer avec l'IA et vérifier à tout moment qu'elle obtient bien le maximum (<code>Max/Max</code>) à chaque question. Sous le nom de chaque étudiant, les trois pastilles colorées (<code>🟢 IA</code>, <code>🔵 Humain</code>, <code>⚪ À corriger</code>) résument l'avancement de sa copie. À droite de chaque ligne s'affichent deux badges côte à côte : <strong>le score à la question actuellement ouverte</strong> (ex: <code>8/8</code>) et <strong>le score total sur l'ensemble de l'examen</strong> (ex: <code>18.8 tot</code>). Vous pouvez trier la liste en un clic par nom, par note à la question ouverte ou par note totale.",
-                    "<strong>4. Première façon de lancer l'IA — Corriger uniquement la question courante pour l'élève courant (Calibrage) :</strong> Tout en bas de la colonne de droite, cliquez sur le bouton <strong>« Relancer l'IA pour cette question »</strong>. L'IA évalue alors <strong>uniquement la question active pour l'élève affiché</strong>. C'est la méthode idéale pour <strong>calibrer vos critères</strong> sur quelques copies : vous ferez typiquement quelques allers-retours avec les critères de la question (dans l'onglet <em>Canevas &amp; Questions</em>) jusqu'à obtenir exactement le comportement souhaité. Juste au-dessus du bouton, trois cases (<em>Ne pas écraser : Notes / Feedback / Justificatif</em>) permettent si besoin de protéger les éléments existants.",
-                    "<strong>5. Deuxième façon de lancer l'IA — Fenêtre « Lancer la correction IA » et Mode Batch recommandé :</strong> Une fois vos critères calibrés, cliquez sur le bouton <strong>« ▶ Correction IA »</strong> en haut à gauche pour ouvrir la fenêtre de lancement par lot :<br>• <strong>Copies cibles :</strong> Corrigez <em>Toutes les copies cochées</em> dans la colonne de gauche, ou <em>Uniquement la copie en cours</em> (pour évaluer toutes les questions d'un seul étudiant).<br>• <strong>Questions à corriger :</strong> Cliquez sur <em>Tout cocher</em>, <em>Question active seule</em> ou sélectionnez les questions de votre choix.<br>• <strong>Comportement d'écrasement (Override) :</strong> Cochez <em>Ne pas écraser les notes / le feedback / le justificatif</em> pour préserver le travail déjà effectué.<br>• <strong>Mode d'exécution — Nous recommandons le Mode Batch (Flex) :</strong> Vous avez le choix entre le <strong>⚡ Mode Standard</strong> (requêtes parallèles en direct via plusieurs threads, compatible avec tous les fournisseurs) et le <strong>🌿 Mode Flex (Lot Asynchrone / API Batch)</strong> qui exécute le lot en arrière-plan sur les serveurs du fournisseur avec <strong>50 % de réduction sur le coût des tokens</strong> et sans bloquer votre machine. <strong>Nous recommandons vivement le mode Batch / Flex pour corriger vos examens.</strong> Attention : ce mode Batch est disponible avec une clé directe <strong>Google Gemini</strong>, <strong>OpenAI</strong> ou <strong>Anthropic (Claude)</strong>, mais il n'est <strong>malheureusement pas disponible via OpenRouter</strong>."
+                    "L'onglet <strong>5. Notation</strong> réunit trois colonnes synchronisées : la <strong>Liste des copies</strong> à gauche (avec le <code>⭐ Corrigé de référence</code> épinglé tout en haut), la <strong>Visionneuse PDF interactive</strong> au centre et le <strong>Poste de notation par critères</strong> à droite.",
+                    "<strong>1. Petits ronds de questions &amp; Navigation horizontale :</strong> Cliquez sur un rond numéroté (<code>1</code>, <code>2</code>, <code>3</code>...) en haut à droite pour centrer automatiquement le PDF sur cette question. Naviguez ensuite d'un étudiant à l'autre sur cette même question avec les flèches <code>↑</code>/<code>↓</code> (<code>J</code>/<code>K</code>) et cochez/décochez les critères avec les touches <code>1–9</code>.",
+                    "<strong>2. Code couleur des statuts :</strong><br>• 🟢 <strong>Vert (<code>IA</code>) :</strong> Question pré-corrigée par l'IA (en attente de relecture/validation par l'enseignant).<br>• 🔵 <strong>Bleu (<code>Humain</code>) :</strong> Question corrigée, modifiée ou validée manuellement par un humain.<br>• ⚪ <strong>Gris (<code>À corriger</code>) :</strong> Question non encore évaluée.",
+                    "<strong>3. Calibrage sur l'élève courant vs Lancement par lot (<code>▶ Correction IA</code>) :</strong><br>• <strong>Calibrer sur 1 copie :</strong> En bas à droite, cliquez sur <strong>« Relancer l'IA pour cette question »</strong> pour tester votre barème sur l'étudiant affiché.<br>• <strong>Lancer sur toute la promotion (<code>▶ Correction IA</code>) :</strong> Cliquez sur <strong>▶ Correction IA</strong> en haut à gauche et choisissez entre le <strong>⚡ Mode Standard</strong> (threads parallèles en direct) et le <strong>🌿 Mode Flex / Lot Asynchrone (-50 % sur le coût API)</strong>, vivement recommandé avec une clé directe Gemini, OpenAI ou Anthropic."
                 ],
                 screenshots: [
                     {
                         filePrefix: "07_grading",
-                        caption: "Vue d'ensemble de l'onglet Évaluation : Colonne de gauche (pastilles 🟢 IA / 🔵 Humain / ⚪ À corriger, score de la question ouverte & score total), copie PDF centrée au milieu, et petits ronds colorés des questions (1 à 10) en haut à droite"
+                        caption: "Vue d'ensemble de l'onglet Notation : Colonne de gauche (⭐ Corrigé de référence, pastilles 🟢 IA / 🔵 Humain / ⚪ À corriger, score de la question & score total), copie PDF centrée au milieu et grille de critères à droite"
                     },
                     {
                         filePrefix: "07b_grading_single_ai",
-                        caption: "Bas de la colonne de droite : Justificatif IA, Feedback élève (Markdown + KaTeX), options « Ne pas écraser » et bouton « Relancer l'IA pour cette question » pour calibrer ses critères sur l'élève courant"
+                        caption: "Bas de la colonne de droite : Justificatif IA, Feedback élève (Markdown + KaTeX), options « Ne pas écraser » et bouton « Relancer l'IA pour cette question »"
                     },
                     {
                         filePrefix: "07c_grading_launch_modal",
-                        caption: "Fenêtre « Lancer la correction IA » : Choix des copies cibles, des questions, des protections d'écrasement et sélection entre le Mode Standard (threads parallèles) et le Mode Flex / Batch asynchrone recommandé (-50 %)"
+                        caption: "Fenêtre « Lancer la correction IA » : Choix des copies, des questions, des règles d'écrasement et sélection du Mode Flex / Batch asynchrone (-50 %)"
                     }
                 ],
                 callouts: [
                     {
-                        title: "Calibrage sur l'élève courant",
-                        desc: "Utilisez « Relancer l'IA pour cette question » en bas à droite pour tester et ajuster vos critères par allers-retours avant de lancer un lot global."
-                    },
-                    {
-                        title: "Code Couleur (🟢 IA • 🔵 Humain • ⚪ À corriger)",
-                        desc: "Repérez instantanément sur les petits ronds en haut à droite et dans la colonne de gauche quelles questions sont notées par l'IA, validées par l'humain ou non corrigées."
-                    },
-                    {
-                        title: "Score de la question & Score total à gauche",
-                        desc: "Visualisez côte à côte pour chaque étudiant sa note à la question ouverte (ex: 8/8) et sa note totale (ex: 18.8 tot), avec tri en un clic."
+                        title: "Ergonomie 100 % Clavier",
+                        desc: "Cochez les critères avec les touches 1–9 et passez d'une copie à l'autre avec J/K sans toucher la souris."
                     },
                     {
                         title: "Mode Batch / Flex Recommandé (-50 %)",
-                        desc: "Nous recommandons le mode Batch asynchrone (disponible chez Gemini, OpenAI et Claude, mais pas sur OpenRouter) pour sa fiabilité et son tarif réduit de 50 %."
+                        desc: "Disponible avec les clés directes Gemini, OpenAI et Claude pour pré-corriger toute une promotion à moitié prix."
                     }
                 ]
             },
             {
-                id: "collaborative-sharing",
-                stepNumber: "7",
-                tag: "Chapitre 7 — Correction en Équipe (Gradaly Pro)",
-                badge: "Nouveauté v3.0 • PRO",
-                shortTitle: "7. Partage Collaboratif & Fusion (PRO)",
+                id: "exam-collaborative-sharing",
+                guide: "exam",
+                stepNumber: "E6",
+                partColor: "indigo",
+                tag: "Mode Examen • Étape 6 — Correction en Équipe (Gradaly Pro)",
+                badge: "Partage & Fusion Sélective • PRO",
+                shortTitle: "E6. Partage Collaboratif & Fusion (PRO)",
                 title: "Partage Collaboratif de Projet & Fusion Sélective par Question",
-                subtitle: "Répartissez la correction entre collègues ou assistants via une archive .gradaly ou un lien Cloud chiffré de bout en bout (Gradaly Pro).",
+                subtitle: "Répartissez la correction d'un examen entre collègues ou assistants via une archive .gradaly ou un lien Cloud chiffré AES-256 (Gradaly Pro).",
                 paragraphs: [
-                    "Pour corriger un examen à plusieurs (co-titulaires ou équipe d'assistants), <strong>Gradaly Pro</strong> permet de partager tout ou partie d'un projet avec barre de progression en temps réel.",
-                    "Cliquez sur l'icône <strong>Partager / Exporter</strong> à côté du nom du projet dans la barre supérieure pour choisir entre un fichier local <code>.gradaly</code> ou un <strong>Lien Cloud chiffré</strong>. Avec le lien Cloud, l'archive est chiffrée sur votre ordinateur en <strong>AES-256-GCM</strong> avant l'envoi, et la clé secrète de déchiffrement (<code>#k=...</code>) figure exclusivement dans le lien que vous transmettez à votre collègue.",
-                    "Lorsque votre collègue clique sur <strong>Importer / Fusionner</strong>, Gradaly analyse l'archive, vérifie automatiquement que le canevas PDF possède exactement la même <strong>empreinte cryptographique SHA-256</strong>, et propose soit d'<strong>importer comme nouveau projet sous un nouveau nom</strong> (100 % sans risque), soit de <strong>fusionner sélectivement le barème et/ou les corrections question par question</strong> avec sauvegarde automatique préalable dans <code>backups/</code>."
+                    "Pour corriger un examen à plusieurs (co-titulaires ou équipe d'assistants), <strong>Gradaly Pro</strong> permet de partager tout ou partie d'un projet via une archive locale <code>.gradaly</code> ou un <strong>Lien Cloud chiffré de bout en bout en AES-256-GCM</strong> (valide 7, 14 ou 30 jours).",
+                    "Lorsque votre collègue clique sur <strong>Importer / Fusionner</strong>, Gradaly vérifie l'empreinte SHA-256 du canevas PDF et propose soit d'<strong>importer comme nouveau projet</strong>, soit de <strong>fusionner sélectivement le barème et/ou les corrections question par question</strong> (ex: fusionner Q1–Q2 de l'Assistant A avec Q3–Q4 de l'Assistant B) avec sauvegarde automatique préalable dans <code>backups/</code>."
                 ],
                 screenshots: [
                     {
@@ -793,125 +876,354 @@ const manualTranslations = {
                     },
                     {
                         filePrefix: "10_import_merge_modal",
-                        caption: "Fenêtre Importer / Fusionner (Gradaly Pro) : Vérification SHA-256 du canevas, sélection par question et protection des conflits"
+                        caption: "Fenêtre Importer / Fusionner (Gradaly Pro) : Vérification SHA-256 du canevas et fusion sélective question par question"
                     }
                 ],
                 callouts: [
                     {
-                        title: "4 profils de partage préconfigurés",
-                        desc: "Choisissez « Barème & Corrections (Léger < 500 Ko) », « Projet complet », « Canevas & Barème uniquement » ou « Projet + Copies vierges »."
+                        title: "Liens Cloud Chiffrés de Bout en Bout",
+                        desc: "Transmettez le projet à votre équipe avec chiffrement AES-256-GCM côté client (la clé #k=... ne quitte jamais le lien)."
                     },
                     {
-                        title: "Lien Cloud chiffré de bout en bout",
-                        desc: "Les archives volumineuses sont découpées et chiffrées automatiquement avec barre de progression et durée de validité (7, 14 ou 30 jours)."
-                    },
-                    {
-                        title: "Nouveau projet ou Fusion sélective",
-                        desc: "Créez un nouveau projet avec le nom de votre choix, ou cochez précisément les questions dont vous souhaitez récupérer le barème ou les notes."
-                    },
-                    {
-                        title: "Protection des corrections manuelles & Backup",
-                        desc: "Protégez vos corrections manuelles locales contre l'écrasement et bénéficiez d'une sauvegarde automatique dans le dossier backups/."
+                        title: "Fusion Sélective Question par Question",
+                        desc: "Rassemblez les questions corrigées par chaque assistant tout en protégeant vos corrections manuelles locales."
                     }
                 ]
             },
             {
-                id: "analytics-and-exports",
-                stepNumber: "8",
-                tag: "Chapitre 8 — Statistiques & Restitution",
-                badge: "Excel • PDF • Portail Web",
-                shortTitle: "8. Statistiques, PDF & Portail Web",
-                title: "Statistiques de Promotion, PDF Annotés & Portail Web Étudiant Chiffré",
-                subtitle: "Analysez la distribution des notes, simulez vos ajustements de barème et restituez des copies richement commentées.",
+                id: "exam-analytics-and-exports",
+                guide: "exam",
+                stepNumber: "E7",
+                partColor: "indigo",
+                tag: "Mode Examen • Étape 7 — Statistiques & Restitution",
+                badge: "Excel • PDF Annotés • Portail Web Examen",
+                shortTitle: "E7. Statistiques, PDF & Portail Examen",
+                title: "Statistiques de Promotion, PDF Annotés & Portail Web de Consultation des Copies",
+                subtitle: "Analysez la distribution des notes, ajustez le barème à la volée et restituez à chaque étudiant sa copie corrigée et commentée.",
                 paragraphs: [
-                    "L'onglet <strong>Synthèse</strong> affiche en temps réel les indicateurs de la promotion : moyenne, médiane, écart-type, notes min/max, histogrammes par tranches <code>[a, b[</code> sans ambiguïté, et taux de réussite détaillé pour chaque critère du barème.",
-                    "Pour la restitution des résultats, Gradaly propose trois canaux complémentaires (1 copie test en version gratuite ; illimité pour toute la promotion avec Gradaly Pro) :",
-                    "1) <strong>Tableur Excel multi-feuilles</strong> comprenant une feuille de synthèse officielle (avec matricules, noms, e-mails, groupes) et un onglet détaillé par question.<br>2) <strong>Copies PDF annotées individuelles</strong> (regroupées dans une archive ZIP) avec page de garde récapitulative, barème détaillé par question et formules mathématiques.<br>3) <strong>Portail Web Étudiant chiffré de bout en bout</strong> : publiez les copies chiffrées en 1 clic, envoyez automatiquement les e-mails individuels avec lien magique, imprimez des <strong>planches de QR codes découpables</strong> à distribuer en classe, ou partagez un <strong>Portail de révision enseignant</strong>."
+                    "L'onglet <strong>6. Statistiques</strong> calcule en temps réel les indicateurs de la promotion : moyenne, médiane, écart-type, notes min/max, histogrammes par tranches <code>[a, b[</code>, et taux de validation de chaque critère.",
+                    "Pour restituer les résultats aux étudiants (aperçu 1 copie en version gratuite ; promotion complète avec Gradaly Pro), trois canaux sont disponibles :<br>1) <strong>Tableur Excel multi-feuilles</strong> (synthèse officielle + 1 onglet détaillé par question).<br>2) <strong>Copies PDF annotées individuelles (ZIP)</strong> combinant une page de garde récapitulative et les pages manuscrites de l'étudiant.<br>3) <strong>Portail Web Étudiant Zero-Knowledge</strong> : publiez les copies corrigées chiffrées en 1 clic (pendant 30, 60, 90, 180 ou 365 jours), envoyez automatiquement les liens magiques par e-mail, ou imprimez des <strong>planches de coupons QR codes individuels</strong> à distribuer en auditoire."
                 ],
                 screenshots: [
                     {
                         filePrefix: "08_stats",
-                        caption: "Onglet Synthèse : Indicateurs statistiques, histogrammes [a, b[, réussite par critère et centre d'exportation"
+                        caption: "Onglet Statistiques (Mode Examen) : Indicateurs de promotion, histogrammes [a, b[, réussite par critère et centre d'exportation"
                     }
                 ],
                 callouts: [
                     {
-                        title: "Export Excel multi-feuilles",
-                        desc: "Prêt pour l'administration universitaire avec synthèse globale et détail binaire (1/0) de chaque critère par question."
+                        title: "Tableur Excel & Copies PDF Annotées",
+                        desc: "Générez le fichier Excel officiel des notes ainsi qu'un PDF annoté individuel par étudiant avec formules KaTeX."
                     },
                     {
-                        title: "Copies PDF annotées (Archive ZIP)",
-                        desc: "Génère un PDF individuel par étudiant combinant une page de garde synthétique et l'intégralité de sa copie."
+                        title: "Portail Web de Consultation de Copie",
+                        desc: "Chaque étudiant consulte sa copie corrigée, son barème détaillé et ses commentaires via lien e-mail ou coupon QR individuel."
+                    }
+                ]
+            },
+
+            // =========================================================================
+            // MANUEL 2 : MODE ENTRAÎNEMENT & AUTO-ÉVALUATION QR (P1 à P4) — 100 % AUTONOME
+            // =========================================================================
+            {
+                id: "practice-getting-started",
+                guide: "practice",
+                stepNumber: "P1",
+                partHeader: "Manuel 2 — Mode Entraînement QR (Étudiant)",
+                partColor: "teal",
+                partBanner: {
+                    kicker: "Manuel 2 • Produit 2 : Mode Entraînement & Auto-Évaluation QR (Chapitres P1 à P4)",
+                    title: "Guide Complet du Mode Entraînement QR : Auto-Évaluation Formative par l'Étudiant sur Smartphone",
+                    desc: "Ce manuel 100 % autonome explique comment créer une feuille d'exercices PDF munie de QR codes pour que vos étudiants s'entraînent sur papier, photographient leur brouillon avec leur smartphone et reçoivent un feedback IA immédiat (BYOK — 0 € pour l'enseignant)."
+                },
+                tag: "Mode Entraînement QR • Étape 1 — Principe & Création",
+                badge: "Formatif • Entraînement Autonome Étudiant",
+                shortTitle: "P1. Principe & Création du Projet",
+                title: "Principe du Mode Entraînement QR & Création d'un Projet d'Entraînement",
+                subtitle: "Permettez à vos étudiants de s'entraîner librement sur papier avec un retour IA immédiat sur smartphone — sans ramasser une seule copie ni payer le moindre jeton API.",
+                paragraphs: [
+                    "<strong>L'objectif pédagogique du Mode Entraînement QR (badge <code>Entraînement</code>) :</strong> Pour réussir un examen écrit, les étudiants doivent s'entraîner à rédiger des démonstrations, calculs et raisonnements complets sur papier (séances d'exercices / TD, devoirs à domicile, annales d'examen blanc). Or, il est matériellement impossible pour un enseignant de ramasser et corriger chaque semaine des centaines de feuilles d'exercices. <strong>Le Mode Entraînement QR transforme n'importe quel sujet d'exercices PDF en tuteur d'auto-évaluation interactif :</strong><br>1. <strong>L'enseignant</strong> prépare sa feuille d'exercices PDF, définit les critères d'évaluation (et le corrigé type <code>Solutionnaire</code> éventuel), positionne des QR codes sur le PDF et publie un portail web statique chiffré.<br>2. <strong>L'étudiant</strong> imprime la feuille d'exercices (ou l'affiche à l'écran), résout l'exercice au stylo sur papier, <strong>scanne le QR code de la question avec son smartphone</strong>, prend en photo son brouillon manuscrit et reçoit <strong>instantanément un feedback formateur détaillé critère par critère</strong> !",
+                    "<strong>Pourquoi cela coûte 0 € à l'enseignant (Architecture 100 % Statique &amp; BYOK) :</strong> Contrairement au Mode Examen où l'enseignant corrige les copies de sa promotion, dans un projet d'Entraînement <strong>il n'y a ni liste d'étudiants, ni copies scannées, ni clé API enseignant dans la publication</strong>. Chaque étudiant saisit une seule fois sa propre clé API personnelle sur son smartphone (<strong>Bring Your Own Key — BYOK</strong>, par exemple une <strong>clé gratuite Google AI Studio Gemini</strong>). C'est le téléphone de l'étudiant qui interroge directement l'IA.",
+                    "<strong>Une interface épurée en 3 onglets :</strong> Depuis l'Écran d'accueil, cliquez sur <strong>Nouveau projet → Projet d'Entraînement (Auto-évaluation étudiant)</strong> (ou sur <strong>Créer projet de démo → Projet d'Entraînement (Auto-évaluation QR)</strong> pour explorer une séance complète de Trigonométrie en français ou en anglais). Le projet s'ouvre sur <strong>3 onglets dédiés</strong> : <code>1. Canevas &amp; Questions</code>, <code>2. Placement QR Codes</code> et <code>3. Publication Web</code>."
+                ],
+                screenshots: [
+                    {
+                        filePrefix: "01_welcome",
+                        caption: "Écran d'accueil : Les projets d'Entraînement sont identifiés par le badge vert d'eau « Entraînement »"
                     },
                     {
-                        title: "Portail Web Étudiant Zero-Knowledge",
-                        desc: "Chaque copie est chiffrée sur votre machine (AES-256-GCM) avec sa propre clé unique (#k=...) avant l'envoi."
+                        filePrefix: "12_demo_types_modal",
+                        caption: "Fenêtre de création de démo : Choisissez « Projet d'Entraînement (Auto-évaluation QR) » pour ouvrir une séance d'exercices QR complète"
+                    }
+                ],
+                callouts: [
+                    {
+                        title: "Rédaction Papier + Caméra Smartphone",
+                        desc: "Les étudiants continuent à rédiger de vraies mathématiques et démonstrations sur papier tout en bénéficiant d'un retour immédiat sur téléphone."
                     },
                     {
-                        title: "Envoi d'e-mails & Coupons QR imprimables",
-                        desc: "Envoyez les liens individuels par e-mail ou imprimez une planche PDF de coupons QR codes individuels à remettre en auditoire."
+                        title: "Zéro Copie à Ramasser, Zéro Liste CSV",
+                        desc: "Un projet d'Entraînement ne comporte ni onglet Étudiants ni onglet Copies : tout se passe en autonomie côté étudiant."
+                    },
+                    {
+                        title: "0 € de Frais IA pour l'Enseignant (BYOK)",
+                        desc: "Les étudiants utilisent leur propre clé gratuite Google AI Studio (Gemini) sur leur téléphone — 0 € facturé à l'enseignant."
+                    },
+                    {
+                        title: "Démo Entraînement QR Intégrée",
+                        desc: "Lancez la démo Entraînement QR en 1 clic depuis l'écran d'accueil pour tester immédiatement une fiche de 10 exercices avec solutionnaire."
+                    }
+                ]
+            },
+            {
+                id: "practice-canvas-and-rubric",
+                guide: "practice",
+                stepNumber: "P2",
+                partColor: "teal",
+                tag: "Mode Entraînement QR • Étape 2 — Sujet PDF, Solutionnaire & Barème",
+                badge: "Guide 100 % Autonome",
+                shortTitle: "P2. Sujet PDF, Solutionnaire & Critères",
+                title: "Importer la Feuille d'Exercices PDF, le Corrigé Type & Concevoir le Barème Formatif",
+                subtitle: "Découpez chaque exercice sur votre PDF vierge, importez votre Solutionnaire et créez vos critères d'auto-évaluation manuellement ou avec l'Assistant IA.",
+                paragraphs: [
+                    "Dans l'onglet <strong>1. Canevas &amp; Questions</strong> de votre projet d'Entraînement (notez la barre supérieure épurée à 3 onglets et l'absence de zone d'identification étudiant), vous préparez les exercices et le barème qui guideront l'IA lors de l'auto-évaluation de l'étudiant :",
+                    "<strong>1. Importer le PDF d'exercices vierge (<code>Canevas</code>) &amp; Encadrer chaque question :</strong> Importez votre PDF d'énoncé et tracez un rectangle autour de chaque exercice (<code>Q1</code>, <code>Q2</code>, ...). <strong>Conseil essentiel :</strong> englobez l'énoncé imprimé de la question dans le rectangle ! En mode Entraînement, Gradaly découpe ce rectangle pour <strong>afficher l'énoncé de l'exercice sur l'écran du smartphone de l'étudiant</strong> et pour donner tout le contexte visuel à l'IA.",
+                    "<strong>2. Importer le PDF Corrigé Type optionnel (<code>Solutionnaire</code>) :</strong> Utilisez la bascule <strong>Énoncé (Canevas) / Solutionnaire</strong> en haut du PDF pour importer un PDF contenant vos résolutions détaillées. Si le corrigé est rédigé sur le même canevas que l'énoncé vierge, les zones s'appliquent automatiquement ; si sa mise en page diffère, basculez sur la vue <em>Solutionnaire</em> et encadrez la solution correspondante pour chaque question. En mode Entraînement, le Solutionnaire remplit trois rôles :<br>• <strong>Aider l'Assistant IA de Barème</strong> à générer des critères précis.<br>• <strong>Servir de référence mathématique/conceptuelle à l'IA</strong> lorsqu'elle évalue la photo du brouillon de l'étudiant.<br>• <strong>Être débloqué et affiché visuellement sur le smartphone de l'étudiant</strong> après qu'il a soumis au moins une tentative manuscrite !",
+                    "<strong>3. Définir les critères du barème (Purement Additif ou Purement Diminutif) :</strong><br>• Gradaly calcule <code>Score = Note de base + Σ (critères validés)</code>, borné entre <code>0</code> et <code>Score max</code>.<br>• Choisissez soit un <strong>barème purement additif</strong> (<code>Note de base = 0</code>, critères positifs <code>+1</code>, <code>+2</code> par étape réussie), soit un <strong>barème purement diminutif</strong> (<code>Note de base = Score max</code>, pénalités négatives <code>-0.5</code>, <code>-1</code>). Évitez de mélanger des points positifs et négatifs dans une même question.<br>• Utilisez le champ du bas (<strong>Consignes &amp; Logique de correction / Prompt IA</strong>) pour préciser vos consignes pédagogiques.",
+                    "<strong>4. Utiliser l'Assistant IA de Barème (<code>Concevoir / Modifier avec l'IA</code>) :</strong> Cliquez sur <strong>Concevoir / Modifier avec l'IA</strong> au-dessus de la liste des critères pour générer automatiquement une grille de critères formative à partir de l'énoncé et du solutionnaire, puis affinez-la par chat."
+                ],
+                screenshots: [
+                    {
+                        filePrefix: "13a_practice_questions",
+                        caption: "Mode Entraînement — Onglet 1. Canevas & Questions : Barre supérieure dédiée à 3 onglets (Canevas & Questions | Placement QR Codes | Publication Web), découpage des exercices, critères formatifs et bascule Énoncé / Solutionnaire"
+                    },
+                    {
+                        filePrefix: "03_rubric_assistant",
+                        caption: "Assistant IA de Barème : Co-concevez vos critères d'auto-évaluation et consignes IA en vous appuyant sur l'énoncé et le Solutionnaire"
+                    }
+                ],
+                callouts: [
+                    {
+                        title: "Découpe de l'énoncé affichée sur Smartphone",
+                        desc: "Le rectangle tracé sur le PDF Canevas est automatiquement découpé et affiché en haut de l'écran du téléphone de l'étudiant."
+                    },
+                    {
+                        title: "Corrigé Type (Solutionnaire) intégré",
+                        desc: "Fiabilise l'évaluation par l'IA et peut être révélé automatiquement à l'étudiant après son premier essai manuscrit."
+                    },
+                    {
+                        title: "Barème Additif ou Diminutif Clair",
+                        desc: "Des critères explicites étape par étape permettent à l'étudiant de comprendre immédiatement où se situe son erreur."
+                    },
+                    {
+                        title: "Assistant IA de Barème inclus",
+                        desc: "Générez en quelques secondes vos critères formatifs à partir du PDF d'exercices et du corrigé type."
+                    }
+                ]
+            },
+            {
+                id: "practice-qr-placement",
+                guide: "practice",
+                stepNumber: "P3",
+                partColor: "teal",
+                tag: "Mode Entraînement QR • Étape 3 — Placement des QR Codes & PDF Imprimable",
+                badge: "Inclus en Version Gratuite & Pro",
+                shortTitle: "P3. Placement QR & PDF Imprimable",
+                title: "Positionner les QR Codes sur le PDF & Générer la Feuille d'Exercices Prête à Imprimer",
+                subtitle: "Incrustez un QR code général (toute la fiche) et/ou des QR codes individuels par exercice directement dans les cadres de votre PDF.",
+                paragraphs: [
+                    "Ouvrez l'onglet <strong>2. Placement QR Codes</strong> pour définir l'emplacement des QR codes d'auto-évaluation sur votre feuille d'exercices :",
+                    "<strong>1. QR Code Général vs QR Codes par Question :</strong><br>• <strong>QR Général (Tout le sujet) :</strong> Placé par défaut en haut de la Page 1. Lorsqu'un étudiant le scanne, son téléphone ouvre le portail sur le sommaire complet des exercices.<br>• <strong>QR Codes par Question (<code>QR Q1</code>, <code>QR Q2</code>, ...) :</strong> Incrustés directement dans le cadre de chaque exercice sur le PDF. Lorsqu'un étudiant scanne <code>QR Q1</code>, son smartphone s'ouvre <strong>directement sur la Question 1</strong> (<code>?q=Q1</code>), prêt à photographier sa résolution !",
+                    "<strong>2. Glisser-déposer à la souris &amp; Alignement en 1 clic dans les coins :</strong> Cliquez sur une question dans la liste de gauche pour afficher sa page. Déplacez librement chaque QR code à la souris sur la page PDF afin de ne masquer aucune formule ni figure, ou cliquez sur <code>Coin haut-droit</code>, <code>Coin haut-gauche</code> ou <code>Coin bas-droit</code>. L'icône œil permet d'activer ou masquer chaque QR code.",
+                    "<strong>3. Télécharger le sujet PDF avec QR Codes prêt à imprimer :</strong> Cliquez sur <strong>Télécharger le sujet PDF avec QR Codes prêt à imprimer</strong>. Gradaly génère un PDF vectoriel haute définition intégrant tous vos QR codes actifs, prêt à être distribué en TD ou déposé sur Moodle."
+                ],
+                screenshots: [
+                    {
+                        filePrefix: "13_practice_qr",
+                        caption: "Mode Entraînement — Onglet 2. Placement QR Codes : Liste des QR codes à gauche, boutons d'alignement dans les coins et glisser-déposer interactif sur la Page 2 (QR Q1 et QR Q2)"
+                    }
+                ],
+                callouts: [
+                    {
+                        title: "Lien direct par exercice (?q=Q1)",
+                        desc: "Scanner le QR code d'un exercice ouvre directement cette question précise sur le smartphone de l'étudiant."
+                    },
+                    {
+                        title: "QR Codes pérennes si le barème évolue",
+                        desc: "Même si vous ajustez un critère plus tard et mettez à jour la publication en ligne, les QR codes déjà imprimés restent 100 % valides !"
+                    }
+                ]
+            },
+            {
+                id: "practice-publish-and-student",
+                guide: "practice",
+                stepNumber: "P4",
+                partColor: "teal",
+                tag: "Mode Entraînement QR • Étape 4 — Simulateur, Publication Web & App Étudiant",
+                badge: "Simulateur Gratuit • Publication Gradaly Pro • BYOK",
+                shortTitle: "P4. Simulateur, Publication (Pro) & App Étudiant",
+                title: "Simulateur Smartphone (Gratuit), Publication Web Zero-Knowledge (Pro) & Parcours de l'Étudiant",
+                subtitle: "Configurez les options pédagogiques, testez gratuitement dans le Simulateur Smartphone intégré, et publiez en ligne ou en archive .zip avec Gradaly Pro.",
+                paragraphs: [
+                    "Dans l'onglet <strong>3. Publication Web</strong>, vous paramétrez le comportement pédagogique de l'application mobile, la testez dans le simulateur et la mettez en ligne :",
+                    "<strong>1. Options pédagogiques (Avant et Après l'essai de l'étudiant) :</strong><br>• <strong>Afficher les critères du barème avant la 1re tentative :</strong> Choisissez si l'étudiant voit d'emblée la grille des critères attendus ou si elle reste masquée jusqu'à son premier essai.<br>• <strong>Afficher la justification détaillée de l'évaluation IA :</strong> Affiche l'explication critère par critère en plus du conseil formateur.<br>• <strong>Révéler le corrigé type (<code>Solutionnaire</code>) après au moins une tentative :</strong> Garde votre corrigé de référence verrouillé tant que l'étudiant n'a pas soumis une première photo de son travail manuscrit !",
+                    "<strong>2. Tester gratuitement dans le Simulateur Smartphone intégré :</strong> Cliquez sur le bouton <strong>Tester l'application étudiant (Simulateur)</strong> en haut à droite. Même dans l'<strong>Édition Communautaire Gratuite</strong>, vous pouvez tester l'intégralité de l'interface mobile directement dans Gradaly.",
+                    "<strong>3. Publier en 1 clic sur le Cloud ou Exporter en <code>.zip</code> autonome (Gradaly Pro) :</strong> Avec <strong>Gradaly Pro</strong>, cliquez sur <strong>Publier en 1 clic sur portal.gradaly.io</strong> (chiffré côté client en <strong>AES-256-GCM</strong>, avec choix de la durée de maintien en ligne : <strong>60 jours</strong>, <strong>180 jours / 1 semestre</strong> ou <strong>365 jours / 1 an</strong>) ou cliquez sur <strong>Exporter en site web statique autonome (.zip)</strong> pour l'héberger sur votre propre serveur universitaire.",
+                    "<strong>4. Le parcours de l'étudiant sur son smartphone (BYOK — 0 € pour l'enseignant) :</strong><br>• L'étudiant scanne le QR code imprimé sur sa feuille d'exercices.<br>• Lors de sa 1re visite, il touche le bandeau <strong>Clé API</strong> et suit le mini-guide intégré de 30 secondes pour coller une <strong>clé API gratuite Google AI Studio (Gemini)</strong> (mémorisée localement dans le navigateur de son téléphone).<br>• Il appuie sur <strong>Prendre en photo ma copie</strong>, photographie son brouillon papier et lance <strong>Évaluer ma réponse avec l'IA</strong> pour découvrir sa note estimée, les critères validés, le feedback mathématique en LaTeX et le corrigé type débloqué !",
+                    "<strong>5. Exemple interactif en direct (Sujet PDF imprimable &amp; Portail Étudiant) :</strong><br>• 🇫🇷 <a href=\"practice_examples_pdfs/Sujet_QR_Demo_Practice_FR.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-teal-700 font-bold underline hover:text-teal-900\">Voir le sujet PDF avec QR Codes (Démo FR)</a> &nbsp;|&nbsp; <a href=\"https://portal.gradaly.io/?e=ex_f511e8d3dad53c82&id=practice#k=6p9EEDYpJx0TMPq7vWBK8h8oeuplQq07tGq56yQPWiM\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-teal-700 font-bold underline hover:text-teal-900\">Ouvrir le Portail d'Entraînement Étudiant en direct (Démo FR)</a><br>• 🇬🇧 <a href=\"practice_examples_pdfs/Sujet_QR_Demo_Practice_EN.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-teal-700 font-bold underline hover:text-teal-900\">Voir le sujet PDF avec QR Codes (Démo EN)</a> &nbsp;|&nbsp; <a href=\"https://portal.gradaly.io/?e=ex_7c576e0a7ff4729b&id=practice#k=fOTpaHBSuaFzzdN7AJYjSF_BKMgKaYcGQj6lyYljH10\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-teal-700 font-bold underline hover:text-teal-900\">Ouvrir le Portail d'Entraînement Étudiant en direct (Démo EN)</a>"
+                ],
+                screenshots: [
+                    {
+                        filePrefix: "14_practice_publish",
+                        caption: "Mode Entraînement — Onglet 3. Publication Web : Options pédagogiques, déblocage du Solutionnaire après essai, durée de disponibilité (60/180/365 j) et publication Cloud / ZIP (Gradaly Pro)"
+                    },
+                    {
+                        filePrefix: "15_practice_student_portal",
+                        caption: "Simulateur Smartphone Étudiant intégré : Prévisualisez l'application mobile où l'étudiant saisit sa clé Gemini gratuite (BYOK), photographie son brouillon et reçoit son feedback immédiat"
+                    }
+                ],
+                callouts: [
+                    {
+                        title: "Simulateur Smartphone intégré (Gratuit)",
+                        desc: "Testez gratuitement vos exercices, votre barème et l'interface mobile étudiant directement dans Gradaly."
+                    },
+                    {
+                        title: "Publication Cloud ou ZIP statique (Gradaly Pro)",
+                        desc: "Publiez en 1 clic en AES-256-GCM sur portal.gradaly.io (60/180/365 jours) ou exportez une archive web .zip autonome."
+                    },
+                    {
+                        title: "Clé gratuite Google AI Studio pour l'étudiant",
+                        desc: "L'interface mobile intègre un tutoriel pas-à-pas montrant à l'étudiant comment créer gratuitement sa clé Gemini en 30 secondes."
+                    },
+                    {
+                        title: "Solutionnaire débloqué après l'effort",
+                        desc: "L'étudiant doit soumettre la photo d'une première tentative sur papier avant de débloquer le corrigé type de l'enseignant."
+                    }
+                ]
+            },
+
+            // =========================================================================
+            // GUIDE 3 : CLÉS API IA & FAQ (R1 à R2)
+            // =========================================================================
+            {
+                id: "ai-settings",
+                guide: "reference",
+                stepNumber: "R1",
+                partHeader: "Clés API IA & FAQ",
+                partColor: "slate",
+                partBanner: {
+                    kicker: "Référence & Configuration (Chapitres R1 et R2)",
+                    title: "Configuration des Clés API IA, Choix du Modèle & Foire Aux Questions",
+                    desc: "Comment paramétrer Gemini, OpenRouter, OpenAI, Anthropic ou un serveur local/universitaire, et réponses aux questions fréquentes."
+                },
+                tag: "Référence R1 — Configuration IA",
+                badge: "OpenRouter • Gemini • GPT • Claude • Local",
+                shortTitle: "R1. Clés API & Choix du Modèle IA",
+                title: "Configurer sa Clé API & Choisir le Bon Modèle d'IA",
+                subtitle: "Paramétrez une clé API dans Paramètres (⚙️) pour activer l'Assistant IA de Barème et la Pré-correction IA avec 0 % de marge.",
+                paragraphs: [
+                    "<strong>Modèles multimodaux recommandés :</strong> Sur les copies manuscrites universitaires (mathématiques, physique, sciences de l'ingénieur, économie, droit), nous obtenons d'<strong>excellents résultats</strong> avec <strong><code>Gemini 3.8 Flash</code></strong>, <strong><code>GPT 5-4 mini</code></strong>, <strong><code>Claude-Sonnet-5.5</code></strong> et <strong><code>Mistral-Large 4.0</code></strong>.",
+                    "<strong>Clé directe vs OpenRouter :</strong> Créez une clé directement chez <strong>Google Gemini</strong>, <strong>OpenAI</strong> ou <strong>Anthropic</strong> (ce qui donne accès au <strong>mode Batch / Flex asynchrone à -50 %</strong>), ou utilisez <strong>OpenRouter</strong> pour accéder à tous les modèles avec un seul compte.",
+                    "<strong>0 % de marge &amp; Serveur Universitaire / Local :</strong> Gradaly ne prélève aucune commission sur vos jetons API — et l'usage est <strong>100 % gratuit (0 €) si vous connectez le serveur IA de votre université ou un modèle local via Ollama</strong>."
+                ],
+                screenshots: [
+                    {
+                        filePrefix: "11_settings_ai",
+                        caption: "Fenêtre Paramètres IA (⚙️) : Choix du fournisseur (Gemini, OpenRouter, OpenAI, Anthropic ou Serveur Local / Universitaire) et test de connexion"
+                    }
+                ],
+                providerGuides: [
+                    {
+                        name: "OpenRouter (Passerelle Multi-Modèles)",
+                        tag: "Tous les modèles en 1 clé",
+                        icon: "fas fa-network-wired",
+                        desc: "Un seul compte et une seule clé API pour utiliser <code>Gemini 3.8 Flash</code>, <code>GPT 5-4 mini</code>, <code>Claude-Sonnet-5.5</code> et <code>Mistral-Large 4.0</code> (note : le mode Batch asynchrone n'est pas supporté sur OpenRouter).",
+                        steps: [
+                            "Créez un compte sur <strong>openrouter.ai</strong> et créditez 5 $ ou 10 $ dans <strong>Credits</strong>.",
+                            "Allez dans <strong>Keys → Create Key</strong> et copiez la clé (<code>sk-or-v1-...</code>).",
+                            "Collez-la dans Gradaly <strong>Paramètres (⚙️) → OpenRouter</strong>."
+                        ],
+                        url: "https://openrouter.ai/keys",
+                        linkLabel: "Ouvrir la console OpenRouter Keys"
+                    },
+                    {
+                        name: "Google Gemini (Google AI Studio)",
+                        tag: "Rapide, Offre Gratuite & Batch -50 %",
+                        icon: "fas fa-bolt",
+                        desc: "Accès direct à <code>Gemini 3.8 Flash</code> et Pro avec support du mode Batch à -50 % (ainsi qu'une offre gratuite idéale pour les étudiants en mode Entraînement QR).",
+                        steps: [
+                            "Connectez-vous à <strong>Google AI Studio</strong> (<code>aistudio.google.com</code>).",
+                            "Cliquez sur <strong>Get API key → Create API key</strong> et copiez la clé (<code>AIzaSy...</code>).",
+                            "Collez-la dans Gradaly <strong>Paramètres (⚙️) → Google Gemini</strong>."
+                        ],
+                        url: "https://aistudio.google.com/app/apikey",
+                        linkLabel: "Ouvrir Google AI Studio API Keys"
+                    },
+                    {
+                        name: "OpenAI (Modèles GPT)",
+                        tag: "Haute précision logique",
+                        icon: "fas fa-brain",
+                        desc: "Accès direct à <code>GPT 5-4 mini</code> et aux modèles de vision OpenAI avec réduction de 50 % en mode Batch.",
+                        steps: [
+                            "Connectez-vous sur <strong>platform.openai.com</strong> et ajoutez 5 $ de crédit dans <strong>Settings → Billing</strong>.",
+                            "Allez dans <strong>API keys → + Create new secret key</strong> (<code>sk-proj-...</code>).",
+                            "Collez-la dans Gradaly <strong>Paramètres (⚙️) → OpenAI</strong>."
+                        ],
+                        url: "https://platform.openai.com/api-keys",
+                        linkLabel: "Ouvrir OpenAI Platform API Keys"
+                    },
+                    {
+                        name: "Anthropic (Modèles Claude)",
+                        tag: "Rédaction fine & Démonstrations",
+                        icon: "fas fa-feather-alt",
+                        desc: "Accès direct à <code>Claude-Sonnet-5.5</code> et Opus pour l'analyse de démonstrations manuscrites denses.",
+                        steps: [
+                            "Connectez-vous sur <strong>console.anthropic.com</strong> et créditez votre compte dans <strong>Billing</strong>.",
+                            "Allez dans <strong>API Keys → Create Key</strong> (<code>sk-ant-...</code>).",
+                            "Collez-la dans Gradaly <strong>Paramètres (⚙️) → Anthropic</strong>."
+                        ],
+                        url: "https://console.anthropic.com/settings/keys",
+                        linkLabel: "Ouvrir Anthropic Console API Keys"
                     }
                 ]
             },
             {
                 id: "faq",
-                stepNumber: "9",
-                tag: "Chapitre 9 — FAQ",
-                badge: "Fonctionnement, Fichiers Locaux & Support",
-                shortTitle: "9. Foire Aux Questions (FAQ)",
+                guide: "reference",
+                stepNumber: "R2",
+                partColor: "slate",
+                tag: "Référence R2 — Foire Aux Questions (FAQ)",
+                badge: "Architecture, Confidentialité & Bonnes Pratiques",
+                shortTitle: "R2. Foire Aux Questions (FAQ)",
                 title: "Foire Aux Questions (FAQ)",
-                subtitle: "Réponses aux questions fréquentes sur le fonctionnement de l'IA, le stockage local dans Documents/Gradaly, la sécurité des clés API, le chiffrement Cloud et le support.",
+                subtitle: "Toutes les réponses sur la différence entre Mode Examen et Mode Entraînement QR, les coûts IA, les fichiers locaux et le chiffrement Zero-Knowledge.",
                 paragraphs: [
-                    "Retrouvez ci-dessous les réponses détaillées aux questions techniques, pédagogiques et de confidentialité les plus fréquentes sur Gradaly."
+                    "Retrouvez ci-dessous les réponses détaillées aux questions les plus fréquentes sur les deux produits intégrés dans Gradaly."
                 ],
                 faqs: [
                     {
-                        q: "Comment fonctionne concrètement la correction par IA dans Gradaly ?",
-                        a: "<p>Lorsque vous lancez l'IA sur une question pour une copie donnée, Gradaly extrait <strong>l'image découpée de la zone rectangulaire</strong> que vous avez tracée pour cette question, et l'envoie au modèle d'IA accompagnée d'un prompt contenant vos critères de barème (<code>CRITERIA</code>) et vos consignes générales pour la question (<code>PROMPT_TEXT</code>).</p><p><strong>C'est exactement similaire à ce que vous feriez si vous faisiez un copier-coller d'une capture d'écran de cette zone dans votre outil de chat IA favori en lui demandant :</strong> <em>« Corrige cet extrait de copie : voici ma politique de notation et mes critères pour cette question, indique-moi quels critères sont validés, pourquoi, et rédige un commentaire pour l'étudiant. »</em></p><p>C'est pourquoi, pour que l'IA fasse un travail remarquable, il est essentiel d'être très précis sur la façon d'appliquer votre barème : englobez l'énoncé dans la zone de la question (ou collez l'énoncé en texte plein dans le champ de consignes en bas de la question) et utilisez l'Assistant IA de Barème pour calibrer vos critères.</p>"
+                        q: "Quelle est la différence exacte entre le Produit 1 (Mode Examen) et le Produit 2 (Mode Entraînement QR) ?",
+                        a: "<p><strong>Produit 1 — Mode Examen (Certificatif, par l'enseignant) :</strong> Vous ramassez les copies des étudiants après un examen, les scannez, associez les identités 100 % hors-ligne par OCR, corrigez la promotion dans Gradaly (manuellement ou avec votre clé API enseignant) et exportez le fichier Excel des notes, les PDF annotés ou le Portail Web de Consultation de Copie.</p><p><strong>Produit 2 — Mode Entraînement &amp; Auto-évaluation QR (Formatif, par l'étudiant) :</strong> Il n'y a <strong>ni liste d'étudiants ni copies ramassées par l'enseignant</strong>. Vous apposez des QR codes sur une feuille d'exercices PDF vierge et publiez un portail statique chiffré (avec Gradaly Pro). Les étudiants résolvent les exercices sur papier, scannent le QR code avec leur smartphone, prennent en photo leur brouillon et reçoivent un feedback IA formateur immédiat en utilisant <strong>leur propre clé API personnelle (BYOK — ex: clé gratuite Google AI Studio, coûtant 0 € à l'enseignant)</strong>.</p>"
                     },
                     {
-                        q: "Faut-il faire confiance à la correction IA ?",
-                        a: "<p><strong>Oui et non — dans un premier temps, non, absolument pas !</strong> Votre barème initial pourrait être trop strict ou comporter des implicites, ou le modèle d'IA que vous avez choisi pourrait ne pas être capable de résoudre correctement la question ou mal interpréter une notation manuscrite.</p><p><strong>Relire et valider manuellement :</strong> Nous vous recommandons vivement de <strong>relire les propositions produites par l'IA et de les valider</strong>, tout particulièrement si Gradaly est utilisé dans un <strong>but certificatif (examen officiel)</strong>. Gradaly a été conçu pour vous permettre de vérifier, ajuster en un clic et valider manuellement chaque réponse et chaque feedback, et il sera toujours préférable de le faire.</p><p><strong>Droit de regard et réclamation des étudiants :</strong> Grâce à la transparence du barème par critères restitué aux étudiants (via les PDF annotés ou le Portail Web Étudiant), nous vous recommandons également de toujours laisser la possibilité aux étudiants de consulter leur copie et, le cas échéant, de contester l'application d'un critère.</p>"
+                        q: "Faut-il faire confiance à l'IA pour un examen certificatif officiel ?",
+                        a: "<p><strong>Dans un premier temps, jamais aveuglément !</strong> Pour un examen certificatif (Mode Examen), nous recommandons vivement de calibrer d'abord votre barème sur quelques copies, puis de <strong>relire et valider manuellement chaque copie</strong> (ce qui fait passer son statut de 🟢 IA à 🔵 Humain). Grâce à la transparence du barème restitué aux étudiants, ces derniers peuvent également consulter le détail des critères appliqués à leur copie.</p>"
                     },
                     {
-                        q: "Combien coûte la correction d'un examen avec l'IA ?",
-                        a: "<p>Il n'y a pas de tarif unique figé, car le coût dépend du nombre de copies à corriger, du nombre de questions, ainsi que de la taille et de la gamme du modèle d'IA choisi (chaque fournisseur d'API publie sa grille tarifaire exacte par million de tokens que vous pouvez consulter).</p><p>Pour vous donner un ordre de grandeur concret issu de nos propres examens : avec un excellent modèle comme <strong><code>Gemini 3.8 Flash</code></strong> (qui donne de très bons résultats dans nos tests), nous avons corrigé des examens universitaires de statistiques complexes comportant <strong>6 à 7 pages de réponses pour 400 étudiants pour un coût total de l'ordre de 5 à 7 $</strong> en mode flexible/batch (sans aucune marge prélevée par Gradaly).</p>"
+                        q: "Combien coûte l'IA en Mode Examen et en Mode Entraînement QR ?",
+                        a: "<p><strong>En Mode Examen :</strong> Avec un excellent modèle comme <code>Gemini 3.8 Flash</code> en mode Batch/Flex (-50 %), pré-corriger un examen de 6 pages pour <strong>400 étudiants coûte environ 5 à 7 $ au total</strong> (0 % de marge prélevée par Gradaly).</p><p><strong>En Mode Entraînement QR :</strong> Cela coûte <strong>0 € à l'enseignant</strong>, car chaque étudiant utilise sa propre clé API personnelle (BYOK, comme l'offre gratuite Google AI Studio Gemini) directement depuis son smartphone.</p>"
                     },
                     {
-                        q: "J'ai déjà un abonnement payant à ChatGPT Plus (OpenAI), Claude Pro ou Gemini Advanced : pourquoi ne puis-je pas l'utiliser directement plutôt qu'une clé API ?",
-                        a: "<p><strong>1. Deux services totalement distincts chez les fournisseurs d'IA :</strong> Chez OpenAI, Anthropic et Google, les abonnements grand public (ChatGPT Plus, Claude Pro, Gemini Advanced à ~20 €/mois) et l'accès par <strong>clé API</strong> sont deux produits séparés. Les abonnements mensuels donnent uniquement accès à leur interface de discussion web/mobile pour un usage manuel et ne permettent techniquement pas à un logiciel externe comme Gradaly d'envoyer des requêtes automatisées (leurs conditions d'utilisation l'interdisent d'ailleurs formellement).</p><p><strong>2. Traitement par lots et confidentialité accrue :</strong> Pour pré-corriger des dizaines ou des centaines de copies en parallèle et recevoir des réponses structurées (cases du barème cochées automatiquement, justificatif enseignant et feedback étudiant), Gradaly doit passer par l'API officielle. De plus, <strong>les données transmises via l'API bénéficient de garanties de confidentialité professionnelles</strong> : contrairement aux interfaces de chat grand public par défaut, les copies envoyées via l'API <strong>ne sont pas utilisées par OpenAI, Google ou Anthropic pour entraîner leurs modèles</strong>.</p><p><strong>3. Un coût à l'usage minime (sans abonnement supplémentaire) :</strong> L'utilisation d'une clé API ne nécessite aucun abonnement mensuel fixe : vous ne payez qu'à la consommation réelle (<em>pay-as-you-go</em>, sans aucune marge prélevée par Gradaly), soit typiquement <strong>quelques euros à peine pour corriger une promotion entière de plusieurs centaines d'étudiants</strong> (et Google propose même un niveau gratuit sur l'API Gemini pour tester). Si vous souhaitez éviter de gérer plusieurs comptes, vous pouvez utiliser <strong>OpenRouter</strong> (une seule clé rechargeable donnant accès à GPT, Claude, Gemini, etc.) ou le serveur IA de votre université.</p>"
+                        q: "Quelle résolution (DPI) utiliser pour scanner les copies en Mode Examen ?",
+                        a: "<p>Scannez en <strong>Couleur entre <code>150 DPI</code> et <code>200 DPI</code></strong>. Évitez le 300 ou 600 DPI (qui alourdit les fichiers d'un facteur 5 sans aucun gain pour l'IA) ainsi que le noir et blanc binaire 1-bit (qui efface les tracés au crayon et les schémas en couleur).</p>"
                     },
                     {
-                        q: "Combien de temps cela prend-il de corriger mon examen avec l'IA ?",
-                        a: "<p>La durée dépend du nombre de zones de questions, du nombre de copies et de la difficulté de la tâche demandée à l'agent d'IA. À titre indicatif, pour un examen de <strong>400 copies, 5 questions et une dizaine de pages de réponses</strong> en mode flexible, l'examen complet est généralement pré-corrigé en <strong>une dizaine de minutes</strong>.</p><p><strong>Astuce performance :</strong> N'hésitez pas à ajuster le <strong>nombre de threads parallèles (workers)</strong> dans les <strong>Paramètres (⚙️)</strong> de l'application — augmenter ce paramètre permet d'accélérer sensiblement la vitesse de traitement (selon les quotas autorisés par votre fournisseur d'API).</p>"
+                        q: "Où sont stockés mes projets et mes clés API, et comment fonctionne le chiffrement Cloud Zero-Knowledge ?",
+                        a: "<p>Tous vos projets sont stockés localement dans <strong><code>Documents/Gradaly/</code></strong> sur votre ordinateur, et vos clés API restent dans <code>~/.gradaly_settings.json</code>. Lorsque vous publiez un Portail d'Examen, un Portail d'Entraînement QR ou un Lien Collaboratif, tous les fichiers sont chiffrés sur votre machine en <strong><code>AES-256-GCM</code></strong> avant l'envoi. La clé de déchiffrement (<code>#k=...</code>) reste dans le fragment d'URL après <code>#</code>, qui n'est jamais transmis au serveur.</p>"
                     },
                     {
-                        q: "Quelle résolution (DPI) doivent avoir mes scans de copies ?",
-                        a: "<p>Privilégiez des fichiers <strong>les plus légers possibles tout en restant parfaitement lisibles</strong> : une résolution de <strong><code>150 DPI</code> à <code>200 DPI</code></strong> constitue le compromis idéal, aussi bien pour la lecture à l'écran que pour la reconnaissance par l'IA.</p><p><strong>Inutile de monter à 300 ou 600 DPI :</strong> Une résolution trop élevée n'apporte strictement aucun gain de précision pour l'IA (les images étant redimensionnées avant l'analyse) mais alourdit vos fichiers PDF d'un facteur 4 à 10, ce qui ralentit inutilement le découpage des copies, l'affichage et l'envoi vers le Portail Web ou le Cloud.</p><p><strong>Conservez la couleur :</strong> Nous recommandons de scanner en <strong>Couleur (en 150–200 DPI avec compression PDF standard)</strong> plutôt qu'en noir et blanc binaire (1 bit) qui écrase les contrastes. La couleur préserve beaucoup mieux les tracés au crayon gris, les stylos de couleur sur les schémas et les exposants/indices fins.</p>"
-                    },
-                    {
-                        q: "Où sont stockés les fichiers de Gradaly sur mon ordinateur ?",
-                        a: "<p>Tous vos projets d'examen sont stockés localement dans le dossier <strong><code>Documents/Gradaly/</code></strong> de votre ordinateur (par ex. <code>~/Documents/Gradaly/</code> sur macOS/Linux ou <code>C:\\Users\\VotreNom\\Documents\\Gradaly\\</code> sur Windows), avec un sous-dossier par projet.</p><p>À l'intérieur de chaque dossier de projet, toutes les données sont enregistrées sous forme de fichiers standards et lisibles :<ul><li><strong>Les fichiers PDF :</strong> le sujet vierge (<code>canvas.pdf</code>), le corrigé type éventuel (<code>solution.pdf</code>) et toutes les copies PDF découpées dans le sous-dossier <code>copies/</code> (<code>copie_01.pdf</code>, <code>copie_02.pdf</code>, etc.).</li><li><strong>Les fichiers texte JSON :</strong> le barème et les zones de questions (<code>config.json</code>), la liste des étudiants avec noms, matricules et e-mails (<code>students.json</code>), la table d'appariement OCR (<code>matching.json</code>), ainsi que les évaluations et commentaires de chaque copie dans le sous-dossier <code>gradings/</code> (<code>copie_01.json</code>, etc.).</li></ul></p><p><strong>⚠️ Conseil important :</strong> Bien que ce stockage transparent facilite la sauvegarde de votre dossier <code>Documents/Gradaly</code>, <strong>nous vous conseillons vivement de ne PAS modifier ou renommer manuellement les fichiers dans ce dossier</strong>, car cela risquerait de corrompre la cohérence du projet.</p>"
-                    },
-                    {
-                        q: "Où sont stockées mes clés API et est-ce sécurisé ?",
-                        a: "<p>Vos clés API (Gemini, OpenRouter, OpenAI, Anthropic) sont enregistrées <strong>strictement en local sur votre ordinateur</strong> dans le fichier de configuration <code>.gradaly_settings.json</code> situé à la racine de votre dossier utilisateur (<code>~/.gradaly_settings.json</code> sur macOS/Linux ou <code>C:\\Users\\VotreNom\\.gradaly_settings.json</code> sur Windows).</p><p><strong>Garanties de sécurité :</strong><ul><li>Vos clés API ne sont <strong>jamais envoyées vers un serveur Gradaly</strong> et ne sont <strong>jamais incluses lorsque vous exportez ou partagez un projet <code>.gradaly</code></strong> avec un collègue.</li><li>Lorsque vous utilisez l'IA, votre ordinateur communique <strong>directement en HTTPS chiffré (TLS 1.3)</strong> avec le serveur officiel du fournisseur d'IA que vous avez choisi.</li><li>Vous pouvez à tout moment plafonner le budget mensuel ou révoquer votre clé depuis l'interface de votre fournisseur d'IA.</li></ul></p>"
-                    },
-                    {
-                        q: "Où sont stockées les données lorsque je publie un examen sur le Cloud ? Qui peut y accéder ?",
-                        a: "<p>Lorsque vous publiez un examen sur le <strong>Portail Web Étudiant</strong> ou générez un <strong>lien de partage collaboratif Cloud</strong>, <strong>chaque fichier est chiffré localement sur votre ordinateur en <code>AES-256-GCM</code> avant même qu'un seul octet ne quitte votre machine</strong>. Seuls des blocs binaires chiffrés inintelligibles (<code>.enc</code>) sont stockés sur notre stockage cloud européen (avec suppression automatique à l'échéance choisie).</p><p>La clé secrète de déchiffrement (<code>#k=...</code>) est placée dans le fragment d'URL situé après le symbole dièse (<code>#</code>). Selon le standard officiel d'Internet (RFC 3986), ce fragment n'est jamais envoyé au serveur lors des requêtes HTTP. <strong>Ainsi, même les créateurs de Gradaly ne peuvent jamais lire vos fichiers, et même un pirate qui compromettrait le serveur cloud ne verrait que des données chiffrées indéchiffrables</strong> : seul le détenteur du lien généré possède la clé permettant de déchiffrer la copie ou le projet.</p>"
-                    },
-                    {
-                        q: "Pourquoi une application Desktop plutôt qu'un outil 100 % Web ? Quelle est la vision de Gradaly ?",
-                        a: "<p>Nous avons fait le choix d'une application native installée sur votre ordinateur (macOS, Windows, Linux) pour deux raisons fondamentales :</p><p>1) <strong>Maîtrise immédiate de vos données :</strong> Vous n'êtes jamais obligé d'envoyer les copies non chiffrées ni la liste nominative de vos étudiants sur un serveur distant pour préparer, découper et associer vos copies.</p><p>2) <strong>Notre vision à moyen terme (Autonomie 100 % locale) :</strong> Les processeurs d'ordinateurs portables et les modèles d'IA multimodaux ouverts progressent à une vitesse fulgurante. <strong>La vision de Gradaly est que d'ici quelques années, d'excellents modèles de vision et de raisonnement tourneront directement sur votre ordinateur portable</strong> (ou sur le serveur interne de votre faculté). Grâce à son architecture locale compatible Ollama / serveurs universitaires, Gradaly permettra aux enseignants d'être <strong>100 % autonomes</strong>, sans dépendre d'aucun cloud externe ni payer le moindre jeton.</p>"
-                    },
-                    {
-                        q: "Quelles sont les différences avec d'autres outils comme Gradescope ou les plateformes Cloud d'IA ?",
-                        a: "<p><strong>Par rapport à Gradescope :</strong> Gradescope possède de vrais atouts pour certains usages — collaboration web simultanée en temps réel sans fusion de fichiers, support très poussé des formulaires QCM à bulles et regroupement automatique (clustering) de réponses courtes. En revanche, Gradescope n'inclut pas de pré-correction par IA multimodale sur les raisonnements manuscrits, n'offre pas d'assistant IA pour concevoir vos barèmes, et vous laisse moins de contrôle sur vos données (stockées en clair sur des serveurs tiers). Gradaly peut s'utiliser en <strong>Mode 100 % Humain</strong> avec le même confort de grille par critères, tout en y ajoutant l'Assistant IA de barème, la pré-correction IA et un contrôle 100 % local sur vos données.</p><p><strong>Par rapport aux plateformes Cloud de correction IA émergentes :</strong> Ces plateformes imposent généralement un modèle d'IA unique sans transparence et revendent des « packs de crédits IA » avec une forte marge. Gradaly vous laisse le <strong>libre choix du modèle d'IA</strong> (Gemini, GPT, Claude, Mistral, OpenRouter ou un serveur gratuit de votre université / local) et ne facture <strong>0 % de marge sur l'IA</strong>.</p>"
-                    },
-                    {
-                        q: "Où puis-je faire des suggestions d'amélioration ou signaler un bug ?",
-                        a: "<p>Vos retours d'expérience, idées de fonctionnalités et signalements de bugs sont les bienvenus ! Vous pouvez ouvrir un ticket directement sur notre espace GitHub Issues ici : <a href=\"https://github.com/pschaus/gradaly-website/issues\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-indigo-600 font-bold hover:underline\">https://github.com/pschaus/gradaly-website/issues</a>.</p>"
+                        q: "Combien de temps les portails d'Examen, d'Entraînement QR et les liens collaboratifs restent-ils en ligne ?",
+                        a: "<p>Vous choisissez la durée de rétention lors de la publication (avec suppression automatique à l'échéance) : <strong>30 à 365 jours</strong> pour le Portail de Consultation d'Examen, <strong>60, 180 (1 semestre) ou 365 jours (1 an)</strong> pour le Portail d'Entraînement QR, et <strong>7, 14 ou 30 jours</strong> pour les liens de partage entre collègues. Avec Gradaly Pro, vous pouvez aussi exporter les portails d'Examen et d'Entraînement en archive <code>.zip</code> autonome pour les héberger sans limite de durée sur le serveur de votre université.</p>"
                     }
                 ]
             }
@@ -922,6 +1234,7 @@ const manualTranslations = {
 function manualApp() {
     return {
         lang: 'en',
+        activeGuide: 'exam',
         search: '',
         t: manualTranslations.en,
         init() {
@@ -935,31 +1248,43 @@ function manualApp() {
                     this.lang = 'fr';
                 }
             }
+            const modeParam = urlParams.get('mode');
+            if (modeParam === 'exam' || modeParam === 'practice' || modeParam === 'reference' || modeParam === 'all') {
+                this.activeGuide = modeParam;
+            }
             this.t = manualTranslations[this.lang];
         },
         toggleLang() {
             this.lang = this.lang === 'en' ? 'fr' : 'en';
             this.t = manualTranslations[this.lang];
         },
+        selectGuide(guide) {
+            this.activeGuide = guide;
+            this.search = '';
+        },
         get filteredSections() {
             const q = this.search.trim().toLowerCase();
-            if (!q) return this.t.sections;
-            return this.t.sections.filter((sec) => {
-                const haystack = [
-                    sec.title,
-                    sec.subtitle,
-                    sec.shortTitle,
-                    ...(sec.paragraphs || []),
-                    ...(sec.callouts || []).map((c) => c.title + ' ' + c.desc),
-                    ...(sec.providerGuides || []).map((p) => p.name + ' ' + p.desc + ' ' + (p.steps || []).join(' ')),
-                    ...(sec.faqs || []).map((f) => f.q + ' ' + f.a),
-                    sec.comparisonTable ? sec.comparisonTable.title + ' ' + sec.comparisonTable.rows.map((r) => r.join(' ')).join(' ') : '',
-                    sec.tip ? sec.tip.title + ' ' + sec.tip.text : ''
-                ]
-                    .join(' ')
-                    .toLowerCase();
-                return haystack.includes(q);
-            });
+            if (q) {
+                return this.t.sections.filter((sec) => {
+                    const haystack = [
+                        sec.title,
+                        sec.subtitle,
+                        sec.shortTitle,
+                        ...(sec.paragraphs || []),
+                        ...(sec.callouts || []).map((c) => c.title + ' ' + c.desc),
+                        ...(sec.providerGuides || []).map((p) => p.name + ' ' + p.desc + ' ' + (p.steps || []).join(' ')),
+                        ...(sec.faqs || []).map((f) => f.q + ' ' + f.a),
+                        sec.tip ? sec.tip.title + ' ' + sec.tip.text : ''
+                    ]
+                        .join(' ')
+                        .toLowerCase();
+                    return haystack.includes(q);
+                });
+            }
+            if (this.activeGuide === 'all') {
+                return this.t.sections;
+            }
+            return this.t.sections.filter((sec) => sec.guide === this.activeGuide);
         }
     };
 }

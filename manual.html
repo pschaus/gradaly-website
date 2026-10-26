@@ -46,19 +46,21 @@
         </div>
     </nav>
 
-    <!-- Header Banner -->
-    <header class="pt-28 pb-12 bg-gradient-to-b from-indigo-950 via-slate-900 to-slate-900 text-white border-b border-slate-800">
+    <!-- Header Banner with 2-in-1 Product Guide Switcher -->
+    <header class="pt-28 pb-10 bg-gradient-to-b from-indigo-950 via-slate-900 to-slate-900 text-white border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-400/30 mb-4">
-                    <i class="fas fa-book-open"></i>
-                    <span x-text="t.hero_pill"></span>
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+                <div class="max-w-3xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-400/30 mb-4">
+                        <i class="fas fa-layer-group"></i>
+                        <span x-text="t.hero_pill"></span>
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3" x-text="t.hero_title"></h1>
+                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed" x-text="t.hero_subtitle"></p>
                 </div>
-                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4" x-text="t.hero_title"></h1>
-                <p class="text-base sm:text-lg text-slate-300 leading-relaxed mb-6" x-text="t.hero_subtitle"></p>
 
                 <!-- Search input -->
-                <div class="relative max-w-xl">
+                <div class="relative w-full lg:w-96 shrink-0">
                     <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
                     <input type="text"
                            x-model="search"
@@ -71,6 +73,81 @@
                     </button>
                 </div>
             </div>
+
+            <!-- 2-in-1 Product Selector Cards (No Common Foundation: Two Independent Manuals) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <!-- Manual 1: Exam Grading Mode (Certificatif — Enseignant) -->
+                <button type="button"
+                        @click="selectGuide('exam')"
+                        :class="activeGuide === 'exam' ? 'ring-2 ring-indigo-400 bg-indigo-950/90 border-indigo-400 shadow-xl' : 'bg-slate-800/60 hover:bg-slate-800/90 border-slate-700/80 opacity-85 hover:opacity-100'"
+                        class="text-left p-5 rounded-2xl border transition-all cursor-pointer flex items-start gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-xl shrink-0 shadow-md group-hover:scale-105 transition">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-indigo-500/30 text-indigo-200 border border-indigo-400/40" x-text="t.card_exam_badge"></span>
+                            <span class="text-xs font-mono text-indigo-300" x-text="t.card_exam_chapters"></span>
+                        </div>
+                        <h2 class="text-lg sm:text-xl font-extrabold text-white" x-text="t.card_exam_title"></h2>
+                        <p class="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed" x-text="t.card_exam_desc"></p>
+                    </div>
+                </button>
+
+                <!-- Manual 2: Practice & Self-Assessment QR Mode (Formatif — Étudiant) -->
+                <button type="button"
+                        @click="selectGuide('practice')"
+                        :class="activeGuide === 'practice' ? 'ring-2 ring-teal-400 bg-teal-950/90 border-teal-400 shadow-xl' : 'bg-slate-800/60 hover:bg-slate-800/90 border-slate-700/80 opacity-85 hover:opacity-100'"
+                        class="text-left p-5 rounded-2xl border transition-all cursor-pointer flex items-start gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-teal-600 text-white flex items-center justify-center text-xl shrink-0 shadow-md group-hover:scale-105 transition">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-2 mb-1">
+                            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold uppercase tracking-wider bg-teal-500/30 text-teal-200 border border-teal-400/40" x-text="t.card_practice_badge"></span>
+                            <span class="text-xs font-mono text-teal-300" x-text="t.card_practice_chapters"></span>
+                        </div>
+                        <h2 class="text-lg sm:text-xl font-extrabold text-white" x-text="t.card_practice_title"></h2>
+                        <p class="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed" x-text="t.card_practice_desc"></p>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Secondary Filter Bar: API Keys & FAQ / Show All -->
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-2 text-xs">
+                <div class="flex flex-wrap items-center gap-2">
+                    <span class="text-slate-400 font-semibold uppercase tracking-wider mr-1" x-text="t.filter_label"></span>
+                    <button type="button"
+                            @click="selectGuide('exam')"
+                            :class="activeGuide === 'exam' ? 'bg-indigo-600 text-white border-indigo-500 font-bold' : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'"
+                            class="px-3 py-1.5 rounded-lg border transition cursor-pointer flex items-center gap-1.5">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span x-text="t.filter_exam"></span>
+                    </button>
+                    <button type="button"
+                            @click="selectGuide('practice')"
+                            :class="activeGuide === 'practice' ? 'bg-teal-600 text-white border-teal-500 font-bold' : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'"
+                            class="px-3 py-1.5 rounded-lg border transition cursor-pointer flex items-center gap-1.5">
+                        <i class="fas fa-qrcode"></i>
+                        <span x-text="t.filter_practice"></span>
+                    </button>
+                    <button type="button"
+                            @click="selectGuide('reference')"
+                            :class="activeGuide === 'reference' ? 'bg-amber-600 text-white border-amber-500 font-bold' : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'"
+                            class="px-3 py-1.5 rounded-lg border transition cursor-pointer flex items-center gap-1.5">
+                        <i class="fas fa-key"></i>
+                        <span x-text="t.filter_reference"></span>
+                    </button>
+                    <button type="button"
+                            @click="selectGuide('all')"
+                            :class="activeGuide === 'all' ? 'bg-white text-slate-900 border-white font-bold' : 'bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700'"
+                            class="px-3 py-1.5 rounded-lg border transition cursor-pointer flex items-center gap-1.5">
+                        <i class="fas fa-layer-group"></i>
+                        <span x-text="t.filter_all"></span>
+                    </button>
+                </div>
+                <div class="text-slate-400" x-text="t.filter_hint"></div>
+            </div>
         </div>
     </header>
 
@@ -80,19 +157,53 @@
 
             <!-- Sticky Sidebar Table of Contents -->
             <aside class="lg:w-72 shrink-0">
-                <div class="lg:sticky lg:top-24 bg-white rounded-2xl border border-slate-200 p-5 shadow-xs">
-                    <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3" x-text="t.toc_title"></div>
+                <div class="lg:sticky lg:top-24 bg-white rounded-2xl border border-slate-200 p-5 shadow-xs max-h-[calc(100vh-7rem)] overflow-y-auto">
+                    <!-- Quick Guide Switcher inside Sidebar -->
+                    <div class="grid grid-cols-2 gap-1.5 p-1 bg-slate-100 rounded-xl mb-4 text-xs font-bold">
+                        <button type="button"
+                                @click="selectGuide('exam')"
+                                :class="activeGuide === 'exam' ? 'bg-indigo-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900'"
+                                class="py-1.5 px-2 rounded-lg transition cursor-pointer truncate flex items-center justify-center gap-1">
+                            <i class="fas fa-graduation-cap text-[10px]"></i>
+                            <span x-text="lang === 'fr' ? '1. Examen' : '1. Exam'"></span>
+                        </button>
+                        <button type="button"
+                                @click="selectGuide('practice')"
+                                :class="activeGuide === 'practice' ? 'bg-teal-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900'"
+                                class="py-1.5 px-2 rounded-lg transition cursor-pointer truncate flex items-center justify-center gap-1">
+                            <i class="fas fa-qrcode text-[10px]"></i>
+                            <span x-text="lang === 'fr' ? '2. Entraînement' : '2. Practice'"></span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="text-xs font-bold uppercase tracking-wider text-slate-400" x-text="t.toc_title"></div>
+                        <button x-show="activeGuide !== 'all'"
+                                @click="selectGuide('all')"
+                                class="text-[11px] font-semibold text-indigo-600 hover:underline cursor-pointer"
+                                x-text="t.filter_all"></button>
+                    </div>
+
                     <nav class="space-y-1 text-sm">
-                        <template x-for="(sec, idx) in t.sections" :key="sec.id">
-                            <a :href="'#' + sec.id"
-                               class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-slate-700 hover:bg-indigo-50 hover:text-indigo-700 font-medium transition">
-                                <span class="w-5 h-5 rounded-md bg-indigo-50 text-indigo-700 font-bold text-xs flex items-center justify-center shrink-0" x-text="idx + 1"></span>
-                                <span class="truncate" x-text="sec.shortTitle"></span>
-                            </a>
+                        <template x-for="(sec, idx) in filteredSections" :key="sec.id">
+                            <div>
+                                <template x-if="sec.partHeader">
+                                    <div class="pt-3 pb-1 px-2 text-[11px] font-extrabold uppercase tracking-wider"
+                                         :class="sec.partColor === 'teal' ? 'text-teal-700' : sec.partColor === 'indigo' ? 'text-indigo-700' : 'text-slate-500'"
+                                         x-text="sec.partHeader"></div>
+                                </template>
+                                <a :href="'#' + sec.id"
+                                   class="flex items-center gap-2.5 px-3 py-1.5 rounded-xl text-slate-700 hover:bg-indigo-50 hover:text-indigo-700 font-medium transition">
+                                    <span class="px-1.5 h-5 rounded-md font-bold text-[11px] flex items-center justify-center shrink-0"
+                                          :class="sec.partColor === 'teal' ? 'bg-teal-50 text-teal-700 border border-teal-200' : sec.partColor === 'indigo' ? 'bg-indigo-50 text-indigo-700 border border-indigo-200' : 'bg-slate-100 text-slate-700 border border-slate-200'"
+                                          x-text="sec.stepNumber"></span>
+                                    <span class="truncate text-xs sm:text-sm" x-text="sec.shortTitle"></span>
+                                </a>
+                            </div>
                         </template>
                     </nav>
 
-                    <div class="mt-6 pt-5 border-t border-slate-100">
+                    <div class="mt-5 pt-4 border-t border-slate-100">
                         <div class="p-3.5 rounded-xl bg-indigo-50/70 border border-indigo-100 text-xs text-indigo-950 space-y-2">
                             <div class="font-bold flex items-center gap-1.5 text-indigo-700">
                                 <i class="fas fa-shield-alt"></i>
@@ -105,159 +216,170 @@
             </aside>
 
             <!-- Documentation Chapters -->
-            <main class="flex-1 space-y-14 min-w-0">
+            <main class="flex-1 space-y-12 min-w-0">
 
                 <template x-for="(sec, idx) in filteredSections" :key="sec.id">
-                    <section :id="sec.id" class="scroll-mt-24 bg-white rounded-3xl border border-slate-200/90 shadow-sm overflow-hidden">
-                        <!-- Section Header -->
-                        <div class="px-6 sm:px-8 py-6 bg-slate-50/80 border-b border-slate-200/80 flex items-start gap-4">
-                            <div class="w-11 h-11 rounded-2xl bg-indigo-600 text-white font-extrabold text-lg flex items-center justify-center shrink-0 shadow-sm" x-text="sec.stepNumber"></div>
-                            <div>
-                                <div class="flex flex-wrap items-center gap-2">
-                                    <span class="text-xs font-bold uppercase tracking-wider text-indigo-600" x-text="sec.tag"></span>
-                                    <template x-if="sec.badge">
-                                        <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200" x-text="sec.badge"></span>
+                    <div class="space-y-4">
+                        <template x-if="sec.partBanner">
+                            <div class="pt-2 pb-1">
+                                <div class="p-6 sm:p-7 rounded-2xl border shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                                     :class="sec.partColor === 'teal' ? 'bg-gradient-to-r from-teal-900 via-teal-800 to-slate-900 text-white border-teal-700' : sec.partColor === 'indigo' ? 'bg-gradient-to-r from-indigo-950 via-indigo-900 to-slate-900 text-white border-indigo-800' : 'bg-slate-900 text-white border-slate-800'">
+                                    <div class="space-y-1.5">
+                                        <div class="text-xs font-extrabold uppercase tracking-widest opacity-80" x-text="sec.partBanner.kicker"></div>
+                                        <h2 class="text-xl sm:text-2xl font-extrabold" x-text="sec.partBanner.title"></h2>
+                                        <p class="text-xs sm:text-sm opacity-90 leading-relaxed" x-text="sec.partBanner.desc"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+
+                        <section :id="sec.id" class="scroll-mt-24 bg-white rounded-3xl border border-slate-200/90 shadow-sm overflow-hidden">
+                            <!-- Section Header -->
+                            <div class="px-6 sm:px-8 py-6 bg-slate-50/80 border-b border-slate-200/80 flex items-start gap-4">
+                                <div class="px-3 h-11 rounded-2xl text-white font-extrabold text-base flex items-center justify-center shrink-0 shadow-sm"
+                                     :class="sec.partColor === 'teal' ? 'bg-teal-600' : sec.partColor === 'indigo' ? 'bg-indigo-600' : 'bg-slate-700'"
+                                     x-text="sec.stepNumber"></div>
+                                <div>
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <span class="text-xs font-bold uppercase tracking-wider"
+                                              :class="sec.partColor === 'teal' ? 'text-teal-600' : sec.partColor === 'indigo' ? 'text-indigo-600' : 'text-slate-600'"
+                                              x-text="sec.tag"></span>
+                                        <template x-if="sec.badge">
+                                            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200" x-text="sec.badge"></span>
+                                        </template>
+                                    </div>
+                                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-0.5" x-text="sec.title"></h2>
+                                    <p class="text-sm sm:text-base text-slate-600 mt-1" x-text="sec.subtitle"></p>
+                                </div>
+                            </div>
+
+                            <!-- Section Body -->
+                            <div class="p-6 sm:p-8 space-y-6">
+                                <!-- Overview paragraphs -->
+                                <div class="space-y-3 text-slate-700 text-sm sm:text-base leading-relaxed">
+                                    <template x-for="(p, pIdx) in sec.paragraphs" :key="pIdx">
+                                        <p x-html="p"></p>
                                     </template>
                                 </div>
-                                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-0.5" x-text="sec.title"></h2>
-                                <p class="text-sm sm:text-base text-slate-600 mt-1" x-text="sec.subtitle"></p>
-                            </div>
-                        </div>
 
-                        <!-- Section Body -->
-                        <div class="p-6 sm:p-8 space-y-6">
-                            <!-- Overview paragraphs -->
-                            <div class="space-y-3 text-slate-700 text-sm sm:text-base leading-relaxed">
-                                <template x-for="(p, pIdx) in sec.paragraphs" :key="pIdx">
-                                    <p x-html="p"></p>
+                                <!-- Dynamic Language Screenshot(s) -->
+                                <template x-if="sec.screenshots && sec.screenshots.length > 0">
+                                    <div class="space-y-6 pt-2">
+                                        <template x-for="(shot, sIdx) in sec.screenshots" :key="sIdx">
+                                            <figure class="rounded-2xl border border-slate-200 bg-slate-900/5 p-2 sm:p-3 shadow-md">
+                                                <div class="flex items-center justify-between px-2 pb-2 text-xs text-slate-500">
+                                                    <span class="font-semibold text-slate-700 flex items-center gap-1.5">
+                                                        <i class="fas fa-desktop" :class="sec.partColor === 'teal' ? 'text-teal-600' : 'text-indigo-600'"></i>
+                                                        <span x-text="shot.caption"></span>
+                                                    </span>
+                                                    <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-white border border-slate-200 text-slate-600" x-text="lang === 'fr' ? 'Interface FR' : 'EN Interface'"></span>
+                                                </div>
+                                                <img :src="'manual-assets/' + shot.filePrefix + '_' + lang + '.png'"
+                                                     :alt="shot.caption"
+                                                     loading="lazy"
+                                                     class="w-full rounded-xl border border-slate-200 shadow-sm bg-white">
+                                            </figure>
+                                        </template>
+                                    </div>
+                                </template>
+
+                                <!-- Numbered Key Callouts / Bullets -->
+                                <template x-if="sec.callouts && sec.callouts.length > 0">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                                        <template x-for="(c, cIdx) in sec.callouts" :key="cIdx">
+                                            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
+                                                <span class="w-6 h-6 rounded-full text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5"
+                                                      :class="sec.partColor === 'teal' ? 'bg-teal-600' : 'bg-indigo-600'"
+                                                      x-text="cIdx + 1"></span>
+                                                <div class="text-xs sm:text-sm">
+                                                    <div class="font-bold text-slate-900 mb-0.5" x-text="c.title"></div>
+                                                    <p class="text-slate-600 leading-relaxed" x-html="c.desc"></p>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </template>
+
+                                <!-- Provider API Key Creation Cards -->
+                                <template x-if="sec.providerGuides && sec.providerGuides.length > 0">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
+                                        <template x-for="(pg, pgIdx) in sec.providerGuides" :key="pgIdx">
+                                            <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/70 flex flex-col justify-between space-y-3">
+                                                <div class="space-y-2">
+                                                    <div class="flex items-center justify-between gap-2">
+                                                        <h3 class="font-extrabold text-slate-900 text-base flex items-center gap-2">
+                                                            <i :class="pg.icon" class="text-indigo-600"></i>
+                                                            <span x-text="pg.name"></span>
+                                                        </h3>
+                                                        <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-200" x-text="pg.tag"></span>
+                                                    </div>
+                                                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" x-html="pg.desc"></p>
+                                                    <ol class="list-decimal list-inside space-y-1 text-xs text-slate-700 pt-1">
+                                                        <template x-for="(st, stIdx) in pg.steps" :key="stIdx">
+                                                            <li x-html="st"></li>
+                                                        </template>
+                                                    </ol>
+                                                </div>
+                                                <template x-if="pg.url">
+                                                    <div class="pt-2 border-t border-slate-200/80">
+                                                        <a :href="pg.url" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 hover:text-indigo-800 transition">
+                                                            <span x-text="pg.linkLabel"></span>
+                                                            <i class="fas fa-external-link-alt text-[10px]"></i>
+                                                        </a>
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </template>
+
+                                <!-- FAQ Cards -->
+                                <template x-if="sec.faqs && sec.faqs.length > 0">
+                                    <div class="space-y-4 pt-2">
+                                        <template x-for="(faq, fIdx) in sec.faqs" :key="fIdx">
+                                            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/90 space-y-2">
+                                                <h3 class="text-base font-extrabold text-slate-900 flex items-start gap-2.5">
+                                                    <span class="w-6 h-6 rounded-lg bg-indigo-100 text-indigo-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">Q</span>
+                                                    <span x-text="faq.q"></span>
+                                                </h3>
+                                                <div class="pl-8 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2" x-html="faq.a"></div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </template>
+
+                                <!-- Pedagogical Tip Box -->
+                                <template x-if="sec.tip">
+                                    <div class="p-4 sm:p-5 rounded-2xl bg-amber-50/80 border border-amber-200/90 flex items-start gap-3.5 text-xs sm:text-sm text-amber-950">
+                                        <i class="fas fa-lightbulb text-amber-600 text-lg shrink-0 mt-0.5"></i>
+                                        <div>
+                                            <div class="font-bold mb-0.5" x-text="sec.tip.title"></div>
+                                            <p class="leading-relaxed text-amber-900/90" x-text="sec.tip.text"></p>
+                                        </div>
+                                    </div>
                                 </template>
                             </div>
-
-                            <!-- Dynamic Language Screenshot(s) -->
-                            <template x-if="sec.screenshots && sec.screenshots.length > 0">
-                                <div class="space-y-6 pt-2">
-                                    <template x-for="(shot, sIdx) in sec.screenshots" :key="sIdx">
-                                        <figure class="rounded-2xl border border-slate-200 bg-slate-900/5 p-2 sm:p-3 shadow-md">
-                                            <div class="flex items-center justify-between px-2 pb-2 text-xs text-slate-500">
-                                                <span class="font-semibold text-slate-700 flex items-center gap-1.5">
-                                                    <i class="fas fa-desktop text-indigo-600"></i>
-                                                    <span x-text="shot.caption"></span>
-                                                </span>
-                                                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-white border border-slate-200 text-slate-600" x-text="lang === 'fr' ? 'Interface FR' : 'EN Interface'"></span>
-                                            </div>
-                                            <img :src="'manual-assets/' + shot.filePrefix + '_' + lang + '.png'"
-                                                 :alt="shot.caption"
-                                                 loading="lazy"
-                                                 class="w-full rounded-xl border border-slate-200 shadow-sm bg-white">
-                                        </figure>
-                                    </template>
-                                </div>
-                            </template>
-
-                            <!-- Numbered Key Callouts / Bullets -->
-                            <template x-if="sec.callouts && sec.callouts.length > 0">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-                                    <template x-for="(c, cIdx) in sec.callouts" :key="cIdx">
-                                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
-                                            <span class="w-6 h-6 rounded-full bg-indigo-600 text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5" x-text="cIdx + 1"></span>
-                                            <div class="text-xs sm:text-sm">
-                                                <div class="font-bold text-slate-900 mb-0.5" x-text="c.title"></div>
-                                                <p class="text-slate-600 leading-relaxed" x-html="c.desc"></p>
-                                            </div>
-                                        </div>
-                                    </template>
-                                </div>
-                            </template>
-
-                            <!-- Provider API Key Creation Cards -->
-                            <template x-if="sec.providerGuides && sec.providerGuides.length > 0">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
-                                    <template x-for="(pg, pgIdx) in sec.providerGuides" :key="pgIdx">
-                                        <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/70 flex flex-col justify-between space-y-3">
-                                            <div class="space-y-2">
-                                                <div class="flex items-center justify-between gap-2">
-                                                    <h3 class="font-extrabold text-slate-900 text-base flex items-center gap-2">
-                                                        <i :class="pg.icon" class="text-indigo-600"></i>
-                                                        <span x-text="pg.name"></span>
-                                                    </h3>
-                                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-200" x-text="pg.tag"></span>
-                                                </div>
-                                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" x-html="pg.desc"></p>
-                                                <ol class="list-decimal list-inside space-y-1 text-xs text-slate-700 pt-1">
-                                                    <template x-for="(st, stIdx) in pg.steps" :key="stIdx">
-                                                        <li x-html="st"></li>
-                                                    </template>
-                                                </ol>
-                                            </div>
-                                            <template x-if="pg.url">
-                                                <div class="pt-2 border-t border-slate-200/80">
-                                                    <a :href="pg.url" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 hover:text-indigo-800 transition">
-                                                        <span x-text="pg.linkLabel"></span>
-                                                        <i class="fas fa-external-link-alt text-[10px]"></i>
-                                                    </a>
-                                                </div>
-                                            </template>
-                                        </div>
-                                    </template>
-                                </div>
-                            </template>
-
-                            <!-- Comparison Table -->
-                            <template x-if="sec.comparisonTable">
-                                <div class="pt-3 overflow-x-auto">
-                                    <h3 class="text-lg font-extrabold text-slate-900 mb-3" x-text="sec.comparisonTable.title"></h3>
-                                    <div class="rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
-                                        <table class="w-full text-left border-collapse text-xs sm:text-sm">
-                                            <thead>
-                                                <tr class="bg-slate-900 text-white">
-                                                    <template x-for="(col, colIdx) in sec.comparisonTable.headers" :key="colIdx">
-                                                        <th class="py-3.5 px-4 font-bold border-b border-slate-800" :class="colIdx === 1 ? 'bg-indigo-700 text-white' : ''" x-text="col"></th>
-                                                    </template>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="divide-y divide-slate-200 bg-white">
-                                                <template x-for="(row, rIdx) in sec.comparisonTable.rows" :key="rIdx">
-                                                    <tr class="hover:bg-slate-50/80 transition">
-                                                        <td class="py-3 px-4 font-bold text-slate-900 bg-slate-50/60" x-text="row[0]"></td>
-                                                        <td class="py-3 px-4 font-semibold text-indigo-950 bg-indigo-50/40" x-html="row[1]"></td>
-                                                        <td class="py-3 px-4 text-slate-700" x-html="row[2]"></td>
-                                                        <td class="py-3 px-4 text-slate-700" x-html="row[3]"></td>
-                                                    </tr>
-                                                </template>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </template>
-
-                            <!-- FAQ Cards -->
-                            <template x-if="sec.faqs && sec.faqs.length > 0">
-                                <div class="space-y-4 pt-2">
-                                    <template x-for="(faq, fIdx) in sec.faqs" :key="fIdx">
-                                        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/90 space-y-2">
-                                            <h3 class="text-base font-extrabold text-slate-900 flex items-start gap-2.5">
-                                                <span class="w-6 h-6 rounded-lg bg-indigo-100 text-indigo-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">Q</span>
-                                                <span x-text="faq.q"></span>
-                                            </h3>
-                                            <div class="pl-8 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2" x-html="faq.a"></div>
-                                        </div>
-                                    </template>
-                                </div>
-                            </template>
-
-                            <!-- Pedagogical Tip Box -->
-                            <template x-if="sec.tip">
-                                <div class="p-4 sm:p-5 rounded-2xl bg-amber-50/80 border border-amber-200/90 flex items-start gap-3.5 text-xs sm:text-sm text-amber-950">
-                                    <i class="fas fa-lightbulb text-amber-600 text-lg shrink-0 mt-0.5"></i>
-                                    <div>
-                                        <div class="font-bold mb-0.5" x-text="sec.tip.title"></div>
-                                        <p class="leading-relaxed text-amber-900/90" x-text="sec.tip.text"></p>
-                                    </div>
-                                </div>
-                            </template>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
                 </template>
+
+                <!-- Switch Guide Bottom Navigation Card -->
+                <div x-show="activeGuide === 'exam' || activeGuide === 'practice'" class="p-6 sm:p-8 rounded-3xl border border-slate-200 bg-white shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-wider text-slate-400" x-text="t.switch_guide_kicker"></div>
+                        <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 mt-0.5"
+                            x-text="activeGuide === 'exam' ? t.card_practice_title : t.card_exam_title"></h3>
+                        <p class="text-xs sm:text-sm text-slate-600 mt-1"
+                           x-text="activeGuide === 'exam' ? t.card_practice_desc : t.card_exam_desc"></p>
+                    </div>
+                    <button type="button"
+                            @click="selectGuide(activeGuide === 'exam' ? 'practice' : 'exam'); window.scrollTo({top: 0, behavior: 'smooth'})"
+                            :class="activeGuide === 'exam' ? 'bg-teal-600 hover:bg-teal-700' : 'bg-indigo-600 hover:bg-indigo-700'"
+                            class="px-5 py-3 rounded-xl text-white font-bold text-sm shadow-md transition shrink-0 cursor-pointer flex items-center gap-2">
+                        <span x-text="activeGuide === 'exam' ? t.btn_go_practice : t.btn_go_exam"></span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
 
             </main>
         </div>

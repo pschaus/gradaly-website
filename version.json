@@ -1,18 +1,18 @@
 {
-  "version": "3.0.2",
-  "name": "Gradaly v3.0.2",
-  "title": "Gradaly v3.0.2",
-  "published_at": "2026-10-24T12:00:00.000Z",
-  "notes": "### ✨ New Features & Improvements\n- **Geometric Copy Alignment (2D RANSAC)**: Automatically detect and correct printer scaling, rotation, and scanner offsets across student copies relative to the reference canvas, with instant cancellation support during per-copy calibration.\n- **1-Click PDF Page Reordering & Rotation**: Swap adjacent pages directly from the PDF viewer separator or open the thumbnail grid modal to reorder and rotate pages (`+90°`, `180°`, `-90°`) for one or multiple copies.\n- **Filter by Selected Copies in Grading**: Added a symmetric 2×2 filter bar (`All`, `Selected (N)`, `To grade`, `Graded`) and reorganized the copies list header for a cleaner workspace.\n- **Unified Solutionnaire & AI Rubric Editing**: Unified `Solutionnaire` terminology across the UI, redesigned the criteria toolbar with a full-width *Design / Edit with AI* button, and enabled direct conversational editing of existing rubrics.\n- **Enhanced OCR & Automatic Student Matching**: Rendered identification zone crops at 2.5× resolution (180 DPI), added multiset canvas token subtraction, improved spaced student ID reassembly, supported `\"Last, First\"` CSV rosters, and preserved live matching progress across tab switches.",
-  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v3.0.2",
+  "version": "4.0.0",
+  "name": "Gradaly v4.0.0",
+  "title": "Gradaly v4.0.0",
+  "published_at": "2026-10-26T21:30:00.000Z",
+  "notes": "### ✨ What's New in Gradaly v4.0.0\n- **2-in-1 Dual-Mode Architecture (Exam Grading & Practice QR)**: Gradaly now combines two complementary tools in one native desktop app: (1) **Summative Exam Mode** for teachers to grade scanned student copies (100% human, AI-assisted, or in a team), and (2) **Formative Practice & Self-Assessment QR Mode** for students to practice autonomously on paper with their smartphone.\n- **Printable QR Exercise Worksheets & Student Smartphone App (BYOK)**: Stamp general and per-question QR codes (`?q=Q1`) onto your PDF exercise sheets. Students solve on paper, scan the QR code, photograph their handwritten work, and receive instant rubric feedback and Reference Solution (`Solutionnaire`) unlocking after their 1st attempt using their own free Google AI Studio (Gemini) key (0 € API cost for the teacher).\n- **Built-In Smartphone Simulator (Free) & Zero-Knowledge Publication (Pro)**: Preview and test the mobile student experience directly inside Gradaly for free, and publish encrypted sessions to `portal.gradaly.io` (60/180/365 days) or export standalone `.zip` packages with Gradaly Pro.\n- **Split Statement & Answer Zones (`ANSWER_ZONES`) and Reference Solution Zones (`SOLUTION_ZONES`)**: Define separate statement and student answer bounding boxes when questions and answer spaces are on different pages, and draw dedicated bounding boxes on the Reference Solution PDF.\n- **Practice Project Sharing & Selective Merge**: Share `.gradaly` archives or encrypted Cloud links and selectively merge rubrics, criteria, and QR settings for Practice projects.\n- **4 Built-In Demo Projects (FR & EN)**: Explore `Demo Exam FR`, `Demo Exam EN`, `Demo Entraînement FR`, and `Demo Practice EN` out of the box.",
+  "html_url": "https://github.com/pschaus/gradaly-website/releases/tag/v4.0.0",
   "assets": {
-    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.2_universal.dmg",
-    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.2_x64-setup.exe",
-    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.2_amd64.AppImage",
-    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.2_aarch64.AppImage",
-    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.2_amd64.deb",
-    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_3.0.2_arm64.deb",
-    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-3.0.2-1.x86_64.rpm",
-    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-3.0.2-1.aarch64.rpm"
+    "macos": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_universal.dmg",
+    "windows": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_x64-setup.exe",
+    "linux_appimage_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_amd64.AppImage",
+    "linux_appimage_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_aarch64.AppImage",
+    "linux_deb_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_amd64.deb",
+    "linux_deb_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_arm64.deb",
+    "linux_rpm_x86": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-4.0.0-1.x86_64.rpm",
+    "linux_rpm_arm": "https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-4.0.0-1.aarch64.rpm"
   }
 }
