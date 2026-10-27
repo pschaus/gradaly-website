@@ -418,9 +418,9 @@
                             </div>
                         </div>
 
-                        <!-- Practice Slide 3: Student Smartphone Self-Assessment (BYOK) -->
+                        <!-- Practice Slide 3: Student Smartphone Self-Assessment -->
                         <div x-show="practiceSlide === 3" x-transition.opacity.duration.500ms class="flex flex-col" style="grid-area: 1 / 1;">
-                            <img :src="'manual-assets/15_practice_student_portal_' + lang + '.png'" alt="Auto-évaluation sur smartphone étudiant (BYOK)" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
+                            <img :src="'manual-assets/15_practice_student_portal_' + lang + '.png'" alt="Auto-évaluation sur smartphone étudiant" class="rounded-xl w-full shadow-inner border border-slate-200 mb-0">
                             <div class="px-6 sm:px-8 pb-8 pt-5 bg-emerald-50/60 rounded-b-xl border-t border-emerald-100 text-left">
                                 <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 mb-1" x-text="t.carousel_slide9_badge"></span>
                                 <h3 class="text-xl sm:text-2xl font-bold text-emerald-950 mb-1" x-text="t.carousel_slide9_title"></h3>
@@ -681,12 +681,12 @@
                         <p class="text-slate-300 text-sm sm:text-base leading-relaxed" x-text="t.portal_demo_desc"></p>
                         
                         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-                            <a href="demo/index.html?id=8b0b6cc4a3bfd478081950f54a1a4969#k=2yQdLmtPN4pKbuVfEflHqDkqLUDbIxr2uRZ7TTTYWtM" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-lg hover:shadow-indigo-500/30 transition transform hover:-translate-y-0.5 cursor-pointer">
+                            <a x-show="lang === 'fr'" href="demo/index.html?id=8b0b6cc4a3bfd478081950f54a1a4969#k=2yQdLmtPN4pKbuVfEflHqDkqLUDbIxr2uRZ7TTTYWtM" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-lg hover:shadow-indigo-500/30 transition transform hover:-translate-y-0.5 cursor-pointer">
                                 <span>🇫🇷</span>
                                 <span x-text="t.portal_btn_demo_fr"></span>
                                 <i class="fas fa-external-link-alt text-xs opacity-75"></i>
                             </a>
-                            <a href="demo/index.html?id=e6b892e325d36bfd74f1a9d50b45d64e#k=fps-pl-WevkHs676fF76-Jl4xtKBXQCfMjQoxtrG9EY" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 shadow-md hover:shadow-slate-800/30 transition transform hover:-translate-y-0.5 cursor-pointer">
+                            <a x-show="lang === 'en'" href="demo/index.html?id=e6b892e325d36bfd74f1a9d50b45d64e#k=fps-pl-WevkHs676fF76-Jl4xtKBXQCfMjQoxtrG9EY" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-lg hover:shadow-indigo-500/30 transition transform hover:-translate-y-0.5 cursor-pointer">
                                 <span>🇬🇧</span>
                                 <span x-text="t.portal_btn_demo_en"></span>
                                 <i class="fas fa-external-link-alt text-xs opacity-75"></i>
@@ -809,13 +809,13 @@
                     <div class="pt-2 space-y-3">
                         <div class="text-xs font-bold uppercase tracking-wider text-teal-300/90" x-text="t.practice_demo_step1_label"></div>
                         <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
-                            <a href="practice_examples_pdfs/Sujet_QR_Demo_Practice_FR.pdf" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-teal-400/30 shadow-md transition transform hover:-translate-y-0.5 cursor-pointer">
+                            <a x-show="lang === 'fr'" href="practice_examples_pdfs/Sujet_QR_Demo_Practice_FR.pdf" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-teal-400/30 shadow-md transition transform hover:-translate-y-0.5 cursor-pointer">
                                 <i class="fas fa-file-pdf text-rose-400 text-base"></i>
                                 <span>🇫🇷</span>
                                 <span x-text="t.practice_btn_pdf_fr"></span>
                                 <i class="fas fa-external-link-alt text-xs opacity-75"></i>
                             </a>
-                            <a href="practice_examples_pdfs/Sujet_QR_Demo_Practice_EN.pdf" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-slate-600 shadow-md transition transform hover:-translate-y-0.5 cursor-pointer">
+                            <a x-show="lang === 'en'" href="practice_examples_pdfs/Sujet_QR_Demo_Practice_EN.pdf" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-teal-400/30 shadow-md transition transform hover:-translate-y-0.5 cursor-pointer">
                                 <i class="fas fa-file-pdf text-rose-400 text-base"></i>
                                 <span>🇬🇧</span>
                                 <span x-text="t.practice_btn_pdf_en"></span>
@@ -828,13 +828,13 @@
                     <div class="pt-2 space-y-3">
                         <div class="text-xs font-bold uppercase tracking-wider text-emerald-300/90" x-text="t.practice_demo_step2_label"></div>
                         <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
-                            <a href="https://portal.gradaly.io/?e=ex_f511e8d3dad53c82&id=practice#k=6p9EEDYpJx0TMPq7vWBK8h8oeuplQq07tGq56yQPWiM" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-sm shadow-lg hover:shadow-teal-500/30 transition transform hover:-translate-y-0.5 cursor-pointer">
+                            <a x-show="lang === 'fr'" href="https://portal.gradaly.io/?e=ex_f511e8d3dad53c82&id=practice#k=6p9EEDYpJx0TMPq7vWBK8h8oeuplQq07tGq56yQPWiM" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-sm shadow-lg hover:shadow-teal-500/30 transition transform hover:-translate-y-0.5 cursor-pointer">
                                 <i class="fas fa-qrcode"></i>
                                 <span>🇫🇷</span>
                                 <span x-text="t.practice_btn_portal_fr"></span>
                                 <i class="fas fa-external-link-alt text-xs opacity-75"></i>
                             </a>
-                            <a href="https://portal.gradaly.io/?e=ex_7c576e0a7ff4729b&id=practice#k=fOTpaHBSuaFzzdN7AJYjSF_BKMgKaYcGQj6lyYljH10" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 shadow-md hover:shadow-slate-800/30 transition transform hover:-translate-y-0.5 cursor-pointer">
+                            <a x-show="lang === 'en'" href="https://portal.gradaly.io/?e=ex_7c576e0a7ff4729b&id=practice#k=fOTpaHBSuaFzzdN7AJYjSF_BKMgKaYcGQj6lyYljH10" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-sm shadow-lg hover:shadow-teal-500/30 transition transform hover:-translate-y-0.5 cursor-pointer">
                                 <i class="fas fa-qrcode"></i>
                                 <span>🇬🇧</span>
                                 <span x-text="t.practice_btn_portal_en"></span>
@@ -896,7 +896,7 @@
                         <tr>
                             <td class="py-3.5 px-5 font-bold text-slate-900 bg-slate-50" x-text="t.comp_r4_label"></td>
                             <td class="py-3.5 px-5 text-slate-700" x-text="t.comp_r4_exam"></td>
-                            <td class="py-3.5 px-5 text-emerald-800 font-semibold bg-emerald-50/40" x-text="t.comp_r4_prac"></td>
+                            <td class="py-3.5 px-5 text-slate-700" x-text="t.comp_r4_prac"></td>
                         </tr>
                         <tr>
                             <td class="py-3.5 px-5 font-bold text-slate-900 bg-slate-50" x-text="t.comp_r5_label"></td>
@@ -1039,101 +1039,94 @@
                 <span class="font-mono font-bold text-indigo-900">v4.0.0</span>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 text-left max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 text-left max-w-6xl mx-auto items-stretch">
                 <!-- macOS Card -->
-                <div class="p-7 rounded-2xl border-2 border-indigo-500 bg-gradient-to-b from-indigo-50/40 to-white shadow-xl flex flex-col justify-between relative overflow-hidden">
-                    <div class="absolute top-4 right-4">
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
-                            <i class="fas fa-check-circle mr-1 text-emerald-600"></i>
-                            <span x-text="t.apple_notarized_badge"></span>
-                        </span>
-                    </div>
+                <div class="p-6 rounded-2xl border border-slate-200 bg-white shadow-md hover:shadow-lg transition flex flex-col justify-between">
                     <div>
-                        <div class="w-13 h-13 bg-indigo-600 text-white rounded-2xl flex items-center justify-center text-3xl mb-5 shadow-md shadow-indigo-200">
-                            <i class="fab fa-apple"></i>
+                        <div class="flex items-center gap-3.5 mb-3">
+                            <div class="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center text-2xl shadow-xs shrink-0">
+                                <i class="fab fa-apple"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-extrabold text-slate-900 leading-tight">macOS</h3>
+                                <p class="text-xs font-medium text-slate-600" x-text="t.download_sub_mac"></p>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                            <span>macOS</span>
-                            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700">v4.0.0</span>
-                        </h3>
-                        <p class="text-sm text-slate-600 mb-1" x-text="t.download_sub_mac"></p>
-                        <p class="text-xs text-slate-500 mb-6" x-text="t.macos_req"></p>
+                        <p class="text-xs text-slate-400 mb-5" x-text="t.macos_req"></p>
                     </div>
-                    <div>
-                        <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_universal.dmg" class="w-full inline-flex justify-center items-center px-5 py-3.5 rounded-xl bg-indigo-600 text-white font-bold text-base hover:bg-indigo-700 transition shadow-md hover:shadow-lg space-x-2">
-                            <i class="fas fa-download"></i>
-                            <span x-text="t.download_mac"></span>
-                            <span class="text-indigo-200 text-xs font-normal">(.dmg)</span>
-                        </a>
-                    </div>
+                    <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_universal.dmg" class="w-full h-12 inline-flex justify-center items-center px-4 rounded-xl bg-slate-900 text-white font-semibold text-sm hover:bg-indigo-600 transition shadow-xs gap-2">
+                        <i class="fas fa-download text-xs opacity-80"></i>
+                        <span x-text="t.download_mac"></span>
+                        <span class="text-slate-400 text-xs font-normal">(.dmg)</span>
+                    </a>
                 </div>
 
                 <!-- Windows Card -->
-                <div class="p-7 rounded-2xl border-2 border-blue-500 bg-gradient-to-b from-blue-50/40 to-white shadow-xl flex flex-col justify-between relative overflow-hidden">
-                    <div class="absolute top-4 right-4">
-                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 border border-blue-200">
-                            <i class="fab fa-windows mr-1 text-blue-600"></i>
-                            <span x-text="t.windows_badge"></span>
-                        </span>
-                    </div>
+                <div class="p-6 rounded-2xl border border-slate-200 bg-white shadow-md hover:shadow-lg transition flex flex-col justify-between">
                     <div>
-                        <div class="w-13 h-13 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-3xl mb-5 shadow-md shadow-blue-200">
-                            <i class="fab fa-windows"></i>
+                        <div class="flex items-center gap-3.5 mb-3">
+                            <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center text-2xl shadow-xs shrink-0">
+                                <i class="fab fa-windows"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-extrabold text-slate-900 leading-tight">Windows</h3>
+                                <p class="text-xs font-medium text-slate-600" x-text="t.download_sub_windows"></p>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                            <span>Windows</span>
-                            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">v4.0.0</span>
-                        </h3>
-                        <p class="text-sm text-slate-600 mb-1" x-text="t.download_sub_windows"></p>
-                        <p class="text-xs text-slate-500 mb-6" x-text="t.windows_req"></p>
+                        <p class="text-xs text-slate-400 mb-5" x-text="t.windows_req"></p>
                     </div>
-                    <div>
-                        <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_x64-setup.exe" class="w-full inline-flex justify-center items-center px-5 py-3.5 rounded-xl bg-blue-600 text-white font-bold text-base hover:bg-blue-700 transition shadow-md hover:shadow-lg space-x-2">
-                            <i class="fas fa-download"></i>
-                            <span x-text="t.download_windows"></span>
-                            <span class="text-blue-200 text-xs font-normal">(.exe)</span>
-                        </a>
-                    </div>
+                    <a href="https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_x64-setup.exe" class="w-full h-12 inline-flex justify-center items-center px-4 rounded-xl bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition shadow-xs gap-2">
+                        <i class="fas fa-download text-xs opacity-80"></i>
+                        <span x-text="t.download_windows"></span>
+                        <span class="text-blue-200 text-xs font-normal">(.exe)</span>
+                    </a>
                 </div>
 
                 <!-- Linux Card -->
-                <div x-data="{ linuxArch: 'x86_64' }" class="p-7 rounded-2xl border border-slate-200 bg-gradient-to-b from-slate-50 to-white shadow-xl flex flex-col justify-between relative overflow-hidden">
-                    <div class="absolute top-4 right-4">
-                        <div class="inline-flex p-0.5 bg-slate-200/90 rounded-lg text-xs font-semibold">
-                            <button @click="linuxArch = 'x86_64'" type="button" class="px-2 py-0.5 rounded-md transition" :class="linuxArch === 'x86_64' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-900'">
-                                x86_64
-                            </button>
-                            <button @click="linuxArch = 'arm64'" type="button" class="px-2 py-0.5 rounded-md transition" :class="linuxArch === 'arm64' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-600 hover:text-slate-900'">
-                                ARM64
-                            </button>
-                        </div>
-                    </div>
+                <div x-data="{ linuxArch: 'x86_64' }" class="p-6 rounded-2xl border border-slate-200 bg-white shadow-md hover:shadow-lg transition flex flex-col justify-between">
                     <div>
-                        <div class="w-13 h-13 bg-slate-900 text-white rounded-2xl flex items-center justify-center text-3xl mb-5 shadow-md shadow-slate-300">
-                            <i class="fab fa-linux"></i>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <div class="flex items-center gap-3.5">
+                                <div class="w-12 h-12 bg-amber-500 text-white rounded-xl flex items-center justify-center text-2xl shadow-xs shrink-0">
+                                    <i class="fab fa-linux"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-extrabold text-slate-900 leading-tight">Linux</h3>
+                                    <p class="text-xs font-medium text-slate-600" x-text="t.download_sub_linux"></p>
+                                </div>
+                            </div>
+                            <div class="inline-flex p-0.5 bg-slate-100 border border-slate-200 rounded-lg text-[11px] font-semibold shrink-0">
+                                <button @click="linuxArch = 'x86_64'" type="button" class="px-2 py-0.5 rounded-md transition cursor-pointer" :class="linuxArch === 'x86_64' ? 'bg-white text-slate-900 shadow-2xs' : 'text-slate-500 hover:text-slate-900'">
+                                    x86_64
+                                </button>
+                                <button @click="linuxArch = 'arm64'" type="button" class="px-2 py-0.5 rounded-md transition cursor-pointer" :class="linuxArch === 'arm64' ? 'bg-white text-slate-900 shadow-2xs' : 'text-slate-500 hover:text-slate-900'">
+                                    ARM64
+                                </button>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                            <span>Linux</span>
-                            <span class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-slate-200 text-slate-800">v4.0.0</span>
-                        </h3>
-                        <p class="text-sm text-slate-600 mb-1" x-text="t.download_sub_linux"></p>
-                        <p class="text-xs text-slate-500 mb-6" x-text="t.linux_req"></p>
+                        <p class="text-xs text-slate-400 mb-5" x-text="t.linux_req"></p>
                     </div>
-                    <div class="space-y-2.5">
-                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-4.0.0-1.x86_64.rpm' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-4.0.0-1.aarch64.rpm'" class="w-full inline-flex justify-center items-center px-5 py-2.5 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 transition shadow-md hover:shadow-lg space-x-2">
-                            <i class="fab fa-fedora"></i>
-                            <span x-text="t.download_rpm"></span>
-                            <span class="text-blue-200 text-xs font-normal" x-text="linuxArch === 'x86_64' ? '(Fedora x86_64)' : '(Fedora ARM64)'"></span>
+                    <div class="grid grid-cols-3 gap-2">
+                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-4.0.0-1.x86_64.rpm' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly-4.0.0-1.aarch64.rpm'" class="h-12 flex flex-col justify-center items-center px-2 rounded-xl bg-slate-50 text-slate-800 border border-slate-200 hover:bg-indigo-50 hover:border-indigo-300 hover:text-indigo-900 transition shadow-2xs" title="Fedora / RHEL (.rpm)">
+                            <span class="flex items-center gap-1.5 font-bold text-xs">
+                                <i class="fab fa-fedora text-blue-600 text-sm"></i>
+                                <span>.rpm</span>
+                            </span>
+                            <span class="text-[10px] text-slate-500 leading-none mt-0.5">Fedora</span>
                         </a>
-                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_amd64.deb' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_arm64.deb'" class="w-full inline-flex justify-center items-center px-5 py-2.5 rounded-xl bg-amber-600 text-white font-bold text-sm hover:bg-amber-700 transition shadow-md hover:shadow-lg space-x-2">
-                            <i class="fab fa-ubuntu"></i>
-                            <span x-text="t.download_deb"></span>
-                            <span class="text-amber-200 text-xs font-normal" x-text="linuxArch === 'x86_64' ? '(Ubuntu/Debian amd64)' : '(Ubuntu/Debian arm64)'"></span>
+                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_amd64.deb' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_arm64.deb'" class="h-12 flex flex-col justify-center items-center px-2 rounded-xl bg-slate-50 text-slate-800 border border-slate-200 hover:bg-indigo-50 hover:border-indigo-300 hover:text-indigo-900 transition shadow-2xs" title="Ubuntu / Debian (.deb)">
+                            <span class="flex items-center gap-1.5 font-bold text-xs">
+                                <i class="fab fa-ubuntu text-orange-600 text-sm"></i>
+                                <span>.deb</span>
+                            </span>
+                            <span class="text-[10px] text-slate-500 leading-none mt-0.5">Ubuntu</span>
                         </a>
-                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_amd64.AppImage' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_aarch64.AppImage'" class="w-full inline-flex justify-center items-center px-5 py-2.5 rounded-xl bg-slate-900 text-white font-semibold text-sm hover:bg-slate-800 transition shadow-md hover:shadow-lg space-x-2">
-                            <i class="fas fa-box-open text-xs text-slate-300"></i>
-                            <span x-text="t.download_appimage"></span>
-                            <span class="text-slate-400 text-xs font-normal" x-text="linuxArch === 'x86_64' ? '(Universal x86_64)' : '(Universal ARM64)'"></span>
+                        <a :href="linuxArch === 'x86_64' ? 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_amd64.AppImage' : 'https://github.com/pschaus/gradaly-website/releases/latest/download/Gradaly_4.0.0_aarch64.AppImage'" class="h-12 flex flex-col justify-center items-center px-2 rounded-xl bg-slate-50 text-slate-800 border border-slate-200 hover:bg-indigo-50 hover:border-indigo-300 hover:text-indigo-900 transition shadow-2xs" title="Universal Linux / Arch / Omarchy (.AppImage)">
+                            <span class="flex items-center gap-1 font-bold text-xs">
+                                <i class="fas fa-box-open text-amber-600 text-xs"></i>
+                                <span>.AppImage</span>
+                            </span>
+                            <span class="text-[10px] text-slate-500 leading-none mt-0.5">Arch / Univ.</span>
                         </a>
                     </div>
                 </div>
@@ -1218,6 +1211,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=4.0.3"></script>
 </body>
 </html>
