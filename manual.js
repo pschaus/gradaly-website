@@ -471,16 +471,16 @@ const manualTranslations = {
                 partBanner: {
                     kicker: "Manual 2 • Product 2: Formative Practice QR Mode",
                     title: "Complete Guide to Autonomous Student Self-Assessment via Printable QR Worksheets",
-                    desc: "100% self-contained guide: design a PDF exercise worksheet with embedded QR codes so students solve on paper, scan with their smartphone, and receive instant formative AI feedback using their own Gemini API key."
+                    desc: "100% self-contained guide: design a PDF exercise worksheet with embedded QR codes so students solve on paper, scan with their smartphone, and receive instant formative AI feedback (zero API key required on portal.gradaly.io, or optional personal Gemini key)."
                 },
                 tag: "Practice QR Mode • Step 1 — Concept & Project Creation",
                 badge: "Formative • Autonomous Student Training",
                 shortTitle: "Concept & Creating a Practice Project",
                 title: "How Practice QR Mode Works & Creating a Practice Project",
-                subtitle: "Give your students unlimited paper-based training with instant AI feedback on smartphone — without collecting a single copy, as each student brings his/her own Gemini API key.",
+                subtitle: "Give your students unlimited paper-based training with instant AI feedback on smartphone — without collecting a single copy or exposing your teacher API key.",
                 paragraphs: [
                     "<strong>The Pedagogical Goal of Practice QR Mode (<code>Practice</code> badge):</strong> Before a midterm or final exam, students need to practice solving problems by hand on paper (tutorials, problem sets, homework, past exam papers). However, teachers rarely have the time to collect and grade hundreds of weekly practice sheets. <strong>Practice QR Mode turns any PDF exercise sheet into an interactive self-assessment tutor:</strong><br>1. <strong>The Teacher</strong> prepares the PDF exercise sheet, defines the grading criteria (and optional Reference Solution <code>Solutionnaire</code>), places QR codes on the PDF, and publishes an encrypted static web portal.<br>2. <strong>The Student</strong> prints the PDF worksheet (or views it on tablet/screen), writes their mathematical derivations or essay answer on paper, <strong>scans the question's QR code with their smartphone</strong>, takes a photo of their handwritten work, and receives <strong>immediate, criterion-by-criterion formative AI feedback</strong>!",
-                    "<strong>Each Student Brings His/Her Own Gemini API Key:</strong> Unlike Exam Mode where the teacher runs AI grading on collected copies, in Practice Mode <strong>there are no student rosters, no scanned copies, and no teacher API keys in the published portal</strong>. Instead, each student enters his/her own personal Gemini API key once on his/her smartphone (e.g. a Google AI Studio key). The student's mobile browser communicates directly with the AI provider.",
+                    "<strong>Zero Teacher API Key Exposed — Built-in Gradaly AI Relay or Optional Student Key:</strong> Unlike Exam Mode where the teacher runs AI grading on collected copies, in Practice Mode <strong>there are no student rosters, no scanned copies, and no teacher API keys in the published portal</strong>. When published on <code>portal.gradaly.io</code>, students can evaluate their handwritten answers <strong>immediately with zero API key setup</strong> thanks to the built-in Gradaly AI relay (ideal for all students, including minors under 18), or optionally enter their own personal Google AI Studio (Gemini) API key in their phone browser.",
                     "<strong>Streamlined 3-Tab Interface:</strong> On the Welcome Screen, click <strong>New project → Practice Project (Student Self-Assessment)</strong> (or click <strong>Create demo project → Practice Project (QR Self-Assessment)</strong> to explore a complete Trigonometry worksheet in French or English). A Practice project opens a clean <strong>3-tab workspace</strong>: <code>1. Canvas &amp; Questions</code>, <code>2. QR Code Placement</code>, and <code>3. Web Publication</code>."
                 ],
                 screenshots: [
@@ -503,8 +503,8 @@ const manualTranslations = {
                         desc: "A Practice project has no student list or copies tab — it is 100% dedicated to autonomous formative training."
                     },
                     {
-                        title: "Student's Own Gemini API Key",
-                        desc: "Each student brings and enters his/her own Google AI Studio (Gemini) API key directly on his/her smartphone."
+                        title: "Zero Key Setup on portal.gradaly.io",
+                        desc: "Students get instant AI evaluation out-of-the-box on portal.gradaly.io (or can optionally enter their own personal Gemini API key)."
                     },
                     {
                         title: "Instant Built-in Practice Demo",
@@ -606,7 +606,7 @@ const manualTranslations = {
                     "<strong>1. Pedagogical Visibility Options:</strong><br>• <strong>Show rubric criteria before the 1st attempt:</strong> Let students see the expected steps upfront, or keep criteria hidden until they submit their first photo.<br>• <strong>Show detailed AI evaluation justification:</strong> Display criterion-by-criterion explanations alongside the formative feedback.<br>• <strong>Reveal the Reference Solution (<code>Solutionnaire</code>) after at least one attempt:</strong> Keep your worked-out model solution locked until the student submits an initial handwritten attempt!",
                     "<strong>2. Preview in the Built-in Smartphone Simulator:</strong> Click <strong>Test Student Web App (Simulator)</strong> at the top right of the banner to preview the mobile interface inside Gradaly.",
                     "<strong>3. Publish the Student Practice Website Online or Export Static <code>.zip</code> (Gradaly Pro):</strong> While the Free version lets you create your Practice project and design your PDF with QR codes, <strong>Gradaly Pro</strong> gives you access to publishing the Student Practice Website: click <strong>Publish in 1 click to portal.gradaly.io</strong> (encrypted client-side with <strong>AES-256-GCM</strong>, with a selectable retention duration of <strong>60 days</strong>, <strong>180 days / 1 semester</strong>, or <strong>365 days / 1 year</strong>) or click <strong>Export as standalone static website (.zip)</strong> to host on your own university server.",
-                    "<strong>4. Step-by-Step Student Experience on Smartphone (Student's Own Gemini API Key):</strong><br>• The student scans the QR code on his/her paper worksheet.<br>• On the first visit, the student taps the <strong>API Key</strong> banner and follows the built-in 30-second guide to paste his/her own <strong>Google AI Studio (Gemini) API key</strong> (saved locally in the phone browser).<br>• The student taps <strong>Take a photo of my work</strong>, photographs the handwritten solution on paper, and taps <strong>Evaluate my answer with AI</strong> to receive the score, validated criteria, LaTeX math feedback, and the unlocked Reference Solution!",
+                    "<strong>4. Step-by-Step Student Experience on Smartphone:</strong><br>• The student scans the QR code on his/her paper worksheet.<br>• When hosted on <code>portal.gradaly.io</code>, AI evaluation works <strong>immediately without entering any API key</strong> (via the built-in Gradaly AI relay). Optionally — or when hosted on a standalone <code>.zip</code> server — the student can tap the <strong>Personal Key</strong> button to paste his/her own <strong>Google AI Studio (Gemini) API key</strong> (saved locally in the phone browser).<br>• The student taps <strong>Take a photo of my work</strong>, photographs the handwritten solution on paper, and taps <strong>Evaluate my answer with AI</strong> to receive the score, validated criteria, LaTeX math feedback, and the unlocked Reference Solution!",
                     "<strong>5. Live Interactive Example (Printable PDF Worksheet &amp; Student Portal):</strong><br>• 🇬🇧 <a href=\"practice_examples_pdfs/Sujet_QR_Demo_Practice_EN.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-teal-700 font-bold underline hover:text-teal-900\">View Printable PDF Worksheet with QR Codes (Demo EN)</a> &nbsp;|&nbsp; <a href=\"https://portal.gradaly.io/?e=ex_7c576e0a7ff4729b&id=practice#k=fOTpaHBSuaFzzdN7AJYjSF_BKMgKaYcGQj6lyYljH10\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-teal-700 font-bold underline hover:text-teal-900\">Open Live Student Practice Portal (Demo EN)</a>"
                 ],
                 screenshots: [
@@ -616,7 +616,7 @@ const manualTranslations = {
                     },
                     {
                         filePrefix: "15_practice_student_portal",
-                        caption: "Built-in Student Smartphone Simulator: Preview the mobile web app where students enter their own Gemini API key, snap a photo of their paper work, and get instant feedback"
+                        caption: "Built-in Student Smartphone Simulator: Preview the mobile web app where students snap a photo of their paper work and get instant formative AI feedback"
                     }
                 ],
                 callouts: [
@@ -629,8 +629,8 @@ const manualTranslations = {
                         desc: "Publish with client-side AES-256-GCM encryption to portal.gradaly.io (60/180/365 days) or export a standalone .zip."
                     },
                     {
-                        title: "Free Google AI Studio Key for Students",
-                        desc: "The mobile interface includes a built-in step-by-step tutorial showing students how to get a free Gemini API key in 30 seconds."
+                        title: "Built-in AI Relay or Personal Key",
+                        desc: "On portal.gradaly.io, students can self-assess immediately with zero API key setup, or optionally enter their own free Gemini key."
                     },
                     {
                         title: "Solutionnaire Unlocked After Effort",
@@ -645,10 +645,10 @@ const manualTranslations = {
                 stepNumber: "FAQ",
                 partColor: "teal",
                 tag: "Frequently Asked Questions (FAQ)",
-                badge: "Encryption, Access, API Key & Privacy",
+                badge: "Encryption, Access, AI Relay & Privacy",
                 shortTitle: "Frequently Asked Questions",
                 title: "Frequently Asked Questions (FAQ)",
-                subtitle: "Answers to common questions about why the Practice site is encrypted, who can access it, where the student's API key is stored, and whether the teacher tracks student usage.",
+                subtitle: "Answers to common questions about why the Practice site is encrypted, who can access it, how student photos and API keys are handled, and whether the teacher tracks student usage.",
                 paragraphs: [
                     "Below you will find answers to the most frequent questions about Gradaly's Practice &amp; Self-Assessment QR Mode."
                 ],
@@ -662,8 +662,8 @@ const manualTranslations = {
                         a: "<p><strong>Only the people possessing the link or the QR codes with whom the teacher has decided to share them</strong> have access to the application and can decrypt the exercises in their browser.</p><p>The teacher can therefore share the printable PDF worksheet (or the link) <strong>in complete confidentiality with his/her students</strong> (for example on an internal course page such as Moodle/Canvas or on paper in class) without the exercises or solutions ever being public on the internet. Of course, because access relies on possessing the link or QR code, the application becomes accessible to anyone outside the class if that link or QR code is shared externally.</p>"
                     },
                     {
-                        q: "Where is the API key entered by the student stored?",
-                        a: "<p>The Gemini API key entered by the student on his/her smartphone (or laptop) is stored <strong>strictly locally inside the web browser's local storage (<code>localStorage</code>) on the student's own device</strong>.</p><p><strong>Security guarantees for the student:</strong><ul><li>The student's API key is <strong>never sent to any Gradaly server</strong> and is <strong>never visible to the teacher</strong>.</li><li>When the student submits a photo of his/her handwritten work for self-assessment, the student's browser communicates <strong>directly over encrypted HTTPS</strong> with Google's official Gemini API endpoint.</li><li>The student can clear or replace his/her API key at any time with a single tap in the mobile interface.</li></ul></p>"
+                        q: "Does the student need an API key, and what happens to the photo of the student's handwritten work?",
+                        a: "<p>Depending on how the student uses the Practice portal, there are two operating modes — both guaranteeing <strong>100% anonymity and zero image storage</strong>:</p><p><strong>1. Default Mode on <code>portal.gradaly.io</code> (No student API key required):</strong><ul><li>When the Practice project is deployed on <code>portal.gradaly.io</code> and the student does not enter a personal API key, the evaluation uses the <strong>secure Gradaly AI relay</strong> (making it immediately accessible to all students, including minors under 18, without creating any account).</li><li>In this mode, the photo of the student's handwritten answer (along with the question's evaluation prompt) <strong>transits through the Gradaly relay server</strong> solely to be evaluated by Gemini Flash.</li><li><strong>Strict non-storage guarantee:</strong> The image is <strong>never stored on disk or in the cloud</strong>, remains <strong>100% anonymous</strong>, and is <strong>immediately destroyed from server memory</strong> as soon as the AI feedback is returned to the student's phone.</li></ul></p><p><strong>2. Personal API Key Mode (Optional on <code>portal.gradaly.io</code>, or on a standalone <code>.zip</code> website):</strong><ul><li>If the student enters his/her own Google Gemini API key via the <em>Personal Key</em> button, that key is stored <strong>strictly locally inside the browser's <code>localStorage</code> on the student's own device</strong> (never sent to any Gradaly server and never visible to the teacher).</li><li>When using a personal API key, the student's browser communicates <strong>directly over encrypted HTTPS with Google's official Gemini API endpoint</strong> without passing through the Gradaly server at all.</li></ul></p>"
                     },
                     {
                         q: "Does the teacher know if a student uses the application?",
@@ -1157,16 +1157,16 @@ const manualTranslations = {
                 partBanner: {
                     kicker: "Manuel 2 • Produit 2 : Mode Entraînement & Auto-Évaluation QR",
                     title: "Guide Complet du Mode Entraînement QR : Auto-Évaluation Formative par l'Étudiant sur Smartphone",
-                    desc: "Ce manuel 100 % autonome explique comment créer une feuille d'exercices PDF munie de QR codes pour que vos étudiants s'entraînent sur papier, photographient leur brouillon avec leur smartphone et reçoivent un feedback IA immédiat avec leur propre clé API Gemini."
+                    desc: "Ce manuel 100 % autonome explique comment créer une feuille d'exercices PDF munie de QR codes pour que vos étudiants s'entraînent sur papier, photographient leur brouillon avec leur smartphone et reçoivent un feedback IA immédiat (sans aucune clé API requise sur portal.gradaly.io, ou avec leur propre clé Gemini personnelle)."
                 },
                 tag: "Mode Entraînement QR • Étape 1 — Principe & Création",
                 badge: "Formatif • Entraînement Autonome Étudiant",
                 shortTitle: "Principe & Création du Projet",
                 title: "Principe du Mode Entraînement QR & Création d'un Projet d'Entraînement",
-                subtitle: "Permettez à vos étudiants de s'entraîner librement sur papier avec un retour IA immédiat sur smartphone — sans ramasser une seule copie, chaque étudiant apportant sa propre clé API Gemini.",
+                subtitle: "Permettez à vos étudiants de s'entraîner librement sur papier avec un retour IA immédiat sur smartphone — sans ramasser une seule copie ni exposer votre clé API enseignant.",
                 paragraphs: [
                     "<strong>L'objectif pédagogique du Mode Entraînement QR (badge <code>Entraînement</code>) :</strong> Pour réussir un examen écrit, les étudiants doivent s'entraîner à rédiger des démonstrations, calculs et raisonnements complets sur papier (séances d'exercices / TD, devoirs à domicile, annales d'examen blanc). Or, il est matériellement impossible pour un enseignant de ramasser et corriger chaque semaine des centaines de feuilles d'exercices. <strong>Le Mode Entraînement QR transforme n'importe quel sujet d'exercices PDF en tuteur d'auto-évaluation interactif :</strong><br>1. <strong>L'enseignant</strong> prépare sa feuille d'exercices PDF, définit les critères d'évaluation (et le corrigé type <code>Solutionnaire</code> éventuel), positionne des QR codes sur le PDF et publie un portail web statique chiffré.<br>2. <strong>L'étudiant</strong> imprime la feuille d'exercices (ou l'affiche à l'écran), résout l'exercice au stylo sur papier, <strong>scanne le QR code de la question avec son smartphone</strong>, prend en photo son brouillon manuscrit et reçoit <strong>instantanément un feedback formateur détaillé critère par critère</strong> !",
-                    "<strong>Chaque étudiant apporte sa propre clé API Gemini :</strong> Contrairement au Mode Examen où l'enseignant évalue les copies de sa promotion, dans un projet d'Entraînement <strong>il n'y a ni liste d'étudiants, ni copies scannées, ni clé API enseignant dans la publication</strong>. Chaque étudiant saisit une seule fois sa propre clé API Gemini personnelle sur son smartphone (par exemple une clé Google AI Studio). C'est le téléphone de l'étudiant qui interroge directement l'IA.",
+                    "<strong>Aucune clé API enseignant exposée — Relais IA Gradaly intégré ou Clé personnelle :</strong> Contrairement au Mode Examen où l'enseignant évalue les copies de sa promotion, dans un projet d'Entraînement <strong>il n'y a ni liste d'étudiants, ni copies scannées, ni clé API enseignant dans la publication</strong>. Lorsque le projet est publié sur <code>portal.gradaly.io</code>, les étudiants peuvent faire évaluer leur brouillon <strong>immédiatement sans saisir aucune clé API</strong> grâce au relais IA Gradaly intégré (idéal pour tous les élèves, y compris les mineurs de moins de 18 ans), ou saisir optionnellement leur propre clé API Google AI Studio (Gemini) dans leur navigateur.",
                     "<strong>Une interface épurée en 3 onglets :</strong> Depuis l'Écran d'accueil, cliquez sur <strong>Nouveau projet → Projet d'Entraînement (Auto-évaluation étudiant)</strong> (ou sur <strong>Créer projet de démo → Projet d'Entraînement (Auto-évaluation QR)</strong> pour explorer une séance complète de Trigonométrie en français ou en anglais). Le projet s'ouvre sur <strong>3 onglets dédiés</strong> : <code>1. Canevas &amp; Questions</code>, <code>2. Placement QR Codes</code> et <code>3. Publication Web</code>."
                 ],
                 screenshots: [
@@ -1189,8 +1189,8 @@ const manualTranslations = {
                         desc: "Un projet d'Entraînement ne comporte ni onglet Étudiants ni onglet Copies : tout se passe en autonomie côté étudiant."
                     },
                     {
-                        title: "Clé API Gemini de l'Étudiant",
-                        desc: "Chaque étudiant apporte et saisit sa propre clé API Google AI Studio (Gemini) directement sur son smartphone."
+                        title: "Zéro Clé Requise sur portal.gradaly.io",
+                        desc: "L'évaluation IA fonctionne immédiatement sans configuration sur portal.gradaly.io (avec possibilité optionnelle d'entrer une clé Gemini personnelle)."
                     },
                     {
                         title: "Démo Entraînement QR Intégrée",
@@ -1292,7 +1292,7 @@ const manualTranslations = {
                     "<strong>1. Options pédagogiques (Avant et Après l'essai de l'étudiant) :</strong><br>• <strong>Afficher les critères du barème avant la 1re tentative :</strong> Choisissez si l'étudiant voit d'emblée la grille des critères attendus ou si elle reste masquée jusqu'à son premier essai.<br>• <strong>Afficher la justification détaillée de l'évaluation IA :</strong> Affiche l'explication critère par critère en plus du conseil formateur.<br>• <strong>Révéler le corrigé type (<code>Solutionnaire</code>) après au moins une tentative :</strong> Garde votre corrigé de référence verrouillé tant que l'étudiant n'a pas soumis une première photo de son travail manuscrit !",
                     "<strong>2. Prévisualiser dans le Simulateur Smartphone intégré :</strong> Cliquez sur le bouton <strong>Tester l'application étudiant (Simulateur)</strong> en haut à droite pour prévisualiser l'interface mobile directement dans Gradaly.",
                     "<strong>3. Publier le site web d'entraînement sur le Cloud ou Exporter en <code>.zip</code> autonome (Gradaly Pro) :</strong> Tandis que la version non-Pro permet de créer votre projet et le design de votre sujet PDF avec QR codes, <strong>Gradaly Pro</strong> donne accès à la publication du site web d'entraînement : cliquez sur <strong>Publier en 1 clic sur portal.gradaly.io</strong> (chiffré côté client en <strong>AES-256-GCM</strong>, avec choix de la durée de maintien en ligne : <strong>60 jours</strong>, <strong>180 jours / 1 semestre</strong> ou <strong>365 jours / 1 an</strong>) ou cliquez sur <strong>Exporter en site web statique autonome (.zip)</strong> pour l'héberger sur votre propre serveur universitaire.",
-                    "<strong>4. Le parcours de l'étudiant sur son smartphone (Clé API Gemini personnelle) :</strong><br>• L'étudiant scanne le QR code imprimé sur sa feuille d'exercices.<br>• Lors de sa 1re visite, il touche le bandeau <strong>Clé API</strong> et suit le mini-guide intégré de 30 secondes pour coller sa propre <strong>clé API Google AI Studio (Gemini)</strong> (mémorisée localement dans le navigateur de son téléphone).<br>• Il appuie sur <strong>Prendre en photo ma copie</strong>, photographie son brouillon papier et lance <strong>Évaluer ma réponse avec l'IA</strong> pour découvrir sa note estimée, les critères validés, le feedback mathématique en LaTeX et le corrigé type débloqué !",
+                    "<strong>4. Le parcours de l'étudiant sur son smartphone :</strong><br>• L'étudiant scanne le QR code imprimé sur sa feuille d'exercices.<br>• Lorsque le projet est hébergé sur <code>portal.gradaly.io</code>, l'évaluation IA fonctionne <strong>immédiatement sans saisir aucune clé API</strong> (via le relais IA Gradaly intégré). Optionnellement — ou dans le cas d'un export <code>.zip</code> hébergé sur un serveur tiers — l'étudiant peut toucher le bouton <strong>Clé perso</strong> pour coller sa propre <strong>clé API Google AI Studio (Gemini)</strong> (mémorisée localement dans le navigateur de son téléphone).<br>• Il appuie sur <strong>Prendre en photo ma copie</strong>, photographie son brouillon papier et lance <strong>Évaluer ma réponse avec l'IA</strong> pour découvrir sa note estimée, les critères validés, le feedback mathématique en LaTeX et le corrigé type débloqué !",
                     "<strong>5. Exemple interactif en direct (Sujet PDF imprimable &amp; Portail Étudiant) :</strong><br>• 🇫🇷 <a href=\"practice_examples_pdfs/Sujet_QR_Demo_Practice_FR.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-teal-700 font-bold underline hover:text-teal-900\">Voir le sujet PDF avec QR Codes (Démo FR)</a> &nbsp;|&nbsp; <a href=\"https://portal.gradaly.io/?e=ex_f511e8d3dad53c82&id=practice#k=6p9EEDYpJx0TMPq7vWBK8h8oeuplQq07tGq56yQPWiM\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-teal-700 font-bold underline hover:text-teal-900\">Ouvrir le Portail d'Entraînement Étudiant en direct (Démo FR)</a>"
                 ],
                 screenshots: [
@@ -1302,7 +1302,7 @@ const manualTranslations = {
                     },
                     {
                         filePrefix: "15_practice_student_portal",
-                        caption: "Simulateur Smartphone Étudiant intégré : Prévisualisez l'application mobile où l'étudiant saisit sa propre clé API Gemini, photographie son brouillon et reçoit son feedback immédiat"
+                        caption: "Simulateur Smartphone Étudiant intégré : Prévisualisez l'application mobile où l'étudiant photographie son brouillon et reçoit son feedback immédiat"
                     }
                 ],
                 callouts: [
@@ -1315,8 +1315,8 @@ const manualTranslations = {
                         desc: "Publiez en 1 clic en AES-256-GCM sur portal.gradaly.io (60/180/365 jours) ou exportez une archive web .zip autonome."
                     },
                     {
-                        title: "Clé gratuite Google AI Studio pour l'étudiant",
-                        desc: "L'interface mobile intègre un tutoriel pas-à-pas montrant à l'étudiant comment créer gratuitement sa clé Gemini en 30 secondes."
+                        title: "Relais IA intégré ou Clé personnelle",
+                        desc: "Sur portal.gradaly.io, les étudiants s'auto-évaluent immédiatement sans clé API, ou peuvent saisir leur propre clé Gemini."
                     },
                     {
                         title: "Solutionnaire débloqué après l'effort",
@@ -1331,10 +1331,10 @@ const manualTranslations = {
                 stepNumber: "FAQ",
                 partColor: "teal",
                 tag: "Foire Aux Questions (FAQ)",
-                badge: "Chiffrement, Accès, Clé API & Confidentialité",
+                badge: "Chiffrement, Accès, Relais IA & Confidentialité",
                 shortTitle: "Foire Aux Questions",
                 title: "Foire Aux Questions (FAQ)",
-                subtitle: "Réponses aux questions sur le chiffrement du site d'entraînement, l'accès au contenu, le stockage de la clé API de l'étudiant et l'anonymat des essais.",
+                subtitle: "Réponses aux questions sur le chiffrement du site d'entraînement, l'accès au contenu, le traitement des photos et clés API, et l'anonymat des essais.",
                 paragraphs: [
                     "Retrouvez ci-dessous les réponses aux questions les plus fréquentes concernant le Mode Entraînement &amp; Auto-évaluation QR de Gradaly."
                 ],
@@ -1348,8 +1348,8 @@ const manualTranslations = {
                         a: "<p><strong>Uniquement les personnes disposant du lien ou des QR codes avec qui l'enseignant a décidé de les partager</strong> ont accès à l'application et peuvent déchiffrer les exercices dans leur navigateur.</p><p>L'enseignant peut dès lors communiquer sa feuille d'exercices PDF (ou le lien) <strong>en toute confidentialité avec ses élèves</strong> (par exemple via l'intranet de son cours Moodle/Teams ou sur papier en séance d'exercices) sans que cela ne soit public sur Internet. Cela le devient évidemment si cette information (le lien ou le PDF avec QR codes) est partagée en dehors.</p>"
                     },
                     {
-                        q: "Où est stockée la clé API entrée par l'étudiant ?",
-                        a: "<p>La clé API Gemini saisie par l'étudiant sur son smartphone (ou son ordinateur) est stockée <strong>strictement en local dans la mémoire du navigateur (<code>localStorage</code>) de l'appareil de l'étudiant</strong>.</p><p><strong>Garanties de sécurité pour l'étudiant :</strong><ul><li>La clé API de l'étudiant n'est <strong>jamais envoyée vers un serveur Gradaly</strong> et n'est <strong>jamais visible par l'enseignant</strong>.</li><li>Lorsque l'étudiant envoie la photo de son brouillon manuscrit pour s'auto-évaluer, le navigateur de son téléphone communique <strong>directement en HTTPS chiffré</strong> avec le serveur officiel de l'API Google Gemini.</li><li>L'étudiant peut modifier ou effacer sa clé API à tout moment en un clic depuis l'interface mobile.</li></ul></p>"
+                        q: "Faut-il une clé API et que deviennent les photos envoyées par l'étudiant ?",
+                        a: "<p>Selon le mode utilisé par l'étudiant, deux fonctionnements sont possibles — garantissant dans les deux cas <strong>un anonymat total et zéro stockage des images</strong> :</p><p><strong>1. Mode par défaut sur <code>portal.gradaly.io</code> (Aucune clé API requise) :</strong><ul><li>Lorsque le projet d'Entraînement est déployé chez Gradaly (<code>portal.gradaly.io</code>) et que l'utilisateur n'entre pas sa propre clé API, l'évaluation passe par le <strong>relais IA sécurisé de Gradaly</strong> (ce qui permet une utilisation immédiate par tous les élèves, y compris les mineurs de moins de 18 ans, sans créer de compte).</li><li>Dans ce cas, la photo du brouillon de l'étudiant (accompagnée de la consigne d'évaluation de la question) <strong>transite bien par le serveur Gradaly</strong> le temps d'interroger le modèle Gemini Flash.</li><li><strong>Garantie stricte de non-stockage :</strong> L'image n'est <strong>jamais stockée sur disque ni dans le cloud</strong>, l'essai reste <strong>100 % anonyme</strong>, et l'image est <strong>immédiatement détruite de la mémoire vive</strong> dès que la réponse de l'IA est renvoyée au téléphone de l'étudiant.</li></ul></p><p><strong>2. Mode Clé API personnelle (Optionnel sur <code>portal.gradaly.io</code>, ou sur un export <code>.zip</code> autonome) :</strong><ul><li>Si l'étudiant saisit sa propre clé API Google Gemini via le bouton <em>Clé perso</em>, cette clé est stockée <strong>strictement en local dans la mémoire du navigateur (<code>localStorage</code>) de son appareil</strong> (elle n'est jamais envoyée à Gradaly ni visible par l'enseignant).</li><li>Avec une clé personnelle, le navigateur du téléphone communique <strong>directement en HTTPS chiffré avec le serveur officiel de l'API Google Gemini</strong>, sans même transiter par le serveur Gradaly.</li></ul></p>"
                     },
                     {
                         q: "Est-ce que l'enseignant sait si un étudiant utilise l'application ?",

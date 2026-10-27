@@ -29,12 +29,12 @@ const translations = {
         prod1_section_kicker: "Product 1 • Exams & Formative Mock Tests (By the Teacher)",
 
         prod2_badge: "Product 2 • Autonomous QR Training",
-        prod2_actor: "Used by the Student (Own Gemini Key)",
+        prod2_actor: "Used by the Student (Zero Key on Portal)",
         prod2_title: "Practice & Self-Assessment QR Mode",
         prod2_desc: "For problem sets, tutorials, and self-paced worksheets where students practice autonomously on paper:",
         prod2_b1: "Stamp QR codes onto your PDF exercise sheet (for the whole sheet or inside each question box).",
         prod2_b2: "Students solve on paper, scan the QR code with their smartphone, and snap a photo of their handwritten work.",
-        prod2_b3: "Instant formative AI feedback & progressive Reference Solution unlock — each student brings his/her own Gemini API key.",
+        prod2_b3: "Instant formative AI feedback & progressive Reference Solution unlock — zero API key required on portal.gradaly.io (or optional personal Gemini key).",
         prod2_cta: "Explore Product 2: Practice QR Mode",
         prod2_demo_btn: "Live QR Demo & PDF",
         prod2_manual_btn: "Read Practice QR Manual",
@@ -58,7 +58,7 @@ const translations = {
         adv1_title: "Native Desktop Experience",
         adv1_text: "Ultra-fast, lightweight, and responsive. Operates directly on your machine (macOS, Windows, Linux) with high-performance PDF rendering and zero browser lag.",
         adv_cost_title: "100% Direct & Multi-Provider Choice",
-        adv_cost_text: "Use your own API key (Google Gemini, OpenAI, Anthropic Claude, OpenRouter) or run local models via Ollama with zero margin — and in Practice QR mode, each student brings his/her own Gemini API key.",
+        adv_cost_text: "Use your own API key (Google Gemini, OpenAI, Anthropic Claude, OpenRouter) or run local models via Ollama with zero margin — and in Practice QR mode, students evaluate their work on portal.gradaly.io without needing any API key.",
 
         // Exam Carousel slides (7 slides)
         carousel_slide1_badge: "Exam Mode • Step 1: Import Canvas",
@@ -103,8 +103,8 @@ const translations = {
         carousel_p3_desc: "While the Free version lets you create your project and design your QR PDF, Gradaly Pro unlocks the publication of the encrypted Student Practice Website (hosted on portal.gradaly.io or exported as a standalone .zip).",
 
         carousel_slide9_badge: "Practice QR Mode • Step 4: Student Smartphone",
-        carousel_slide9_title: "Student Smartphone Self-Assessment (Personal Gemini API Key)",
-        carousel_slide9_desc: "Students scan the QR code, photograph their handwritten work on paper, and receive instant formative feedback and solution unlocking using their own Gemini API key.",
+        carousel_slide9_title: "Student Smartphone Self-Assessment (Zero API Key Setup)",
+        carousel_slide9_desc: "Students scan the QR code, photograph their handwritten work on paper, and receive instant formative feedback and solution unlocking (via the built-in Gradaly AI relay or an optional personal Gemini key).",
 
         // Product 1 Section: Exam Mode
         guide_title: "Exam & Mock Test Mode: Cohort Evaluation by the Teacher",
@@ -142,7 +142,7 @@ const translations = {
         // Product 2 Section: Practice & Self-Assessment QR Mode
         practice_badge: "Product 2 • Formative Self-Assessment (By the Student)",
         practice_title: "Practice QR Mode: Printable Worksheets & Smartphone Tutor",
-        practice_subtitle: "Give your students unlimited paper-based training before exams — without collecting a single copy, while each student uses his/her own Gemini API key.",
+        practice_subtitle: "Give your students unlimited paper-based training before exams — without collecting a single copy or requiring any student API key on portal.gradaly.io.",
         practice_step1_tag: "Worksheet & Solutionnaire",
         practice_step1_title: "Import Exercise PDF, Reference Solution & Criteria",
         practice_step1_desc: "In a dedicated 3-tab workspace (with no student roster or copies to manage), frame each exercise on your blank PDF, load your Reference Solution (Solutionnaire), and create formative criteria manually or with the AI Assistant.",
@@ -152,9 +152,9 @@ const translations = {
         practice_step3_tag: "Gradaly Pro Feature",
         practice_b2_title: "Publish the Student Practice Website (Online or ZIP)",
         practice_b2_desc: "Configure pedagogical rules (e.g. unlock the Reference Solution only after the 1st attempt) and preview in the Simulator. With Gradaly Pro, publish the encrypted Student Practice Website in 1 click to portal.gradaly.io (60/180/365 days) or export a standalone .zip.",
-        practice_step4_tag: "Student's Own Gemini API Key",
+        practice_step4_tag: "Built-In AI Relay or Personal Key",
         practice_b3_title: "Autonomous Student Smartphone App",
-        practice_b3_desc: "Students write on paper, scan the QR code with their phone, enter their own Google AI Studio (Gemini) API key once, photograph their handwritten work, and receive instant rubric feedback and solution unlocking.",
+        practice_b3_desc: "Students write on paper, scan the QR code with their phone, photograph their handwritten work, and receive instant rubric feedback and solution unlocking right away (with zero API key setup on portal.gradaly.io, or an optional personal Gemini key).",
         practice_shot_qr: "1. QR Code Placement on the PDF Worksheet",
         practice_shot_publish: "2. Zero-Knowledge Publication & Pedagogical Options (Pro)",
         practice_shot_sim: "3. Built-In Student Smartphone Simulator",
@@ -167,7 +167,7 @@ const translations = {
         practice_demo_step2_label: "2. Live Encrypted Student Self-Assessment Portal (portal.gradaly.io)",
         practice_btn_portal_fr: "Open Live Student Practice Portal (Demo FR)",
         practice_btn_portal_en: "Open Live Student Practice Portal (Demo EN)",
-        practice_demo_note: "Tip: you can scan any QR code on the PDF worksheet with your smartphone camera to jump straight to that exercise (?q=Q1, ?q=Q2...), or test it right here in your browser with your own Google AI Studio (Gemini) API key.",
+        practice_demo_note: "Tip: you can scan any QR code on the PDF worksheet with your smartphone camera to jump straight to that exercise (?q=Q1, ?q=Q2...), or test it right here in your browser (no API key required on portal.gradaly.io!).",
 
         // Side-by-Side Comparison Table
         comp_kicker: "At a Glance",
@@ -186,7 +186,7 @@ const translations = {
         comp_r3_prac: "Zero student roster, zero copies collected by the teacher",
         comp_r4_label: "AI API Key",
         comp_r4_exam: "Optional (100% human mode available) or Teacher API key (~$5 for 400 copies in Batch)",
-        comp_r4_prac: "The student brings his/her own Gemini API key (e.g. Google AI Studio)",
+        comp_r4_prac: "Zero API key required on portal.gradaly.io (built-in Gradaly AI relay) or optional personal student Gemini key",
         comp_r5_label: "Free vs. Gradaly Pro",
         comp_r5_exam: "Free: full grading + 1-copy export preview • Pro: full-cohort Excel, annotated PDFs, Exam Web Portal & Team Merge",
         comp_r5_prac: "Free: project creation & printable QR PDF design • Pro: publication of the Student Practice Website (online or .zip)",
@@ -299,12 +299,12 @@ const translations = {
         prod1_section_kicker: "Produit 1 • Examens & Tests à Blanc Formatifs (Par l'Enseignant)",
 
         prod2_badge: "Produit 2 • Entraînement Autonome QR",
-        prod2_actor: "Utilisé par l'Étudiant (Clé Gemini personnelle)",
+        prod2_actor: "Utilisé par l'Étudiant (Zéro clé requise)",
         prod2_title: "Mode Entraînement & Auto-évaluation QR",
         prod2_desc: "Pour vos séances d'exercices (TD), devoirs et fiches de révision où l'étudiant s'entraîne en autonomie sur papier :",
         prod2_b1: "Incrustez des QR codes sur votre feuille d'exercices PDF (pour toute la fiche ou dans chaque cadre de question).",
         prod2_b2: "L'étudiant rédige sur papier, scanne le QR code avec son smartphone et prend en photo son brouillon manuscrit.",
-        prod2_b3: "Feedback IA formateur immédiat & déblocage du corrigé type après essai — l'étudiant apporte sa propre clé API Gemini.",
+        prod2_b3: "Feedback IA formateur immédiat & déblocage du corrigé type après essai — aucune clé API requise sur portal.gradaly.io (ou clé Gemini personnelle optionnelle).",
         prod2_cta: "Découvrir le Produit 2 : Mode Entraînement QR",
         prod2_demo_btn: "Démo QR & PDF en Direct",
         prod2_manual_btn: "Manuel Entraînement QR",
@@ -328,7 +328,7 @@ const translations = {
         adv1_title: "Application de Bureau Fluide",
         adv1_text: "Ultra-rapide, légère et réactive. S'exécute directement sur votre ordinateur (macOS, Windows, Linux) avec un affichage PDF haute performance, sans lenteur de navigateur ni distraction.",
         adv_cost_title: "100 % Direct & Multi-Fournisseurs",
-        adv_cost_text: "Utilisez votre propre clé API (Google Gemini, OpenAI, Anthropic Claude, OpenRouter) ou des modèles locaux via Ollama sans aucune marge — et en mode Entraînement QR, chaque étudiant apporte sa propre clé API Gemini.",
+        adv_cost_text: "Utilisez votre propre clé API (Google Gemini, OpenAI, Anthropic Claude, OpenRouter) ou des modèles locaux via Ollama sans aucune marge — et en mode Entraînement QR, les étudiants s'auto-évaluent sur portal.gradaly.io sans avoir besoin d'aucune clé API.",
 
         // Exam Carousel slides (7 slides)
         carousel_slide1_badge: "Mode Examen • Étape 1 : Canevas & Zone ID",
@@ -373,8 +373,8 @@ const translations = {
         carousel_p3_desc: "Tandis que la version gratuite permet de créer votre projet et le design de votre PDF avec QR codes, Gradaly Pro débloque la publication du site web d'entraînement chiffré (en ligne sur portal.gradaly.io ou en archive .zip).",
 
         carousel_slide9_badge: "Mode Entraînement QR • Étape 4 : Smartphone Étudiant",
-        carousel_slide9_title: "Auto-évaluation sur smartphone (Clé API Gemini de l'étudiant)",
-        carousel_slide9_desc: "L'étudiant scanne le QR code, photographie son brouillon manuscrit et reçoit immédiatement un feedback formateur et le corrigé type débloqué en utilisant sa propre clé API Gemini.",
+        carousel_slide9_title: "Auto-évaluation sur smartphone (Aucune clé API requise)",
+        carousel_slide9_desc: "L'étudiant scanne le QR code, photographie son brouillon manuscrit et reçoit immédiatement un feedback formateur et le corrigé type débloqué (via le relais IA Gradaly intégré ou sa propre clé Gemini).",
 
         // Product 1 Section: Exam Mode
         guide_title: "Mode Examen & Test à Blanc : Évaluation de Promotion par l'Enseignant",
@@ -412,7 +412,7 @@ const translations = {
         // Product 2 Section: Practice & Self-Assessment QR Mode
         practice_badge: "Produit 2 • Auto-Évaluation Formative (Par l'Étudiant)",
         practice_title: "Mode Entraînement QR : Feuilles d'Exercices Imprimables & Tuteur Smartphone",
-        practice_subtitle: "Offrez à vos étudiants un entraînement illimité sur papier avant l'examen — sans ramasser une seule copie, chaque étudiant apportant sa propre clé API Gemini.",
+        practice_subtitle: "Offrez à vos étudiants un entraînement illimité sur papier avant l'examen — sans ramasser une seule copie et sans aucune clé API requise sur portal.gradaly.io.",
         practice_step1_tag: "Sujet d'Exercices & Solutionnaire",
         practice_step1_title: "Importer le PDF d'Exercices, le Corrigé Type & les Critères",
         practice_step1_desc: "Dans un espace dédié à 3 onglets (sans liste d'étudiants ni copies à gérer), encadrez chaque exercice sur votre PDF vierge, importez votre Solutionnaire et créez vos critères formatifs manuellement ou avec l'Assistant IA.",
@@ -422,9 +422,9 @@ const translations = {
         practice_step3_tag: "Fonctionnalité Gradaly Pro",
         practice_b2_title: "Publication du Site Web d'Entraînement (En ligne ou ZIP)",
         practice_b2_desc: "Choisissez vos règles pédagogiques (ex: débloquer le Solutionnaire uniquement après le 1er essai). Avec Gradaly Pro, publiez le site web d'entraînement étudiant chiffré en AES-256 sur portal.gradaly.io (60/180/365 j) ou exportez-le en .zip autonome.",
-        practice_step4_tag: "Clé API Gemini de l'Étudiant",
+        practice_step4_tag: "Relais IA Intégré ou Clé Perso",
         practice_b3_title: "Application Smartphone Étudiant Autonome",
-        practice_b3_desc: "L'étudiant rédige au stylo sur papier, scanne le QR code avec son téléphone, saisit une seule fois sa propre clé API Google AI Studio (Gemini), photographie son brouillon et reçoit un feedback immédiat ainsi que le corrigé débloqué.",
+        practice_b3_desc: "L'étudiant rédige au stylo sur papier, scanne le QR code avec son téléphone, photographie son brouillon et reçoit immédiatement un feedback détaillé ainsi que le corrigé débloqué (sans aucune clé API à configurer sur portal.gradaly.io, ou avec une clé Gemini personnelle optionnelle).",
         practice_shot_qr: "1. Positionnement des QR Codes sur le sujet PDF",
         practice_shot_publish: "2. Publication Zero-Knowledge & Options pédagogiques (Pro)",
         practice_shot_sim: "3. Simulateur Smartphone Étudiant intégré",
@@ -437,7 +437,7 @@ const translations = {
         practice_demo_step2_label: "2. Portail d'auto-évaluation étudiant en direct (portal.gradaly.io)",
         practice_btn_portal_fr: "Ouvrir le Portail d'Entraînement Étudiant (Démo FR)",
         practice_btn_portal_en: "Ouvrir le Portail d'Entraînement Étudiant (Démo EN)",
-        practice_demo_note: "Astuce : vous pouvez scanner n'importe quel QR code du sujet PDF avec votre smartphone pour ouvrir directement la question correspondante (?q=Q1, ?q=Q2...), ou tester ici dans votre navigateur avec votre propre clé API Google AI Studio (Gemini).",
+        practice_demo_note: "Astuce : vous pouvez scanner n'importe quel QR code du sujet PDF avec votre smartphone pour ouvrir directement la question correspondante (?q=Q1, ?q=Q2...), ou tester ici dans votre navigateur (aucune clé API requise sur portal.gradaly.io !).",
 
         // Side-by-Side Comparison Table
         comp_kicker: "En un coup d'œil",
@@ -456,7 +456,7 @@ const translations = {
         comp_r3_prac: "Zéro liste d'étudiants, zéro copie à ramasser ou scanner pour l'enseignant",
         comp_r4_label: "Clé API IA",
         comp_r4_exam: "Optionnelle (mode 100 % humain disponible) ou clé enseignant (~5 $ pour 400 copies en Batch)",
-        comp_r4_prac: "L'étudiant apporte et utilise sa propre clé API Gemini (ex: Google AI Studio)",
+        comp_r4_prac: "Aucune clé API requise sur portal.gradaly.io (relais IA Gradaly intégré) ou clé Gemini personnelle optionnelle",
         comp_r5_label: "Version Gratuite vs Gradaly Pro",
         comp_r5_exam: "Gratuit : correction complète + test d'export 1 copie • Pro : Excel complet, PDF annotés, Portail Web d'Examen & Fusion d'équipe",
         comp_r5_prac: "Gratuit : création du projet et design du PDF avec QR codes • Pro : publication du site web d'entraînement étudiant (en ligne ou .zip)",
